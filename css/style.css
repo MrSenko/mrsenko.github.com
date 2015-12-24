@@ -488,13 +488,14 @@
 		.feature-grid.four .feature {
                         margin-right: 1%;
 			margin-bottom: 3em;
-			width: 24%;
+			width: 32%;
 		}
 
                 .feature-grid.four .feature:nth-child(odd) .content,
                 .feature-grid.four .feature:nth-child(even) .content {
                     text-align: left;
                     float: left;
+                    width: 100%;
                 }
 
 /* Icon */
