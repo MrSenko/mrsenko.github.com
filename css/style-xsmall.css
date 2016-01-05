@@ -71,6 +71,10 @@
 		width: 100%;
 	}
 
+	.feature-grid .feature .subscription {
+		text-align: left !important;
+	}
+
 	.feature-grid .feature .image {
 		margin-bottom: 1em;
 	}
