@@ -28,8 +28,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.76"
-     inkscape:cx="190.13158"
-     inkscape:cy="156.36364"
+     inkscape:cx="-108.55263"
+     inkscape:cy="-159.42583"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -55,6 +55,14 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-632.36218)">
+    <rect
+       style="fill:#be5c5c;fill-opacity:1;stroke:#ffccdd;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.94117647000000004;stroke-dasharray:none"
+       id="rect3703"
+       width="635.52631"
+       height="555.26318"
+       x="-275"
+       y="420"
+       transform="translate(0,632.36218)" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot2993-4"
@@ -72,5 +80,22 @@
            y="373.41483"
            style="font-size:144px;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara3015-4"
-         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:FontAwesome;-inkscape-font-specification:FontAwesome"></flowPara></flowRoot>  </g>
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:FontAwesome;-inkscape-font-specification:FontAwesome"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2993-4-6"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Aldrich;-inkscape-font-specification:Aldrich"
+       transform="matrix(3.1376263,0,0,3.1376263,-478.41831,-174.52222)"
+       inkscape:export-filename="/home/atodorov/private/repos/mr_senko/images/for_print_icon.png"
+       inkscape:export-xdpi="299.89597"
+       inkscape:export-ydpi="299.89597"
+       inkscape:transform-center-y="-231.26831"><flowRegion
+         id="flowRegion2995-0-1"><rect
+           id="rect2997-3-2"
+           width="769.73682"
+           height="213.1579"
+           x="82.894737"
+           y="373.41483"
+           style="font-size:144px;fill:#ffffff;fill-opacity:1" /></flowRegion><flowPara
+         id="flowPara3015-4-2"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;font-family:FontAwesome;-inkscape-font-specification:FontAwesome"></flowPara></flowRoot>  </g>
 </svg>
