@@ -10,7 +10,7 @@ from jinja2 import Environment, FileSystemLoader
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print "USAGE: %s <template>" % __file__
+        sys.stderr.write("USAGE: %s <template>\n" % __file__)
         sys.exit(1)
 
     abs_path  = os.path.abspath(sys.argv[1])
