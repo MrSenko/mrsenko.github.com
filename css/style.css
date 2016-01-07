@@ -974,7 +974,7 @@
 		#header img {
 			left: 1.25em;
 			margin: 0;
-			padding-top: 2.5em;
+			padding-top: 2em;
 			position: absolute;
 			top: 0;
 		}
@@ -1046,11 +1046,17 @@
 
 		#header.alt {
 			background-color: transparent;
+
+                        background-attachment: fixed;
+                        background-image: url("images/overlay.png"), url("../images/banner.jpg");
+                        background-position: center top;
+                        background-size: cover;
+
 			border: 0;
 			box-shadow: none;
-			height: 3.25em;
+			height: 6em;
 			line-height: 3.25em;
-			position: absolute;
+			position: relative;
 		}
 
 			#header.alt h1 {
@@ -1084,7 +1090,7 @@
 /* Banner */
 
 	#banner {
-		padding: 10em 0 5em 0;
+		padding: 2em 0 5em 0;
 		background-attachment: fixed;
 		background-image: url("images/overlay.png"), url("../images/banner.jpg");
 		background-position: center top;
