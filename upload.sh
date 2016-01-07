@@ -13,6 +13,7 @@ for tmpl in `find -name "*.jinja"`; do
     fi
 done
 
+exit 88
 
 for d in `find ./ -type d | grep -v ".git"`; do
     dest=`echo $d | sed 's|./||'`
