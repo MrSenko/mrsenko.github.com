@@ -1,31 +1,33 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>{% block title %}Open Source Wizards{% endblock %} - Mr. Senko</title>
+            {% block head %}
+		<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
+		<!--[if lte IE 8]><script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/html5shiv.js"></script><![endif]-->
+		<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
+		<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/skel.min.js"></script>
+		<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/skel-layers.min.js"></script>
+		{% include "init.js.html" %}
 		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/skel.css" />
+			<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" />
+			<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style-xlarge.css" />
 		</noscript>
+            {% endblock %}
 	</head>
 	<body class="landing">
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<img src="images/logo.png" />
+				<img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/logo.png" />
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html#how-it-works">How It Works</a></li>
-						<li><a href="index.html#who-are-we">Who Are We</a></li>
-						<li><a href="index.html#get-in-touch">Get In Touch</a></li>
+						<li><a href="{{ SITEURL }}/#how-it-works">How It Works</a></li>
+						<li><a href="{{ SITEURL }}/#who-are-we">Who Are We</a></li>
+						<li><a href="{{ SITEURL }}/#get-in-touch">Get In Touch</a></li>
 					</ul>
 				</nav>
 			</header>
