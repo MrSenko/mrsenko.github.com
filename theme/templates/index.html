@@ -2,11 +2,13 @@
 
 {% block content %}
     <section id="banner">
+        {% block banner %}
             <h2>Mr. Senko's blog</h2>
             <p>
                 diary of magic adventures <br/>
                 in the open source world
             </p>
+        {% endblock %}
     </section>
 
     {% for article in articles_page.object_list %}
