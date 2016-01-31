@@ -35,6 +35,7 @@ DEFAULT_PAGINATION = 20
 #RELATIVE_URLS = True
 
 THEME = 'theme/'
+COLOR_SCHEME_CSS = "github.css"
 
 INDEX_SAVE_AS = 'blog/index.html'
 
