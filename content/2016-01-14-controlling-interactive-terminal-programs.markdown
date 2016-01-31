@@ -1,4 +1,5 @@
 Title: Controlling Interactive Terminal Programs
+Headline: with gdb and Python
 date: 2016-01-14 16:03
 comments: true
 Tags: fedora.planet, QA
