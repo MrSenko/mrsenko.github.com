@@ -28,26 +28,33 @@
 						<li><a href="{{ SITEURL }}/#how-it-works">How It Works</a></li>
 						<li><a href="{{ SITEURL }}/#who-are-we">Who Are We</a></li>
 						<li><a href="{{ SITEURL }}/#get-in-touch">Get In Touch</a></li>
+						<li><a href="{{ SITEURL }}/blog/">Blog</a></li>
 					</ul>
 				</nav>
 			</header>
+{% if page and page.banner_title %}
+        <section id="banner">
+            <h2>{{ page.banner_title }}</h2>
+            <p>
+                {{ page.banner_subtitle }}
+            </p>
+
+        {% if page.show_button %}
+            <ul class="actions">
+                <li><a href="#start" class="button special big">Get Started</a></li>
+            </ul>
+        {% endif %}
+    </section>
+{% elif article %}
+        <section id="banner">
+            <h2>{{ article.title }}</h2>
+            <p>
+                {{ article.headline }}
+            </p>
+    </section>
+{% endif %}
+
 {% block content %}
-    {% block banner %}
-		<!-- Banner -->
-			<section id="banner">
-				<h2>Open source libraries break</h2>
-				<p>
-                                    Mr. Senko is here to test and fix them<br />
-                                    so you can develop your products<br/>
-                                    without the support hassle!
-                                </p>
-
-
-				<ul class="actions">
-					<li><a href="#start" class="button special big">Get Started</a></li>
-				</ul>
-			</section>
-    {% endblock %}
 {% endblock %}
 		<!-- Footer -->
 			<footer id="footer">
