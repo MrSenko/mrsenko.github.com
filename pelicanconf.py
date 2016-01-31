@@ -52,6 +52,7 @@ TAGS_SAVE_AS = 'blog/tags/index.html'
 ARCHIVES_SAVE_AS = 'blog/archives/index.html'
 
 AUTHORS_SAVE_AS = 'blog/authors/index.html'
+AUTHOR_URL = 'blog/authors/{slug}'
 AUTHOR_SAVE_AS  = 'blog/authors/{slug}/index.html'
 
 CATEGORIES_SAVE_AS = ''
