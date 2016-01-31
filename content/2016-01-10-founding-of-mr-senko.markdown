@@ -1,5 +1,5 @@
 Title: Founding of Mr. Senko
-date: 2016-01-19 14:00
+date: 2016-01-10 14:00
 comments: true
 Author: Alexander Todorov
 

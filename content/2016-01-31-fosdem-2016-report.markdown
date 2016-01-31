@@ -1,0 +1,98 @@
+Title: FOSDEM 2016 Report
+date: 2016-01-31 19:30
+comments: true
+
+Hello everyone, [Mr. Senko](http://MrSenko.com) flew to Brussels for his first
+public appearances and we are very excited about this. He visited
+[FOSDEM](http://fosdem.org) to get an update on the latest news in open source
+and scored the highest ping-pong score for
+[BBC Open Source](https://twitter.com/atodorov_/status/693762736765976576)
+on Sunday!
+He also learned a bit about [Elixir](http://elixir-lang.org) with the
+Belgian Elixir Study group, attended a panel on open source and start-ups
+organized by [The Startup Bus](http://europe.startupbus.com)
+and made lots of new friends. Here are some of
+the details and links for further reading.
+
+![Ping-pong with computers](/images/bbc_ping_pong.jpg "Ping-pong with computers")
+
+
+Friday - Day 0
+--------------
+
+Friday was a fruitful day for Mr. Senko. It started with a meeting at
+[BetaCowork](http://betacowork) - one of the co-working spaces in Brussels
+and continued with a visit to
+[Brussels Erlang Factory Lite](http://www.erlang-factory.com/brussels2016/)
+where we learned a bit about Erlang and Elixir and even managed to create a
+[small pull request](https://github.com/belgian-elixir-study-group/efl/pull/5)
+as part of the exercises. Funny enough, one of the organizers,
+[Yuri Leikind](https://twitter.com/less_software) was spot on to recognize our
+Bulgarian accent.
+
+BetaCowork was bursting with people who've come for FOSDEM. There was a GNOME
+team and the Libre Office Italian team! The place is huge and is definitely
+an alternative for the entrepreneurs who are tired of working from home! It
+is also very close to ULB so next time you visit FOSDEM definitely check their
+events schedule as well.
+
+Saturday - Day 1
+-----------------
+
+Saturday was the
+[Testing and Automation](https://fosdem.org/2016/schedule/track/testing_and_automation/)
+day. The morning track showed us [Frida](http://frida.re) - a tool
+which injects JavaScript into existing processes and could be used for testing
+interoperability with closed source applications. Another interesting use case
+is overriding the standard `read` and `write` functions in order to automate testing
+of interactive text based applications on Linux. Mr. Senko had the pleasure talking
+to Frida's authors on both days. These are extremely tallented and knowledgeable
+folks so definitely keep an eye on their work.
+
+In the afternoon the room got packed when Marcin and Lukasz presented their
+experience with
+[Jenkins Job DSL](https://github.com/jenkinsci/job-dsl-plugin) plugin.
+The plugin is very flexible and powerfull, using Groovy
+as its programming language. The only drawback is that it is
+sometimes too complex to use and requires a steep learning curve.
+Regardless of this the only tools we know about related to
+Jenkins as Code are the Jenkins Job DSL and Jenkins Job Builder plugins.
+
+
+In the evening Mr. Senko visited a panel talk about
+[the impact of open source on the tech industry](https://www.eventbrite.com/e/startupbusaccelerate-the-impact-of-open-source-software-on-the-tech-industry-tickets-20869395925)
+at the second big co-workign space in Brussels - [Co.Station](http://co-station.com).
+The place is in the city center so definitely worth to visit at any time.
+Mr. Senko made quite a few new friends there and possibly found potential
+pilot customers. We've also made contact with the organizers of
+[Startup Bus Europe](http://europe.startupbus.com) and hopefully we'll see
+the bus coming to Sofia as well. And we also got invited to the first
+[Angular.js conference in Belgium](https://www.linkedin.com/pulse/setting-up-first-angular-conference-belgium-sam-vloeberghs)
+and with a bit of luck you'll see a talk from us in the summer.
+
+
+Sunday - Day 2
+---------------
+
+Sunday was the lazy day. The only talk of interest to Mr. Senko was
+[Tweaking Ruby GC parameters for speed and profit](https://fosdem.org/2016/schedule/event/tweaking_ruby_gc/)
+. The rest of the time was spent networking, collecting t-shirts,
+reporting
+[a bug against Fedora Account System](https://fedorahosted.org/fedora-infrastructure/ticket/5085)
+and meeting with old friends.
+
+![hammer down](/images/bbc_hammer_game.jpg "hammer down")
+
+In the early afternoon Mr. Senko played a few geeky games at the BBC Open Source
+stand. BBC is developing the [micro:bit](https://www.microbit.co.uk/) - a small computer which is intended to
+teach programming to small children. With its help BBC has built a ping-pong
+device which counts how many times you hit the ball.
+
+In the second game you had to smash a
+red circle with a foam hammer as soon as it lighted up. Mr. Senko managed to
+win the first game and then lost the second one. He even got to test the device
+and tried to crash it by scoring penalty points when the counter was still zero.
+BBC definitely did their job right because the device didn't crash.
+
+
+
