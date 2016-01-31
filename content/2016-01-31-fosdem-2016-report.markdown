@@ -85,7 +85,7 @@ and meeting with old friends.
 
 In the early afternoon Mr. Senko played a few geeky games at the BBC Open Source
 stand. BBC is developing the [micro:bit](https://www.microbit.co.uk/) - a small computer which is intended to
-teach programming to small children. With its help BBC has built a ping-pong
+teach programming to small children. With its help they has built a ping-pong
 device which counts how many times you hit the ball.
 
 In the second game you had to smash a
@@ -95,4 +95,4 @@ and tried to crash it by scoring penalty points when the counter was still zero.
 BBC definitely did their job right because the device didn't crash.
 
 
-
+Thank you for taking the time to read this report. See you at the next event!
