@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <section id="banner">
+            <h2>Mr. Senko's blog</h2>
+            <p>
+                diary of magic adventures <br/>
+                in the open source world
+            </p>
+    </section>
+
     {% for article in articles_page.object_list %}
     <section class="wrapper style1">
         <div class="container">
