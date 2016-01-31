@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for article in articles_page.object_list %}
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                    <h2>{{ article.title }}</h2>
+                </a>
+            </header>
+
+            {{ article.content }}
+
+            <p class="post-meta">Posted by
+                {% for author in article.authors %}
+                    <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                {% endfor %}
+                on {{ article.locale_date }}
+            </p>
+        </div>
+    </section>
+    {% endfor %}
+
+    {% include "pagination.html" %}
+{% endblock content %}
+
