@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-01-31T19:30:00+02:00</updated><entry><title>FOSDEM 2016 Report</title><link href="http://mrsenko.com/blog/2016/01/31/fosdem-2016-report/" rel="alternate"></link><updated>2016-01-31T19:30:00+02:00</updated><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-01-31:blog/2016/01/31/fosdem-2016-report/</id><summary type="html">&lt;p&gt;Hello everyone, &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt; flew to Brussels for his first
+public appearances and we are very excited about this. He visited
+&lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; to get an update on the latest news in open source
+and scored the highest ping-pong score for
+&lt;a href="https://twitter.com/atodorov_/status/693762736765976576"&gt;BBC Open Source&lt;/a&gt;
+on Sunday!
+He also learned a bit about &lt;a href="http://elixir-lang.org"&gt;Elixir&lt;/a&gt; with the
+Belgian Elixir Study group, attended a panel on open source and start-ups
+organized by &lt;a href="http://europe.startupbus.com"&gt;The Startup Bus&lt;/a&gt;
+and made lots of new friends. Here are some of
+the details and links for further reading.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Ping-pong with computers" src="/images/bbc_ping_pong.jpg" title="Ping-pong with computers" /&gt;&lt;/p&gt;
+&lt;h2&gt;Friday - Day 0&lt;/h2&gt;
+&lt;p&gt;Friday was a fruitful day for Mr. Senko. It started with a meeting at
+&lt;a href="http://betacowork"&gt;BetaCowork&lt;/a&gt; - one of the co-working spaces in Brussels
+and continued with a visit to
+&lt;a href="http://www.erlang-factory.com/brussels2016/"&gt;Brussels Erlang Factory Lite&lt;/a&gt;
+where we learned a bit about Erlang and Elixir and even managed to create a
+&lt;a href="https://github.com/belgian-elixir-study-group/efl/pull/5"&gt;small pull request&lt;/a&gt;
+as part of the exercises. Funny enough, one of the organizers,
+&lt;a href="https://twitter.com/less_software"&gt;Yuri Leikind&lt;/a&gt; was spot on to recognize our
+Bulgarian accent.&lt;/p&gt;
+&lt;p&gt;BetaCowork was bursting with people who've come for FOSDEM. There was a GNOME
+team and the Libre Office Italian team! The place is huge and is definitely
+an alternative for the entrepreneurs who are tired of working from home! It
+is also very close to ULB so next time you visit FOSDEM definitely check their
+events schedule as well.&lt;/p&gt;
+&lt;h2&gt;Saturday - Day 1&lt;/h2&gt;
+&lt;p&gt;Saturday was the
+&lt;a href="https://fosdem.org/2016/schedule/track/testing_and_automation/"&gt;Testing and Automation&lt;/a&gt;
+day. The morning track showed us &lt;a href="http://frida.re"&gt;Frida&lt;/a&gt; - a tool
+which injects JavaScript into existing processes and could be used for testing
+interoperability with closed source applications. Another interesting use case
+is overriding the standard &lt;code&gt;read&lt;/code&gt; and &lt;code&gt;write&lt;/code&gt; functions in order to automate testing
+of interactive text based applications on Linux. Mr. Senko had the pleasure talking
+to Frida's authors on both days. These are extremely tallented and knowledgeable
+folks so definitely keep an eye on their work.&lt;/p&gt;
+&lt;p&gt;In the afternoon the room got packed when Marcin and Lukasz presented their
+experience with
+&lt;a href="https://github.com/jenkinsci/job-dsl-plugin"&gt;Jenkins Job DSL&lt;/a&gt; plugin.
+The plugin is very flexible and powerfull, using Groovy
+as its programming language. The only drawback is that it is
+sometimes too complex to use and requires a steep learning curve.
+Regardless of this the only tools we know about related to
+Jenkins as Code are the Jenkins Job DSL and Jenkins Job Builder plugins.&lt;/p&gt;
+&lt;p&gt;In the evening Mr. Senko visited a panel talk about
+&lt;a href="https://www.eventbrite.com/e/startupbusaccelerate-the-impact-of-open-source-software-on-the-tech-industry-tickets-20869395925"&gt;the impact of open source on the tech industry&lt;/a&gt;
+at the second big co-workign space in Brussels - &lt;a href="http://co-station.com"&gt;Co.Station&lt;/a&gt;.
+The place is in the city center so definitely worth to visit at any time.
+Mr. Senko made quite a few new friends there and possibly found potential
+pilot customers. We've also made contact with the organizers of
+&lt;a href="http://europe.startupbus.com"&gt;Startup Bus Europe&lt;/a&gt; and hopefully we'll see
+the bus coming to Sofia as well. And we also got invited to the first
+&lt;a href="https://www.linkedin.com/pulse/setting-up-first-angular-conference-belgium-sam-vloeberghs"&gt;Angular.js conference in Belgium&lt;/a&gt;
+and with a bit of luck you'll see a talk from us in the summer.&lt;/p&gt;
+&lt;h2&gt;Sunday - Day 2&lt;/h2&gt;
+&lt;p&gt;Sunday was the lazy day. The only talk of interest to Mr. Senko was
+&lt;a href="https://fosdem.org/2016/schedule/event/tweaking_ruby_gc/"&gt;Tweaking Ruby GC parameters for speed and profit&lt;/a&gt;
+. The rest of the time was spent networking, collecting t-shirts,
+reporting
+&lt;a href="https://fedorahosted.org/fedora-infrastructure/ticket/5085"&gt;a bug against Fedora Account System&lt;/a&gt;
+and meeting with old friends.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="hammer down" src="/images/bbc_hammer_game.jpg" title="hammer down" /&gt;&lt;/p&gt;
+&lt;p&gt;In the early afternoon Mr. Senko played a few geeky games at the BBC Open Source
+stand. BBC is developing the &lt;a href="https://www.microbit.co.uk/"&gt;micro:bit&lt;/a&gt; - a small computer which is intended to
+teach programming to small children. With its help they has built a ping-pong
+device which counts how many times you hit the ball.&lt;/p&gt;
+&lt;p&gt;In the second game you had to smash a
+red circle with a foam hammer as soon as it lighted up. Mr. Senko managed to
+win the first game and then lost the second one. He even got to test the device
+and tried to crash it by scoring penalty points when the counter was still zero.
+BBC definitely did their job right because the device didn't crash.&lt;/p&gt;
+&lt;p&gt;Thank you for taking the time to read this report. See you at the next event!&lt;/p&gt;</summary></entry><entry><title>Founding of Mr. Senko</title><link href="http://mrsenko.com/blog/2016/01/10/founding-of-mr-senko/" rel="alternate"></link><updated>2016-01-10T14:00:00+02:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-01-10:blog/2016/01/10/founding-of-mr-senko/</id><summary type="html">&lt;p&gt;Hello everyone, welcome to &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;! We are a group of friends who have
+been working with open source for the last 10 years. During this time we've
+seen technologies come and go and hype projects becoming abandoned months later.
+We've seen the pain when companies had to rewrite their software because of this
+and the struggle to get your patches accepted upstream.
+Don't you wish you had somebody who could take care of all the hassle for you?&lt;/p&gt;
+&lt;p&gt;Mr. Senko is our attempt at providing commercial support for open source projects,
+specifically libraries which other companies use to build their products. As of now
+we have diverse experience in Java, Python and JavaScript as well as my personal
+experience with Quality Assurance.&lt;/p&gt;
+&lt;p&gt;In the next weeks and months we will be refining our value proposition and building
+the team so we can offer you great technical support and expertise. We plan to blog
+regularly about our progress and about technology and open source events in general! 
+You can follow us at &lt;a href="https://twitter.com/Mr_Senko"&gt;@Mr_Senko&lt;/a&gt; or tweet at the wizard
+using the &lt;strong&gt;#MrSenko&lt;/strong&gt; hashtag! &lt;/p&gt;
+&lt;p&gt;Stay tuned for more news!&lt;/p&gt;</summary></entry></feed>

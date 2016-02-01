@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    		<title>Founding of Mr. Senko</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+
+        <meta name="description" content="Hello everyone, welcome to Mr. Senko! We are a group of friends who have been working with open source for the last 10 years. During ..." >
+
+        <meta name="author" content="Alexander Todorov">
+
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><a href="http://mrsenko.com/#how-it-works">How It Works</a></li>
+						<li><a href="http://mrsenko.com/#who-are-we">Who Are We</a></li>
+						<li><a href="http://mrsenko.com/#get-in-touch">Get In Touch</a></li>
+						<li><a href="http://mrsenko.com/blog/">Blog</a></li>
+					</ul>
+				</nav>
+			</header>
+    <section id="banner">
+            <h2>Founding of Mr. Senko</h2>
+            <p>
+                
+            </p>
+    </section>
+
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p>Hello everyone, welcome to <a href="http://MrSenko.com">Mr. Senko</a>! We are a group of friends who have
+been working with open source for the last 10 years. During this time we've
+seen technologies come and go and hype projects becoming abandoned months later.
+We've seen the pain when companies had to rewrite their software because of this
+and the struggle to get your patches accepted upstream.
+Don't you wish you had somebody who could take care of all the hassle for you?</p>
+<p>Mr. Senko is our attempt at providing commercial support for open source projects,
+specifically libraries which other companies use to build their products. As of now
+we have diverse experience in Java, Python and JavaScript as well as my personal
+experience with Quality Assurance.</p>
+<p>In the next weeks and months we will be refining our value proposition and building
+the team so we can offer you great technical support and expertise. We plan to blog
+regularly about our progress and about technology and open source events in general! 
+You can follow us at <a href="https://twitter.com/Mr_Senko">@Mr_Senko</a> or tweet at the wizard
+using the <strong>#MrSenko</strong> hashtag! </p>
+<p>Stay tuned for more news!</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/blog/authors/alexander-todorov">Alexander Todorov</a>
+        on Sun 10 January 2016
+        </p>
+    </div>
+
+    </div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+						<li>Design: TEMPLATED</li>
+					</ul>
+				</div>
+			</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72200638-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+	</body>
+</html>
