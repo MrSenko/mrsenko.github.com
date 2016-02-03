@@ -26,6 +26,8 @@
                 {% endfor %}
                 on {{ article.locale_date }}
             </p>
+
+            {% include 'comments.html' %}
         </div>
     </section>
     {% endfor %}
