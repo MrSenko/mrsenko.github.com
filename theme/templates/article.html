@@ -23,6 +23,19 @@
     {% endfor %}
 {% endblock %}
 
+{% block banner %}
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.headline }}</p>
+    <p>
+        <em>Posted by
+            {% for author in article.authors %}
+                <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+            {% endfor %}
+            <br/>on {{ article.locale_date }}
+        </em>
+    </p>
+{% endblock %}
+
 {% block content %}
 <section id="#article" class="wrapper style1">
     <div class="container">

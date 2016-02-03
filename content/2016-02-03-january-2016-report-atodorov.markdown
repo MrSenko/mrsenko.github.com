@@ -1,7 +1,9 @@
 Title: January 2016 Report
+headline: Pelican, Sphinx and misc
 date: 2016-02-03 22:30
 comments: true
 Author: Alexander Todorov
+Tags: Python
 
 This is my first status report for [Mr. Senko](http://MrSenko.com). During
 January 2016 I've worked on:

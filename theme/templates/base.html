@@ -41,27 +41,21 @@
 					</ul>
 				</nav>
 			</header>
-{% if page and page.banner_title %}
-        <section id="banner">
-            <h2>{{ page.banner_title }}</h2>
-            <p>
-                {{ page.banner_subtitle }}
-            </p>
 
-        {% if page.show_button %}
-            <ul class="actions">
-                <li><a href="#start" class="button special big">Get Started</a></li>
-            </ul>
-        {% endif %}
-    </section>
-{% elif article %}
-    <section id="banner">
-            <h2>{{ article.title }}</h2>
-            <p>
-                {{ article.headline }}
-            </p>
-    </section>
-{% endif %}
+            <section id="banner">
+                {% block banner %}
+                    {% if page and page.banner_title %}
+                        <h2>{{ page.banner_title }}</h2>
+                        <p>{{ page.banner_subtitle }}</p>
+
+                        {% if page.show_button %}
+                            <ul class="actions">
+                                <li><a href="#start" class="button special big">Get Started</a></li>
+                            </ul>
+                        {% endif %}
+                    {% endif %}
+                {% endblock %}
+            </section>
 
 {% block content %}
 {% endblock %}
