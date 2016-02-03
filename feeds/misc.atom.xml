@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-01-31T19:30:00+02:00</updated><entry><title>FOSDEM 2016 Report</title><link href="http://mrsenko.com/blog/2016/01/31/fosdem-2016-report/" rel="alternate"></link><updated>2016-01-31T19:30:00+02:00</updated><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-01-31:blog/2016/01/31/fosdem-2016-report/</id><summary type="html">&lt;p&gt;Hello everyone, &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt; flew to Brussels for his first
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-02-03T22:30:00+02:00</updated><entry><title>January 2016 Report</title><link href="http://mrsenko.com/blog/2016/02/03/january-2016-report/" rel="alternate"></link><updated>2016-02-03T22:30:00+02:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-02-03:blog/2016/02/03/january-2016-report/</id><summary type="html">&lt;p&gt;This is my first status report for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
+January 2016 I've worked on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Improvements to
+&lt;a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed"&gt;pelican-clean-blog&lt;/a&gt;
+theme&lt;/li&gt;
+&lt;li&gt;URL updates in &lt;code&gt;package.json&lt;/code&gt; for several Node.js packages;&lt;/li&gt;
+&lt;li&gt;.spec file to build RPMs for
+&lt;a href="https://github.com/django-ses/django-ses/pull/83"&gt;django-ses&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;New test case for
+&lt;a href="https://github.com/belgian-elixir-study-group/efl/pull/5"&gt;Elixir study exercises&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Updates to an old PR for
+&lt;a href="https://github.com/sphinx-doc/sphinx/pull/1902"&gt;Sphinx&lt;/a&gt; which also fixes a
+new regression;&lt;/li&gt;
+&lt;li&gt;Filed a
+&lt;a href="https://github.com/getpelican/pelican/issues/1902"&gt;RFE&lt;/a&gt; against Pelican
+and will continue working on it this month.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Sphinx broke&lt;/h2&gt;
+&lt;p&gt;The Sphinx changes are particularly interesting - the fix for
+issue #656 in commit 4c4450d changes the Graphviz's
+&lt;code&gt;node['options']&lt;/code&gt; type from &lt;code&gt;list&lt;/code&gt; to &lt;code&gt;dict&lt;/code&gt; which in turn breaks
+&lt;code&gt;html_visit_inheritance_diagram()&lt;/code&gt; and the inheritance_diagram extension.&lt;/p&gt;
+&lt;p&gt;My previous work on this PR introduced some basic tests, which were missing
+and they caught the type change! Because the tests and my latest changes are
+not yet merged into master the &lt;code&gt;inheritance_diagram.py&lt;/code&gt; extension is still
+broken! The tests fail in Travis-CI but probably due to &lt;code&gt;dot&lt;/code&gt; not being
+installed. Locally everything seems to work.&lt;/p&gt;
+&lt;p&gt;Its also worth mentioning that it's been 2 weeks since I've updated my PR
+and a bit more since Sphinx introduced the regression. As far as I can see
+there's not been any updates with respect to this. 
+If you'd like to get a
+faster response cycle please &lt;strong&gt;consider subscribing to
+&lt;a href="/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>FOSDEM 2016 Report</title><link href="http://mrsenko.com/blog/2016/01/31/fosdem-2016-report/" rel="alternate"></link><updated>2016-01-31T19:30:00+02:00</updated><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-01-31:blog/2016/01/31/fosdem-2016-report/</id><summary type="html">&lt;p&gt;Hello everyone, &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt; flew to Brussels for his first
 public appearances and we are very excited about this. He visited
 &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; to get an update on the latest news in open source
 and scored the highest ping-pong score for
