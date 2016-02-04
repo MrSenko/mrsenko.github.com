@@ -43,4 +43,4 @@ and a bit more since Sphinx introduced the regression. As far as I can see
 there's not been any updates with respect to this. 
 If you'd like to get a
 faster response cycle please **consider subscribing to
-[Mr. Senko](/subscribe.html)!**
+[Mr. Senko]({filename}pages/subscribe.html)!**
