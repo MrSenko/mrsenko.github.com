@@ -136,6 +136,74 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/2016/03/30/march-2016-report/" rel="bookmark" title="Permalink to March 2016 Report">
+                    <h2>March 2016 Report</h2>
+                </a>
+            </header>
+
+            <p>Here is a quick status report for <a href="http://MrSenko.com">Mr. Senko</a>. During
+March 2016 I've worked on:</p>
+<ul>
+<li>A few more improvements to
+<a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed">pelican-clean-blog</a>
+theme;</li>
+<li>Two new features for 
+<a href="https://github.com/getpelican/pelican/pulls/atodorov">Pelican</a>;</li>
+<li>Several bug fixes and improvements for
+<a href="https://github.com/Nitrate/Nitrate/pulls/atodorov">Nitrate</a>.</li>
+</ul>
+<h2>Nitrate Test Case Management System</h2>
+<p><a href="http://nitrate.readthedocs.org/en/latest/guide/introduction.html">Nitrate</a> is
+a test case management system written with Django. We use it internally to track
+testing activities. It is reasonably good at what it does but there are some
+issues with how the software has been developed in the past.</p>
+<ul>
+<li>
+<p>Nitrate is Django based but doesn't follow best Django practices.
+There are places where it executes raw SQL against the DB instead of using
+Django's ORM model. This makes it non-portable between DBMS.</p>
+</li>
+<li>
+<p>Nitrate has a long development history but poor documentation. It has introduced
+DB migrations and updates in a non-Django friendly way. The currently preferred
+method is to execute an SQL file against the DB. This is poorly documented and
+of course I've missed it. I'm sure others will miss it as well.</p>
+</li>
+<li>
+<p>Going forward with native Django migrations all of these SQL files need to be
+converted and I haven't looked into this yet. Another possibility is to just release
+a new version which doesn't allow automatic DB updates.</p>
+</li>
+<li>
+<p>There are a bunch of static files (e.g. images) used directly in CSS and JavaScript files.
+This immediately breaks if you decide to host your static files elsewhere
+(e.g. Amazon S3 bucket). There is an easy fix but it requires the use of latest Django.</p>
+</li>
+<li>
+<p>Django version (and other dependencies) are quite old. This introduces security
+risk and also makes it harder to develop new functionality sometimes. I have opened
+a PR to bring Django forward to 1.8.11 version but that still needs more work.
+Yes I broke the test-suite as part of the migration.</p>
+</li>
+<li>
+<p>So far my impression is that the Nitrate team are slow to respond on GitHub.
+Given the current state of Nitrate and the amount of work which needs to be done
+this is disappointing.</p>
+</li>
+</ul>
+<p>If you like my work and need a faster response cycle please
+<strong>consider subscribing to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong></p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/authors/alexander-todorov">Alexander Todorov</a>
+                on Wed 30 March 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/2016/03/30/march-2016-report/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/" rel="bookmark" title="Permalink to Why Your Open Source Bugs Will Not Be Fixed">
                     <h2>Why Your Open Source Bugs Will Not Be Fixed</h2>
                 </a>

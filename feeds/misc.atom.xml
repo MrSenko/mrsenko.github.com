@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-02-14T17:30:00+02:00</updated><entry><title>Why Your Open Source Bugs Will Not Be Fixed</title><link href="http://mrsenko.com/blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/" rel="alternate"></link><updated>2016-02-14T17:30:00+02:00</updated><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-02-14:blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/</id><summary type="html">&lt;p&gt;Here at Mr. Senko we've been researching why many bugs reported against
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-03-30T14:30:00+03:00</updated><entry><title>March 2016 Report</title><link href="http://mrsenko.com/blog/2016/03/30/march-2016-report/" rel="alternate"></link><updated>2016-03-30T14:30:00+03:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-03-30:blog/2016/03/30/march-2016-report/</id><summary type="html">&lt;p&gt;Here is a quick status report for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
+March 2016 I've worked on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A few more improvements to
+&lt;a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed"&gt;pelican-clean-blog&lt;/a&gt;
+theme;&lt;/li&gt;
+&lt;li&gt;Two new features for 
+&lt;a href="https://github.com/getpelican/pelican/pulls/atodorov"&gt;Pelican&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Several bug fixes and improvements for
+&lt;a href="https://github.com/Nitrate/Nitrate/pulls/atodorov"&gt;Nitrate&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Nitrate Test Case Management System&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://nitrate.readthedocs.org/en/latest/guide/introduction.html"&gt;Nitrate&lt;/a&gt; is
+a test case management system written with Django. We use it internally to track
+testing activities. It is reasonably good at what it does but there are some
+issues with how the software has been developed in the past.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Nitrate is Django based but doesn't follow best Django practices.
+There are places where it executes raw SQL against the DB instead of using
+Django's ORM model. This makes it non-portable between DBMS.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nitrate has a long development history but poor documentation. It has introduced
+DB migrations and updates in a non-Django friendly way. The currently preferred
+method is to execute an SQL file against the DB. This is poorly documented and
+of course I've missed it. I'm sure others will miss it as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Going forward with native Django migrations all of these SQL files need to be
+converted and I haven't looked into this yet. Another possibility is to just release
+a new version which doesn't allow automatic DB updates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;There are a bunch of static files (e.g. images) used directly in CSS and JavaScript files.
+This immediately breaks if you decide to host your static files elsewhere
+(e.g. Amazon S3 bucket). There is an easy fix but it requires the use of latest Django.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Django version (and other dependencies) are quite old. This introduces security
+risk and also makes it harder to develop new functionality sometimes. I have opened
+a PR to bring Django forward to 1.8.11 version but that still needs more work.
+Yes I broke the test-suite as part of the migration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;So far my impression is that the Nitrate team are slow to respond on GitHub.
+Given the current state of Nitrate and the amount of work which needs to be done
+this is disappointing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you like my work and need a faster response cycle please
+&lt;strong&gt;consider subscribing to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Why Your Open Source Bugs Will Not Be Fixed</title><link href="http://mrsenko.com/blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/" rel="alternate"></link><updated>2016-02-14T17:30:00+02:00</updated><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-02-14:blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/</id><summary type="html">&lt;p&gt;Here at Mr. Senko we've been researching why many bugs reported against
 open source projects don't get fixed. This is not surprising given that many
 contributors to open source use the "scratch your own itch" principle.
 We've been talking to various people why some bugs are left open. We've
