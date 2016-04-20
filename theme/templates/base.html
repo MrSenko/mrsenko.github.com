@@ -48,9 +48,9 @@
                         <h2>{{ page.banner_title }}</h2>
                         <p>{{ page.banner_subtitle }}</p>
 
-                        {% if page.show_button %}
+                        {% if page.action_button %}
                             <ul class="actions">
-                                <li><a href="#start" class="button special big">Get Started</a></li>
+                                <li><a href="{{ page.action_button_link }}" class="button special big">{{ page.action_button }}</a></li>
                             </ul>
                         {% endif %}
                     {% endif %}
