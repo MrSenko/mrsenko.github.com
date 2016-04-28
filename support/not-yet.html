@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    		<title>March 2016 Report</title>
+		<title>Mr. Senko - Open Source Wizards - Not Yet Supported</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -108,14 +108,6 @@
 
                 <!-- Code highlight color scheme -->
                     <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
-
-
-
-        <meta name="description" content="Nitrate & Pelican" >
-
-        <meta name="author" content="Alexander Todorov">
-
-        <meta name="tags" content="Python" >
 	</head>
 	<body class="landing">
 
@@ -134,104 +126,49 @@
 			</header>
 
             <section id="banner">
-    <h2>March 2016 Report</h2>
-    <p>Nitrate & Pelican</p>
-    <p>
-        <em>Posted by
-                <a href="http://mrsenko.com/blog/authors/alexander-todorov">Alexander Todorov</a>
-            <br/>on Wed 30 March 2016
-        </em>
-    </p>
             </section>
 
-<section id="#article" class="wrapper style1">
-    <div class="container">
-    <p>Here is a quick status report for <a href="http://MrSenko.com">Mr. Senko</a>. During
-March 2016 I've worked on:</p>
-<ul>
-<li>A few more improvements to
-<a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed">pelican-clean-blog</a>
-theme;</li>
-<li>Two new features for 
-<a href="https://github.com/getpelican/pelican/pulls/atodorov">Pelican</a>;</li>
-<li>Several bug fixes and improvements for
-<a href="https://github.com/Nitrate/Nitrate/pulls/atodorov">Nitrate</a>.</li>
-</ul>
-<h2>Nitrate Test Case Management System</h2>
-<p><a href="http://nitrate.readthedocs.org/en/latest/guide/introduction.html">Nitrate</a> is
-a test case management system written with Django. We use it internally to track
-testing activities. It is reasonably good at what it does but there are some
-issues with how the software has been developed in the past.</p>
-<ul>
-<li>
-<p>Nitrate is Django based but doesn't follow best Django practices.
-There are places where it executes raw SQL against the DB instead of using
-Django's ORM model. This makes it non-portable between DBMS.</p>
-</li>
-<li>
-<p>Nitrate has a long development history but poor documentation. It has introduced
-DB migrations and updates in a non-Django friendly way. The currently preferred
-method is to execute an SQL file against the DB. This is poorly documented and
-of course I've missed it. I'm sure others will miss it as well.</p>
-</li>
-<li>
-<p>Going forward with native Django migrations all of these SQL files need to be
-converted and I haven't looked into this yet. Another possibility is to just release
-a new version which doesn't allow automatic DB updates.</p>
-</li>
-<li>
-<p>There are a bunch of static files (e.g. images) used directly in CSS and JavaScript files.
-This immediately breaks if you decide to host your static files elsewhere
-(e.g. Amazon S3 bucket). There is an easy fix but it requires the use of latest Django.</p>
-</li>
-<li>
-<p>Django version (and other dependencies) are quite old. This introduces security
-risk and also makes it harder to develop new functionality sometimes. I have opened
-a PR to bring Django forward to 1.8.11 version but that still needs more work.
-Yes I broke the test-suite as part of the migration.</p>
-</li>
-<li>
-<p>So far my impression is that the Nitrate team are slow to respond on GitHub.
-Given the current state of Nitrate and the amount of work which needs to be done
-this is disappointing.</p>
-</li>
-</ul>
-<p>If you like my work and need a faster response cycle please
-<strong>consider subscribing to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong></p>
+    
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<p>
+Sorry, this technology is not yet supported!
+                                                </p>
+                                                <p>
+Mr. Senko is working hard to support different technology stacks.
+                                                </p>
+                                                <p>
+Let us know what are you interested in!
+                                                </p>
+					</header>
 
-    <div class="post-meta">
-        <p>
-        Posted by
-            <a href="http://mrsenko.com/blog/authors/alexander-todorov">Alexander Todorov</a>
-        on Wed 30 March 2016
-        </p>
-    </div>
+                                        <section>
+                                            <form method="post" action="https://obuvki41plus-otb.rhcloud.com/hooks/MrSenko/contact/">
+                                                <div class="row uniform 50%">
+                                                    <div class="6u 12u$(xsmall)">
+                                                        <input type="text" name="name" id="name" value="" placeholder="Name" />
+                                                    </div>
+                                                    <div class="6u$ 12u$(xsmall)">
+                                                        <input type="email" name="email" id="email" value="" placeholder="Email" />
+                                                    </div>
+                                                    <div class="12u$">
+                                                        <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+                                                    </div>
+                                                    <div class="12u$">
+                                                        <ul class="actions">
+                                                            <li><input type="submit" value="Send Message" class="special" /></li>
+                                                            <li><input type="reset" value="Reset" /></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </form>
 
-        <div class="tags">
-            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, </p>
-        </div>
-    </div>
-
-    <section id="comments" class="wrapper style2 special">
-        <div class="container">
-            <header class="major special">
-                <h2>Comments !</h2>
-            </header>
-
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'mrsenko';
-                var disqus_identifier = 'blog/2016/03/30/march-2016-report/';
-                var disqus_url = 'http://mrsenko.com/blog/2016/03/30/march-2016-report/';
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//mrsenko.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
-    </section>
+                                        </section>
+				</div>
+			</section>
+    
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">

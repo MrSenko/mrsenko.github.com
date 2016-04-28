@@ -9,6 +9,7 @@
 		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
 		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
 		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
 <script>
 /*
 	Spatial by TEMPLATED
@@ -117,10 +118,9 @@
                             </a>
 				<nav id="nav">
 					<ul>
-						<li><a href="http://mrsenko.com/#how-it-works">How It Works</a></li>
+						<li><a href="http://mrsenko.com/blog/">Blog</a></li>
 						<li><a href="http://mrsenko.com/#who-are-we">Who Are We</a></li>
 						<li><a href="http://mrsenko.com/#get-in-touch">Get In Touch</a></li>
-						<li><a href="http://mrsenko.com/blog/">Blog</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -136,19 +136,26 @@
 						<h2>Activate Your Subscription</h2>
 					</header>
 
-<section>
-    <p>
-        <b>IMPORTANT:</b> Mr. Senko is still in pre-launch phase. We are collecting information
-        about what open source projects have the most bugs and need to be fixed first!
-        No money will be charged on your behalf. Subscribe to indicate your interest!
-    </p>
-</section>
-
-
-
                                         <section>
                                             <form method="post" action="https://obuvki41plus-otb.rhcloud.com/hooks/MrSenko/subscribe/">
                                                 <div class="row uniform 50%">
+                                                    <div class="12u$">
+                                                        <h4>Select a subscription plan</h4>
+                                                        <ul class="nodisk">
+                                                            <li>
+                                                                <input type="radio" id="plan-upstream" name="plan" value="upstream">
+                                                                <label for="plan-upstream">UPSTREAM</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" id="plan-startup" name="plan" value="start-up">
+                                                                <label for="plan-startup">START-UP</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" id="plan-enterprise" name="plan" value="enterprise">
+                                                                <label for="plan-enterprise">ENTERPRISE</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                     <div class="12u$">
                                                         <h4>Personal information</h4>
                                                     </div>
@@ -164,23 +171,7 @@
                                                     <div class="6u$ 12u$(xsmall)">
                                                         <input type="text" name="twitter_username" id="twitter_username" value="" placeholder="Twitter username" />
                                                     </div>
-                                                    <div class="12u$">
-                                                        <h4>Select a subscription plan</h4>
-                                                        <ul>
-                                                            <li>
-                                                                <input type="radio" id="plan-upstream" name="plan" value="upstream">
-                                                                <label for="plan-upstream">UPSTREAM</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="plan-startup" name="plan" value="start-up">
-                                                                <label for="plan-startup">START-UP</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" id="plan-enterprise" name="plan" value="enterprise">
-                                                                <label for="plan-enterprise">ENTERPRISE</label>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+
                                                     <div class="12u$">
                                                         <ul class="actions">
                                                             <li><input type="submit" value="Subscribe" class="special" /></li>
@@ -226,7 +217,8 @@ window.__lo_site_id = 55938;
         wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
       })();
-</script><script type="text/javascript">
+</script>
+<script type="text/javascript">
     var disqus_shortname = 'mrsenko';
     (function () {
         var s = document.createElement('script'); s.async = true;
