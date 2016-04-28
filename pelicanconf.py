@@ -59,6 +59,6 @@ AUTHOR_SAVE_AS  = 'blog/authors/{slug}/index.html'
 CATEGORIES_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 
-STATIC_PATHS = ['images/', 'CNAME']
+STATIC_PATHS = ['images/', 'CNAME', 'js/']
 
 ADDTHIS_PUBID = "ra-568b9305e58615ff"
