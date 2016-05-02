@@ -4,6 +4,8 @@ date: 2016-02-03 22:30
 comments: true
 Author: Alexander Todorov
 Tags: Python
+url: blog/2016/02/03/january-2016-report/
+save_as: blog/2016/02/03/january-2016-report/index.html
 
 This is my first status report for [Mr. Senko](http://MrSenko.com). During
 January 2016 I've worked on:

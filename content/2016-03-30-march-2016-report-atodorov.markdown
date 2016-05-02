@@ -4,6 +4,8 @@ date: 2016-03-30 14:30
 comments: true
 Author: Alexander Todorov
 Tags: Python
+url: blog/2016/03/30/march-2016-report/
+save_as: blog/2016/03/30/march-2016-report/index.html
 
 Here is a quick status report for [Mr. Senko](http://MrSenko.com). During
 March 2016 I've worked on:

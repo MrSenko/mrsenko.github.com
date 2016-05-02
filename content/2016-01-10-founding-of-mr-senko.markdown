@@ -2,6 +2,8 @@ Title: Founding of Mr. Senko
 date: 2016-01-10 14:00
 comments: true
 Author: Alexander Todorov
+url: blog/2016/01/10/founding-of-mr-senko/
+save_as: blog/2016/01/10/founding-of-mr-senko/index.html
 
 Hello everyone, welcome to [Mr. Senko](http://MrSenko.com)! We are a group of friends who have
 been working with open source for the last 10 years. During this time we've

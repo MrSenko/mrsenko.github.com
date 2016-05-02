@@ -2,6 +2,8 @@ Title: Why Your Open Source Bugs Will Not Be Fixed
 headline: and what to do about it
 date: 2016-02-14 17:30
 comments: true
+url: blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/
+save_as: blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/index.html
 
 Here at Mr. Senko we've been researching why many bugs reported against
 open source projects don't get fixed. This is not surprising given that many

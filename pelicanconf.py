@@ -43,7 +43,7 @@ INDEX_SAVE_AS = 'blog/index.html'
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = PAGE_URL
 
-ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_URL = 'blog/{author}/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = ARTICLE_URL + 'index.html'
 
 TAG_URL = 'blog/tags/{slug}/'
@@ -53,8 +53,12 @@ TAGS_SAVE_AS = 'blog/tags/index.html'
 ARCHIVES_SAVE_AS = 'blog/archives/index.html'
 
 AUTHORS_SAVE_AS = 'blog/authors/index.html'
-AUTHOR_URL = 'blog/authors/{slug}'
-AUTHOR_SAVE_AS  = 'blog/authors/{slug}/index.html'
+AUTHOR_URL = 'blog/{slug}/'
+AUTHOR_SAVE_AS  = AUTHOR_URL + 'index.html'
+AUTHOR_SUBSTITUTIONS = [
+    ('Alexander Todorov', 'atodorov'),
+    ('Krasimir Tsonev',   'krasimir'),
+]
 
 CATEGORIES_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
