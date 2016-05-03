@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    		<title>January 2016 Report</title>
+		<title>Mr. Senko - Open Source Wizards - Tag Ruby</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -108,14 +108,6 @@
 
                 <!-- Code highlight color scheme -->
                     <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
-
-
-
-        <meta name="description" content="Pelican, Sphinx and misc" >
-
-        <meta name="author" content="Alexander Todorov">
-
-        <meta name="tags" content="Python" >
 	</head>
 	<body class="landing">
 
@@ -134,86 +126,103 @@
 			</header>
 
             <section id="banner">
-    <h2>January 2016 Report</h2>
-    <p>Pelican, Sphinx and misc</p>
-    <p>
-        <em>Posted by
-                <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-            <br/>on Wed 03 February 2016
-        </em>
-    </p>
+    <h2>Articles with tag: Ruby</h2>
             </section>
 
-<section id="#article" class="wrapper style1">
-    <div class="container">
-    <p>This is my first status report for <a href="http://MrSenko.com">Mr. Senko</a>. During
-January 2016 I've worked on:</p>
-<ul>
-<li>Improvements to
-<a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed">pelican-clean-blog</a>
-theme</li>
-<li>URL updates in <code>package.json</code> for several Node.js packages;</li>
-<li>.spec file to build RPMs for
-<a href="https://github.com/django-ses/django-ses/pull/83">django-ses</a>;</li>
-<li>New test case for
-<a href="https://github.com/belgian-elixir-study-group/efl/pull/5">Elixir study exercises</a></li>
-<li>Updates to an old PR for
-<a href="https://github.com/sphinx-doc/sphinx/pull/1902">Sphinx</a> which also fixes a
-new regression;</li>
-<li>Filed a
-<a href="https://github.com/getpelican/pelican/issues/1902">RFE</a> against Pelican
-and will continue working on it this month.</li>
-</ul>
-<h2>Sphinx broke</h2>
-<p>The Sphinx changes are particularly interesting - the fix for
-issue #656 in commit 4c4450d changes the Graphviz's
-<code>node['options']</code> type from <code>list</code> to <code>dict</code> which in turn breaks
-<code>html_visit_inheritance_diagram()</code> and the inheritance_diagram extension.</p>
-<p>My previous work on this PR introduced some basic tests, which were missing
-and they caught the type change! Because the tests and my latest changes are
-not yet merged into master the <code>inheritance_diagram.py</code> extension is still
-broken! The tests fail in Travis-CI but probably due to <code>dot</code> not being
-installed. Locally everything seems to work.</p>
-<p>Its also worth mentioning that it's been 2 weeks since I've updated my PR
-and a bit more since Sphinx introduced the regression. As far as I can see
-there's not been any updates with respect to this. 
-If you'd like to get a
-faster response cycle please <strong>consider subscribing to
-<a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong></p>
-
-    <div class="post-meta">
-        <p>
-        Posted by
-            <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-        on Wed 03 February 2016
-        </p>
-    </div>
-
-        <div class="tags">
-            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, </p>
-        </div>
-    </div>
-
-    <section id="comments" class="wrapper style2 special">
+    <section class="wrapper style1">
         <div class="container">
             <header class="major special">
-                <h2>Comments !</h2>
+                <a href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/" rel="bookmark" title="Permalink to April 2016 Report">
+                    <h2>April 2016 Report</h2>
+                </a>
             </header>
 
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'mrsenko';
-                var disqus_identifier = 'blog/2016/02/03/january-2016-report/';
-                var disqus_url = 'http://mrsenko.com/blog/2016/02/03/january-2016-report/';
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//mrsenko.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
+            <p>Here is a quick status report of my work for <a href="http://MrSenko.com">Mr. Senko</a>. During
+April 2016 I've worked on:</p>
+<ul>
+<li>Additional patches to the <a href="https://github.com/Nitrate/Nitrate/pulls/atodorov">Nitrate</a>
+test case management system;</li>
+<li>New features for the <a href="https://github.com/railslove/i18n_viz/pulls/atodorov">i18n_viz</a>
+Ruby gem;</li>
+<li>New features for <a href="https://github.com/getpelican/pelican/pull/1926">Pelican</a>.</li>
+</ul>
+<h2>Nitrate</h2>
+<p>As I've written previously Nitrate is a test case management system, which we use internally.
+Unfortunately it is using very old version of Django and it is not so easy to migrate
+forward.</p>
+<p>I've decided to stall all of my previous pull requests and focus on getting the tests
+up and running in Travis-CI before going forward. I've managed to fix a few of them
+locally but then hit a road block. The fact that the Nitrate team is very limited in
+capacity (only 1 person at the moment) isn't helping either. I will continue working
+on this but with lower priority.</p>
+<h2>New features for i18n_viz</h2>
+<p><a href="https://github.com/railslove/i18n_viz">i18n_viz</a> is a very cool Ruby gem which
+lets your browse your own Rails application and visualize and edit your translatable
+strings. Think of it as a reversed lookup for translations.
+i18n_viz highlights your app’s translatable text and adds a tooltip containing
+the translation key which links to the translation in your favorite online
+translation tool.</p>
+<p>I have added the <code>css_override</code> option to allow for better styling of the
+highlights and tooltips provided by this gem.
+<a href="https://github.com/railslove/i18n_viz/pull/20">PR #20</a> has already been merged
+but not released into a new version yet.</p>
+<p>I've also fixed a
+<a href="https://github.com/railslove/i18n_viz/pull/19">bug with nested HTML tags</a> and
+changed the <code>external_tool_url</code> option to support
+<a href="https://github.com/railslove/i18n_viz/pull/22">code execution</a>. With this
+the user is able to configure the URL to an online translation tool during
+runtime. My particular use-case is to include the currently selected locale
+in the URL string. These two pull requests are not merged yet and unfortunately
+the package author is busy at the moment so it will take some time.</p>
+<h2>New features for Pelican</h2>
+<p>I've managed to implement more granular control over tag, categories and
+author slugs in Pelican in
+<a href="https://github.com/getpelican/pelican/pull/1926">PR #1926</a> and the code is
+already merged!</p>
+<p>Under the hood the <code>slugify()</code> method now can skip replacing non-alphanumeric
+characters so you have more control over the generated URLs. I've experienced
+this problem when migrating my personal blog from Octopress to Pelican.</p>
+<p>Then I've also added the possibility to configure author slugs, which is
+useful to blogs with multiple authors or if you want your author slug
+to match your GitHub username.
+In fact <code>pelicanconf.py</code> for Mr. Senko's blog looks like this:</p>
+<div class="highlight"><pre><span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{author}/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s1">}/{slug}/&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="n">ARTICLE_URL</span> <span class="o">+</span> <span class="s1">&#39;index.html&#39;</span>
+
+<span class="n">AUTHOR_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{slug}/&#39;</span>
+<span class="n">AUTHOR_SAVE_AS</span>  <span class="o">=</span> <span class="n">AUTHOR_URL</span> <span class="o">+</span> <span class="s1">&#39;index.html&#39;</span>
+
+<span class="n">AUTHOR_SUBSTITUTIONS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;Alexander Todorov&#39;</span><span class="p">,</span> <span class="s1">&#39;atodorov&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Krasimir Tsonev&#39;</span><span class="p">,</span>   <span class="s1">&#39;krasimir&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<p><strong>NOTE:</strong> older URLs on this blog do not match above settings for
+compatibility reasons!</p>
+<p>I hope you like my work and please
+<strong>consider subscribing to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong>
+if need a faster release cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Tue 03 May 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/#disqus_thread">comments</a>.</p>        </div>
     </section>
+
+<section class="wrapper special">
+    <div class="container">
+    <ul class="actions">
+        <li>
+            Page 1 / 1
+        </li>
+        </li>
+    </ul>
+    </div>
+</section>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
