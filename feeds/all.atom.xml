@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-05-03T12:30:00+03:00</updated><entry><title>April 2016 Report</title><link href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/" rel="alternate"></link><updated>2016-05-03T12:30:00+03:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-03:blog/atodorov/2016/05/03/april-2016-report/</id><summary type="html">&lt;p&gt;Here is a quick status report of my work for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-05-05T14:10:00+03:00</updated><entry><title>Conditional Include in Jinja2 and Pelican</title><link href="http://mrsenko.com/blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/" rel="alternate"></link><updated>2016-05-05T14:10:00+03:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-05:blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/</id><summary type="html">&lt;p&gt;How do you create Jinja templates which behave differently based
+on what Pelican plugins are loaded ? I've hit this problem while
+working on improving
+&lt;a href="https://github.com/alexandrevicenzi/Flex/pull/20"&gt;Flex PR #20&lt;/a&gt;.
+The straight forward solution looks like this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;PLUGINS&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;assets&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;stylesheet/style.css&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;filters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cssmin&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;style.min.css&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;        &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;ASSET_URL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endassets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;THEME_STATIC_DIR&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/stylesheet/style.min.css&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endfor&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It appears to work great except when the &lt;code&gt;assets&lt;/code&gt; plugin isn't loaded.
+Then we get a &lt;a href="https://github.com/pallets/jinja/pull/582"&gt;TemplateSyntaxError&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;TemplateSyntaxError&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Encountered&lt;/span&gt; &lt;span class="n"&gt;unknown&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Jinja&lt;/span&gt; &lt;span class="n"&gt;was&lt;/span&gt; &lt;span class="n"&gt;looking&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;following&lt;/span&gt; &lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;endfor&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;else&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;innermost&lt;/span&gt; &lt;span class="n"&gt;block&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;needs&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;closed&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;for&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;{% assets %}&lt;/code&gt; tag is not defined because the &lt;code&gt;assets&lt;/code&gt; plugin is missing.
+We may expect that Jinja will parse this tag only if the body of the for loop is
+executed but instead Jinja tries to parse all tags before rendering the template.
+The solution, as proposed by @ThiefMaster on GitHub, is to use a conditional
+&lt;code&gt;{% include %}&lt;/code&gt; tag inside the for loop body like so&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;PLUGINS&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;include&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets.html&amp;#39;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;THEME_STATIC_DIR&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/stylesheet/style.min.css&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endfor&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Where &lt;code&gt;assets.html&lt;/code&gt; looks like this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;assets&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;stylesheet/style.css&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;filters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cssmin&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;style.min.css&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;ASSET_URL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endassets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I don't like splitting out the HTML code in this way. Imagine that we later decide to
+add a second CSS file to the template. The risk of forgetting to add it in both places
+increases as the number of CSS files (or places where we use the same HTML pattern)
+increases. However this appears to be the only way to conditionally use the &lt;code&gt;assets&lt;/code&gt;
+plugin only when it is loaded. The proposed changes are in
+&lt;a href="https://github.com/alexandrevicenzi/Flex/pull/40"&gt;Flex PR #40&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I hope you like my work and please
+&lt;strong&gt;subscribe to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;&lt;/strong&gt;
+if you need a faster release cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>April 2016 Report</title><link href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/" rel="alternate"></link><updated>2016-05-03T12:30:00+03:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-03:blog/atodorov/2016/05/03/april-2016-report/</id><summary type="html">&lt;p&gt;Here is a quick status report of my work for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
 April 2016 I've worked on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Additional patches to the &lt;a href="https://github.com/Nitrate/Nitrate/pulls/atodorov"&gt;Nitrate&lt;/a&gt;

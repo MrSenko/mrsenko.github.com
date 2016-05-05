@@ -109,6 +109,12 @@
 
                 <!-- Code highlight color scheme -->
                     <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+                    <meta name="twitter:site" content="@Mr_Senko">
+                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
+                    <meta name="twitter:description" content="Support for open source libraries">
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
 	</head>
 	<body class="landing">
 
@@ -133,6 +139,74 @@
     </p>
             </section>
 
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/" rel="bookmark" title="Permalink to Conditional Include in Jinja2 and Pelican">
+                    <h2>Conditional Include in Jinja2 and Pelican</h2>
+                </a>
+            </header>
+
+            <p>How do you create Jinja templates which behave differently based
+on what Pelican plugins are loaded ? I've hit this problem while
+working on improving
+<a href="https://github.com/alexandrevicenzi/Flex/pull/20">Flex PR #20</a>.
+The straight forward solution looks like this</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span> <span class="k">in</span> <span class="nv">PLUGINS</span> <span class="k">if</span> <span class="nv">name</span> <span class="o">==</span> <span class="s1">&#39;assets&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">assets</span> <span class="s2">&quot;stylesheet/style.css&quot;</span><span class="o">,</span> <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;cssmin&quot;</span><span class="o">,</span> <span class="nv">output</span><span class="o">=</span><span class="s2">&quot;style.min.css&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">ASSET_URL</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endassets</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">THEME_STATIC_DIR</span> <span class="cp">}}</span><span class="x">/stylesheet/style.min.css&quot;&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>It appears to work great except when the <code>assets</code> plugin isn't loaded.
+Then we get a <a href="https://github.com/pallets/jinja/pull/582">TemplateSyntaxError</a>:</p>
+<div class="highlight"><pre><span class="n">TemplateSyntaxError</span><span class="o">:</span> <span class="n">Encountered</span> <span class="n">unknown</span> <span class="n">tag</span> <span class="s1">&#39;assets&#39;</span><span class="o">.</span>
+<span class="n">Jinja</span> <span class="n">was</span> <span class="n">looking</span> <span class="k">for</span> <span class="n">the</span> <span class="n">following</span> <span class="n">tags</span><span class="o">:</span> <span class="s1">&#39;endfor&#39;</span> <span class="n">or</span> <span class="s1">&#39;else&#39;</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">innermost</span> <span class="n">block</span> <span class="n">that</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">closed</span> <span class="k">is</span> <span class="s1">&#39;for&#39;</span><span class="o">.</span><span class="err">`</span>
+</pre></div>
+
+
+<p>The <code>{% assets %}</code> tag is not defined because the <code>assets</code> plugin is missing.
+We may expect that Jinja will parse this tag only if the body of the for loop is
+executed but instead Jinja tries to parse all tags before rendering the template.
+The solution, as proposed by @ThiefMaster on GitHub, is to use a conditional
+<code>{% include %}</code> tag inside the for loop body like so</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span> <span class="k">in</span> <span class="nv">PLUGINS</span> <span class="k">if</span> <span class="nv">name</span> <span class="o">==</span> <span class="s1">&#39;assets&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;assets.html&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">THEME_STATIC_DIR</span> <span class="cp">}}</span><span class="x">/stylesheet/style.min.css&quot;&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>Where <code>assets.html</code> looks like this</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">assets</span> <span class="s2">&quot;stylesheet/style.css&quot;</span><span class="o">,</span> <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;cssmin&quot;</span><span class="o">,</span> <span class="nv">output</span><span class="o">=</span><span class="s2">&quot;style.min.css&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">ASSET_URL</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="cp">{%</span> <span class="k">endassets</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>I don't like splitting out the HTML code in this way. Imagine that we later decide to
+add a second CSS file to the template. The risk of forgetting to add it in both places
+increases as the number of CSS files (or places where we use the same HTML pattern)
+increases. However this appears to be the only way to conditionally use the <code>assets</code>
+plugin only when it is loaded. The proposed changes are in
+<a href="https://github.com/alexandrevicenzi/Flex/pull/40">Flex PR #40</a>.</p>
+<p>I hope you like my work and please
+<strong>subscribe to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a></strong>
+if you need a faster release cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Thu 05 May 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/#disqus_thread">comments</a>.</p>        </div>
+    </section>
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
@@ -638,7 +712,6 @@ using the <strong>#MrSenko</strong> hashtag! </p>
 					</ul>
 					<ul class="copyright">
 						<li>&copy; 2016 Mr. Senko, Ltd.</li>
-						<li>Design: TEMPLATED</li>
 					</ul>
 				</div>
 			</footer>
