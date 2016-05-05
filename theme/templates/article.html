@@ -34,7 +34,7 @@
         {% else %}
             <meta name="twitter:description" content="{{ article.summary|striptags|truncate(140) }}">
         {% endif %}
-
+        <meta name="twitter:card" content="summary_large_image">
         {% if article.twitter_image %}
             <meta name="twitter:card" content="summary_large_image">
             {% if article.twitter_image|lower|truncate(4, True, '') == "http" %}
