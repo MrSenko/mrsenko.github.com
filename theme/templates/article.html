@@ -50,7 +50,7 @@
 {% endblock %}
 
 {% block opengraph %}
-        {{ super() }}
+        <meta property="og:site_name" content="{{ SITENAME }}">
         <meta property="og:type" content="article" />
         {% for author in article.authors %}
             <meta property="article:author" content="{{ SITEURL }}/{{ author.url }}" />
