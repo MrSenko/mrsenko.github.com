@@ -26,6 +26,16 @@
                     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/code_blocks/darkly.css" rel="stylesheet">
                 {% endif %}
             {% endblock %}
+
+            {% block twitter_card %}
+                {% for name,link in SOCIAL if name in ['twitter'] %}
+                    <meta name="twitter:site" content="@{{ link|replace('http://', 'https://')|replace('https://twitter.com/', '') }}">
+                    <meta name="twitter:title" content="{{ SITENAME }}">
+                    <meta name="twitter:description" content="{{ SITESUBTITLE|default('View the blog.') }}">
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/twitter_card.jpg">
+                {% endfor %}
+            {% endblock twitter_card %}
 	</head>
 	<body class="landing">
 
@@ -63,14 +73,15 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
+                                    {% if SOCIAL %}
 					<ul class="icons">
-						<li><a href="https://github.com/MrSenko" class="icon fa-github"></a></li>
-						<li><a href="https://twitter.com/Mr_Senko" class="icon fa-twitter"></a></li>
-						<li><a href="https://bitbucket.org/MrSenko" class="icon fa-bitbucket"></a></li>
+                                            {% for name,link in SOCIAL %}
+						<li><a href="{{ link }}" class="icon fa-{{ name|lower }}"></a></li>
+                                            {% endfor %}
 					</ul>
+                                    {% endif %}
 					<ul class="copyright">
 						<li>&copy; 2016 Mr. Senko, Ltd.</li>
-						<li>Design: TEMPLATED</li>
 					</ul>
 				</div>
 			</footer>

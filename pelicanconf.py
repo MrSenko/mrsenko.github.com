@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Mr. Senko'
 SITENAME = u'Mr. Senko - Open Source Wizards'
+SITESUBTITLE = 'Support for open source libraries'
 SITEURL = ''
 
 PATH = 'content'
@@ -26,9 +27,11 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
          ('You can modify those links in your config file', '#'),)
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+            ('github', 'https://github.com/MrSenko'),
+            ('twitter', 'https://twitter.com/Mr_Senko'),
+            ('bitbucket', 'https://bitbucket.org/MrSenko'),
+)
 
 DEFAULT_PAGINATION = 20
 

@@ -23,6 +23,32 @@
     {% endfor %}
 {% endblock %}
 
+{% block twitter_card %}
+    {% for name,link in SOCIAL if name in ['twitter'] %}
+        <meta name="twitter:site" content="@{{ link|replace('http://', 'https://')|replace('https://twitter.com/', '') }}">
+        <meta name="twitter:title" content="{{ article.title }}">
+        {% if description %}
+            <meta name="twitter:description" content="{{ description }}">
+        {% elif article.headline %}
+            <meta name="twitter:description" content="{{ article.headline }}">
+        {% else %}
+            <meta name="twitter:description" content="{{ article.summary|striptags|truncate(140) }}">
+        {% endif %}
+
+        {% if article.twitter_image %}
+            <meta name="twitter:card" content="summary_large_image">
+            {% if article.twitter_image|lower|truncate(4, True, '') == "http" %}
+                <meta property="twitter:image" content="{{ article.twitter_image }}">
+            {% else %}
+                <meta property="twitter:image" content="{{ SITEURL }}/{{ article.twitter_image }}">
+            {% endif %}
+        {% else %}
+            <meta name="twitter:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/twitter_card.jpg">
+        {% endif %}
+
+    {% endfor %}
+{% endblock %}
+
 {% block banner %}
     <h2>{{ article.title }}</h2>
     <p>{{ article.headline }}</p>
