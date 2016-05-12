@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-05-12T10:10:00+03:00</updated><entry><title>A/B Testing with Jinja2 and Pelican</title><link href="http://mrsenko.com/blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/" rel="alternate"></link><updated>2016-05-12T10:10:00+03:00</updated><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-05-12:blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/</id><summary type="html">&lt;p&gt;A/B testing is a randomized experiment with two variants,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-05-12T10:10:00+03:00</updated><entry><title>A/B Testing with Jinja2 and Pelican</title><link href="http://mrsenko.com/blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/" rel="alternate"></link><published>2016-05-12T10:10:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-05-12:blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/</id><summary type="html">&lt;p&gt;A/B testing is a randomized experiment with two variants,
 which are the control and variation in the controlled experiment.
 In this article we're going to present a solution which works with
 &lt;em&gt;Pelican&lt;/em&gt; and other &lt;em&gt;Jinja2&lt;/em&gt; based static site generators.&lt;/p&gt;
@@ -12,7 +12,7 @@ for &lt;em&gt;Jinja2&lt;/em&gt;. It allows you to encode experiments in your tem
 the experiment selected by the &lt;code&gt;AB_EXPERIMENT&lt;/code&gt; environment variable. &lt;strong&gt;control&lt;/strong&gt;
 is the default experiment name if &lt;code&gt;AB_EXPERIMENT&lt;/code&gt; is not specified!
 The syntax looks like this&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;experiment&lt;/span&gt; &lt;span class="nv"&gt;control&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;This is the control&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endexperiment&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;experiment&lt;/span&gt; &lt;span class="nv"&gt;control&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;This is the control&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endexperiment&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;experiment&lt;/span&gt; &lt;span class="nv"&gt;v1&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;This is version 1&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endexperiment&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -23,14 +23,14 @@ The syntax looks like this&lt;/p&gt;
 At &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt; we use &lt;em&gt;Pelican&lt;/em&gt; and created the complimentary
 &lt;a href="https://github.com/MrSenko/pelican-ab"&gt;pelican-ab&lt;/a&gt; plugin. To enable the plugin
 simply add it in your &lt;code&gt;pelicanconf.py&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path/to/pelican-ab&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path/to/pelican-ab&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pelican_ab&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;After encoding your experiments into the theme templates you can generate the
 resulting HTML files by running the command&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;AB_EXPERIMENT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;v1&amp;quot;&lt;/span&gt; make html
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;AB_EXPERIMENT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;v1&amp;quot;&lt;/span&gt; make html
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -38,7 +38,7 @@ resulting HTML files by running the command&lt;/p&gt;
 &lt;code&gt;OUTPUT_PATH&lt;/code&gt; plus the experiment name. For example 'output/v1', 'output/v2',
 etc. The control experiments are rendered directly under &lt;code&gt;OUTPUT_PATH&lt;/code&gt;.
 For example the control directory structure of this blog looks like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;output/
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;output/
 |-- blog
 |   |-- 2016
 |   |   | ...
@@ -59,7 +59,7 @@ For example the control directory structure of this blog looks like this:&lt;/p&
 
 &lt;p&gt;After rendering an experiment called 'v1' the directory structure looks like
 this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;output/v1/
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;output/v1/
 |-- blog
 |   |-- 2016
 |   |   | ...
@@ -92,6 +92,24 @@ using the same HTML template variation.&lt;/p&gt;
 to the content url property the values will not be changed. This means
 all your CSS, JavaScript and images will continue to work without being
 duplicated under the experiment directory.&lt;/p&gt;
+&lt;h2&gt;Testing and publishing experiments&lt;/h2&gt;
+&lt;p&gt;For local development use the command &lt;code&gt;AB_EXPERIMENT="xy" make regenerate&lt;/code&gt;
+or &lt;code&gt;AB_EXPERIMENT="xy" make html&lt;/code&gt; together with &lt;code&gt;make serve&lt;/code&gt; to review the
+experiments. When you are ready to publish them online execute the following
+sequence of commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rm -rf output/
+make github
+&lt;span class="nv"&gt;AB_EXPERIMENT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;01&amp;quot;&lt;/span&gt; make github
+&lt;span class="nv"&gt;AB_EXPERIMENT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;02&amp;quot;&lt;/span&gt; make github
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;By default &lt;code&gt;publishconf.py&lt;/code&gt; contains &lt;code&gt;DELETE_OUTPUT_DIRECTORY = True&lt;/code&gt;
+which causes &lt;em&gt;pelican-ab&lt;/em&gt; to raise an exception. The problem is that you need
+to execute &lt;code&gt;make publish&lt;/code&gt; or &lt;code&gt;make github&lt;/code&gt; for each experiment you'd like to
+publish online. When &lt;code&gt;DELETE_OUTPUT_DIRECTORY&lt;/code&gt; is True the previous contents
+will be deleted and &lt;strong&gt;ONLY&lt;/strong&gt; that variation will be published!
+This will break your website because everything will be gone!&lt;/p&gt;
 &lt;h2&gt;A/B testing&lt;/h2&gt;
 &lt;p&gt;Now that we finally got our experiments encoded and rendered it is time to
 re-route some of the web traffic to them and analyze the results. &lt;em&gt;pelican-ab&lt;/em&gt;
@@ -103,12 +121,12 @@ of results are collected. Our favorite ones are &lt;em&gt;LuckyOrange&lt;/em&gt;
 At Mr. Senko we will do our best to accomodate every need and merge patches
 and feature requests as they come in.
 Should you need commercial support for these or other open source libraries
-please &lt;strong&gt;subscribe to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Conditional Include in Jinja2 and Pelican</title><link href="http://mrsenko.com/blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/" rel="alternate"></link><updated>2016-05-05T14:10:00+03:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-05:blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/</id><summary type="html">&lt;p&gt;How do you create Jinja templates which behave differently based
+please &lt;strong&gt;subscribe to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Conditional Include in Jinja2 and Pelican</title><link href="http://mrsenko.com/blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/" rel="alternate"></link><published>2016-05-05T14:10:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-05:blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/</id><summary type="html">&lt;p&gt;How do you create Jinja templates which behave differently based
 on what Pelican plugins are loaded ? I've hit this problem while
 working on improving
 &lt;a href="https://github.com/alexandrevicenzi/Flex/pull/20"&gt;Flex PR #20&lt;/a&gt;.
 The straight forward solution looks like this&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;PLUGINS&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;PLUGINS&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;assets&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;stylesheet/style.css&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;filters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cssmin&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;style.min.css&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="x"&gt;        &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;ASSET_URL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&amp;gt;&lt;/span&gt;
 &lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endassets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
@@ -120,7 +138,7 @@ The straight forward solution looks like this&lt;/p&gt;
 
 &lt;p&gt;It appears to work great except when the &lt;code&gt;assets&lt;/code&gt; plugin isn't loaded.
 Then we get a &lt;a href="https://github.com/pallets/jinja/pull/582"&gt;TemplateSyntaxError&lt;/a&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;TemplateSyntaxError&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Encountered&lt;/span&gt; &lt;span class="n"&gt;unknown&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TemplateSyntaxError&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Encountered&lt;/span&gt; &lt;span class="n"&gt;unknown&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;span class="n"&gt;Jinja&lt;/span&gt; &lt;span class="n"&gt;was&lt;/span&gt; &lt;span class="n"&gt;looking&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;following&lt;/span&gt; &lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;endfor&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;else&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
 &lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;innermost&lt;/span&gt; &lt;span class="n"&gt;block&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;needs&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;closed&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;for&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -131,7 +149,7 @@ We may expect that Jinja will parse this tag only if the body of the for loop is
 executed but instead Jinja tries to parse all tags before rendering the template.
 The solution, as proposed by @ThiefMaster on GitHub, is to use a conditional
 &lt;code&gt;{% include %}&lt;/code&gt; tag inside the for loop body like so&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;PLUGINS&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;PLUGINS&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="x"&gt;    &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;include&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;assets.html&amp;#39;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="x"&gt;    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;THEME_STATIC_DIR&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/stylesheet/style.min.css&amp;quot;&amp;gt;&lt;/span&gt;
@@ -140,7 +158,7 @@ The solution, as proposed by @ThiefMaster on GitHub, is to use a conditional
 
 
 &lt;p&gt;Where &lt;code&gt;assets.html&lt;/code&gt; looks like this&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;assets&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;stylesheet/style.css&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;filters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cssmin&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;style.min.css&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;assets&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;stylesheet/style.css&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;filters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cssmin&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;style.min.css&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="x"&gt;    &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;ASSET_URL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&amp;gt;&lt;/span&gt;
 &lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endassets&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -154,7 +172,7 @@ plugin only when it is loaded. The proposed changes are in
 &lt;a href="https://github.com/alexandrevicenzi/Flex/pull/40"&gt;Flex PR #40&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I hope you like my work and please
 &lt;strong&gt;subscribe to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;&lt;/strong&gt;
-if you need a faster release cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>April 2016 Report</title><link href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/" rel="alternate"></link><updated>2016-05-03T12:30:00+03:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-03:blog/atodorov/2016/05/03/april-2016-report/</id><summary type="html">&lt;p&gt;Here is a quick status report of my work for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
+if you need a faster release cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>April 2016 Report</title><link href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/" rel="alternate"></link><published>2016-05-03T12:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-03:blog/atodorov/2016/05/03/april-2016-report/</id><summary type="html">&lt;p&gt;Here is a quick status report of my work for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
 April 2016 I've worked on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Additional patches to the &lt;a href="https://github.com/Nitrate/Nitrate/pulls/atodorov"&gt;Nitrate&lt;/a&gt;
@@ -203,7 +221,7 @@ this problem when migrating my personal blog from Octopress to Pelican.&lt;/p&gt
 useful to blogs with multiple authors or if you want your author slug
 to match your GitHub username.
 In fact &lt;code&gt;pelicanconf.py&lt;/code&gt; for Mr. Senko's blog looks like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;blog/{author}/{date:%Y}/{date:%m}/{date:&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;}/{slug}/&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;blog/{author}/{date:%Y}/{date:%m}/{date:&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;}/{slug}/&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;index.html&amp;#39;&lt;/span&gt;
 
 &lt;span class="n"&gt;AUTHOR_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;blog/{slug}/&amp;#39;&lt;/span&gt;
@@ -220,7 +238,7 @@ In fact &lt;code&gt;pelicanconf.py&lt;/code&gt; for Mr. Senko's blog looks like 
 compatibility reasons!&lt;/p&gt;
 &lt;p&gt;I hope you like my work and please
 &lt;strong&gt;consider subscribing to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;
-if need a faster release cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category><category term="Ruby"></category></entry><entry><title>March 2016 Report</title><link href="http://mrsenko.com/blog/2016/03/30/march-2016-report/" rel="alternate"></link><updated>2016-03-30T14:30:00+03:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-03-30:blog/2016/03/30/march-2016-report/</id><summary type="html">&lt;p&gt;Here is a quick status report for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
+if need a faster release cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category><category term="Ruby"></category></entry><entry><title>March 2016 Report</title><link href="http://mrsenko.com/blog/2016/03/30/march-2016-report/" rel="alternate"></link><published>2016-03-30T14:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-03-30:blog/2016/03/30/march-2016-report/</id><summary type="html">&lt;p&gt;Here is a quick status report for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
 March 2016 I've worked on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A few more improvements to
@@ -271,7 +289,7 @@ this is disappointing.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you like my work and need a faster response cycle please
-&lt;strong&gt;consider subscribing to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Why Your Open Source Bugs Will Not Be Fixed</title><link href="http://mrsenko.com/blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/" rel="alternate"></link><updated>2016-02-14T17:30:00+02:00</updated><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-02-14:blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/</id><summary type="html">&lt;p&gt;Here at Mr. Senko we've been researching why many bugs reported against
+&lt;strong&gt;consider subscribing to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Why Your Open Source Bugs Will Not Be Fixed</title><link href="http://mrsenko.com/blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/" rel="alternate"></link><published>2016-02-14T17:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-02-14:blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/</id><summary type="html">&lt;p&gt;Here at Mr. Senko we've been researching why many bugs reported against
 open source projects don't get fixed. This is not surprising given that many
 contributors to open source use the "scratch your own itch" principle.
 We've been talking to various people why some bugs are left open. We've
@@ -416,7 +434,7 @@ This is how the open source is expected to work, isn't it ?&lt;/p&gt;
 &lt;p&gt;If you happen to be from those folks who don't have enough technical
 knowledge to work on a particular project or don't have the time to
 do so please consider &lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribing to Mr. Senko&lt;/a&gt;!
-We're happy to provide open source support to those who need it.&lt;/p&gt;</summary></entry><entry><title>January 2016 Report</title><link href="http://mrsenko.com/blog/2016/02/03/january-2016-report/" rel="alternate"></link><updated>2016-02-03T22:30:00+02:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-02-03:blog/2016/02/03/january-2016-report/</id><summary type="html">&lt;p&gt;This is my first status report for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
+We're happy to provide open source support to those who need it.&lt;/p&gt;</summary></entry><entry><title>January 2016 Report</title><link href="http://mrsenko.com/blog/2016/02/03/january-2016-report/" rel="alternate"></link><published>2016-02-03T22:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-02-03:blog/2016/02/03/january-2016-report/</id><summary type="html">&lt;p&gt;This is my first status report for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
 January 2016 I've worked on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Improvements to
@@ -449,7 +467,7 @@ and a bit more since Sphinx introduced the regression. As far as I can see
 there's not been any updates with respect to this. 
 If you'd like to get a
 faster response cycle please &lt;strong&gt;consider subscribing to
-&lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>FOSDEM 2016 Report</title><link href="http://mrsenko.com/blog/2016/01/31/fosdem-2016-report/" rel="alternate"></link><updated>2016-01-31T19:30:00+02:00</updated><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-01-31:blog/2016/01/31/fosdem-2016-report/</id><summary type="html">&lt;p&gt;Hello everyone, &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt; flew to Brussels for his first
+&lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>FOSDEM 2016 Report</title><link href="http://mrsenko.com/blog/2016/01/31/fosdem-2016-report/" rel="alternate"></link><published>2016-01-31T19:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-01-31:blog/2016/01/31/fosdem-2016-report/</id><summary type="html">&lt;p&gt;Hello everyone, &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt; flew to Brussels for his first
 public appearances and we are very excited about this. He visited
 &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; to get an update on the latest news in open source
 and scored the highest ping-pong score for
@@ -521,7 +539,7 @@ red circle with a foam hammer as soon as it lighted up. Mr. Senko managed to
 win the first game and then lost the second one. He even got to test the device
 and tried to crash it by scoring penalty points when the counter was still zero.
 BBC definitely did their job right because the device didn't crash.&lt;/p&gt;
-&lt;p&gt;Thank you for taking the time to read this report. See you at the next event!&lt;/p&gt;</summary></entry><entry><title>Founding of Mr. Senko</title><link href="http://mrsenko.com/blog/2016/01/10/founding-of-mr-senko/" rel="alternate"></link><updated>2016-01-10T14:00:00+02:00</updated><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-01-10:blog/2016/01/10/founding-of-mr-senko/</id><summary type="html">&lt;p&gt;Hello everyone, welcome to &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;! We are a group of friends who have
+&lt;p&gt;Thank you for taking the time to read this report. See you at the next event!&lt;/p&gt;</summary></entry><entry><title>Founding of Mr. Senko</title><link href="http://mrsenko.com/blog/2016/01/10/founding-of-mr-senko/" rel="alternate"></link><published>2016-01-10T14:00:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-01-10:blog/2016/01/10/founding-of-mr-senko/</id><summary type="html">&lt;p&gt;Hello everyone, welcome to &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;! We are a group of friends who have
 been working with open source for the last 10 years. During this time we've
 seen technologies come and go and hype projects becoming abandoned months later.
 We've seen the pain when companies had to rewrite their software because of this

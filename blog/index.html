@@ -164,7 +164,7 @@ for <em>Jinja2</em>. It allows you to encode experiments in your templates and r
 the experiment selected by the <code>AB_EXPERIMENT</code> environment variable. <strong>control</strong>
 is the default experiment name if <code>AB_EXPERIMENT</code> is not specified!
 The syntax looks like this</p>
-<div class="highlight"><pre><span class="cp">{%</span> <span class="k">experiment</span> <span class="nv">control</span> <span class="cp">%}</span><span class="x">This is the control</span><span class="cp">{%</span> <span class="k">endexperiment</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">experiment</span> <span class="nv">control</span> <span class="cp">%}</span><span class="x">This is the control</span><span class="cp">{%</span> <span class="k">endexperiment</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">experiment</span> <span class="nv">v1</span> <span class="cp">%}</span><span class="x">This is version 1</span><span class="cp">{%</span> <span class="k">endexperiment</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
 
@@ -175,14 +175,14 @@ The syntax looks like this</p>
 At <a href="http://MrSenko.com">Mr. Senko</a> we use <em>Pelican</em> and created the complimentary
 <a href="https://github.com/MrSenko/pelican-ab">pelican-ab</a> plugin. To enable the plugin
 simply add it in your <code>pelicanconf.py</code></p>
-<div class="highlight"><pre><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path/to/pelican-ab&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path/to/pelican-ab&#39;</span><span class="p">]</span>
 <span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pelican_ab&#39;</span><span class="p">]</span>
 </pre></div>
 
 
 <p>After encoding your experiments into the theme templates you can generate the
 resulting HTML files by running the command</p>
-<div class="highlight"><pre><span class="nv">AB_EXPERIMENT</span><span class="o">=</span><span class="s2">&quot;v1&quot;</span> make html
+<div class="highlight"><pre><span></span><span class="nv">AB_EXPERIMENT</span><span class="o">=</span><span class="s2">&quot;v1&quot;</span> make html
 </pre></div>
 
 
@@ -190,7 +190,7 @@ resulting HTML files by running the command</p>
 <code>OUTPUT_PATH</code> plus the experiment name. For example 'output/v1', 'output/v2',
 etc. The control experiments are rendered directly under <code>OUTPUT_PATH</code>.
 For example the control directory structure of this blog looks like this:</p>
-<div class="highlight"><pre>output/
+<div class="highlight"><pre><span></span>output/
 |-- blog
 |   |-- 2016
 |   |   | ...
@@ -211,7 +211,7 @@ For example the control directory structure of this blog looks like this:</p>
 
 <p>After rendering an experiment called 'v1' the directory structure looks like
 this:</p>
-<div class="highlight"><pre>output/v1/
+<div class="highlight"><pre><span></span>output/v1/
 |-- blog
 |   |-- 2016
 |   |   | ...
@@ -244,6 +244,24 @@ using the same HTML template variation.</p>
 to the content url property the values will not be changed. This means
 all your CSS, JavaScript and images will continue to work without being
 duplicated under the experiment directory.</p>
+<h2>Testing and publishing experiments</h2>
+<p>For local development use the command <code>AB_EXPERIMENT="xy" make regenerate</code>
+or <code>AB_EXPERIMENT="xy" make html</code> together with <code>make serve</code> to review the
+experiments. When you are ready to publish them online execute the following
+sequence of commands:</p>
+<div class="highlight"><pre><span></span>rm -rf output/
+make github
+<span class="nv">AB_EXPERIMENT</span><span class="o">=</span><span class="s2">&quot;01&quot;</span> make github
+<span class="nv">AB_EXPERIMENT</span><span class="o">=</span><span class="s2">&quot;02&quot;</span> make github
+</pre></div>
+
+
+<p>By default <code>publishconf.py</code> contains <code>DELETE_OUTPUT_DIRECTORY = True</code>
+which causes <em>pelican-ab</em> to raise an exception. The problem is that you need
+to execute <code>make publish</code> or <code>make github</code> for each experiment you'd like to
+publish online. When <code>DELETE_OUTPUT_DIRECTORY</code> is True the previous contents
+will be deleted and <strong>ONLY</strong> that variation will be published!
+This will break your website because everything will be gone!</p>
 <h2>A/B testing</h2>
 <p>Now that we finally got our experiments encoded and rendered it is time to
 re-route some of the web traffic to them and analyze the results. <em>pelican-ab</em>
@@ -277,7 +295,7 @@ on what Pelican plugins are loaded ? I've hit this problem while
 working on improving
 <a href="https://github.com/alexandrevicenzi/Flex/pull/20">Flex PR #20</a>.
 The straight forward solution looks like this</p>
-<div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span> <span class="k">in</span> <span class="nv">PLUGINS</span> <span class="k">if</span> <span class="nv">name</span> <span class="o">==</span> <span class="s1">&#39;assets&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span> <span class="k">in</span> <span class="nv">PLUGINS</span> <span class="k">if</span> <span class="nv">name</span> <span class="o">==</span> <span class="s1">&#39;assets&#39;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">assets</span> <span class="s2">&quot;stylesheet/style.css&quot;</span><span class="o">,</span> <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;cssmin&quot;</span><span class="o">,</span> <span class="nv">output</span><span class="o">=</span><span class="s2">&quot;style.min.css&quot;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">ASSET_URL</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">endassets</span> <span class="cp">%}</span><span class="x"></span>
@@ -289,7 +307,7 @@ The straight forward solution looks like this</p>
 
 <p>It appears to work great except when the <code>assets</code> plugin isn't loaded.
 Then we get a <a href="https://github.com/pallets/jinja/pull/582">TemplateSyntaxError</a>:</p>
-<div class="highlight"><pre><span class="n">TemplateSyntaxError</span><span class="o">:</span> <span class="n">Encountered</span> <span class="n">unknown</span> <span class="n">tag</span> <span class="s1">&#39;assets&#39;</span><span class="o">.</span>
+<div class="highlight"><pre><span></span><span class="n">TemplateSyntaxError</span><span class="o">:</span> <span class="n">Encountered</span> <span class="n">unknown</span> <span class="n">tag</span> <span class="s1">&#39;assets&#39;</span><span class="o">.</span>
 <span class="n">Jinja</span> <span class="n">was</span> <span class="n">looking</span> <span class="k">for</span> <span class="n">the</span> <span class="n">following</span> <span class="n">tags</span><span class="o">:</span> <span class="s1">&#39;endfor&#39;</span> <span class="n">or</span> <span class="s1">&#39;else&#39;</span><span class="o">.</span>
 <span class="n">The</span> <span class="n">innermost</span> <span class="n">block</span> <span class="n">that</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">closed</span> <span class="k">is</span> <span class="s1">&#39;for&#39;</span><span class="o">.</span><span class="err">`</span>
 </pre></div>
@@ -300,7 +318,7 @@ We may expect that Jinja will parse this tag only if the body of the for loop is
 executed but instead Jinja tries to parse all tags before rendering the template.
 The solution, as proposed by @ThiefMaster on GitHub, is to use a conditional
 <code>{% include %}</code> tag inside the for loop body like so</p>
-<div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span> <span class="k">in</span> <span class="nv">PLUGINS</span> <span class="k">if</span> <span class="nv">name</span> <span class="o">==</span> <span class="s1">&#39;assets&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span> <span class="k">in</span> <span class="nv">PLUGINS</span> <span class="k">if</span> <span class="nv">name</span> <span class="o">==</span> <span class="s1">&#39;assets&#39;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;assets.html&#39;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">THEME_STATIC_DIR</span> <span class="cp">}}</span><span class="x">/stylesheet/style.min.css&quot;&gt;</span>
@@ -309,7 +327,7 @@ The solution, as proposed by @ThiefMaster on GitHub, is to use a conditional
 
 
 <p>Where <code>assets.html</code> looks like this</p>
-<div class="highlight"><pre><span class="cp">{%</span> <span class="k">assets</span> <span class="s2">&quot;stylesheet/style.css&quot;</span><span class="o">,</span> <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;cssmin&quot;</span><span class="o">,</span> <span class="nv">output</span><span class="o">=</span><span class="s2">&quot;style.min.css&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">assets</span> <span class="s2">&quot;stylesheet/style.css&quot;</span><span class="o">,</span> <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;cssmin&quot;</span><span class="o">,</span> <span class="nv">output</span><span class="o">=</span><span class="s2">&quot;style.min.css&quot;</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">ASSET_URL</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
 <span class="cp">{%</span> <span class="k">endassets</span> <span class="cp">%}</span><span class="x"></span>
 </pre></div>
@@ -389,7 +407,7 @@ this problem when migrating my personal blog from Octopress to Pelican.</p>
 useful to blogs with multiple authors or if you want your author slug
 to match your GitHub username.
 In fact <code>pelicanconf.py</code> for Mr. Senko's blog looks like this:</p>
-<div class="highlight"><pre><span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{author}/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s1">}/{slug}/&#39;</span>
+<div class="highlight"><pre><span></span><span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{author}/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s1">}/{slug}/&#39;</span>
 <span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="n">ARTICLE_URL</span> <span class="o">+</span> <span class="s1">&#39;index.html&#39;</span>
 
 <span class="n">AUTHOR_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{slug}/&#39;</span>
