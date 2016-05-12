@@ -105,6 +105,30 @@ to the content url property the values will not be changed. This means
 all your CSS, JavaScript and images will continue to work without being
 duplicated under the experiment directory.
 
+
+Testing and publishing experiments
+----------------------------------
+
+For local development use the command `AB_EXPERIMENT="xy" make regenerate`
+or `AB_EXPERIMENT="xy" make html` together with `make serve` to review the
+experiments. When you are ready to publish them online execute the following
+sequence of commands:
+
+    :::bash
+    rm -rf output/
+    make github
+    AB_EXPERIMENT="01" make github
+    AB_EXPERIMENT="02" make github
+
+
+By default `publishconf.py` contains `DELETE_OUTPUT_DIRECTORY = True`
+which causes *pelican-ab* to raise an exception. The problem is that you need
+to execute `make publish` or `make github` for each experiment you'd like to
+publish online. When `DELETE_OUTPUT_DIRECTORY` is True the previous contents
+will be deleted and **ONLY** that variation will be published!
+This will break your website because everything will be gone!
+
+
 A/B testing
 -----------
 
