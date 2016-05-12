@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    		<title>A/B Testing with Jinja2 and Pelican</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+
+        <meta name="description" content="A/B testing is a randomized experiment with two variants, which are the control and variation in the controlled experiment. In this ..." >
+
+        <meta name="author" content="Mr. Senko">
+
+        <meta name="tags" content="Python" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="A/B Testing with Jinja2 and Pelican">
+            <meta name="twitter:description" content="A/B testing is a randomized experiment with two variants, which are the control and variation in the controlled experiment. In this ...">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="http://mrsenko.com/blog/mr-senko/" />
+        <meta property="og:url" content="http://mrsenko.com/blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/" />
+        <meta property="og:title" content="A/B Testing with Jinja2 and Pelican" />
+        <meta property="article:published_time" content="2016-05-12 10:10:00+03:00">
+            <meta property="og:description" content="A/B testing is a randomized experiment with two variants, which are the control and variation in the controlled experiment. In this ...">
+
+            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><a href="http://mrsenko.com/blog/">Blog</a></li>
+						<li><a href="http://mrsenko.com/#who-are-we">Who Are We</a></li>
+						<li><a href="http://mrsenko.com/#get-in-touch">Get In Touch</a></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+    <h2>A/B Testing with Jinja2 and Pelican</h2>
+    <p></p>
+    <p>
+        <em>Posted by
+                <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Thu 12 May 2016
+        </em>
+    </p>
+            </section>
+
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p>A/B testing is a randomized experiment with two variants,
+which are the control and variation in the controlled experiment.
+In this article we're going to present a solution which works with
+<em>Pelican</em> and other <em>Jinja2</em> based static site generators.</p>
+<h2>The markup</h2>
+<p>In statically generated websites you either have content or templates.
+We've been interested in encoding A/B experiments in templates and didn't
+find a solution so we made our own.
+<a href="https://github.com/MrSenko/jinja-ab">jinja-ab</a> is an A/B testing extension
+for <em>Jinja2</em>. It allows you to encode experiments in your templates and renders
+the experiment selected by the <code>AB_EXPERIMENT</code> environment variable. <strong>control</strong>
+is the default experiment name if <code>AB_EXPERIMENT</code> is not specified!
+The syntax looks like this</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">experiment</span> <span class="nv">control</span> <span class="cp">%}</span><span class="x">This is the control</span><span class="cp">{%</span> <span class="k">endexperiment</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">experiment</span> <span class="nv">v1</span> <span class="cp">%}</span><span class="x">This is version 1</span><span class="cp">{%</span> <span class="k">endexperiment</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<h2>Rendering and output control</h2>
+<p><em>jinja-ab</em> deals with rendering the template string based on the value of
+<code>AB_EXPERIMENT</code>. It is up to you to decide what to do with the result.
+At <a href="http://MrSenko.com">Mr. Senko</a> we use <em>Pelican</em> and created the complimentary
+<a href="https://github.com/MrSenko/pelican-ab">pelican-ab</a> plugin. To enable the plugin
+simply add it in your <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path/to/pelican-ab&#39;</span><span class="p">]</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pelican_ab&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>After encoding your experiments into the theme templates you can generate the
+resulting HTML files by running the command</p>
+<div class="highlight"><pre><span class="nv">AB_EXPERIMENT</span><span class="o">=</span><span class="s2">&quot;v1&quot;</span> make html
+</pre></div>
+
+
+<p>When rendering experiments the resulting HTML files are saved under
+<code>OUTPUT_PATH</code> plus the experiment name. For example 'output/v1', 'output/v2',
+etc. The control experiments are rendered directly under <code>OUTPUT_PATH</code>.
+For example the control directory structure of this blog looks like this:</p>
+<div class="highlight"><pre>output/
+|-- blog
+|   |-- 2016
+|   |   | ...
+|   |-- archives
+|   |-- atodorov
+|   |   `-- ...
+|   |-- mr-senko
+|   |   `-- ...
+|   `-- tags
+|       | ...
+|-- feeds
+|-- images
+|-- js
+|-- support
+`-- theme
+</pre></div>
+
+
+<p>After rendering an experiment called 'v1' the directory structure looks like
+this:</p>
+<div class="highlight"><pre>output/v1/
+|-- blog
+|   |-- 2016
+|   |   | ...
+|   |-- archives
+|   |-- atodorov
+|   |   `-- ...
+|   |-- mr-senko
+|   |   `-- ...
+|   `-- tags
+|       | ...
+`-- support
+</pre></div>
+
+
+<p>Only content output is saved under the new directory because content it
+rendered using the templates which we want to A/B test. This is how <em>pelican-ab</em>
+works for the moment.</p>
+<p>This plugin also automatically updates the <code>Content.url</code> and <code>URLWrapper.url</code>
+class properties from <em>Pelican</em> so that things like <code>{{ article.url }}</code>
+and <code>{{ author.url }}</code> will point to URLs from the same experiment.</p>
+<p>In other words each experiment
+produces its own HTML and URL structure, using the experiment name as
+prefix. Once a user lands on
+a page from experiment "v1" all links to other content will also point to
+"v1", for example 'blog/about-me.html' becomes 'v1/blog/about-me.html', etc.
+This will help you gather more information from the experiment because
+all your internal URLs are under the same experiment,
+using the same HTML template variation.</p>
+<p><strong>NOTE:</strong> wherever you use the <code>{{ SITEURL }}</code> template tag without pointing
+to the content url property the values will not be changed. This means
+all your CSS, JavaScript and images will continue to work without being
+duplicated under the experiment directory.</p>
+<h2>A/B testing</h2>
+<p>Now that we finally got our experiments encoded and rendered it is time to
+re-route some of the web traffic to them and analyze the results. <em>pelican-ab</em>
+is not designed to deal with this, you will have to use external tools to
+control how your web traffic is redirected to your experiments and what sort
+of results are collected. Our favorite ones are <em>LuckyOrange</em> and <em>Optimizely</em>.</p>
+<h2>Support</h2>
+<p><em>jinja-ab</em> and <em>pelican-ab</em> are provided as open source for everyone to use.
+At Mr. Senko we will do our best to accomodate every need and merge patches
+and feature requests as they come in.
+Should you need commercial support for these or other open source libraries
+please <strong>subscribe to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a></strong>!</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+        on Thu 12 May 2016
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, </p>
+        </div>
+    </div>
+
+    <section id="comments" class="wrapper style2 special">
+        <div class="container">
+            <header class="major special">
+                <h2>Comments !</h2>
+            </header>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'mrsenko';
+                var disqus_identifier = 'blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/';
+                var disqus_url = 'http://mrsenko.com/blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mrsenko.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </section>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72200638-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<!-- LuckyOrange -->
+<script type='text/javascript'>
+window.__lo_site_id = 55938;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'mrsenko';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+	</body>
+</html>
