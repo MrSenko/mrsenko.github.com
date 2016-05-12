@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    		<title>FOSDEM 2016 Report</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+
+        <meta name="description" content="Hello everyone, Mr. Senko flew to Brussels for his first public appearances and we are very excited about this. He visited FOSDEM to get ..." >
+
+        <meta name="author" content="Mr. Senko">
+
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="FOSDEM 2016 Report">
+            <meta name="twitter:description" content="Hello everyone, Mr. Senko flew to Brussels for his first public appearances and we are very excited about this. He visited FOSDEM to get ...">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="http://mrsenko.com/v1/blog/mr-senko/" />
+        <meta property="og:url" content="http://mrsenko.com/v1/blog/2016/01/31/fosdem-2016-report/" />
+        <meta property="og:title" content="FOSDEM 2016 Report" />
+        <meta property="article:published_time" content="2016-01-31 19:30:00+02:00">
+            <meta property="og:description" content="Hello everyone, Mr. Senko flew to Brussels for his first public appearances and we are very excited about this. He visited FOSDEM to get ...">
+
+            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+
+						<li><strong><a href="http://mrsenko.com/v1/#subscriptions">Subscriptions</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/v1/#software">Supported software</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+    <h2>FOSDEM 2016 Report</h2>
+    <p></p>
+    <p>
+        <em>Posted by
+                <a href="http://mrsenko.com/v1/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Sun 31 January 2016
+        </em>
+    </p>
+            </section>
+
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p>Hello everyone, <a href="http://MrSenko.com">Mr. Senko</a> flew to Brussels for his first
+public appearances and we are very excited about this. He visited
+<a href="http://fosdem.org">FOSDEM</a> to get an update on the latest news in open source
+and scored the highest ping-pong score for
+<a href="https://twitter.com/atodorov_/status/693762736765976576">BBC Open Source</a>
+on Sunday!
+He also learned a bit about <a href="http://elixir-lang.org">Elixir</a> with the
+Belgian Elixir Study group, attended a panel on open source and start-ups
+organized by <a href="http://europe.startupbus.com">The Startup Bus</a>
+and made lots of new friends. Here are some of
+the details and links for further reading.</p>
+<p><img alt="Ping-pong with computers" src="/images/bbc_ping_pong.jpg" title="Ping-pong with computers" /></p>
+<h2>Friday - Day 0</h2>
+<p>Friday was a fruitful day for Mr. Senko. It started with a meeting at
+<a href="http://betacowork">BetaCowork</a> - one of the co-working spaces in Brussels
+and continued with a visit to
+<a href="http://www.erlang-factory.com/brussels2016/">Brussels Erlang Factory Lite</a>
+where we learned a bit about Erlang and Elixir and even managed to create a
+<a href="https://github.com/belgian-elixir-study-group/efl/pull/5">small pull request</a>
+as part of the exercises. Funny enough, one of the organizers,
+<a href="https://twitter.com/less_software">Yuri Leikind</a> was spot on to recognize our
+Bulgarian accent.</p>
+<p>BetaCowork was bursting with people who've come for FOSDEM. There was a GNOME
+team and the Libre Office Italian team! The place is huge and is definitely
+an alternative for the entrepreneurs who are tired of working from home! It
+is also very close to ULB so next time you visit FOSDEM definitely check their
+events schedule as well.</p>
+<h2>Saturday - Day 1</h2>
+<p>Saturday was the
+<a href="https://fosdem.org/2016/schedule/track/testing_and_automation/">Testing and Automation</a>
+day. The morning track showed us <a href="http://frida.re">Frida</a> - a tool
+which injects JavaScript into existing processes and could be used for testing
+interoperability with closed source applications. Another interesting use case
+is overriding the standard <code>read</code> and <code>write</code> functions in order to automate testing
+of interactive text based applications on Linux. Mr. Senko had the pleasure talking
+to Frida's authors on both days. These are extremely tallented and knowledgeable
+folks so definitely keep an eye on their work.</p>
+<p>In the afternoon the room got packed when Marcin and Lukasz presented their
+experience with
+<a href="https://github.com/jenkinsci/job-dsl-plugin">Jenkins Job DSL</a> plugin.
+The plugin is very flexible and powerfull, using Groovy
+as its programming language. The only drawback is that it is
+sometimes too complex to use and requires a steep learning curve.
+Regardless of this the only tools we know about related to
+Jenkins as Code are the Jenkins Job DSL and Jenkins Job Builder plugins.</p>
+<p>In the evening Mr. Senko visited a panel talk about
+<a href="https://www.eventbrite.com/e/startupbusaccelerate-the-impact-of-open-source-software-on-the-tech-industry-tickets-20869395925">the impact of open source on the tech industry</a>
+at the second big co-workign space in Brussels - <a href="http://co-station.com">Co.Station</a>.
+The place is in the city center so definitely worth to visit at any time.
+Mr. Senko made quite a few new friends there and possibly found potential
+pilot customers. We've also made contact with the organizers of
+<a href="http://europe.startupbus.com">Startup Bus Europe</a> and hopefully we'll see
+the bus coming to Sofia as well. And we also got invited to the first
+<a href="https://www.linkedin.com/pulse/setting-up-first-angular-conference-belgium-sam-vloeberghs">Angular.js conference in Belgium</a>
+and with a bit of luck you'll see a talk from us in the summer.</p>
+<h2>Sunday - Day 2</h2>
+<p>Sunday was the lazy day. The only talk of interest to Mr. Senko was
+<a href="https://fosdem.org/2016/schedule/event/tweaking_ruby_gc/">Tweaking Ruby GC parameters for speed and profit</a>
+. The rest of the time was spent networking, collecting t-shirts,
+reporting
+<a href="https://fedorahosted.org/fedora-infrastructure/ticket/5085">a bug against Fedora Account System</a>
+and meeting with old friends.</p>
+<p><img alt="hammer down" src="/images/bbc_hammer_game.jpg" title="hammer down" /></p>
+<p>In the early afternoon Mr. Senko played a few geeky games at the BBC Open Source
+stand. BBC is developing the <a href="https://www.microbit.co.uk/">micro:bit</a> - a small computer which is intended to
+teach programming to small children. With its help they has built a ping-pong
+device which counts how many times you hit the ball.</p>
+<p>In the second game you had to smash a
+red circle with a foam hammer as soon as it lighted up. Mr. Senko managed to
+win the first game and then lost the second one. He even got to test the device
+and tried to crash it by scoring penalty points when the counter was still zero.
+BBC definitely did their job right because the device didn't crash.</p>
+<p>Thank you for taking the time to read this report. See you at the next event!</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/v1/blog/mr-senko/">Mr. Senko</a>
+        on Sun 31 January 2016
+        </p>
+    </div>
+
+    </div>
+
+    <section id="comments" class="wrapper style2 special">
+        <div class="container">
+            <header class="major special">
+                <h2>Comments !</h2>
+            </header>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'mrsenko';
+                var disqus_identifier = 'v1/blog/2016/01/31/fosdem-2016-report/';
+                var disqus_url = 'http://mrsenko.com/v1/blog/2016/01/31/fosdem-2016-report/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mrsenko.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </section>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72200638-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<!-- LuckyOrange -->
+<script type='text/javascript'>
+window.__lo_site_id = 55938;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'mrsenko';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+	</body>
+</html>
