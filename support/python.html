@@ -1,0 +1,884 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mr. Senko - Open Source Wizards - Supported Python Packages</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+                    <meta name="twitter:site" content="@Mr_Senko">
+                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
+                    <meta name="twitter:description" content="Support for open source libraries">
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><a href="http://mrsenko.com/blog/">Blog</a></li>
+						<li><a href="http://mrsenko.com/#who-are-we">Who Are We</a></li>
+						<li><a href="http://mrsenko.com/#get-in-touch">Get In Touch</a></li>
+
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+            </section>
+
+    
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<h2>Supported Python packages</h2>
+					</header>
+
+
+
+<div id="packages">
+    <input class="search" placeholder="Search" />
+    <button class="sort" data-sort="name">Sort by name</button>
+
+<table>
+    <thead>
+        <tr>
+            <th><strong>Name</strong></th>
+            <th><strong>PyPI</strong></th>
+            <th>Upstream</th>
+        </tr>
+    </thead>
+    <tbody class="list">
+        <tr>
+            <td class="name">django-s3-cache</td>
+            <td class="pypi">
+                <a class="fa-check-square" href="https://pypi.python.org/pypi/django-s3-cache"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/atodorov/django-s3-cache">https://github.com/atodorov/django-s3-cache</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">Markdown</td>
+            <td class="pypi">
+                <a class="fa-check-square" href="https://pypi.python.org/pypi/Markdown"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/waylan/Python-Markdown">https://github.com/waylan/Python-Markdown</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">Markdown-Bugzilla-Extension</td>
+            <td class="pypi">
+                <a class="fa-check-square" href="https://pypi.python.org/pypi/Markdown-Bugzilla-Extension"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/atodorov/Markdown-Bugzilla-Extension">https://github.com/atodorov/Markdown-Bugzilla-Extension</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">Markdown-No-Lazy-BlockQuote-Extension</td>
+            <td class="pypi">
+                <a class="fa-check-square" href="https://pypi.python.org/pypi/Markdown-No-Lazy-BlockQuote-Extension"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/atodorov/Markdown-No-Lazy-BlockQuote-Extension">https://github.com/atodorov/Markdown-No-Lazy-BlockQuote-Extension</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">Markdown-No-Lazy-Code-Extension</td>
+            <td class="pypi">
+                <a class="fa-check-square" href="https://pypi.python.org/pypi/Markdown-No-Lazy-Code-Extension"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/atodorov/Markdown-No-Lazy-Code-Extension">https://github.com/atodorov/Markdown-No-Lazy-Code-Extension</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican</td>
+            <td class="pypi">
+                <a class="fa-check-square" href="https://pypi.python.org/pypi/pelican"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican">https://github.com/getpelican/pelican</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-clean-blog (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/gilsondev/pelican-clean-blog">https://github.com/gilsondev/pelican-clean-blog</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">Casper2Pelican (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/abr4xas/Casper2Pelican">https://github.com/abr4xas/Casper2Pelican</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">Flex (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/alexandrevicenzi/Flex">https://github.com/alexandrevicenzi/Flex</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">Just-Read (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">SoMA (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">SoMA2 (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">aboutwilson (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-alchemy (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/nairobilug/pelican-alchemy">https://github.com/nairobilug/pelican-alchemy</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">backdrop (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">basic (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">blue-penguin (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/jody-frankowski/blue-penguin">https://github.com/jody-frankowski/blue-penguin</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">bootlex (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">bootstrap (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">bootstrap2 (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">bootstrap2-dark (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">bricks (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">brownstone (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">built-texts (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">cebong (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">crowsfoot (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/porterjamesj/crowsfoot">https://github.com/porterjamesj/crowsfoot</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">devrandom (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">devrandom2 (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">elegant (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/talha131/pelican-elegant">https://github.com/talha131/pelican-elegant</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">foundation-default-colors (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">franticworld (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-fresh (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/jsliang/pelican-fresh">https://github.com/jsliang/pelican-fresh</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">gum (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">lightweight (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">martyalchin (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-mg (Pelican-theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/lucachr/pelican-mg">https://github.com/lucachr/pelican-mg</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">mnmlist (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">monospace (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">nest (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/molivier/nest">https://github.com/molivier/nest</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">new-bootstrap2 (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">nmlist (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">notebook (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">notmyidea-cms (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-octopress-theme (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/duilio/pelican-octopress-theme">https://github.com/duilio/pelican-octopress-theme</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-bootstrap3 (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-cait (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/hdra/pelican-cait">https://github.com/hdra/pelican-cait</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-simplegrey (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/fle/pelican-simplegrey">https://github.com/fle/pelican-simplegrey</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-twitchy (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/ingwinlu/pelican-twitchy">https://github.com/ingwinlu/pelican-twitchy</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelipress (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/jjimenezlopez/pelipress">https://github.com/jjimenezlopez/pelipress</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">photowall (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pure (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/PurePelicanTheme/pure">https://github.com/PurePelicanTheme/pure</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pure-single (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/PurePelicanTheme/pure-single">https://github.com/PurePelicanTheme/pure-single</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">simple-bootstrap (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">sneakyidea (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">subtle (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-svbhack (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/gfidente/pelican-svbhack">https://github.com/gfidente/pelican-svbhack</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-svbtle (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/wting/pelican-svbtle">https://github.com/wting/pelican-svbtle</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">syte (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">tuxlite_tbs (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">tuxlite_zf (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">twenty-pelican-html5up (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/frankV/twenty-pelican-html5up">https://github.com/frankV/twenty-pelican-html5up</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">voidy-bootstrap (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/robulouski/voidy-bootstrap">https://github.com/robulouski/voidy-bootstrap</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">waterspill-en (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">zurb-F5-basic (Pelican theme)</td>
+            <td class="pypi">
+                <a class="fa-minus-square" href="#"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">jinja-ab</td>
+            <td class="pypi">
+                <a class="fa-check-square" href="https://pypi.python.org/pypi/jinja-ab"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/MrSenko/jinja-ab">https://github.com/MrSenko/jinja-ab</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="name">pelican-ab</td>
+            <td class="pypi">
+                <a class="fa-check-square" href="https://pypi.python.org/pypi/pelican-ab"></a>
+            </td>
+            <td class="upstream">
+                <a href="https://github.com/MrSenko/pelican-ab">https://github.com/MrSenko/pelican-ab</a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+</div>
+				</div>
+			</section>
+
+<script type="text/javascript">
+var options = {
+    valueNames: [ 'name', 'pypi', 'upstream' ]
+};
+
+var packageList = new List('packages', options);
+</script>
+
+    
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72200638-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<!-- LuckyOrange -->
+<script type='text/javascript'>
+window.__lo_site_id = 55938;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'mrsenko';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+	</body>
+</html>
