@@ -69,3 +69,5 @@ CATEGORY_SAVE_AS = ''
 STATIC_PATHS = ['images/', 'CNAME', 'js/']
 
 ADDTHIS_PUBID = "ra-568b9305e58615ff"
+
+PLUGINS = ['pelican_ab']
