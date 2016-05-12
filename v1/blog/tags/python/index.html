@@ -1,0 +1,589 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Mr. Senko - Open Source Wizards - Tag Python</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+                    <meta name="twitter:site" content="@Mr_Senko">
+                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
+                    <meta name="twitter:description" content="Support for open source libraries">
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+
+						<li><strong><a href="http://mrsenko.com/v1/#subscriptions">Subscriptions</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/v1/#software">Supported software</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+    <h2>Articles with tag: Python</h2>
+            </section>
+
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="http://mrsenko.com/v1/blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/" rel="bookmark" title="Permalink to A/B Testing with Jinja2 and Pelican">
+                    <h2>A/B Testing with Jinja2 and Pelican</h2>
+                </a>
+            </header>
+
+            <p>A/B testing is a randomized experiment with two variants,
+which are the control and variation in the controlled experiment.
+In this article we're going to present a solution which works with
+<em>Pelican</em> and other <em>Jinja2</em> based static site generators.</p>
+<h2>The markup</h2>
+<p>In statically generated websites you either have content or templates.
+We've been interested in encoding A/B experiments in templates and didn't
+find a solution so we made our own.
+<a href="https://github.com/MrSenko/jinja-ab">jinja-ab</a> is an A/B testing extension
+for <em>Jinja2</em>. It allows you to encode experiments in your templates and renders
+the experiment selected by the <code>AB_EXPERIMENT</code> environment variable. <strong>control</strong>
+is the default experiment name if <code>AB_EXPERIMENT</code> is not specified!
+The syntax looks like this</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">experiment</span> <span class="nv">control</span> <span class="cp">%}</span><span class="x">This is the control</span><span class="cp">{%</span> <span class="k">endexperiment</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">experiment</span> <span class="nv">v1</span> <span class="cp">%}</span><span class="x">This is version 1</span><span class="cp">{%</span> <span class="k">endexperiment</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<h2>Rendering and output control</h2>
+<p><em>jinja-ab</em> deals with rendering the template string based on the value of
+<code>AB_EXPERIMENT</code>. It is up to you to decide what to do with the result.
+At <a href="http://MrSenko.com">Mr. Senko</a> we use <em>Pelican</em> and created the complimentary
+<a href="https://github.com/MrSenko/pelican-ab">pelican-ab</a> plugin. To enable the plugin
+simply add it in your <code>pelicanconf.py</code></p>
+<div class="highlight"><pre><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path/to/pelican-ab&#39;</span><span class="p">]</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pelican_ab&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>After encoding your experiments into the theme templates you can generate the
+resulting HTML files by running the command</p>
+<div class="highlight"><pre><span class="nv">AB_EXPERIMENT</span><span class="o">=</span><span class="s2">&quot;v1&quot;</span> make html
+</pre></div>
+
+
+<p>When rendering experiments the resulting HTML files are saved under
+<code>OUTPUT_PATH</code> plus the experiment name. For example 'output/v1', 'output/v2',
+etc. The control experiments are rendered directly under <code>OUTPUT_PATH</code>.
+For example the control directory structure of this blog looks like this:</p>
+<div class="highlight"><pre>output/
+|-- blog
+|   |-- 2016
+|   |   | ...
+|   |-- archives
+|   |-- atodorov
+|   |   `-- ...
+|   |-- mr-senko
+|   |   `-- ...
+|   `-- tags
+|       | ...
+|-- feeds
+|-- images
+|-- js
+|-- support
+`-- theme
+</pre></div>
+
+
+<p>After rendering an experiment called 'v1' the directory structure looks like
+this:</p>
+<div class="highlight"><pre>output/v1/
+|-- blog
+|   |-- 2016
+|   |   | ...
+|   |-- archives
+|   |-- atodorov
+|   |   `-- ...
+|   |-- mr-senko
+|   |   `-- ...
+|   `-- tags
+|       | ...
+`-- support
+</pre></div>
+
+
+<p>Only content output is saved under the new directory because content it
+rendered using the templates which we want to A/B test. This is how <em>pelican-ab</em>
+works for the moment.</p>
+<p>This plugin also automatically updates the <code>Content.url</code> and <code>URLWrapper.url</code>
+class properties from <em>Pelican</em> so that things like <code>{{ article.url }}</code>
+and <code>{{ author.url }}</code> will point to URLs from the same experiment.</p>
+<p>In other words each experiment
+produces its own HTML and URL structure, using the experiment name as
+prefix. Once a user lands on
+a page from experiment "v1" all links to other content will also point to
+"v1", for example 'blog/about-me.html' becomes 'v1/blog/about-me.html', etc.
+This will help you gather more information from the experiment because
+all your internal URLs are under the same experiment,
+using the same HTML template variation.</p>
+<p><strong>NOTE:</strong> wherever you use the <code>{{ SITEURL }}</code> template tag without pointing
+to the content url property the values will not be changed. This means
+all your CSS, JavaScript and images will continue to work without being
+duplicated under the experiment directory.</p>
+<h2>A/B testing</h2>
+<p>Now that we finally got our experiments encoded and rendered it is time to
+re-route some of the web traffic to them and analyze the results. <em>pelican-ab</em>
+is not designed to deal with this, you will have to use external tools to
+control how your web traffic is redirected to your experiments and what sort
+of results are collected. Our favorite ones are <em>LuckyOrange</em> and <em>Optimizely</em>.</p>
+<h2>Support</h2>
+<p><em>jinja-ab</em> and <em>pelican-ab</em> are provided as open source for everyone to use.
+At Mr. Senko we will do our best to accomodate every need and merge patches
+and feature requests as they come in.
+Should you need commercial support for these or other open source libraries
+please <strong>subscribe to <a href="http://mrsenko.com/v1/subscribe.html">Mr. Senko</a></strong>!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/v1/blog/mr-senko/">Mr. Senko</a>
+                on Thu 12 May 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/v1/blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="http://mrsenko.com/v1/blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/" rel="bookmark" title="Permalink to Conditional Include in Jinja2 and Pelican">
+                    <h2>Conditional Include in Jinja2 and Pelican</h2>
+                </a>
+            </header>
+
+            <p>How do you create Jinja templates which behave differently based
+on what Pelican plugins are loaded ? I've hit this problem while
+working on improving
+<a href="https://github.com/alexandrevicenzi/Flex/pull/20">Flex PR #20</a>.
+The straight forward solution looks like this</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span> <span class="k">in</span> <span class="nv">PLUGINS</span> <span class="k">if</span> <span class="nv">name</span> <span class="o">==</span> <span class="s1">&#39;assets&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">assets</span> <span class="s2">&quot;stylesheet/style.css&quot;</span><span class="o">,</span> <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;cssmin&quot;</span><span class="o">,</span> <span class="nv">output</span><span class="o">=</span><span class="s2">&quot;style.min.css&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">ASSET_URL</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endassets</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">THEME_STATIC_DIR</span> <span class="cp">}}</span><span class="x">/stylesheet/style.min.css&quot;&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>It appears to work great except when the <code>assets</code> plugin isn't loaded.
+Then we get a <a href="https://github.com/pallets/jinja/pull/582">TemplateSyntaxError</a>:</p>
+<div class="highlight"><pre><span class="n">TemplateSyntaxError</span><span class="o">:</span> <span class="n">Encountered</span> <span class="n">unknown</span> <span class="n">tag</span> <span class="s1">&#39;assets&#39;</span><span class="o">.</span>
+<span class="n">Jinja</span> <span class="n">was</span> <span class="n">looking</span> <span class="k">for</span> <span class="n">the</span> <span class="n">following</span> <span class="n">tags</span><span class="o">:</span> <span class="s1">&#39;endfor&#39;</span> <span class="n">or</span> <span class="s1">&#39;else&#39;</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">innermost</span> <span class="n">block</span> <span class="n">that</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">be</span> <span class="n">closed</span> <span class="k">is</span> <span class="s1">&#39;for&#39;</span><span class="o">.</span><span class="err">`</span>
+</pre></div>
+
+
+<p>The <code>{% assets %}</code> tag is not defined because the <code>assets</code> plugin is missing.
+We may expect that Jinja will parse this tag only if the body of the for loop is
+executed but instead Jinja tries to parse all tags before rendering the template.
+The solution, as proposed by @ThiefMaster on GitHub, is to use a conditional
+<code>{% include %}</code> tag inside the for loop body like so</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">name</span> <span class="k">in</span> <span class="nv">PLUGINS</span> <span class="k">if</span> <span class="nv">name</span> <span class="o">==</span> <span class="s1">&#39;assets&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">include</span> <span class="s1">&#39;assets.html&#39;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">THEME_STATIC_DIR</span> <span class="cp">}}</span><span class="x">/stylesheet/style.min.css&quot;&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>Where <code>assets.html</code> looks like this</p>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">assets</span> <span class="s2">&quot;stylesheet/style.css&quot;</span><span class="o">,</span> <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;cssmin&quot;</span><span class="o">,</span> <span class="nv">output</span><span class="o">=</span><span class="s2">&quot;style.min.css&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">ASSET_URL</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
+<span class="cp">{%</span> <span class="k">endassets</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+
+<p>I don't like splitting out the HTML code in this way. Imagine that we later decide to
+add a second CSS file to the template. The risk of forgetting to add it in both places
+increases as the number of CSS files (or places where we use the same HTML pattern)
+increases. However this appears to be the only way to conditionally use the <code>assets</code>
+plugin only when it is loaded. The proposed changes are in
+<a href="https://github.com/alexandrevicenzi/Flex/pull/40">Flex PR #40</a>.</p>
+<p>I hope you like my work and please
+<strong>subscribe to <a href="http://mrsenko.com/v1/subscribe.html">Mr. Senko</a></strong>
+if you need a faster release cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/v1/blog/atodorov/">Alexander Todorov</a>
+                on Thu 05 May 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/v1/blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="http://mrsenko.com/v1/blog/atodorov/2016/05/03/april-2016-report/" rel="bookmark" title="Permalink to April 2016 Report">
+                    <h2>April 2016 Report</h2>
+                </a>
+            </header>
+
+            <p>Here is a quick status report of my work for <a href="http://MrSenko.com">Mr. Senko</a>. During
+April 2016 I've worked on:</p>
+<ul>
+<li>Additional patches to the <a href="https://github.com/Nitrate/Nitrate/pulls/atodorov">Nitrate</a>
+test case management system;</li>
+<li>New features for the <a href="https://github.com/railslove/i18n_viz/pulls/atodorov">i18n_viz</a>
+Ruby gem;</li>
+<li>New features for <a href="https://github.com/getpelican/pelican/pull/1926">Pelican</a>.</li>
+</ul>
+<h2>Nitrate</h2>
+<p>As I've written previously Nitrate is a test case management system, which we use internally.
+Unfortunately it is using very old version of Django and it is not so easy to migrate
+forward.</p>
+<p>I've decided to stall all of my previous pull requests and focus on getting the tests
+up and running in Travis-CI before going forward. I've managed to fix a few of them
+locally but then hit a road block. The fact that the Nitrate team is very limited in
+capacity (only 1 person at the moment) isn't helping either. I will continue working
+on this but with lower priority.</p>
+<h2>New features for i18n_viz</h2>
+<p><a href="https://github.com/railslove/i18n_viz">i18n_viz</a> is a very cool Ruby gem which
+lets your browse your own Rails application and visualize and edit your translatable
+strings. Think of it as a reversed lookup for translations.
+i18n_viz highlights your app’s translatable text and adds a tooltip containing
+the translation key which links to the translation in your favorite online
+translation tool.</p>
+<p>I have added the <code>css_override</code> option to allow for better styling of the
+highlights and tooltips provided by this gem.
+<a href="https://github.com/railslove/i18n_viz/pull/20">PR #20</a> has already been merged
+but not released into a new version yet.</p>
+<p>I've also fixed a
+<a href="https://github.com/railslove/i18n_viz/pull/19">bug with nested HTML tags</a> and
+changed the <code>external_tool_url</code> option to support
+<a href="https://github.com/railslove/i18n_viz/pull/22">code execution</a>. With this
+the user is able to configure the URL to an online translation tool during
+runtime. My particular use-case is to include the currently selected locale
+in the URL string. These two pull requests are not merged yet and unfortunately
+the package author is busy at the moment so it will take some time.</p>
+<h2>New features for Pelican</h2>
+<p>I've managed to implement more granular control over tag, categories and
+author slugs in Pelican in
+<a href="https://github.com/getpelican/pelican/pull/1926">PR #1926</a> and the code is
+already merged!</p>
+<p>Under the hood the <code>slugify()</code> method now can skip replacing non-alphanumeric
+characters so you have more control over the generated URLs. I've experienced
+this problem when migrating my personal blog from Octopress to Pelican.</p>
+<p>Then I've also added the possibility to configure author slugs, which is
+useful to blogs with multiple authors or if you want your author slug
+to match your GitHub username.
+In fact <code>pelicanconf.py</code> for Mr. Senko's blog looks like this:</p>
+<div class="highlight"><pre><span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{author}/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s1">}/{slug}/&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="n">ARTICLE_URL</span> <span class="o">+</span> <span class="s1">&#39;index.html&#39;</span>
+
+<span class="n">AUTHOR_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{slug}/&#39;</span>
+<span class="n">AUTHOR_SAVE_AS</span>  <span class="o">=</span> <span class="n">AUTHOR_URL</span> <span class="o">+</span> <span class="s1">&#39;index.html&#39;</span>
+
+<span class="n">AUTHOR_SUBSTITUTIONS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;Alexander Todorov&#39;</span><span class="p">,</span> <span class="s1">&#39;atodorov&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Krasimir Tsonev&#39;</span><span class="p">,</span>   <span class="s1">&#39;krasimir&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<p><strong>NOTE:</strong> older URLs on this blog do not match above settings for
+compatibility reasons!</p>
+<p>I hope you like my work and please
+<strong>consider subscribing to <a href="http://mrsenko.com/v1/subscribe.html">Mr. Senko</a>!</strong>
+if need a faster release cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/v1/blog/atodorov/">Alexander Todorov</a>
+                on Tue 03 May 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/v1/blog/atodorov/2016/05/03/april-2016-report/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="http://mrsenko.com/v1/blog/2016/03/30/march-2016-report/" rel="bookmark" title="Permalink to March 2016 Report">
+                    <h2>March 2016 Report</h2>
+                </a>
+            </header>
+
+            <p>Here is a quick status report for <a href="http://MrSenko.com">Mr. Senko</a>. During
+March 2016 I've worked on:</p>
+<ul>
+<li>A few more improvements to
+<a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed">pelican-clean-blog</a>
+theme;</li>
+<li>Two new features for 
+<a href="https://github.com/getpelican/pelican/pulls/atodorov">Pelican</a>;</li>
+<li>Several bug fixes and improvements for
+<a href="https://github.com/Nitrate/Nitrate/pulls/atodorov">Nitrate</a>.</li>
+</ul>
+<h2>Nitrate Test Case Management System</h2>
+<p><a href="http://nitrate.readthedocs.org/en/latest/guide/introduction.html">Nitrate</a> is
+a test case management system written with Django. We use it internally to track
+testing activities. It is reasonably good at what it does but there are some
+issues with how the software has been developed in the past.</p>
+<ul>
+<li>
+<p>Nitrate is Django based but doesn't follow best Django practices.
+There are places where it executes raw SQL against the DB instead of using
+Django's ORM model. This makes it non-portable between DBMS.</p>
+</li>
+<li>
+<p>Nitrate has a long development history but poor documentation. It has introduced
+DB migrations and updates in a non-Django friendly way. The currently preferred
+method is to execute an SQL file against the DB. This is poorly documented and
+of course I've missed it. I'm sure others will miss it as well.</p>
+</li>
+<li>
+<p>Going forward with native Django migrations all of these SQL files need to be
+converted and I haven't looked into this yet. Another possibility is to just release
+a new version which doesn't allow automatic DB updates.</p>
+</li>
+<li>
+<p>There are a bunch of static files (e.g. images) used directly in CSS and JavaScript files.
+This immediately breaks if you decide to host your static files elsewhere
+(e.g. Amazon S3 bucket). There is an easy fix but it requires the use of latest Django.</p>
+</li>
+<li>
+<p>Django version (and other dependencies) are quite old. This introduces security
+risk and also makes it harder to develop new functionality sometimes. I have opened
+a PR to bring Django forward to 1.8.11 version but that still needs more work.
+Yes I broke the test-suite as part of the migration.</p>
+</li>
+<li>
+<p>So far my impression is that the Nitrate team are slow to respond on GitHub.
+Given the current state of Nitrate and the amount of work which needs to be done
+this is disappointing.</p>
+</li>
+</ul>
+<p>If you like my work and need a faster response cycle please
+<strong>consider subscribing to <a href="http://mrsenko.com/v1/subscribe.html">Mr. Senko</a>!</strong></p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/v1/blog/atodorov/">Alexander Todorov</a>
+                on Wed 30 March 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/v1/blog/2016/03/30/march-2016-report/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="http://mrsenko.com/v1/blog/2016/02/03/january-2016-report/" rel="bookmark" title="Permalink to January 2016 Report">
+                    <h2>January 2016 Report</h2>
+                </a>
+            </header>
+
+            <p>This is my first status report for <a href="http://MrSenko.com">Mr. Senko</a>. During
+January 2016 I've worked on:</p>
+<ul>
+<li>Improvements to
+<a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed">pelican-clean-blog</a>
+theme</li>
+<li>URL updates in <code>package.json</code> for several Node.js packages;</li>
+<li>.spec file to build RPMs for
+<a href="https://github.com/django-ses/django-ses/pull/83">django-ses</a>;</li>
+<li>New test case for
+<a href="https://github.com/belgian-elixir-study-group/efl/pull/5">Elixir study exercises</a></li>
+<li>Updates to an old PR for
+<a href="https://github.com/sphinx-doc/sphinx/pull/1902">Sphinx</a> which also fixes a
+new regression;</li>
+<li>Filed a
+<a href="https://github.com/getpelican/pelican/issues/1902">RFE</a> against Pelican
+and will continue working on it this month.</li>
+</ul>
+<h2>Sphinx broke</h2>
+<p>The Sphinx changes are particularly interesting - the fix for
+issue #656 in commit 4c4450d changes the Graphviz's
+<code>node['options']</code> type from <code>list</code> to <code>dict</code> which in turn breaks
+<code>html_visit_inheritance_diagram()</code> and the inheritance_diagram extension.</p>
+<p>My previous work on this PR introduced some basic tests, which were missing
+and they caught the type change! Because the tests and my latest changes are
+not yet merged into master the <code>inheritance_diagram.py</code> extension is still
+broken! The tests fail in Travis-CI but probably due to <code>dot</code> not being
+installed. Locally everything seems to work.</p>
+<p>Its also worth mentioning that it's been 2 weeks since I've updated my PR
+and a bit more since Sphinx introduced the regression. As far as I can see
+there's not been any updates with respect to this. 
+If you'd like to get a
+faster response cycle please <strong>consider subscribing to
+<a href="http://mrsenko.com/v1/subscribe.html">Mr. Senko</a>!</strong></p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/v1/blog/atodorov/">Alexander Todorov</a>
+                on Wed 03 February 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/v1/blog/2016/02/03/january-2016-report/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+
+<section class="wrapper special">
+    <div class="container">
+    <ul class="actions">
+        <li>
+            Page 1 / 1
+        </li>
+        </li>
+    </ul>
+    </div>
+</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72200638-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<!-- LuckyOrange -->
+<script type='text/javascript'>
+window.__lo_site_id = 55938;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'mrsenko';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+	</body>
+</html>
