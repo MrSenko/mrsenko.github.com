@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mr. Senko - Open Source Wizards - Archives</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+                    <meta name="twitter:site" content="@Mr_Senko">
+                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
+                    <meta name="twitter:description" content="Support for open source libraries">
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+
+						<li><strong><a href="http://mrsenko.com/v1/#subscriptions">Subscriptions</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/v1/#software">Supported software</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+            </section>
+
+    <dl>
+            <dt>Thu 12 May 2016</dt>
+            <dd><a href="http://mrsenko.com/v1/blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/">A/B Testing with Jinja2 and Pelican</a></dd>
+            <dt>Thu 05 May 2016</dt>
+            <dd><a href="http://mrsenko.com/v1/blog/atodorov/2016/05/05/conditional-include-in-jinja2-and-pelican/">Conditional Include in Jinja2 and Pelican</a></dd>
+            <dt>Tue 03 May 2016</dt>
+            <dd><a href="http://mrsenko.com/v1/blog/atodorov/2016/05/03/april-2016-report/">April 2016 Report</a></dd>
+            <dt>Wed 30 March 2016</dt>
+            <dd><a href="http://mrsenko.com/v1/blog/2016/03/30/march-2016-report/">March 2016 Report</a></dd>
+            <dt>Sun 14 February 2016</dt>
+            <dd><a href="http://mrsenko.com/v1/blog/2016/02/14/why-your-open-source-bugs-will-not-be-fixed/">Why Your Open Source Bugs Will Not Be Fixed</a></dd>
+            <dt>Wed 03 February 2016</dt>
+            <dd><a href="http://mrsenko.com/v1/blog/2016/02/03/january-2016-report/">January 2016 Report</a></dd>
+            <dt>Sun 31 January 2016</dt>
+            <dd><a href="http://mrsenko.com/v1/blog/2016/01/31/fosdem-2016-report/">FOSDEM 2016 Report</a></dd>
+            <dt>Sun 10 January 2016</dt>
+            <dd><a href="http://mrsenko.com/v1/blog/2016/01/10/founding-of-mr-senko/">Founding of Mr. Senko</a></dd>
+        <hr>
+    </dl>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72200638-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<!-- LuckyOrange -->
+<script type='text/javascript'>
+window.__lo_site_id = 55938;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'mrsenko';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+	</body>
+</html>
