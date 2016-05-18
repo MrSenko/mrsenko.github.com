@@ -143,7 +143,7 @@ Support
 -------
 
 *jinja-ab* and *pelican-ab* are provided as open source for everyone to use.
-At Mr. Senko we will do our best to accomodate every need and merge patches
+At Mr. Senko we will do our best to accommodate every need and merge patches
 and feature requests as they come in.
 Should you need commercial support for these or other open source libraries
 please **subscribe to [Mr. Senko]({filename}pages/subscribe.html)**!
