@@ -1,0 +1,600 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Mr. Senko - Open Source Wizards - Welcome</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+                    <meta name="twitter:site" content="@Mr_Senko">
+                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
+                    <meta name="twitter:description" content="Support for open source libraries">
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+
+						<li><strong><a href="http://mrsenko.com/v1/#subscriptions">Subscriptions</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/v1/#software">Supported software</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+                        <h2>Open Source Libraries Break</h2>
+                        <p>Mr. Senko is here to test and fix them<br/>
+so you can develop your products<br/>
+without the support hassle!</p>
+
+                            <ul class="actions">
+                                <li><a href="#subscriptions" class="button special big">Tell me more</a></li>
+                            </ul>
+
+            </section>
+
+    
+			<!-- One -->
+				<section id="subscriptions" class="wrapper style1">
+					<div class="container">
+                                            <div class="feature-grid four">
+                                                <div class="box feature">
+                                                    <div class="content subscription">
+                                                        <header>
+							    <h4>Upstream Subscription Plan</h4>
+							</header>
+<ul>
+    <li>
+        Upstream release cycle
+    </li>
+
+    <li>
+        Upstream version support
+    </li>
+
+    <li>
+        Install from public repositories
+    </li>
+
+    <li>
+        Improved documentation
+    </li>
+
+    <li>
+        Bug fixes from Mr. Senko pushed upstream
+    </li>
+
+    <li>
+        Mr. Senko contributes to upstream testing
+    </li>
+
+    <li>
+        1 subscription covers any 10 packages
+    </li>
+
+    <li>
+        1 subscription == 1 priority vote
+    </li>
+</ul>
+                                                        <a href="subscribe.html" class="button special small">Subscribe for 100 $/year</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="box feature">
+                                                    <div class="content subscription">
+                                                        <header>
+							    <h4>Start-up Subscription Plan</h4>
+							</header>
+<ul>
+    <li>
+        Everything from previous plans plus:
+    </li>
+
+    <li>
+        New release every 2 weeks
+    </li>
+
+    <li>
+        2 years support for every minor version
+    </li>
+
+    <li>
+        Patches rebased to latest upstream
+    </li>
+
+    <li>
+        Backports available on request
+    </li>
+
+    <li>
+        Install from private repository URL
+    </li>
+
+    <li>
+        Private repo can be used in multiple projects
+    </li>
+
+    <li>
+        9-5, Mon-Fri coverage
+    </li>
+</ul>
+
+                                                        <a href="subscribe.html" class="button special small">Subscribe for 200 $/year</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="box feature">
+                                                    <div class="content subscription">
+                                                        <header>
+							    <h4>Enterprise Subscription Plan</h4>
+							</header>
+<ul>
+    <li>
+        Everything from previous plans plus:
+    </li>
+
+    <li>
+        New release every week
+    </li>
+
+    <li>
+        Async security and urgent hotfix releases
+    </li>
+
+    <li>
+        5 years support for every minor version
+    </li>
+
+    <li>
+        Stable API warranty
+    </li>
+
+    <li>
+        Additional testing on popular cloud platforms
+    </li>
+
+    <li>
+        Extensive 3rd party dependencies testing
+    </li>
+
+    <li>
+        24x7 coverage for security and urgent issues
+    </li>
+</ul>
+
+                                                        <a href="subscribe.html" class="button special small">Subscribe for 300 $/year</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <h3 id="software">What software is currently supported</h3>
+                                            <ul class="icons">
+                                                <li><a href="support/python.html"><img src="/images/logos/python.png" alt="Python" title="Python packages"></a></li>
+                                                <li><a href="support/not-yet.html"><img src="/images/logos/ruby.png" alt="Ruby" title="Ruby gems"></a></li>
+                                                <li><a href="support/not-yet.html"><img src="/images/logos/nodejs.png" alt="Node.js" title="Node.js and JavaScript libraries"></a></li>
+                                                <li><a href="support/not-yet.html"><img src="/images/logos/php.png" alt="PHP" title="PHP packages"></a></li>
+                                                <li><a href="support/not-yet.html"><img src="/images/logos/java.png" alt="Java" title="Java/Maven packages"></a></li>
+                                                <li><a href="support/not-yet.html"><img src="/images/logos/dot-net.png" alt=".NET" title=".NET NuGet packages"></a></li>
+                                                <li><a href="support/not-yet.html"><img src="/images/logos/android.png" alt="Android" title="Libraries and UI components for Android"></a></li>
+                                                <li><a href="support/not-yet.html"><img src="/images/logos/ios.png" alt="iOS" title="Libraries and UI components for iOS"></a></li>
+                                            </ul>
+
+                                            <h3>How does it work?</h3>
+                                            <ol>
+                                                <li>
+                                                    <a href="https://github.com/MrSenko/bugs/issues">Report a problem to Mr. Senko</a>;
+                                                </li>
+                                                <li>
+                                                    Mr. Senko will prioritize, reproduce, test and fix the problem;
+                                                </li>
+
+                                                <li>
+                                                    Mr. Senko will push the changes to GitHub and create a new package version;
+                                                </li>
+
+                                                <li>
+                                                    You download and upgrade to the latest version!
+                                                </li>
+                                            </ol>
+
+                                            <h3>What is 1 subscription == 10 packages?</h3>
+                                            <p>
+                                                One subscription provides you with technical support for a maximum of
+                                                10 software packages (aka open source projects). You can select any 10
+                                                from the list of supported software. If you need support for more
+                                                packages you have to increase the number of your subscriptions.
+                                            </p>
+
+                                            <h3>What is 1 subscription == 1 priority vote?</h3>
+                                            <p>
+                                                Every Monday morning Mr. Senko decides what bugs and feature requests
+                                                will be included in the next package version. This is based on their
+                                                severity and demand from developers. 1 subscription
+                                                counts as 1 vote! If you are developing multiple applications using the same
+                                                library and want an issue to be fixed faster you have to increase
+                                                the number of your subscriptions! Mr. Senko considers it a good practice to
+                                                have 1 subscription per project!
+                                            </p>
+
+                                            <h3>How do I download packages from Mr. Senko?</h3>
+                                            <p>
+                                                Your subscription maps to a private URL which you can use with your package
+                                                management tools. You can use the same URL within multiple development projects
+                                                (e.g. front-end and back-end). If your
+                                                subscription doesn't provide a private repository then you have to wait
+                                                for the open source community to accept the changes proposed by Mr. Senko
+                                                and release a new version on their website!
+                                            </p>
+					</div>
+				</section>
+
+			<!-- Three -->
+				<section id="who-are-we" class="wrapper style2 special">
+					<div class="container">
+						<header class="major special">
+						    <h2>TEAM</h2>
+						</header>
+						<div class="feature-grid">
+							<div class="feature">
+								<div class="image rounded"><img src="https://avatars1.githubusercontent.com/u/1002300?v=3&amp;s=170" /></div>
+								<div class="content">
+									<header>
+										<h4>Alexander Todorov</h4>
+										<p>Quality Assurance Ninja</p>
+									</header>
+									<p>
+                                                                            Alex has been testing open source software
+                                                                            for the past 9+ years and is responsible for
+                                                                            finding more than 1500 bugs! He was the installation test lead
+                                                                            for Red&nbsp;Hat&nbsp;Enterprise&nbsp;Linux&nbsp;5!
+                                                                        </p>
+                                                                        <ul class="icons">
+                                                                            <li>
+                                                                                <a href="https://twitter.com/atodorov_">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="https://github.com/atodorov">
+                                                                                    <span class="icon fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="https://bg.linkedin.com/in/alextodorov">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+								</div>
+							</div>
+
+							<div class="feature">
+								<div class="image rounded"><img src="https://avatars0.githubusercontent.com/u/528677?v=3&amp;s=170" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Krasimir Tsonev</h4>
+										<p>Front-end developer</p>
+									</header>
+									<p>
+                                                                            Krasimir is a front-end developer, blogger and speaker
+                                                                            who loves writing JavaScript. He is also the author of
+                                                                            the books Node.js Blueprints and Node.js&nbsp;By&nbsp;Example.
+                                                                        </p>
+                                                                        <ul class="icons">
+                                                                            <li>
+                                                                                <a href="https://twitter.com/KrasimirTsonev">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="https://github.com/krasimir">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="https://www.linkedin.com/in/krasimir-tsonev-67b8b66">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="feature-grid">
+							<div class="feature">
+								<div class="image rounded"><img src="https://avatars0.githubusercontent.com/u/574788?v=3&amp;s=170" /></div>
+								<div class="content">
+									<header>
+										<h4>Alexander Kurtakov</h4>
+										<p>Java Developer</p>
+									</header>
+									<p>
+                                                                            Alex is an experienced Eclipse developer and
+                                                                            a member of Eclipse Platform and Tools Program management
+                                                                            committees and serves on the Eclipse Architecture Council.
+                                                                        </p>
+                                                                        <ul class="icons">
+                                                                            <li>
+                                                                                <a href="https://twitter.com/akurtakov">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="https://github.com/akurtakov">
+                                                                                    <span class="icon fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="https://www.linkedin.com/in/alexander-kurtakov-3b24b3">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+								</div>
+							</div>
+
+							<div class="feature">
+								<div class="image rounded"><img src="/images/minko.jpg" alt="" /></div>
+								<div class="content">
+									<header>
+										<h4>Minko Gechev</h4>
+										<p>JavaScript hacker</p>
+									</header>
+									<p>
+                                                                            Minko is an experienced JavaScript developer and frequent conference speaker.
+                                                                            He is the author of the popular
+                                                                            AngularJS Style Guide and AngularJS&nbsp;in&nbsp;Patterns!
+                                                                        </p>
+                                                                        <ul class="icons">
+                                                                            <li>
+                                                                                <a href="https://twitter.com/mgechev">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="https://github.com/mgechev">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a href="https://bg.linkedin.com/in/mgechev">
+                                                                                    <span class="fa-stack">
+                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                                                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                                                                    </span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+			<!-- Four -->
+				<section id="get-in-touch" class="wrapper style3 special">
+					<div class="container">
+						<header class="major">
+							<h2>Get In Touch</h2>
+						</header>
+
+                                                <form method="post" action="https://obuvki41plus-otb.rhcloud.com/hooks/MrSenko/contact/">
+                                                    <div class="row uniform 50%">
+                                                        <div class="6u 12u$(xsmall)">
+                                                            <input type="text" name="name" id="name" value="" placeholder="Name" />
+                                                        </div>
+                                                        <div class="6u$ 12u$(xsmall)">
+                                                            <input type="email" name="email" id="email" value="" placeholder="Email" />
+                                                        </div>
+                                                        <div class="12u$">
+                                                            <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+                                                        </div>
+                                                        <div class="12u$">
+                                                            <ul class="actions">
+                                                                <li><input type="submit" value="Send Message" class="special" /></li>
+                                                                <li><input type="reset" value="Reset" /></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </form>
+					</div>
+				</section>
+    
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72200638-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<!-- LuckyOrange -->
+<script type='text/javascript'>
+window.__lo_site_id = 55938;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'mrsenko';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+	</body>
+</html>
