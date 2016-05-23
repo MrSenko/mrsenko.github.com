@@ -51,18 +51,10 @@
                             </a>
 				<nav id="nav">
 					<ul>
-                                            {% experiment control %}
-						<li><a href="{{ SITEURL }}/blog/">Blog</a></li>
-						<li><a href="{{ SITEURL }}/#who-are-we">Who Are We</a></li>
-						<li><a href="{{ SITEURL }}/#get-in-touch">Get In Touch</a></li>
-                                            {% endexperiment %}
-
-                                            {% experiment v1 %}
-						<li><strong><a href="{{ SITEURL }}/v1/#subscriptions">Subscriptions</a></strong></li>
-						<li><strong><a href="{{ SITEURL }}/v1/#software">Supported software</a></strong></li>
+						<li><strong><a href="{{ SITEURL }}/#subscriptions">Subscriptions</a></strong></li>
+						<li><strong><a href="{{ SITEURL }}/#software">Supported software</a></strong></li>
 						<li><strong><a href="{{ SITEURL }}/blog/">Blog</a></strong></li>
 						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
-                                            {% endexperiment %}
 					</ul>
 				</nav>
 			</header>
@@ -73,13 +65,11 @@
                         <h2>{{ page.banner_title }}</h2>
                         <p>{{ page.banner_subtitle }}</p>
 
-                    {% experiment v1 %}
                         {% if page.action_button %}
                             <ul class="actions">
                                 <li><a href="{{ page.action_button_link }}" class="button special big">{{ page.action_button }}</a></li>
                             </ul>
                         {% endif %}
-                    {% endexperiment %}
 
                     {% endif %}
                 {% endblock %}
