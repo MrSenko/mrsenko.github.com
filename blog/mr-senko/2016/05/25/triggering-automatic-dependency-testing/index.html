@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Triggering Automatic Dependency Testing</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-layers.min.js"></script>
+                <script src="/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: '/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: '/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: '/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: '/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: '/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: '/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="/theme/css/skel.css" />
+			<link rel="stylesheet" href="/theme/css/style.css" />
+			<link rel="stylesheet" href="/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+
+        <meta name="description" content="with Strazar" >
+
+        <meta name="author" content="Mr. Senko">
+
+        <meta name="tags" content="Python" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="Triggering Automatic Dependency Testing">
+            <meta name="twitter:description" content="with Strazar">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="/blog/mr-senko/" />
+        <meta property="og:url" content="/blog/mr-senko/2016/05/25/triggering-automatic-dependency-testing/" />
+        <meta property="og:title" content="Triggering Automatic Dependency Testing" />
+        <meta property="article:published_time" content="2016-05-25 12:10:00+03:00">
+            <meta property="og:description" content="with Strazar">
+
+            <meta property="og:image" content="/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="/">
+				<img src="/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><strong><a href="/#subscriptions">Subscriptions</a></strong></li>
+						<li><strong><a href="/#software">Supported software</a></strong></li>
+						<li><strong><a href="/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+    <h2>Triggering Automatic Dependency Testing</h2>
+    <p>with Strazar</p>
+    <p>
+        <em>Posted by
+                <a href="/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Wed 25 May 2016
+        </em>
+    </p>
+            </section>
+
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p><a href="https://github.com/MrSenko/strazar">Strazar</a> (from Bulgarian for sentinel)
+helps you monitor upstream sources
+and once a new package version is found your <code>.travis.yml</code> environment is updated
+and the changes committed to GitHub which automatically triggers a new build!
+This approach relies on having a good test suite, but you already have that
+covered, right ?</p>
+<p><em>Strazar</em> was inspired by Forbes Lindesay's <em>GitHub Automation</em> talk
+at DEVit Conf 2015 and we're very excited to announce this release days before
+this year's DEVit Conf!</p>
+<h2>What is currently supported</h2>
+<p>In its initial release <em>Strazar</em> only supports <a href="http://pypi.python.org">PyPI</a>,
+Travis-CI and GitHub. We already have written the code to detect new
+<a href="http://rubygems.org">RubyGems</a> and <a href="https://www.npmjs.com">NPM</a> packages
+and that will land in the next versions.
+However we also found the wonderful <a href="http://libraries.io">libraries.io</a>
+service which is already aware of many more package repositories so we'll
+try to integrate <em>Strazar</em> with it in the future.</p>
+<p>We've started with Travis-CI because this is what we use but support for
+other CI environments is very easy to add. <em>Strazar</em> calculates all
+possible combinations between package names and their versions and writes
+them to a text file. To add another CI environment we only need to parse
+and write the file in the correct format.</p>
+<h2>Installation and configuration</h2>
+<p>To install <em>Strazar</em> execute</p>
+<div class="highlight"><pre><span></span>pip install strazar
+</pre></div>
+
+
+<p>Then configure the <code>GITHUB_TOKEN</code> environment variable. This token needs
+the <code>public_repo</code> or <code>repo</code> permission in order to push commits to
+your repositories.</p>
+<h2>Prepare .travis.yml</h2>
+<p><em>Strazar</em> uses the variable format <code>_PACKAGE_NAME</code> where the 
+variable name starts with an under-score followed by the capitalized
+package name. All hyphens are converted to under-scores as well.
+We advise that your <code>.travis.yml</code> files follow the same convention.
+This is how <em>Strazar</em>'s own <code>.travis.yml</code> looks like</p>
+<div class="highlight"><pre><span></span><span class="n">language</span><span class="o">:</span> <span class="n">python</span>
+<span class="n">python</span><span class="o">:</span>
+  <span class="o">-</span> <span class="mf">2.7</span>
+  <span class="o">-</span> <span class="mf">3.5</span>
+<span class="n">install</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">coverage</span> <span class="n">flake8</span> <span class="n">mock</span> <span class="n">PyYAML</span><span class="o">==</span><span class="n">$_PYYAML</span> <span class="n">PyGithub</span><span class="o">==</span><span class="n">$_PYGITHUB</span>
+<span class="n">script</span><span class="o">:</span>
+  <span class="o">-</span> <span class="o">./</span><span class="n">test</span><span class="o">.</span><span class="na">sh</span>
+<span class="n">env</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">_PYGITHUB</span><span class="o">=</span><span class="mf">1.26</span><span class="o">.</span><span class="mi">0</span> <span class="n">_PYYAML</span><span class="o">=</span><span class="mf">3.11</span>
+</pre></div>
+
+
+<h2>How to monitor PyPI</h2>
+<p>PyPI doesn't provide web-hooks so we examine the RSS feed for packages of
+interest based on configuration settings. To start monitoring PyPI execute
+the following code from a cron job (here at Mr. Senko we do it every hour)</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">strazar</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GITHUB_TOKEN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;xxxxxxxxx&#39;</span>
+<span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;PyYAML&quot;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;cb&#39;</span> <span class="p">:</span> <span class="n">strazar</span><span class="o">.</span><span class="n">update_github</span><span class="p">,</span>
+            <span class="s1">&#39;args&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;GITHUB_REPO&#39;</span> <span class="p">:</span> <span class="s1">&#39;MrSenko/strazar&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;GITHUB_BRANCH&#39;</span> <span class="p">:</span> <span class="s1">&#39;master&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;GITHUB_FILE&#39;</span> <span class="p">:</span> <span class="s1">&#39;.travis.yml&#39;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">strazar</span><span class="o">.</span><span class="n">monitor_pypi_rss</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The <code>config</code> dict uses package names as 1st level keys. If you are interested
+in a particular package add it here. All other packages detected from the RSS
+feed will be ignored. If your project depends on multiple packages you have to
+list all of them as 1st level keys in <code>config</code> and duplicate the key values.</p>
+<p>The key value is a list of call-back methods and arguments to execute once a
+new package has been published online. If two or more repositories depend on
+the same package then add them as values to this list.</p>
+<p>The <code>strazar.update_github</code> call-back knows how to commit to your source repo
+which will automatically trigger a new CI build.</p>
+<h2>Support</h2>
+<p><em>Strazar</em> is provided as open source for everyone to use.
+At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in.
+Should you need commercial support for this or other open source libraries
+please <strong>subscribe to
+<a href="/subscribe.html">Mr. Senko's support service</a></strong>!</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="/blog/mr-senko/">Mr. Senko</a>
+        on Wed 25 May 2016
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="/blog/tags/python/">Python</a>, </p>
+        </div>
+    </div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+	</body>
+</html>
