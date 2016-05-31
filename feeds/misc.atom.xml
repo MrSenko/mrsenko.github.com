@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-05-25T14:10:00+03:00</updated><entry><title>Reviving pelican-octopress and pelipress</title><link href="http://mrsenko.com/blog/mr-senko/2016/05/25/reviving-pelican-octopress-and-pelipress/" rel="alternate"></link><published>2016-05-25T14:10:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-05-25:blog/mr-senko/2016/05/25/reviving-pelican-octopress-and-pelipress/</id><summary type="html">&lt;p&gt;&lt;em&gt;pelican-octopress-theme&lt;/em&gt; and &lt;em&gt;Pelipress&lt;/em&gt; are popular themes for &lt;em&gt;Pelican&lt;/em&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-05-31T23:30:00+03:00</updated><entry><title>May 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/05/31/may-2016-status-report/" rel="alternate"></link><published>2016-05-31T23:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-31:blog/atodorov/2016/05/31/may-2016-status-report/</id><summary type="html">&lt;p&gt;Here is a quick status report of my work for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
+May 2016 I've worked on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;New feature: display social icons in index page header for
+&lt;a href="https://github.com/gilsondev/pelican-clean-blog/pull/43"&gt;pelican-clean-blog&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Enabled StatusCake Real User Monitoring (RUM) for
+&lt;a href="https://github.com/alexandrevicenzi/Flex/pull/41"&gt;Flex&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Worked on improving assets plugin support for
+&lt;a href="https://github.com/alexandrevicenzi/Flex/pull/40"&gt;Flex&lt;/a&gt;
+after the original author didn't update their PR;&lt;/li&gt;
+&lt;li&gt;Proposed several fixes for
+&lt;a href="https://github.com/getpelican/pelican/pulls/atodorov"&gt;Pelican&lt;/a&gt;
+to bugs labeled with the 3.7 milestone;&lt;/li&gt;
+&lt;li&gt;Forked, merged and updated the
+&lt;a href="http://mrsenko.com/blog/mr-senko/2016/05/25/reviving-pelican-octopress-and-pelipress/"&gt;pelican-octopress-theme&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Released
+&lt;a href="http://mrsenko.com/blog/mr-senko/2016/05/12/ab-testing-with-jinja2-and-pelican/"&gt;A/B testing tools for Jinja and Pelican&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Released
+&lt;a href="http://mrsenko.com/blog/mr-senko/2016/05/18/triggering-automatic-dependency-testing/"&gt;Strazar&lt;/a&gt; -
+a monitoring tool that we use to automatically trigger new builds in Travis-CI;&lt;/li&gt;
+&lt;li&gt;Started working on
+&lt;a href="https://github.com/pypa/warehouse/pull/1203"&gt;warehouse&lt;/a&gt; - the new code
+which will run PyPI.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Focusing on abandoned pull requests&lt;/h2&gt;
+&lt;p&gt;While working on several issues I've noticed pull requests that were well
+written but they had minor issues, for example code formatting. The code
+review was done in the initial PR but the author didn't update their patches.
+As a result of this the pull request stayed open for a long time.
+I've also been focusing on issues and pull requests which were labeled for
+a particular release but were left open for quite a long time. Hopefully
+we'll see those releases coming out soon.&lt;/p&gt;
+&lt;p&gt;I hope you like my work and please
+&lt;strong&gt;subscribe to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;
+if need a faster response cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Reviving pelican-octopress and pelipress</title><link href="http://mrsenko.com/blog/mr-senko/2016/05/25/reviving-pelican-octopress-and-pelipress/" rel="alternate"></link><published>2016-05-25T14:10:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-05-25:blog/mr-senko/2016/05/25/reviving-pelican-octopress-and-pelipress/</id><summary type="html">&lt;p&gt;&lt;em&gt;pelican-octopress-theme&lt;/em&gt; and &lt;em&gt;Pelipress&lt;/em&gt; are popular themes for &lt;em&gt;Pelican&lt;/em&gt;
 but are not actively
 developed at the moment. Mr. Senko decided to fork and
 continue their active development. The new repository is at
