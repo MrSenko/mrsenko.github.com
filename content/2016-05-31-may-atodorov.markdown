@@ -21,6 +21,8 @@ to bugs labeled with the 3.7 milestone;
 * Forked, merged and updated the
 [pelican-octopress-theme]({filename}2016-05-25-pelican-octopress.markdown);
 * Released
+[A/B testing tools for Jinja and Pelican]({filename}2016-05-12-abtesting-jinja-pelican.markdown);
+* Released
 [Strazar]({filename}2016-05-18-automatic-dependency-testing-strazar.markdown) -
 a monitoring tool that we use to automatically trigger new builds in Travis-CI;
 * Started working on
