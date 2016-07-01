@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
-		<title>Mr. Senko - Open Source Wizards - Authors</title>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>June 2016 Status Report</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="" />
                 <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
@@ -110,14 +110,30 @@
                 <!-- Code highlight color scheme -->
                     <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
 
-                    <meta name="twitter:site" content="@Mr_Senko">
-                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
-                    <meta name="twitter:description" content="Support for open source libraries">
-                    <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
 
-                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
-                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+
+        <meta name="description" content="playing around with mutation testing" >
+
+        <meta name="author" content="Alexander Todorov">
+
+        <meta name="tags" content="Python" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="June 2016 Status Report">
+            <meta name="twitter:description" content="playing around with mutation testing">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="http://mrsenko.com/blog/atodorov/" />
+        <meta property="og:url" content="http://mrsenko.com/blog/atodorov/2016/06/30/june-2016-status-report/" />
+        <meta property="og:title" content="June 2016 Status Report" />
+        <meta property="article:published_time" content="2016-06-30 23:30:00+03:00">
+            <meta property="og:description" content="playing around with mutation testing">
+
+            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
 	</head>
 	<body class="landing">
 
@@ -137,28 +153,69 @@
 			</header>
 
             <section id="banner">
-    <h2>Mr. Senko's blog</h2>
+    <h2>June 2016 Status Report</h2>
+    <p>playing around with mutation testing</p>
     <p>
-        open source from the wizards
+        <em>Posted by
+                <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+            <br/>on Thu 30 June 2016
+        </em>
     </p>
             </section>
 
-        <div class="post-preview">
-            <a href="http://mrsenko.com/blog/atodorov/" rel="bookmark">
-                <h2 class="post-title">
-                    Alexander Todorov (7)
-                </h2>
-            </a>
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p>Hello everyone, last month has been a bit of a holiday and I don't have much
+to share. I've been playing around with mutation testing tools. The few
+patches I did are both related to <em>Cosmic Ray</em>:</p>
+<ul>
+<li>Allow session-name.json to be passed on the command line,
+  <a href="https://github.com/sixty-north/cosmic-ray/pull/144">PR #144</a></li>
+<li>Report the mutation results using unified diff format,
+  <a href="https://github.com/sixty-north/cosmic-ray/pull/145">PR #145</a></li>
+</ul>
+<p>Right now I'm experimenting with running mutation testing against a few
+popular open source libraries, written in both Python and Ruby.
+So far the tools seem to work fine, except minor issues. However the test
+suites I've been playing with aren't very robust and most of the mutants stay
+alive! I will write another blog post on the subject once I have more
+information to share. I hope you like my work and please
+<strong>subscribe to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong>
+if need a faster response cycle for the open source libraries you use.</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+        on Thu 30 June 2016
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, </p>
         </div>
-        <hr>
-        <div class="post-preview">
-            <a href="http://mrsenko.com/blog/mr-senko/" rel="bookmark">
-                <h2 class="post-title">
-                    Mr. Senko (5)
-                </h2>
-            </a>
+    </div>
+
+    <section id="comments" class="wrapper style2 special">
+        <div class="container">
+            <header class="major special">
+                <h2>Comments !</h2>
+            </header>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'mrsenko';
+                var disqus_identifier = 'blog/atodorov/2016/06/30/june-2016-status-report/';
+                var disqus_url = 'http://mrsenko.com/blog/atodorov/2016/06/30/june-2016-status-report/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mrsenko.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
-        <hr>
+    </section>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">

@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-05-31T23:30:00+03:00</updated><entry><title>May 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/05/31/may-2016-status-report/" rel="alternate"></link><published>2016-05-31T23:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-31:blog/atodorov/2016/05/31/may-2016-status-report/</id><summary type="html">&lt;p&gt;Here is a quick status report of my work for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-06-30T23:30:00+03:00</updated><entry><title>June 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/06/30/june-2016-status-report/" rel="alternate"></link><published>2016-06-30T23:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-06-30:blog/atodorov/2016/06/30/june-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, last month has been a bit of a holiday and I don't have much
+to share. I've been playing around with mutation testing tools. The few
+patches I did are both related to &lt;em&gt;Cosmic Ray&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow session-name.json to be passed on the command line,
+  &lt;a href="https://github.com/sixty-north/cosmic-ray/pull/144"&gt;PR #144&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Report the mutation results using unified diff format,
+  &lt;a href="https://github.com/sixty-north/cosmic-ray/pull/145"&gt;PR #145&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Right now I'm experimenting with running mutation testing against a few
+popular open source libraries, written in both Python and Ruby.
+So far the tools seem to work fine, except minor issues. However the test
+suites I've been playing with aren't very robust and most of the mutants stay
+alive! I will write another blog post on the subject once I have more
+information to share. I hope you like my work and please
+&lt;strong&gt;subscribe to &lt;a href="http://mrsenko.com/subscribe.html"&gt;Mr. Senko&lt;/a&gt;!&lt;/strong&gt;
+if need a faster response cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>May 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/05/31/may-2016-status-report/" rel="alternate"></link><published>2016-05-31T23:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-05-31:blog/atodorov/2016/05/31/may-2016-status-report/</id><summary type="html">&lt;p&gt;Here is a quick status report of my work for &lt;a href="http://MrSenko.com"&gt;Mr. Senko&lt;/a&gt;. During
 May 2016 I've worked on:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;New feature: display social icons in index page header for
