@@ -51,7 +51,7 @@
                             </a>
 				<nav id="nav">
 					<ul>
-						<li><strong><a href="{{ SITEURL }}/#subscriptions">Subscriptions</a></strong></li>
+						<li><strong><a href="{{ SITEURL }}/#subscriptions">Plans & Pricing</a></strong></li>
 						<li><strong><a href="{{ SITEURL }}/#software">Supported software</a></strong></li>
 						<li><strong><a href="{{ SITEURL }}/blog/">Blog</a></strong></li>
 						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
@@ -61,8 +61,12 @@
 
             <section id="banner">
                 {% block banner %}
-                    {% if page and page.banner_title %}
-                        <h2>{{ page.banner_title }}</h2>
+                    {% if page and page.banner_title1 %}
+                        <h2>{{ page.banner_title1 }}</h2>
+                        {% if page.banner_title2 %}
+                            <br/>
+                            <h2>{{ page.banner_title2 }}</h2>
+                        {% endif %}
                         <p>{{ page.banner_subtitle }}</p>
 
                         {% if page.action_button %}
@@ -94,6 +98,5 @@
 			</footer>
             {% include 'analytics.html' %}
             {% include 'disqus_script.html' %}
-            {% include 'sharing.html' %}
 	</body>
 </html>
