@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-06-30T23:30:00+03:00</updated><entry><title>June 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/06/30/june-2016-status-report/" rel="alternate"></link><published>2016-06-30T23:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-06-30:blog/atodorov/2016/06/30/june-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, last month has been a bit of a holiday and I don't have much
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-07-30T11:30:00+03:00</updated><entry><title>July 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/07/30/july-2016-status-report/" rel="alternate"></link><published>2016-07-30T11:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-07-30:blog/atodorov/2016/07/30/july-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, July has been relatively busy in terms of pull requests.
+I've been working on &lt;em&gt;Cosmic Ray&lt;/em&gt; the mutation testing tool for Python
+and in the last couple of days taken over maintenance of &lt;em&gt;django-chartit&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I've made several improvements against &lt;em&gt;Cosmic Ray&lt;/em&gt;. The most notable
+are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for nosetests test runner;&lt;/li&gt;
+&lt;li&gt;Added a True-False, False-True replacer operator;&lt;/li&gt;
+&lt;li&gt;Added workaround for empty &lt;code&gt;__init__.py&lt;/code&gt; files which addresses
+&lt;a href="http://bugs.python.org/issue27578"&gt;Python #27578&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Made &lt;em&gt;Cosmic Ray&lt;/em&gt; accept directories and .py file names as possible
+inputs which works like a charm for users who rely heavily on bash completion;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I will be continuing to work on &lt;em&gt;Cosmic Ray&lt;/em&gt; and also integrate mutation testing
+as part of the standard testing toolset used by Mr. Senko.&lt;/p&gt;
+&lt;p&gt;Then I've started working on
+&lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; which is a very
+popular module that has been abandoned in the last couple of years.
+My immediate goal was to merge back the
+&lt;a href="https://github.com/grantmcconnaughey/django-chartit2"&gt;django-chartit2&lt;/a&gt; fork
+by Grant McConnaughey, which adds Python 3 and latest Django support and merge
+some pending pull requests.
+I've been working on fixing quite a few errors and warnings reported by the test
+tools and getting the documentation up to speed. A much anticipated release on
+PyPI will be coming out very soon. Once the merger between &lt;em&gt;django-chartit&lt;/em&gt; and
+&lt;em&gt;django-chartit2&lt;/em&gt; is complete I will continue working on the reported issues.&lt;/p&gt;
+&lt;p&gt;I hope you like my work and please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt;
+if you need a faster response cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>June 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/06/30/june-2016-status-report/" rel="alternate"></link><published>2016-06-30T23:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-06-30:blog/atodorov/2016/06/30/june-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, last month has been a bit of a holiday and I don't have much
 to share. I've been playing around with mutation testing tools. The few
 patches I did are both related to &lt;em&gt;Cosmic Ray&lt;/em&gt;:&lt;/p&gt;
 &lt;ul&gt;
