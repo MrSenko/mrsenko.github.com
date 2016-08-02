@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-07-30T11:30:00+03:00</updated><entry><title>July 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/07/30/july-2016-status-report/" rel="alternate"></link><published>2016-07-30T11:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-07-30:blog/atodorov/2016/07/30/july-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, July has been relatively busy in terms of pull requests.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-08-02T14:50:00+03:00</updated><entry><title>Reviving django-chartit with version 0.2.4</title><link href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/" rel="alternate"></link><published>2016-08-02T14:50:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-08-02:blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; is a Django app
+that can be used to easily create charts from the data in your database. The
+charts are rendered using &lt;code&gt;Highcharts&lt;/code&gt; and &lt;code&gt;jQuery&lt;/code&gt; JavaScript libraries.
+Data in your database can be plotted as simple line charts, column charts,
+area charts, scatter plots, and many more chart types.&lt;/p&gt;
+&lt;p&gt;The project has been originally developed by
+&lt;a href="https://github.com/pgollakota"&gt;Praveen Gollakota&lt;/a&gt; and had gained some
+popularity. Recently Mr. Senko was granted the necessary access rights
+and we've revived the project with two upstream releases.&lt;/p&gt;
+&lt;h2&gt;Changelog&lt;/h2&gt;
+&lt;p&gt;Version 0.2.3 was released a few days ago and merges the &lt;code&gt;django-chartit2&lt;/code&gt; fork by
+&lt;a href="https://github.com/grantmcconnaughey"&gt;Grant McConnaughey&lt;/a&gt; which had a few
+releases of its own earlier this year. It also makes a few improvements and merged
+other pull requests.&lt;/p&gt;
+&lt;p&gt;Version 0.2.4 was released today and fixes the usage of deprecated Django
+APIs which were removed in Django 1.10.&lt;/p&gt;
+&lt;p&gt;Many thanks to Grant for his work on Python 3 and latest Django support!
+Many thanks to Praveen for letting us maintain the project.&lt;/p&gt;
+&lt;h2&gt;Upgrade from django_chartit2&lt;/h2&gt;
+&lt;p&gt;If you are using the &lt;code&gt;django_chartit2&lt;/code&gt; module by Grant then you have to&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip uninstall django_chartit2
+pip install django_chartit
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are not in a hurry to upgrade you may as well wait for the next
+release by Grant, which should automatically require &lt;code&gt;django_chartit&lt;/code&gt;
+and transparently switch you back to using the original package and not
+the fork. However release of such an update is not under our control.&lt;/p&gt;
+&lt;h2&gt;Feature plans&lt;/h2&gt;
+&lt;p&gt;Mr. Senko is currently working actively to bring the rest of the project
+up to speed, including the demo site, which shows how to use the API.
+This is a mandatory step before we go ahead to work on various bug fixes
+and documentation improvements. We will also be looking into adding more
+tests for the project.&lt;/p&gt;
+&lt;h2&gt;Support&lt;/h2&gt;
+&lt;p&gt;At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko's support service&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>July 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/07/30/july-2016-status-report/" rel="alternate"></link><published>2016-07-30T11:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-07-30:blog/atodorov/2016/07/30/july-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, July has been relatively busy in terms of pull requests.
 I've been working on &lt;em&gt;Cosmic Ray&lt;/em&gt; the mutation testing tool for Python
 and in the last couple of days taken over maintenance of &lt;em&gt;django-chartit&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;I've made several improvements against &lt;em&gt;Cosmic Ray&lt;/em&gt;. The most notable
