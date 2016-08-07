@@ -2,7 +2,7 @@ Title: Reviving django-chartit with version 0.2.4
 headline: compatible with Python 3 and Django 1.10
 date: 2016-08-02 14:50
 comments: true
-Tags: Python
+Tags: Python, Django
 
 [django-chartit](https://github.com/chartit/django-chartit) is a Django app
 that can be used to easily create charts from the data in your database. The
