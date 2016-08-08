@@ -2,15 +2,15 @@
 <html>
 	<head>
                     <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
-		<title>Reviving django-chartit with version 0.2.4</title>
+		<title>Adapting From JSON Fixtures to Django Migrations The Easy Way</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="" />
                 <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
-		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
-		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
-		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
-		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
-                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-layers.min.js"></script>
+                <script src="/js/list-v1.2.0.min.js"></script>
 <script>
 /*
 	Spatial by TEMPLATED
@@ -24,36 +24,36 @@
 		reset: 'full',
 		breakpoints: {
 			global: {
-				href: 'http://mrsenko.com/theme/css/style.css',
+				href: '/theme/css/style.css',
 				containers: 1400,
 				grid: { gutters: ['2em', 0] }
 			},
 			xlarge: {
 				media: '(max-width: 1680px)',
-				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				href: '/theme/css/style-xlarge.css',
 				containers: 1200
 			},
 			large: {
 				media: '(max-width: 1280px)',
-				href: 'http://mrsenko.com/theme/css/style-large.css',
+				href: '/theme/css/style-large.css',
 				containers: 960,
 				grid: { gutters: ['1.5em', 0] },
 				viewport: { scalable: false }
 			},
 			medium: {
 				media: '(max-width: 980px)',
-				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				href: '/theme/css/style-medium.css',
 				containers: '90%!'
 			},
 			small: {
 				media: '(max-width: 736px)',
-				href: 'http://mrsenko.com/theme/css/style-small.css',
+				href: '/theme/css/style-small.css',
 				containers: '90%!',
 				grid: { gutters: ['1.25em', 0] }
 			},
 			xsmall: {
 				media: '(max-width: 480px)',
-				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+				href: '/theme/css/style-xsmall.css'
 			}
 		},
 		plugins: {
@@ -102,64 +102,63 @@
 
 })(jQuery);
 </script>		<noscript>
-			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
-			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
-			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+			<link rel="stylesheet" href="/theme/css/skel.css" />
+			<link rel="stylesheet" href="/theme/css/style.css" />
+			<link rel="stylesheet" href="/theme/css/style-xlarge.css" />
 		</noscript>
 
                 <!-- Code highlight color scheme -->
-                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+                    <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
 
 
 
-        <meta name="description" content="compatible with Python 3 and Django 1.10" >
+        <meta name="description" content="django-chartit is a Django app that can be used to easily create charts from the data in your database. The charts are rendered using ..." >
 
         <meta name="author" content="Mr. Senko">
 
         <meta name="tags" content="Python" >
-        <meta name="tags" content="Django" >
 
         <meta name="twitter:site" content="@Mr_Senko">
-        <meta name="twitter:title" content="Reviving django-chartit with version 0.2.4">
-            <meta name="twitter:description" content="compatible with Python 3 and Django 1.10">
+        <meta name="twitter:title" content="Adapting From JSON Fixtures to Django Migrations The Easy Way">
+            <meta name="twitter:description" content="django-chartit is a Django app that can be used to easily create charts from the data in your database. The charts are rendered using ...">
         <meta name="twitter:card" content="summary_large_image">
-            <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+            <meta name="twitter:image" content="/theme/images/twitter_card.jpg">
 
 
         <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
         <meta property="og:type" content="article" />
-            <meta property="article:author" content="http://mrsenko.com/blog/mr-senko/" />
-        <meta property="og:url" content="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/" />
-        <meta property="og:title" content="Reviving django-chartit with version 0.2.4" />
-        <meta property="article:published_time" content="2016-08-02 14:50:00+03:00">
-            <meta property="og:description" content="compatible with Python 3 and Django 1.10">
+            <meta property="article:author" content="/blog/mr-senko/" />
+        <meta property="og:url" content="/blog/mr-senko/2016/08/08/adapting-from-json-fixtures-to-django-migrations-the-easy-way/" />
+        <meta property="og:title" content="Adapting From JSON Fixtures to Django Migrations The Easy Way" />
+        <meta property="article:published_time" content="2016-08-08 10:00:00+03:00">
+            <meta property="og:description" content="django-chartit is a Django app that can be used to easily create charts from the data in your database. The charts are rendered using ...">
 
-            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+            <meta property="og:image" content="/theme/images/og_image.jpg">
 	</head>
 	<body class="landing">
 
 		<!-- Header -->
 			<header id="header" class="alt">
-                            <a href="http://mrsenko.com/">
-				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            <a href="/">
+				<img src="/theme/images/logo.png" />
                             </a>
 				<nav id="nav">
 					<ul>
-						<li><strong><a href="http://mrsenko.com/#subscriptions">Plans & Pricing</a></strong></li>
-						<li><strong><a href="http://mrsenko.com/#software">Supported software</a></strong></li>
-						<li><strong><a href="http://mrsenko.com/blog/">Blog</a></strong></li>
+						<li><strong><a href="/#subscriptions">Plans & Pricing</a></strong></li>
+						<li><strong><a href="/#software">Supported software</a></strong></li>
+						<li><strong><a href="/blog/">Blog</a></strong></li>
 						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
 					</ul>
 				</nav>
 			</header>
 
             <section id="banner">
-    <h2>Reviving django-chartit with version 0.2.4</h2>
-    <p>compatible with Python 3 and Django 1.10</p>
+    <h2>Adapting From JSON Fixtures to Django Migrations The Easy Way</h2>
+    <p></p>
     <p>
         <em>Posted by
-                <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-            <br/>on Tue 02 August 2016
+                <a href="/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Mon 08 August 2016
         </em>
     </p>
             </section>
@@ -205,41 +204,21 @@ tests for the project.</p>
 <p>At Mr. Senko we will do our best to accommodate every need and merge patches
 and feature requests as they come in. Should you need commercial support for
 this or other open source libraries please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
+<strong><a href="/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
 
     <div class="post-meta">
         <p>
         Posted by
-            <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-        on Tue 02 August 2016
+            <a href="/blog/mr-senko/">Mr. Senko</a>
+        on Mon 08 August 2016
         </p>
     </div>
 
         <div class="tags">
-            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, <a href="http://mrsenko.com/blog/tags/django/">Django</a>, </p>
+            <p>tags: <a href="/blog/tags/python/">Python</a>, </p>
         </div>
     </div>
 
-    <section id="comments" class="wrapper style2 special">
-        <div class="container">
-            <header class="major special">
-                <h2>Comments !</h2>
-            </header>
-
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'mrsenko';
-                var disqus_identifier = 'blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/';
-                var disqus_url = 'http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/';
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//mrsenko.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
-    </section>
 
     <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
 		<!-- Footer -->
@@ -255,34 +234,6 @@ this or other open source libraries please
 					</ul>
 				</div>
 			</footer>
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-72200638-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
 
-<!-- LuckyOrange -->
-<script type='text/javascript'>
-window.__lo_site_id = 55938;
-    (function() {
-        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
-        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
-      })();
-</script>
-<script type="text/javascript">
-    var disqus_shortname = 'mrsenko';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
 	</body>
 </html>
