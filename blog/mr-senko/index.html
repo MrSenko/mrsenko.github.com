@@ -149,6 +149,69 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/" rel="bookmark" title="Permalink to New release django-chartit 0.2.6">
+                    <h2>New release django-chartit 0.2.6</h2>
+                </a>
+            </header>
+
+            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
+that can be used to easily create charts from the data in your database. The
+charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
+Data in your database can be plotted as simple line charts, column charts,
+area charts, scatter plots, and many more chart types.</p>
+<p>Today we are releasing version 0.2.6 as part of our regular update process.</p>
+<h2>Changelog since version 0.2.4</h2>
+<ul>
+<li>
+<p>0.2.6 (August 16, 2016)</p>
+<ul>
+<li>Merged <code>chartit_tests/</code> with <code>demoproject/</code></li>
+<li>Load test DB with real data to use during testing</li>
+<li>Add more tests</li>
+<li>Update the path to <code>demoproject.settings</code> when building docs. Fixes
+  a problem which caused some API docs to be empty</li>
+<li>Fix <code>ValueError: not enough values to unpack (expected 2, got 0)</code>
+  with PivotChart when the QuerySet returns empty data</li>
+<li>Dropped requirement on <code>simplejson</code></li>
+<li>Properly handle unicode data in Pivot charts. Fixes
+  <a href="https://github.com/chartit/django-chartit/issues/5">#5</a></li>
+<li>Demo project updated with Chart and PivotChart examples of
+  rendering DateField values on the X axis</li>
+<li>Allow charting of <code>extra()</code> or <code>annotate()</code> fields. Fixes
+  <a href="https://github.com/chartit/django-chartit/issues/8">#8</a> and
+  <a href="https://github.com/chartit/django-chartit/issues/12">#12</a></li>
+<li>Refactor <code>RecursiveDefaultDict</code> to allow chart objects to be
+  serialized to/from cache. Fixes
+  <a href="https://github.com/chartit/django-chartit/issues/10">#10</a></li>
+<li>Add information about supported 3rd party JavaScript versions. Fixes
+  <a href="https://github.com/chartit/django-chartit/issues/14">#14</a></li>
+</ul>
+</li>
+<li>
+<p>0.2.5 (August 3, 2016)</p>
+<ul>
+<li>Workaround Python 3 vs. Python 2 list sort issue which breaks
+  charts with multiple data sources displayed on the same axis!</li>
+<li>Make demoproject/ compatible with Django 1.10</li>
+</ul>
+</li>
+</ul>
+<h2>Support</h2>
+<p>At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 16 August 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/" rel="bookmark" title="Permalink to Reviving django-chartit with version 0.2.4">
                     <h2>Reviving django-chartit with version 0.2.4</h2>
                 </a>

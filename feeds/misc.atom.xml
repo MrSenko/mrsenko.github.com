@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-08-08T10:00:00+03:00</updated><entry><title>Converting JSON Fixtures to Django Migrations</title><link href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/" rel="alternate"></link><published>2016-08-08T10:00:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-08-08:blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/</id><summary type="html">&lt;p&gt;Older Django apps like
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-08-16T11:00:00+03:00</updated><entry><title>New release django-chartit 0.2.6</title><link href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/" rel="alternate"></link><published>2016-08-16T11:00:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-08-16:blog/mr-senko/2016/08/16/new-release-django-chartit-026/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; is a Django app
+that can be used to easily create charts from the data in your database. The
+charts are rendered using &lt;code&gt;Highcharts&lt;/code&gt; and &lt;code&gt;jQuery&lt;/code&gt; JavaScript libraries.
+Data in your database can be plotted as simple line charts, column charts,
+area charts, scatter plots, and many more chart types.&lt;/p&gt;
+&lt;p&gt;Today we are releasing version 0.2.6 as part of our regular update process.&lt;/p&gt;
+&lt;h2&gt;Changelog since version 0.2.4&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;0.2.6 (August 16, 2016)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Merged &lt;code&gt;chartit_tests/&lt;/code&gt; with &lt;code&gt;demoproject/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Load test DB with real data to use during testing&lt;/li&gt;
+&lt;li&gt;Add more tests&lt;/li&gt;
+&lt;li&gt;Update the path to &lt;code&gt;demoproject.settings&lt;/code&gt; when building docs. Fixes
+  a problem which caused some API docs to be empty&lt;/li&gt;
+&lt;li&gt;Fix &lt;code&gt;ValueError: not enough values to unpack (expected 2, got 0)&lt;/code&gt;
+  with PivotChart when the QuerySet returns empty data&lt;/li&gt;
+&lt;li&gt;Dropped requirement on &lt;code&gt;simplejson&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Properly handle unicode data in Pivot charts. Fixes
+  &lt;a href="https://github.com/chartit/django-chartit/issues/5"&gt;#5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Demo project updated with Chart and PivotChart examples of
+  rendering DateField values on the X axis&lt;/li&gt;
+&lt;li&gt;Allow charting of &lt;code&gt;extra()&lt;/code&gt; or &lt;code&gt;annotate()&lt;/code&gt; fields. Fixes
+  &lt;a href="https://github.com/chartit/django-chartit/issues/8"&gt;#8&lt;/a&gt; and
+  &lt;a href="https://github.com/chartit/django-chartit/issues/12"&gt;#12&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Refactor &lt;code&gt;RecursiveDefaultDict&lt;/code&gt; to allow chart objects to be
+  serialized to/from cache. Fixes
+  &lt;a href="https://github.com/chartit/django-chartit/issues/10"&gt;#10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add information about supported 3rd party JavaScript versions. Fixes
+  &lt;a href="https://github.com/chartit/django-chartit/issues/14"&gt;#14&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;0.2.5 (August 3, 2016)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Workaround Python 3 vs. Python 2 list sort issue which breaks
+  charts with multiple data sources displayed on the same axis!&lt;/li&gt;
+&lt;li&gt;Make demoproject/ compatible with Django 1.10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Support&lt;/h2&gt;
+&lt;p&gt;At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko's support service&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;</summary><category term="Python"></category><category term="Django"></category></entry><entry><title>Converting JSON Fixtures to Django Migrations</title><link href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/" rel="alternate"></link><published>2016-08-08T10:00:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-08-08:blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/</id><summary type="html">&lt;p&gt;Older Django apps like
 &lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; and
 &lt;a href="https://github.com/Nitrate/Nitrate"&gt;Nitrate&lt;/a&gt; used JSON fixtures to populate
 their databases with initial data. In this article I will show you an easy way
