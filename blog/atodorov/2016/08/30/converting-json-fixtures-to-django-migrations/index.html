@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Converting JSON Fixtures to Django Migrations</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-layers.min.js"></script>
+                <script src="/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: '/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: '/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: '/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: '/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: '/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: '/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="/theme/css/skel.css" />
+			<link rel="stylesheet" href="/theme/css/style.css" />
+			<link rel="stylesheet" href="/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+
+        <meta name="description" content="the easy way" >
+
+        <meta name="author" content="Alexander Todorov">
+
+        <meta name="tags" content="Python" >
+        <meta name="tags" content="Django" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="Converting JSON Fixtures to Django Migrations">
+            <meta name="twitter:description" content="the easy way">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="/blog/atodorov/" />
+        <meta property="og:url" content="/blog/atodorov/2016/08/30/converting-json-fixtures-to-django-migrations/" />
+        <meta property="og:title" content="Converting JSON Fixtures to Django Migrations" />
+        <meta property="article:published_time" content="2016-08-30 17:00:00+03:00">
+            <meta property="og:description" content="the easy way">
+
+            <meta property="og:image" content="/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="/">
+				<img src="/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><strong><a href="/#subscriptions">Plans & Pricing</a></strong></li>
+						<li><strong><a href="/#software">Supported software</a></strong></li>
+						<li><strong><a href="/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+    <h2>Converting JSON Fixtures to Django Migrations</h2>
+    <p>the easy way</p>
+    <p>
+        <em>Posted by
+                <a href="/blog/atodorov/">Alexander Todorov</a>
+            <br/>on Tue 30 August 2016
+        </em>
+    </p>
+            </section>
+
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p>Older Django apps like
+<a href="https://github.com/chartit/django-chartit">django-chartit</a> and
+<a href="https://github.com/Nitrate/Nitrate">Nitrate</a> used JSON fixtures to populate
+their databases with initial data. In this article I will show you an easy way
+to convert JSON fixtures into native Django migrations.
+The JSON fixture looks like this</p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Godin&quot;</span>
+            <span class="p">},</span>
+ <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">1</span>
+ <span class="p">}</span><span class="err">,</span>
+<span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Guy&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kawasaki&quot;</span>
+            <span class="p">},</span>
+ <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">2</span>
+ <span class="p">}</span><span class="err">,</span>
+<span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Geoffrey&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Colvin&quot;</span>
+            <span class="p">},</span>
+ <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">3</span>
+ <span class="p">}</span>
+</pre></div>
+
+
+<p>Notice the <code>pk</code> and <code>model</code> fields which tell us where this data came from
+and what was the object PK when exported from the database. The <code>fields</code>
+dict is the actual data for this object.</p>
+<p>In Python we can use <code>json.loads</code> and read the fixture data from disk or
+even better assign it directly to a variable inside our Python source file.
+Then iterate over all values and create the objects programmatically like this</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">migrations</span>
+
+
+<span class="k">def</span> <span class="nf">initialize_data</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">schema_editor</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Godin&quot;</span>
+                    <span class="p">},</span>
+         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Guy&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kawasaki&quot;</span>
+                    <span class="p">},</span>
+         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">2</span>
+         <span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Geoffrey&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Colvin&quot;</span>
+                    <span class="p">},</span>
+         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">3</span>
+         <span class="p">},</span>
+    <span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">app_name</span><span class="p">,</span> <span class="n">model_name</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+        <span class="n">ModelClass</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">app_name</span><span class="p">,</span> <span class="n">model_name</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ModelClass</span><span class="p">(</span><span class="o">**</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">])</span>
+        <span class="c1"># this is required only if you have other models</span>
+        <span class="c1"># with foreign keys referring to this object</span>
+        <span class="c1"># obj.pk = record[&#39;pk&#39;]</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Migration</span><span class="p">(</span><span class="n">migrations</span><span class="o">.</span><span class="n">Migration</span><span class="p">):</span>
+
+    <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;demoproject&#39;</span><span class="p">,</span> <span class="s1">&#39;0001_initial&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RunPython</span><span class="p">(</span><span class="n">initialize_data</span><span class="p">),</span>
+    <span class="p">]</span>
+</pre></div>
+
+
+<p>This works well for most of the cases. You should take care to assign the
+same PKs in case there are other objects that hold references to them. If
+this isn't the case then you can drop these fields entirely to reduce your
+source code size.</p>
+<p>I hope you like my work and please
+<strong><a href="/subscribe.html">subscribe to Mr. Senko's support service</a></strong>
+should you need commercial support for this or other open source libraries!</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="/blog/atodorov/">Alexander Todorov</a>
+        on Tue 30 August 2016
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="/blog/tags/python/">Python</a>, <a href="/blog/tags/django/">Django</a>, </p>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
