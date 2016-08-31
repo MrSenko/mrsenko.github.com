@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-08-30T17:00:00+03:00</updated><entry><title>Loading initial data for Many-To-Many fields</title><link href="http://mrsenko.com/blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/" rel="alternate"></link><published>2016-08-30T17:00:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-08-30:blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/</id><summary type="html">&lt;p&gt;Previously I've written about how to
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-08-31T11:30:00+03:00</updated><entry><title>August 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/08/31/august-2016-status-report/" rel="alternate"></link><published>2016-08-31T11:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-08-31:blog/atodorov/2016/08/31/august-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, during August I've been focusing on
+&lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; which
+is a supported package of our Python software stack.&lt;/p&gt;
+&lt;p&gt;Since I've taken over maintenance from Praveen Gollakota there
+were several bug-fix releases, 3 of them in August. The result is
+6 closed issues and increased test coverage. I've spent time to
+refactor parts of the code and make it compatible with the latest
+Django version. Also cleaned up code smells identified by Landscape.io.&lt;/p&gt;
+&lt;p&gt;Future plans for &lt;em&gt;django-chartit&lt;/em&gt; include working on the remaining
+open issues. I think I will have to refactor the code a lot more
+to make it compatible with the latest Highcharts.js API before
+being able to implement the requested features.&lt;/p&gt;
+&lt;p&gt;I have also spoken with Highcharts engineering on the topic of
+testing their JavaScript charting code in the context of &lt;em&gt;django-chartit&lt;/em&gt;.
+My idea is to load the demo project using various versions of the
+JavaScript library and make sure everything works on the client side.
+This appears to be doable with Selenium.&lt;/p&gt;
+&lt;p&gt;I hope you like my work and please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt;
+if you need faster response cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Loading initial data for Many-To-Many fields</title><link href="http://mrsenko.com/blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/" rel="alternate"></link><published>2016-08-30T17:00:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-08-30:blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/</id><summary type="html">&lt;p&gt;Previously I've written about how to
 &lt;a href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/"&gt;use JSON fixtures in Django migrations&lt;/a&gt;.
 This becomes a bit more complicated when you have &lt;code&gt;ManyToMany&lt;/code&gt; fields in
 your models. A corner case is when you have a &lt;code&gt;ManyToMany&lt;/code&gt; relation to &lt;code&gt;self&lt;/code&gt;.
