@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-08-31T11:30:00+03:00</updated><entry><title>August 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/08/31/august-2016-status-report/" rel="alternate"></link><published>2016-08-31T11:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-08-31:blog/atodorov/2016/08/31/august-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, during August I've been focusing on
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-09-14T16:30:00+03:00</updated><entry><title>New release django-chartit 0.2.7</title><link href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/" rel="alternate"></link><published>2016-09-14T16:30:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-09-14:blog/mr-senko/2016/09/14/new-release-django-chartit-027/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; is a Django app
+that can be used to easily create charts from the data in your database. The
+charts are rendered using &lt;code&gt;Highcharts&lt;/code&gt; and &lt;code&gt;jQuery&lt;/code&gt; JavaScript libraries.
+Data in your database can be plotted as simple line charts, column charts,
+area charts, scatter plots, and many more chart types.&lt;/p&gt;
+&lt;p&gt;Today we are releasing version 0.2.7 as part of our regular update process.
+This is an urgent bug fix update because previous versions broke subclassing
+of &lt;code&gt;Chart&lt;/code&gt; and &lt;code&gt;PivotChart&lt;/code&gt; classes.&lt;/p&gt;
+&lt;h2&gt;Changelog since version 0.2.6&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Don't use &lt;code&gt;super(self.__class__)&lt;/code&gt; b/c that breaks chart class inheritance.
+    Fixes &lt;a href="https://github.com/chartit/django-chartit/issues/41"&gt;#41&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Support&lt;/h2&gt;
+&lt;p&gt;At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko's support service&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;</summary><category term="Python"></category><category term="Django"></category></entry><entry><title>August 2016 Status Report</title><link href="http://mrsenko.com/blog/atodorov/2016/08/31/august-2016-status-report/" rel="alternate"></link><published>2016-08-31T11:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-08-31:blog/atodorov/2016/08/31/august-2016-status-report/</id><summary type="html">&lt;p&gt;Hello everyone, during August I've been focusing on
 &lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; which
 is a supported package of our Python software stack.&lt;/p&gt;
 &lt;p&gt;Since I've taken over maintenance from Praveen Gollakota there
