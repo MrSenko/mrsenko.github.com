@@ -146,6 +146,91 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/" rel="bookmark" title="Permalink to Beware of recursion loop when using super()">
+                    <h2>Beware of recursion loop when using super()</h2>
+                </a>
+            </header>
+
+            <p>When working with class inheritance in Python you often find yourself using
+<code>super()</code> to call the parent class methods. The format is</p>
+<div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">([</span><span class="n">current</span> <span class="k">class</span> <span class="nc">name</span><span class="p">],</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="p">[</span><span class="n">base</span> <span class="k">class</span> <span class="nc">method</span><span class="p">]([</span><span class="n">arguments</span><span class="p">])</span>
+</pre></div>
+
+
+<p>When you have lots of similar code you may be tempted to short-cut the writing
+of <code>current class name</code>. The two possibilities are</p>
+<div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">some_method</span><span class="p">()</span>
+<span class="nb">super</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">some_method</span><span class="p">()</span>
+</pre></div>
+
+
+<p>I have seen this in production code. I'm guilty myself as well because I like
+to use the <code>self.__class__</code> notation! This leads to problems, see
+<a href="https://github.com/chartit/django-chartit/issue/41">django-chartit #41</a>, when
+you inherit from the class which uses these shortcuts. For example</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s1">&#39;original&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span>
+
+<span class="k">class</span> <span class="nc">Derived</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s1">&#39;derived&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span>
+        <span class="nb">super</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+        <span class="c1"># super(self.__class__, self).method()</span>
+
+<span class="k">class</span> <span class="nc">Subclass</span><span class="p">(</span><span class="n">Derived</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s1">&#39;subclass of derived&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Subclass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">method</span><span class="p">()</span>
+</pre></div>
+
+
+<p>When you call <code>Derived().method()</code> the result is </p>
+<div class="highlight"><pre><span></span>derived &lt;class &#39;__main__.Derived&#39;&gt; &lt;class &#39;__main__.Derived&#39;&gt;
+original &lt;class &#39;__main__.Derived&#39;&gt; &lt;class &#39;__main__.Derived&#39;&gt;
+</pre></div>
+
+
+<p>Here both shortcuts are evaluated correctly. However when you call
+<code>Subclass().method()</code> the result becomes</p>
+<div class="highlight"><pre><span></span>subclass of derived &lt;class &#39;__main__.Subclass&#39;&gt; &lt;class &#39;__main__.Subclass&#39;&gt;
+derived &lt;class &#39;__main__.Subclass&#39;&gt; &lt;class &#39;__main__.Subclass&#39;&gt;
+derived &lt;class &#39;__main__.Subclass&#39;&gt; &lt;class &#39;__main__.Subclass&#39;&gt;
+derived &lt;class &#39;__main__.Subclass&#39;&gt; &lt;class &#39;__main__.Subclass&#39;&gt;
+... skip ...
+RuntimeError: maximum recursion depth exceeded while calling a Python object
+</pre></div>
+
+
+<p>In the example the call <code>super(Subclass)</code> works fine and invokes
+<code>Derived.method()</code> as expected. Then we call <code>super(Subclass)</code> inside <code>Derived.method()</code>
+which leads back to where we were hence the recursion loop. The problem is only visible
+when you have other classes that inherit from a class which uses incorrect
+invocation of <code>super()</code>. This is why it may lay hidden in production software!</p>
+<p>I definitely expected a severe code smell like that to be discovered by pylint
+and Landscape.io. Indeed older versions (pylint-1.3.1-1.el7.noarch) will report
+error for <code>super(type(self))</code> but not newer ones. As it turns out pylint didn't
+have a test for this condition and have introduced a regression in the
+master branch. I believe this is due to that fact that they didn't check for
+using <code>type()</code> directly but rather that was a side effect which ceased to exist
+once the code was updated.
+<a href="https://github.com/PyCQA/pylint/pull/1109">Pylint#1109</a> adds tests for
+the two code smells described above and updates the checkers to explicitly
+detect them! Happy testing!</p>
+<p>I hope you like my work and please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>
+should you need commercial support for this or other open source libraries!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Wed 14 September 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/" rel="bookmark" title="Permalink to New release django-chartit 0.2.7">
                     <h2>New release django-chartit 0.2.7</h2>
                 </a>
