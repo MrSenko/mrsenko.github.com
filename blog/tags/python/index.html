@@ -143,6 +143,48 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/" rel="bookmark" title="Permalink to Status Report for September 2016">
+                    <h2>Status Report for September 2016</h2>
+                </a>
+            </header>
+
+            <p>Hello everyone, during September I've been focusing on
+<a href="https://github.com/sixty-north/cosmic-ray">Cosmic Ray</a> which
+is a supported package of our Python software stack.</p>
+<p>The changes include better error checking when running the test suite in
+Travis CI, fixes for some code smells and style updates, some Python 3.3
+compatibility fixes, traceback fix for Python 3.4, new <code>and-or</code> replacement
+operators and internal refactoring.</p>
+<p>During my work on <code>and-or</code> replacement operators it turned out that <em>Cosmic Ray</em>
+didn't support the notion of one operator producing multiple code mutations.
+This required refactoring of project internals and is now currently suported.
+As a follow up there are a couple more issues opened to clean up the existing
+code, mainly the comparisons replacement operators.</p>
+<p><strong>NOTE</strong> <em>Cosmic Ray</em> is still not compatible with Python 3.3 and will probably
+never be, despite my work. In <code>cosmic_ray/importing.py</code> we make use of
+<code>importlib.machinery.ModuleSpec</code> which was introduced in 3.4 and at this moment
+we don't want to backport and support this for Python 3.3. The rest of the code
+is 3.3 compatible though.</p>
+<p>During September I have also worked on
+<a href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/">django-chartit v0.2.7</a> to fix
+a nasty <a href="http://mrsenko.com/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/">recursion loop</a>
+bug. The follow up of this bug is 
+<a href="https://github.com/PyCQA/pylint/pull/1109">pylint #1109</a>, which is now merged
+into master!</p>
+<p>I hope you like my work and please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
+if you need faster response cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Tue 04 October 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/" rel="bookmark" title="Permalink to Beware of recursion loop when using super()">
                     <h2>Beware of recursion loop when using super()</h2>
                 </a>

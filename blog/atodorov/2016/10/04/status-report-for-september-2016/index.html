@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
-		<title>Mr. Senko - Open Source Wizards - Authors</title>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Status Report for September 2016</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="" />
                 <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
@@ -110,14 +110,30 @@
                 <!-- Code highlight color scheme -->
                     <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
 
-                    <meta name="twitter:site" content="@Mr_Senko">
-                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
-                    <meta name="twitter:description" content="Support for open source libraries">
-                    <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
 
-                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
-                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+
+        <meta name="description" content="working on Cosmic Ray and pylint" >
+
+        <meta name="author" content="Alexander Todorov">
+
+        <meta name="tags" content="Python" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="Status Report for September 2016">
+            <meta name="twitter:description" content="working on Cosmic Ray and pylint">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="http://mrsenko.com/blog/atodorov/" />
+        <meta property="og:url" content="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/" />
+        <meta property="og:title" content="Status Report for September 2016" />
+        <meta property="article:published_time" content="2016-10-04 10:30:00+03:00">
+            <meta property="og:description" content="working on Cosmic Ray and pylint">
+
+            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
 	</head>
 	<body class="landing">
 
@@ -137,28 +153,80 @@
 			</header>
 
             <section id="banner">
-    <h2>Mr. Senko's blog</h2>
+    <h2>Status Report for September 2016</h2>
+    <p>working on Cosmic Ray and pylint</p>
     <p>
-        open source from the wizards
+        <em>Posted by
+                <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+            <br/>on Tue 04 October 2016
+        </em>
     </p>
             </section>
 
-        <div class="post-preview">
-            <a href="http://mrsenko.com/blog/atodorov/" rel="bookmark">
-                <h2 class="post-title">
-                    Alexander Todorov (13)
-                </h2>
-            </a>
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p>Hello everyone, during September I've been focusing on
+<a href="https://github.com/sixty-north/cosmic-ray">Cosmic Ray</a> which
+is a supported package of our Python software stack.</p>
+<p>The changes include better error checking when running the test suite in
+Travis CI, fixes for some code smells and style updates, some Python 3.3
+compatibility fixes, traceback fix for Python 3.4, new <code>and-or</code> replacement
+operators and internal refactoring.</p>
+<p>During my work on <code>and-or</code> replacement operators it turned out that <em>Cosmic Ray</em>
+didn't support the notion of one operator producing multiple code mutations.
+This required refactoring of project internals and is now currently suported.
+As a follow up there are a couple more issues opened to clean up the existing
+code, mainly the comparisons replacement operators.</p>
+<p><strong>NOTE</strong> <em>Cosmic Ray</em> is still not compatible with Python 3.3 and will probably
+never be, despite my work. In <code>cosmic_ray/importing.py</code> we make use of
+<code>importlib.machinery.ModuleSpec</code> which was introduced in 3.4 and at this moment
+we don't want to backport and support this for Python 3.3. The rest of the code
+is 3.3 compatible though.</p>
+<p>During September I have also worked on
+<a href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/">django-chartit v0.2.7</a> to fix
+a nasty <a href="http://mrsenko.com/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/">recursion loop</a>
+bug. The follow up of this bug is 
+<a href="https://github.com/PyCQA/pylint/pull/1109">pylint #1109</a>, which is now merged
+into master!</p>
+<p>I hope you like my work and please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
+if you need faster response cycle for the open source libraries you use.</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+        on Tue 04 October 2016
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, </p>
         </div>
-        <hr>
-        <div class="post-preview">
-            <a href="http://mrsenko.com/blog/mr-senko/" rel="bookmark">
-                <h2 class="post-title">
-                    Mr. Senko (8)
-                </h2>
-            </a>
+    </div>
+
+    <section id="comments" class="wrapper style2 special">
+        <div class="container">
+            <header class="major special">
+                <h2>Comments !</h2>
+            </header>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'mrsenko';
+                var disqus_identifier = 'blog/atodorov/2016/10/04/status-report-for-september-2016/';
+                var disqus_url = 'http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mrsenko.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
-        <hr>
+    </section>
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
