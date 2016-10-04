@@ -8,7 +8,7 @@ compatibility fixes, traceback fix for Python 3.4, new &lt;code&gt;and-or&lt;/co
 operators and internal refactoring.&lt;/p&gt;
 &lt;p&gt;During my work on &lt;code&gt;and-or&lt;/code&gt; replacement operators it turned out that &lt;em&gt;Cosmic Ray&lt;/em&gt;
 didn't support the notion of one operator producing multiple code mutations.
-This required refactoring of project internals and is now currently suported.
+This required refactoring of project internals and is now currently supported.
 As a follow up there are a couple more issues opened to clean up the existing
 code, mainly the comparisons replacement operators.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; &lt;em&gt;Cosmic Ray&lt;/em&gt; is still not compatible with Python 3.3 and will probably
