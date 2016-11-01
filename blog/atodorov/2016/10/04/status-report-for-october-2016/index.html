@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Status Report for October 2016</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-layers.min.js"></script>
+                <script src="/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: '/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: '/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: '/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: '/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: '/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: '/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="/theme/css/skel.css" />
+			<link rel="stylesheet" href="/theme/css/style.css" />
+			<link rel="stylesheet" href="/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+
+        <meta name="description" content="working on Cosmic Ray and pylint" >
+
+        <meta name="author" content="Alexander Todorov">
+
+        <meta name="tags" content="Python" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="Status Report for October 2016">
+            <meta name="twitter:description" content="working on Cosmic Ray and pylint">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="/blog/atodorov/" />
+        <meta property="og:url" content="/blog/atodorov/2016/10/04/status-report-for-october-2016/" />
+        <meta property="og:title" content="Status Report for October 2016" />
+        <meta property="article:published_time" content="2016-10-04 10:30:00+03:00">
+            <meta property="og:description" content="working on Cosmic Ray and pylint">
+
+            <meta property="og:image" content="/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="/">
+				<img src="/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><strong><a href="/#subscriptions">Plans & Pricing</a></strong></li>
+						<li><strong><a href="/#software">Supported software</a></strong></li>
+						<li><strong><a href="/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+    <h2>Status Report for October 2016</h2>
+    <p>working on Cosmic Ray and pylint</p>
+    <p>
+        <em>Posted by
+                <a href="/blog/atodorov/">Alexander Todorov</a>
+            <br/>on Tue 04 October 2016
+        </em>
+    </p>
+            </section>
+
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p>Hello everyone, during September I've been focusing on
+<a href="https://github.com/sixty-north/cosmic-ray">Cosmic Ray</a> which
+is a supported package of our Python software stack.</p>
+<p>The changes include better error checking when running the test suite in
+Travis CI, fixes for some code smells and style updates, some Python 3.3
+compatibility fixes, traceback fix for Python 3.4, new <code>and-or</code> replacement
+operators and internal refactoring.</p>
+<p>During my work on <code>and-or</code> replacement operators it turned out that <em>Cosmic Ray</em>
+didn't support the notion of one operator producing multiple code mutations.
+This required refactoring of project internals and is now currently supported.
+As a follow up there are a couple more issues opened to clean up the existing
+code, mainly the comparisons replacement operators.</p>
+<p><strong>NOTE</strong> <em>Cosmic Ray</em> is still not compatible with Python 3.3 and will probably
+never be, despite my work. In <code>cosmic_ray/importing.py</code> we make use of
+<code>importlib.machinery.ModuleSpec</code> which was introduced in 3.4 and at this moment
+we don't want to backport and support this for Python 3.3. The rest of the code
+is 3.3 compatible though.</p>
+<p>During September I have also worked on
+<a href="/blog/mr-senko/2016/09/14/new-release-django-chartit-027/">django-chartit v0.2.7</a> to fix
+a nasty <a href="/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/">recursion loop</a>
+bug. The follow up of this bug is 
+<a href="https://github.com/PyCQA/pylint/pull/1109">pylint #1109</a>, which is now merged
+into master!</p>
+<p>I hope you like my work and please
+<strong><a href="/subscribe.html">subscribe to Mr. Senko</a></strong>
+if you need faster response cycle for the open source libraries you use.</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="/blog/atodorov/">Alexander Todorov</a>
+        on Tue 04 October 2016
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="/blog/tags/python/">Python</a>, </p>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa fa-twitter"></a></li>
+						<li><a href="https://bitbucket.org/MrSenko" class="icon fa fa-bitbucket"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>

@@ -149,6 +149,57 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/" rel="bookmark" title="Permalink to Status Report for October 2016">
+                    <h2>Status Report for October 2016</h2>
+                </a>
+            </header>
+
+            <p>Hello everyone, during October I've been focusing on
+<a href="https://github.com/sixty-north/cosmic-ray">Cosmic Ray</a> which
+is a supported package of our
+<a href="http://mrsenko.com/support/python.html">Python software stack</a>.</p>
+<p>The changes include</p>
+<ul>
+<li>Report only SURVIVED mutants if <code>--full-report</code> is not specified;</li>
+<li>Refactoring of <code>MutationCore.visit_mutation_site()</code>;</li>
+<li>Update of comparison operators mutations based on the new behavior;</li>
+<li>Refactoring of <code>UnaryOp</code> mutation operators based on the new behavior
+  and introduction of more mutations;</li>
+<li>Update <code>BinaryOp</code> mutation operators and add more mutations;</li>
+<li>Update of <code>tools/inspector.py</code> to follow the latest code.</li>
+</ul>
+<p>All of my work this month was around <code>visit_mutation_site()</code> being able
+to generate multiple mutations at a single site. For example the code</p>
+<div class="highlight"><pre><span></span>a &lt; b
+</pre></div>
+
+
+<p>can be mutated into:</p>
+<div class="highlight"><pre><span></span>a &lt;= b
+a is not b
+a &gt; b
+... etc
+</pre></div>
+
+
+<p>Previously this was done using different mutation operators but now it
+is done using a single class and an index to the desired operator replacement.
+As a follow up other mutation operators had to be updated as well. As a result
+the code base is cleaner and easier to understand.</p>
+<p>I hope you like my work and please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
+if you need faster response cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Mon 31 October 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/" rel="bookmark" title="Permalink to Status Report for September 2016">
                     <h2>Status Report for September 2016</h2>
                 </a>

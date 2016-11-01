@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-10-04T10:30:00+03:00</updated><entry><title>Status Report for September 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/" rel="alternate"></link><published>2016-10-04T10:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-10-04:blog/atodorov/2016/10/04/status-report-for-september-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during September I've been focusing on
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-10-31T11:30:00+02:00</updated><entry><title>Status Report for October 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/" rel="alternate"></link><published>2016-10-31T11:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-10-31:blog/atodorov/2016/10/31/status-report-for-october-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during October I've been focusing on
+&lt;a href="https://github.com/sixty-north/cosmic-ray"&gt;Cosmic Ray&lt;/a&gt; which
+is a supported package of our
+&lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The changes include&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Report only SURVIVED mutants if &lt;code&gt;--full-report&lt;/code&gt; is not specified;&lt;/li&gt;
+&lt;li&gt;Refactoring of &lt;code&gt;MutationCore.visit_mutation_site()&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Update of comparison operators mutations based on the new behavior;&lt;/li&gt;
+&lt;li&gt;Refactoring of &lt;code&gt;UnaryOp&lt;/code&gt; mutation operators based on the new behavior
+  and introduction of more mutations;&lt;/li&gt;
+&lt;li&gt;Update &lt;code&gt;BinaryOp&lt;/code&gt; mutation operators and add more mutations;&lt;/li&gt;
+&lt;li&gt;Update of &lt;code&gt;tools/inspector.py&lt;/code&gt; to follow the latest code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All of my work this month was around &lt;code&gt;visit_mutation_site()&lt;/code&gt; being able
+to generate multiple mutations at a single site. For example the code&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;a &amp;lt; b
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;can be mutated into:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;a &amp;lt;= b
+a is not b
+a &amp;gt; b
+... etc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Previously this was done using different mutation operators but now it
+is done using a single class and an index to the desired operator replacement.
+As a follow up other mutation operators had to be updated as well. As a result
+the code base is cleaner and easier to understand.&lt;/p&gt;
+&lt;p&gt;I hope you like my work and please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt;
+if you need faster response cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Status Report for September 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/" rel="alternate"></link><published>2016-10-04T10:30:00+03:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-10-04:blog/atodorov/2016/10/04/status-report-for-september-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during September I've been focusing on
 &lt;a href="https://github.com/sixty-north/cosmic-ray"&gt;Cosmic Ray&lt;/a&gt; which
 is a supported package of our Python software stack.&lt;/p&gt;
 &lt;p&gt;The changes include better error checking when running the test suite in
