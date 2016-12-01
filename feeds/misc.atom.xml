@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-10-31T11:30:00+02:00</updated><entry><title>Status Report for October 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/" rel="alternate"></link><published>2016-10-31T11:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-10-31:blog/atodorov/2016/10/31/status-report-for-october-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during October I've been focusing on
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-11-30T17:30:00+02:00</updated><entry><title>What I've worked on in November 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/" rel="alternate"></link><published>2016-11-30T17:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-11-30:blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during November I've been focusing on
+Cosmic Ray, pylint and django-chartit which are
+supported packages in our
+&lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The changes include&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cosmic Ray will not fail if baseline test execution fails, see
+  &lt;a href="https://github.com/sixty-north/cosmic-ray/pull/181"&gt;PR #181&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Cosmic Ray refactoring in skipping mutations to self, see
+  &lt;a href="https://github.com/sixty-north/cosmic-ray/pull/180"&gt;PR #180&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Added new checker to pylint. Statements using &lt;code&gt;len(SEQUENCE)&lt;/code&gt; are
+  checked more thoroughly. If there are comparisons to 0 these should
+  be refactored. See &lt;a href="https://github.com/PyCQA/pylint/pull/1154"&gt;PR #1154&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Fixed small pylint typo;&lt;/li&gt;
+&lt;li&gt;Started work on support for &lt;code&gt;RawQuerySet&lt;/code&gt; in django-chartit. This also alignes
+  with support for model properties. There is a POC solution proposed to
+  requesters and waiting for feedback. New version of django-chartit will be released
+  very soon, see &lt;a href="https://github.com/chartit/django-chartit/issues/44"&gt;#44&lt;/a&gt; and
+  &lt;a href="https://github.com/chartit/django-chartit/issues/35"&gt;#35&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope you like my work and please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt;
+if you need faster response cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Status Report for October 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/" rel="alternate"></link><published>2016-10-31T11:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-10-31:blog/atodorov/2016/10/31/status-report-for-october-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during October I've been focusing on
 &lt;a href="https://github.com/sixty-north/cosmic-ray"&gt;Cosmic Ray&lt;/a&gt; which
 is a supported package of our
 &lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;.&lt;/p&gt;

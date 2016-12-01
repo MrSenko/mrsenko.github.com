@@ -143,6 +143,45 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/" rel="bookmark" title="Permalink to What I've worked on in November 2016">
+                    <h2>What I've worked on in November 2016</h2>
+                </a>
+            </header>
+
+            <p>Hello everyone, during November I've been focusing on
+Cosmic Ray, pylint and django-chartit which are
+supported packages in our
+<a href="http://mrsenko.com/support/python.html">Python software stack</a>.</p>
+<p>The changes include</p>
+<ul>
+<li>Cosmic Ray will not fail if baseline test execution fails, see
+  <a href="https://github.com/sixty-north/cosmic-ray/pull/181">PR #181</a>;</li>
+<li>Cosmic Ray refactoring in skipping mutations to self, see
+  <a href="https://github.com/sixty-north/cosmic-ray/pull/180">PR #180</a>;</li>
+<li>Added new checker to pylint. Statements using <code>len(SEQUENCE)</code> are
+  checked more thoroughly. If there are comparisons to 0 these should
+  be refactored. See <a href="https://github.com/PyCQA/pylint/pull/1154">PR #1154</a>.</li>
+<li>Fixed small pylint typo;</li>
+<li>Started work on support for <code>RawQuerySet</code> in django-chartit. This also alignes
+  with support for model properties. There is a POC solution proposed to
+  requesters and waiting for feedback. New version of django-chartit will be released
+  very soon, see <a href="https://github.com/chartit/django-chartit/issues/44">#44</a> and
+  <a href="https://github.com/chartit/django-chartit/issues/35">#35</a>.</li>
+</ul>
+<p>I hope you like my work and please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
+if you need faster response cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Wed 30 November 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/" rel="bookmark" title="Permalink to Status Report for October 2016">
                     <h2>Status Report for October 2016</h2>
                 </a>
