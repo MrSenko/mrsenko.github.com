@@ -2,7 +2,7 @@
 <html>
 	<head>
                 <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
-		<title>Mr. Senko - Open Source Wizards - Tags</title>
+		<title>Mr. Senko - Open Source Wizards - Tag Python</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="" />
                 <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
@@ -137,12 +137,73 @@
 			</header>
 
             <section id="banner">
+    <h2>Articles with tag: Python</h2>
             </section>
 
-    <h1>Tags for Mr. Senko - Open Source Wizards</h1>        <li><a href="http://mrsenko.com/blog/tags/django/">Django</a> (5)</li>
-        <li><a href="http://mrsenko.com/blog/tags/python/">Python</a> (21)</li>
-        <li><a href="http://mrsenko.com/blog/tags/qa/">QA</a> (1)</li>
-        <li><a href="http://mrsenko.com/blog/tags/ruby/">Ruby</a> (1)</li>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="http://mrsenko.com/blog/2016/02/03/january-2016-report/" rel="bookmark" title="Permalink to January 2016 Report">
+                    <h2>January 2016 Report</h2>
+                </a>
+            </header>
+
+            <p>This is my first status report for <a href="http://MrSenko.com">Mr. Senko</a>. During
+January 2016 I've worked on:</p>
+<ul>
+<li>Improvements to
+<a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed">pelican-clean-blog</a>
+theme</li>
+<li>URL updates in <code>package.json</code> for several Node.js packages;</li>
+<li>.spec file to build RPMs for
+<a href="https://github.com/django-ses/django-ses/pull/83">django-ses</a>;</li>
+<li>New test case for
+<a href="https://github.com/belgian-elixir-study-group/efl/pull/5">Elixir study exercises</a></li>
+<li>Updates to an old PR for
+<a href="https://github.com/sphinx-doc/sphinx/pull/1902">Sphinx</a> which also fixes a
+new regression;</li>
+<li>Filed a
+<a href="https://github.com/getpelican/pelican/issues/1902">RFE</a> against Pelican
+and will continue working on it this month.</li>
+</ul>
+<h2>Sphinx broke</h2>
+<p>The Sphinx changes are particularly interesting - the fix for
+issue #656 in commit 4c4450d changes the Graphviz's
+<code>node['options']</code> type from <code>list</code> to <code>dict</code> which in turn breaks
+<code>html_visit_inheritance_diagram()</code> and the inheritance_diagram extension.</p>
+<p>My previous work on this PR introduced some basic tests, which were missing
+and they caught the type change! Because the tests and my latest changes are
+not yet merged into master the <code>inheritance_diagram.py</code> extension is still
+broken! The tests fail in Travis-CI but probably due to <code>dot</code> not being
+installed. Locally everything seems to work.</p>
+<p>Its also worth mentioning that it's been 2 weeks since I've updated my PR
+and a bit more since Sphinx introduced the regression. As far as I can see
+there's not been any updates with respect to this. 
+If you'd like to get a
+faster response cycle please <strong>consider subscribing to
+<a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong></p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Wed 03 February 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/2016/02/03/january-2016-report/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+
+<section class="wrapper special">
+    <div class="container">
+    <ul class="actions">
+        <li>
+            <a href="http://mrsenko.com/blog/tags/python/index.html" class="button special big">&larr;Newest Posts </a>
+        </li>
+        <li>
+            Page 2 / 2
+        </li>
+        </li>
+    </ul>
+    </div>
+</section>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">

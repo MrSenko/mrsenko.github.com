@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-11-30T17:30:00+02:00</updated><entry><title>What I've worked on in November 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/" rel="alternate"></link><published>2016-11-30T17:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-11-30:blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during November I've been focusing on
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-12-13T14:30:00+02:00</updated><entry><title>New release pelican-ab 0.2.3</title><link href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/" rel="alternate"></link><published>2016-12-13T14:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-12-13:blog/mr-senko/2016/12/13/new-release-pelican-ab-023/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/MrSenko/pelican-ab"&gt;pelicna-ab&lt;/a&gt; is an A/B testing plugin
+for Pelican, the static site generator. It allows you to encode experiments in
+your templates and renders the experiment selected by the &lt;code&gt;AB_EXPERIMENT&lt;/code&gt;
+environment variable.&lt;/p&gt;
+&lt;p&gt;Today we are releasing version &lt;code&gt;0.2.3&lt;/code&gt; as an urgent bug fix update handling
+internal changes in the latest version of Pelican.
+In previous versions Pelican used the &lt;code&gt;JINJA_EXTENSIONS&lt;/code&gt; setting to
+configure additional Jinja2 modules. In version 3.7.0, released yesterday,
+&lt;code&gt;JINJA_EXTENSIONS&lt;/code&gt; has been replaced with the &lt;code&gt;JINJA_ENVIRONMENT&lt;/code&gt; setting.
+Version 0.2.3 of pelican-ab handles both cases and is able to work with older
+and newer versions of Pelican!&lt;/p&gt;
+&lt;h2&gt;Support&lt;/h2&gt;
+&lt;p&gt;At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko's support service&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>What I've worked on in November 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/" rel="alternate"></link><published>2016-11-30T17:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-11-30:blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during November I've been focusing on
 Cosmic Ray, pylint and django-chartit which are
 supported packages in our
 &lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;.&lt;/p&gt;
