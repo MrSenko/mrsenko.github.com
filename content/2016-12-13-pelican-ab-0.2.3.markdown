@@ -1,0 +1,26 @@
+Title: New release pelican-ab 0.2.3
+headline: bug fix for Pelican 3.7.0
+date: 2016-12-13 14:30
+comments: true
+Tags: Python
+
+[pelicna-ab](https://github.com/MrSenko/pelican-ab) is an A/B testing plugin
+for Pelican, the static site generator. It allows you to encode experiments in
+your templates and renders the experiment selected by the `AB_EXPERIMENT`
+environment variable.
+
+Today we are releasing version `0.2.3` as an urgent bug fix update handling
+internal changes in the latest version of Pelican.
+In previous versions Pelican used the `JINJA_EXTENSIONS` setting to
+configure additional Jinja2 modules. In version 3.7.0, released yesterday,
+`JINJA_EXTENSIONS` has been replaced with the `JINJA_ENVIRONMENT` setting.
+Version 0.2.3 of pelican-ab handles both cases and is able to work with older
+and newer versions of Pelican!
+
+Support
+--------
+
+At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+**[subscribe to Mr. Senko's support service]({filename}pages/subscribe.html)**!
