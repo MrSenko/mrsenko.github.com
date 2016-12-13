@@ -4,7 +4,7 @@ date: 2016-12-13 14:30
 comments: true
 Tags: Python
 
-[pelicna-ab](https://github.com/MrSenko/pelican-ab) is an A/B testing plugin
+[pelican-ab](https://github.com/MrSenko/pelican-ab) is an A/B testing plugin
 for Pelican, the static site generator. It allows you to encode experiments in
 your templates and renders the experiment selected by the `AB_EXPERIMENT`
 environment variable.
@@ -16,6 +16,13 @@ configure additional Jinja2 modules. In version 3.7.0, released yesterday,
 `JINJA_EXTENSIONS` has been replaced with the `JINJA_ENVIRONMENT` setting.
 Version 0.2.3 of pelican-ab handles both cases and is able to work with older
 and newer versions of Pelican!
+
+This backward-incompatible change in Pelican has been automatically detected by our
+monitoring tool
+[Strazar]({filename}2016-05-18-automatic-dependency-testing-strazar.markdown),
+which proves the value of automatic testing against the latest versions of
+upstream dependencies!
+
 
 Support
 --------
