@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-12-13T14:30:00+02:00</updated><entry><title>New release pelican-ab 0.2.3</title><link href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/" rel="alternate"></link><published>2016-12-13T14:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-12-13:blog/mr-senko/2016/12/13/new-release-pelican-ab-023/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/MrSenko/pelican-ab"&gt;pelicna-ab&lt;/a&gt; is an A/B testing plugin
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-12-13T14:30:00+02:00</updated><entry><title>New release pelican-ab 0.2.3</title><link href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/" rel="alternate"></link><published>2016-12-13T14:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-12-13:blog/mr-senko/2016/12/13/new-release-pelican-ab-023/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/MrSenko/pelican-ab"&gt;pelican-ab&lt;/a&gt; is an A/B testing plugin
 for Pelican, the static site generator. It allows you to encode experiments in
 your templates and renders the experiment selected by the &lt;code&gt;AB_EXPERIMENT&lt;/code&gt;
 environment variable.&lt;/p&gt;
@@ -10,6 +10,11 @@ configure additional Jinja2 modules. In version 3.7.0, released yesterday,
 &lt;code&gt;JINJA_EXTENSIONS&lt;/code&gt; has been replaced with the &lt;code&gt;JINJA_ENVIRONMENT&lt;/code&gt; setting.
 Version 0.2.3 of pelican-ab handles both cases and is able to work with older
 and newer versions of Pelican!&lt;/p&gt;
+&lt;p&gt;This backward-incompatible change in Pelican has been automatically detected by our
+monitoring tool
+&lt;a href="http://mrsenko.com/blog/mr-senko/2016/05/18/triggering-automatic-dependency-testing/"&gt;Strazar&lt;/a&gt;,
+which proves the value of automatic testing against the latest versions of
+upstream dependencies!&lt;/p&gt;
 &lt;h2&gt;Support&lt;/h2&gt;
 &lt;p&gt;At Mr. Senko we will do our best to accommodate every need and merge patches
 and feature requests as they come in. Should you need commercial support for

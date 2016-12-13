@@ -154,7 +154,7 @@
                 </a>
             </header>
 
-            <p><a href="https://github.com/MrSenko/pelican-ab">pelicna-ab</a> is an A/B testing plugin
+            <p><a href="https://github.com/MrSenko/pelican-ab">pelican-ab</a> is an A/B testing plugin
 for Pelican, the static site generator. It allows you to encode experiments in
 your templates and renders the experiment selected by the <code>AB_EXPERIMENT</code>
 environment variable.</p>
@@ -165,6 +165,11 @@ configure additional Jinja2 modules. In version 3.7.0, released yesterday,
 <code>JINJA_EXTENSIONS</code> has been replaced with the <code>JINJA_ENVIRONMENT</code> setting.
 Version 0.2.3 of pelican-ab handles both cases and is able to work with older
 and newer versions of Pelican!</p>
+<p>This backward-incompatible change in Pelican has been automatically detected by our
+monitoring tool
+<a href="http://mrsenko.com/blog/mr-senko/2016/05/18/triggering-automatic-dependency-testing/">Strazar</a>,
+which proves the value of automatic testing against the latest versions of
+upstream dependencies!</p>
 <h2>Support</h2>
 <p>At Mr. Senko we will do our best to accommodate every need and merge patches
 and feature requests as they come in. Should you need commercial support for
