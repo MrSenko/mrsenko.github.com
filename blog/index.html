@@ -146,6 +146,117 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/" rel="bookmark" title="Permalink to Using model properties and raw SQL with django-chartit">
+                    <h2>Using model properties and raw SQL with django-chartit</h2>
+                </a>
+            </header>
+
+            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
+that can be used to easily create charts from the data in your database. The
+charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
+Data in your database can be plotted as simple line charts, column charts,
+area charts, scatter plots, and many more chart types.</p>
+<p>Few days ago we have released version 0.2.8 which includes support for
+model properties and raw SQL queries in your charts. This blog post will describe
+how to use them.</p>
+<h2>Using model properties</h2>
+<p>Sometimes it is convenient to calculate a value inside your models but
+not store it in the database. For example consider the following model</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">City</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">region</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;USA:</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">city</span>
+</pre></div>
+
+
+<p>You are not able to select the <code>region</code> "field" but you may use it
+as part of your chart <code>terms</code> as shown below</p>
+<div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">DataPool</span><span class="p">(</span>
+        <span class="n">series</span><span class="o">=</span><span class="p">[{</span>
+            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">SalesHistory</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">only</span><span class="p">(</span>
+                            <span class="s1">&#39;bookstore__city&#39;</span><span class="p">,</span> <span class="s1">&#39;sale_qty&#39;</span>
+                          <span class="p">)[:</span><span class="mi">10</span><span class="p">],</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;bookstore__city__region&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;sale_qty&#39;</span>
+            <span class="p">]</span>
+        <span class="p">}]</span>
+<span class="p">)</span>
+
+<span class="n">cht</span> <span class="o">=</span> <span class="n">Chart</span><span class="p">(</span>
+        <span class="n">datasource</span><span class="o">=</span><span class="n">ds</span><span class="p">,</span>
+        <span class="n">series_options</span><span class="o">=</span><span class="p">[{</span>
+            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;stacking&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                <span class="s1">&#39;stack&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;bookstore__city__region&#39;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">&#39;sale_qty&#39;</span>
+                <span class="p">]</span>
+            <span class="p">}},</span>
+        <span class="p">],</span>
+        <span class="n">chart_options</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Sales reports&#39;</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;xAxis&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;City&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>The full example, including source code and live charts is available at
+<a href="https://github.com/chartit/django-chartit/tree/master/demoproject">django-chartit/demoproject</a>!</p>
+<h2>Using raw SQL queries</h2>
+<p>Django allows you to execute SQL queries directly. These will return objects in the form of
+RawQuerySet and can be used in the same way as any other QuerySet.</p>
+<div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">DataPool</span><span class="p">(</span>
+        <span class="n">series</span><span class="o">=</span><span class="p">[{</span>
+            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">MonthlyWeatherByCity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span>
+                            <span class="s2">&quot;SELECT id, month, houston_temp, boston_temp &quot;</span>
+                            <span class="s2">&quot;FROM demoproject_monthlyweatherbycity&quot;</span><span class="p">)</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;month&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;houston_temp&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;boston_temp&#39;</span>
+            <span class="p">]</span>
+        <span class="p">}]</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>You will have to select the primary key field and pay attention to field names as to avoid
+duplicates when performing <code>JOIN</code> operations. Otherwise there is no difference. Full examples,
+including source code and live charts are available at
+<a href="https://github.com/chartit/django-chartit/tree/master/demoproject">django-chartit/demoproject</a>!</p>
+<h2>Support</h2>
+<p>At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 13 December 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/" rel="bookmark" title="Permalink to New release pelican-ab 0.2.3">
                     <h2>New release pelican-ab 0.2.3</h2>
                 </a>
@@ -1399,74 +1510,6 @@ if need a faster release cycle for the open source libraries you use.</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/2016/03/30/march-2016-report/" rel="bookmark" title="Permalink to March 2016 Report">
-                    <h2>March 2016 Report</h2>
-                </a>
-            </header>
-
-            <p>Here is a quick status report for <a href="http://MrSenko.com">Mr. Senko</a>. During
-March 2016 I've worked on:</p>
-<ul>
-<li>A few more improvements to
-<a href="https://github.com/gilsondev/pelican-clean-blog/pulls?q=is%3Apr+author%3Aatodorov+is%3Aclosed">pelican-clean-blog</a>
-theme;</li>
-<li>Two new features for 
-<a href="https://github.com/getpelican/pelican/pulls/atodorov">Pelican</a>;</li>
-<li>Several bug fixes and improvements for
-<a href="https://github.com/Nitrate/Nitrate/pulls/atodorov">Nitrate</a>.</li>
-</ul>
-<h2>Nitrate Test Case Management System</h2>
-<p><a href="http://nitrate.readthedocs.org/en/latest/guide/introduction.html">Nitrate</a> is
-a test case management system written with Django. We use it internally to track
-testing activities. It is reasonably good at what it does but there are some
-issues with how the software has been developed in the past.</p>
-<ul>
-<li>
-<p>Nitrate is Django based but doesn't follow best Django practices.
-There are places where it executes raw SQL against the DB instead of using
-Django's ORM model. This makes it non-portable between DBMS.</p>
-</li>
-<li>
-<p>Nitrate has a long development history but poor documentation. It has introduced
-DB migrations and updates in a non-Django friendly way. The currently preferred
-method is to execute an SQL file against the DB. This is poorly documented and
-of course I've missed it. I'm sure others will miss it as well.</p>
-</li>
-<li>
-<p>Going forward with native Django migrations all of these SQL files need to be
-converted and I haven't looked into this yet. Another possibility is to just release
-a new version which doesn't allow automatic DB updates.</p>
-</li>
-<li>
-<p>There are a bunch of static files (e.g. images) used directly in CSS and JavaScript files.
-This immediately breaks if you decide to host your static files elsewhere
-(e.g. Amazon S3 bucket). There is an easy fix but it requires the use of latest Django.</p>
-</li>
-<li>
-<p>Django version (and other dependencies) are quite old. This introduces security
-risk and also makes it harder to develop new functionality sometimes. I have opened
-a PR to bring Django forward to 1.8.11 version but that still needs more work.
-Yes I broke the test-suite as part of the migration.</p>
-</li>
-<li>
-<p>So far my impression is that the Nitrate team are slow to respond on GitHub.
-Given the current state of Nitrate and the amount of work which needs to be done
-this is disappointing.</p>
-</li>
-</ul>
-<p>If you like my work and need a faster response cycle please
-<strong>consider subscribing to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong></p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Wed 30 March 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/2016/03/30/march-2016-report/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
