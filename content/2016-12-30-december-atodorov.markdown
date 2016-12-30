@@ -35,8 +35,7 @@ New extensions for pylint
 
 I've worked on the new
 [compare-to-empty-string](https://github.com/PyCQA/pylint/pull/1183)
-extension for pylint which is still under review. Using this extension
-the following snippet
+extension for pylint. Using this extension the following snippet
 
     :::python
     if S != "":
@@ -57,7 +56,8 @@ will be flagged as problematic because it can be written in a more natural way:
 
 The extension will be disabled by default because empty string may be
 a valid value depending on the behavior of your program. I have also
-created a similar extension to flag integer comparisons against zero!
+created a similar extension to flag integer comparisons against zero,
+see [pylint#1243](https://github.com/PyCQA/pylint/pull/1243).
 While these may seem a bit extreme they are very useful to identify
 code which can be refactored to reduce comparisons
 when coupled with mutation testing!
