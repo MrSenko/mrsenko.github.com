@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-12-13T15:30:00+02:00</updated><entry><title>Using model properties and raw SQL with django-chartit</title><link href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/" rel="alternate"></link><published>2016-12-13T15:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-12-13:blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; is a Django app
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-12-30T10:30:00+02:00</updated><entry><title>What I've worked on in December 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/" rel="alternate"></link><published>2016-12-30T10:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-12-30:blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during December I've been working on several
+different projects from our supported
+&lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;
+and also ventured into Ruby land.&lt;/p&gt;
+&lt;h2&gt;Versions 0.2.3 and 0.2.4 of pelican-ab&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;pelican-ab&lt;/em&gt; is an A/B testing plugin for Pelican, the static site
+generator for Python. It allows you to encode experiments in your
+templates and renders the experiment selected by the &lt;code&gt;AB_EXPERIMENT&lt;/code&gt;
+environment variable.&lt;/p&gt;
+&lt;p&gt;There were two versions released in December 2016 making it compatible
+with the newly released &lt;em&gt;Pelican 3.7.0&lt;/em&gt;, adding more tests and fixing some
+minor bugs.&lt;/p&gt;
+&lt;h2&gt;Version 0.2.8 of django-chartit&lt;/h2&gt;
+&lt;p&gt;I have worked on a new version for django-chartit which adds support for
+&lt;a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/"&gt;model properties and raw SQL queries in charts&lt;/a&gt;.
+I've also done internal work for further refactoring but without
+anything concrete yet!&lt;/p&gt;
+&lt;h2&gt;New extensions for pylint&lt;/h2&gt;
+&lt;p&gt;I've worked on the new
+&lt;a href="https://github.com/PyCQA/pylint/pull/1183"&gt;compare-to-empty-string&lt;/a&gt;
+extension for pylint. Using this extension the following snippet&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will be flagged as problematic because it can be written in a more natural way:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The extension will be disabled by default because empty string may be
+a valid value depending on the behavior of your program. I have also
+created a similar extension to flag integer comparisons against zero,
+see &lt;a href="https://github.com/PyCQA/pylint/pull/1243"&gt;pylint#1243&lt;/a&gt;.
+While these may seem a bit extreme they are very useful to identify
+code which can be refactored to reduce comparisons
+when coupled with mutation testing!&lt;/p&gt;
+&lt;h2&gt;New Rspec formatters&lt;/h2&gt;
+&lt;p&gt;I've worked on two new formatters for Rspec:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/MrSenko/rspec_numbered_documentation"&gt;rspec_numbered_documentation&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/MrSenko/rspec_key_value"&gt;rspec_key_value&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both add simple syntactic sugar to how Rspec output can be formatted and make it
+easier for debugging or sending off for further machine processing.&lt;/p&gt;
+&lt;p&gt;I hope you like my work and please
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt;
+if you need faster response cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category><category term="Ruby"></category></entry><entry><title>Using model properties and raw SQL with django-chartit</title><link href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/" rel="alternate"></link><published>2016-12-13T15:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2016-12-13:blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chartit/django-chartit"&gt;django-chartit&lt;/a&gt; is a Django app
 that can be used to easily create charts from the data in your database. The
 charts are rendered using &lt;code&gt;Highcharts&lt;/code&gt; and &lt;code&gt;jQuery&lt;/code&gt; JavaScript libraries.
 Data in your database can be plotted as simple line charts, column charts,

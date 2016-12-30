@@ -143,6 +143,89 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/" rel="bookmark" title="Permalink to April 2016 Report">
+                    <h2>April 2016 Report</h2>
+                </a>
+            </header>
+
+            <p>Here is a quick status report of my work for <a href="http://MrSenko.com">Mr. Senko</a>. During
+April 2016 I've worked on:</p>
+<ul>
+<li>Additional patches to the <a href="https://github.com/Nitrate/Nitrate/pulls/atodorov">Nitrate</a>
+test case management system;</li>
+<li>New features for the <a href="https://github.com/railslove/i18n_viz/pulls/atodorov">i18n_viz</a>
+Ruby gem;</li>
+<li>New features for <a href="https://github.com/getpelican/pelican/pull/1926">Pelican</a>.</li>
+</ul>
+<h2>Nitrate</h2>
+<p>As I've written previously Nitrate is a test case management system, which we use internally.
+Unfortunately it is using very old version of Django and it is not so easy to migrate
+forward.</p>
+<p>I've decided to stall all of my previous pull requests and focus on getting the tests
+up and running in Travis-CI before going forward. I've managed to fix a few of them
+locally but then hit a road block. The fact that the Nitrate team is very limited in
+capacity (only 1 person at the moment) isn't helping either. I will continue working
+on this but with lower priority.</p>
+<h2>New features for i18n_viz</h2>
+<p><a href="https://github.com/railslove/i18n_viz">i18n_viz</a> is a very cool Ruby gem which
+lets your browse your own Rails application and visualize and edit your translatable
+strings. Think of it as a reversed lookup for translations.
+i18n_viz highlights your app’s translatable text and adds a tooltip containing
+the translation key which links to the translation in your favorite online
+translation tool.</p>
+<p>I have added the <code>css_override</code> option to allow for better styling of the
+highlights and tooltips provided by this gem.
+<a href="https://github.com/railslove/i18n_viz/pull/20">PR #20</a> has already been merged
+but not released into a new version yet.</p>
+<p>I've also fixed a
+<a href="https://github.com/railslove/i18n_viz/pull/19">bug with nested HTML tags</a> and
+changed the <code>external_tool_url</code> option to support
+<a href="https://github.com/railslove/i18n_viz/pull/22">code execution</a>. With this
+the user is able to configure the URL to an online translation tool during
+runtime. My particular use-case is to include the currently selected locale
+in the URL string. These two pull requests are not merged yet and unfortunately
+the package author is busy at the moment so it will take some time.</p>
+<h2>New features for Pelican</h2>
+<p>I've managed to implement more granular control over tag, categories and
+author slugs in Pelican in
+<a href="https://github.com/getpelican/pelican/pull/1926">PR #1926</a> and the code is
+already merged!</p>
+<p>Under the hood the <code>slugify()</code> method now can skip replacing non-alphanumeric
+characters so you have more control over the generated URLs. I've experienced
+this problem when migrating my personal blog from Octopress to Pelican.</p>
+<p>Then I've also added the possibility to configure author slugs, which is
+useful to blogs with multiple authors or if you want your author slug
+to match your GitHub username.
+In fact <code>pelicanconf.py</code> for Mr. Senko's blog looks like this:</p>
+<div class="highlight"><pre><span></span><span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{author}/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s1">}/{slug}/&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="n">ARTICLE_URL</span> <span class="o">+</span> <span class="s1">&#39;index.html&#39;</span>
+
+<span class="n">AUTHOR_URL</span> <span class="o">=</span> <span class="s1">&#39;blog/{slug}/&#39;</span>
+<span class="n">AUTHOR_SAVE_AS</span>  <span class="o">=</span> <span class="n">AUTHOR_URL</span> <span class="o">+</span> <span class="s1">&#39;index.html&#39;</span>
+
+<span class="n">AUTHOR_SUBSTITUTIONS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;Alexander Todorov&#39;</span><span class="p">,</span> <span class="s1">&#39;atodorov&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Krasimir Tsonev&#39;</span><span class="p">,</span>   <span class="s1">&#39;krasimir&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+
+
+<p><strong>NOTE:</strong> older URLs on this blog do not match above settings for
+compatibility reasons!</p>
+<p>I hope you like my work and please
+<strong>consider subscribing to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong>
+if need a faster release cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Tue 03 May 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/05/03/april-2016-report/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/2016/03/30/march-2016-report/" rel="bookmark" title="Permalink to March 2016 Report">
                     <h2>March 2016 Report</h2>
                 </a>
