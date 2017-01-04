@@ -13,7 +13,7 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="logo.svg">
   <defs
      id="defs4">
@@ -3033,15 +3033,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.44"
-     inkscape:cx="281.13902"
-     inkscape:cy="425.61044"
+     inkscape:zoom="1.18"
+     inkscape:cx="210.63269"
+     inkscape:cy="-386.64969"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1404"
+     inkscape:window-width="1402"
      inkscape:window-height="872"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -3060,7 +3060,7 @@
        id="guide9002" />
     <sodipodi:guide
        orientation="1,0"
-       position="475,828"
+       position="485.88957,-198.15951"
        id="guide9004" />
   </sodipodi:namedview>
   <metadata
@@ -3071,7 +3071,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3080,12 +3080,12 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#116644;fill-opacity:1;stroke:#ffccdd;stroke-width:1.98336995;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray:none"
+       style="fill:#116644;fill-opacity:1;stroke:#ffccdd;stroke-width:2.93908381;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647"
        id="rect9040"
-       width="562.0166"
-       height="1111.2604"
-       x="-11.611616"
-       y="131.67451" />
+       width="561.06091"
+       height="2444.3955"
+       x="12.316791"
+       y="-26.676325" />
     <g
        id="g9025"
        style="fill:#fffffe;fill-opacity:1"
@@ -3240,5 +3240,39 @@
              id="rect3723-4" /></flowRegion><flowPara
            style="font-size:48px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro Bold Italic"
            id="flowPara3725-1">www.MrSenko.com</flowPara></flowRoot>    </g>
+    <g
+       id="g4112"
+       inkscape:export-xdpi="499.52316"
+       inkscape:export-ydpi="499.52316"
+       transform="translate(-122.88136,-63.559322)">
+      <flowRoot
+         transform="matrix(1.0653669,0,0,1.0653669,226.03672,973.6777)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56px;line-height:125%;font-family:Aldrich;-inkscape-font-specification:Aldrich;letter-spacing:0px;word-spacing:0px;fill:#fffffe;fill-opacity:1;stroke:none"
+         id="flowRoot8972-3"
+         xml:space="preserve"><flowRegion
+           id="flowRegion8974-2"><rect
+             style="font-size:56px;fill:#fffffe;fill-opacity:1"
+             y="387.36218"
+             x="-31"
+             height="158"
+             width="742"
+             id="rect8976-7" /></flowRegion><flowPara
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:56px;font-family:Raleway;-inkscape-font-specification:Raleway;fill:#fffffe;fill-opacity:1"
+           id="flowPara8978-0">#MrSenko</flowPara><flowPara
+           id="flowPara8984-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:56px;font-family:Raleway;-inkscape-font-specification:Raleway;fill:#fffffe;fill-opacity:1" /></flowRoot>      <flowRoot
+         transform="translate(219.36579,964.7239)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:Aldrich;-inkscape-font-specification:Aldrich;letter-spacing:0px;word-spacing:0px;fill:#fffffe;fill-opacity:1;stroke:none"
+         id="flowRoot8986-80"
+         xml:space="preserve"><flowRegion
+           id="flowRegion8988-87"><rect
+             y="489.36218"
+             x="-25"
+             height="129"
+             width="566"
+             id="rect8990-4"
+             style="fill:#fffffe;fill-opacity:1" /></flowRegion><flowPara
+           id="flowPara8994-1"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34px;font-family:'Myriad Pro';-inkscape-font-specification:'Myriad Pro Italic';fill:#fffffe;fill-opacity:1">open source wizards</flowPara></flowRoot>    </g>
   </g>
 </svg>
