@@ -149,6 +149,55 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/" rel="bookmark" title="Permalink to Using private PyPI repositories">
+                    <h2>Using private PyPI repositories</h2>
+                </a>
+            </header>
+
+            <p>Once you have subscribed to Mr. Senko you will receive a repository URL from
+which to install package versions supported by Mr. Senko. The URL is of the form
+<strong>https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID</strong></p>
+<p>You must keep this URL secret! You can install supported packaged by either command line:</p>
+<div class="highlight"><pre><span></span>pip install nitrate --extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
+</pre></div>
+
+
+<p>or inside of your project by adding the following statement to <code>requirements.txt</code>:</p>
+<div class="highlight"><pre><span></span>--extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
+</pre></div>
+
+
+<p>Another possibility is to configure the private repository URL directly into <code>setup.py</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;YourAppName&#39;</span><span class="p">,</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">&#39;strazar&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">dependency_links</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">&#39;https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>And you're ready to seamlessly pip install private packages from Mr. Senko.</p>
+<h2>What is Mr. Senko?</h2>
+<p>Mr. Senko provides long term support for various open source libraries. We do
+bug fixes and feature development, improve testing and write documentation so
+you don't have to!
+<strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong>
+if you need faster response cycle for the open source components which you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Sun 22 January 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/" rel="bookmark" title="Permalink to Using model properties and raw SQL with django-chartit">
                     <h2>Using model properties and raw SQL with django-chartit</h2>
                 </a>

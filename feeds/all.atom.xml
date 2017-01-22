@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2016-12-30T10:30:00+02:00</updated><entry><title>What I've worked on in December 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/" rel="alternate"></link><published>2016-12-30T10:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-12-30:blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during December I've been working on several
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-01-22T12:30:00+02:00</updated><entry><title>Using private PyPI repositories</title><link href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/" rel="alternate"></link><published>2017-01-22T12:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-01-22:blog/mr-senko/2017/01/22/using-private-pypi-repositories/</id><summary type="html">&lt;p&gt;Once you have subscribed to Mr. Senko you will receive a repository URL from
+which to install package versions supported by Mr. Senko. The URL is of the form
+&lt;strong&gt;https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You must keep this URL secret! You can install supported packaged by either command line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install nitrate --extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or inside of your project by adding the following statement to &lt;code&gt;requirements.txt&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Another possibility is to configure the private repository URL directly into &lt;code&gt;setup.py&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;YourAppName&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;install_requires&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="s1"&gt;&amp;#39;strazar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;],&lt;/span&gt;
+    &lt;span class="n"&gt;dependency_links&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="s1"&gt;&amp;#39;https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And you're ready to seamlessly pip install private packages from Mr. Senko.&lt;/p&gt;
+&lt;h2&gt;What is Mr. Senko?&lt;/h2&gt;
+&lt;p&gt;Mr. Senko provides long term support for various open source libraries. We do
+bug fixes and feature development, improve testing and write documentation so
+you don't have to!
+&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt;
+if you need faster response cycle for the open source components which you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>What I've worked on in December 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/" rel="alternate"></link><published>2016-12-30T10:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-12-30:blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during December I've been working on several
 different projects from our supported
 &lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;
 and also ventured into Ruby land.&lt;/p&gt;
