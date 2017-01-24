@@ -20,6 +20,14 @@ or inside of your project by adding the following statement to `requirements.txt
     :::
     --extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
 
+You can also configure your `~/.pip/pip.conf` file to look like this
+
+    :::
+    [global]
+    ; Extra index from Mr. Senko
+    extra-index-url = https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
+
+
 Another possibility is to configure the private repository URL directly into `setup.py`:
 
     :::python
