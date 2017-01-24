@@ -178,6 +178,13 @@ which to install package versions supported by Mr. Senko. The URL is of the form
 </pre></div>
 
 
+<p>You can also configure your <code>~/.pip/pip.conf</code> file to look like this</p>
+<div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="c1">; Extra index from Mr. Senko</span>
+<span class="na">extra-index-url</span> <span class="o">=</span> <span class="s">https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID</span>
+</pre></div>
+
+
 <p>Another possibility is to configure the private repository URL directly into <code>setup.py</code>:</p>
 <div class="highlight"><pre><span></span><span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;YourAppName&#39;</span><span class="p">,</span>

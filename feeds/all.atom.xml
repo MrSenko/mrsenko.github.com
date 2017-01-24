@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-01-22T12:30:00+02:00</updated><entry><title>Using private PyPI repositories</title><link href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/" rel="alternate"></link><published>2017-01-22T12:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-01-22:blog/mr-senko/2017/01/22/using-private-pypi-repositories/</id><summary type="html">&lt;p&gt;Once you have subscribed to Mr. Senko you will receive a repository URL from
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-01-24T09:30:00+02:00</updated><entry><title>Nitrate bug fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-01-24T09:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-01-24:blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.04
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-01-24&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
+&lt;p&gt;Updated Nitrate package is now available that adds various enhancements and
+bug fixes.&lt;/p&gt;
+&lt;h2&gt;Changelog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Don't hard-code priorities in advanced search.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/45"&gt;PR #45&lt;/a&gt;,
+  fixes &lt;a href="https://bugzilla.redhat.com/show_bug.cgi?id=1139932"&gt;RhBz #1139932&lt;/a&gt; (Chenxiong Qi)&lt;/li&gt;
+&lt;li&gt;Update to Django 1.8.11. &lt;a href="https://github.com/Nitrate/Nitrate/pull/81"&gt;PR #81&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update django-tinymce to 2.4.0&lt;/li&gt;
+&lt;li&gt;Minor updates to documentation.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/100"&gt;PR #100&lt;/a&gt; (Matthias Cavigelli)&lt;/li&gt;
+&lt;li&gt;Update link to wadofstuff-django-serializers.
+  PR &lt;a href="https://github.com/Nitrate/Nitrate/pull/101"&gt;#101&lt;/a&gt;,
+  fixes &lt;a href="https://github.com/Nitrate/Nitrate/issues/99"&gt;#99&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Require Celery&amp;lt;2 for compatibility reasons.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/102"&gt;PR #102&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Host static files in DEBUG mode for development.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/103"&gt;PR #103&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;flake8 fixes. &lt;a href="https://github.com/Nitrate/Nitrate/pull/104"&gt;PR #104&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Using private PyPI repositories</title><link href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/" rel="alternate"></link><published>2017-01-22T12:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-01-22:blog/mr-senko/2017/01/22/using-private-pypi-repositories/</id><summary type="html">&lt;p&gt;Once you have subscribed to Mr. Senko you will receive a repository URL from
 which to install package versions supported by Mr. Senko. The URL is of the form
 &lt;strong&gt;https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;You must keep this URL secret! You can install supported packaged by either command line:&lt;/p&gt;
@@ -9,6 +39,13 @@ which to install package versions supported by Mr. Senko. The URL is of the form
 
 &lt;p&gt;or inside of your project by adding the following statement to &lt;code&gt;requirements.txt&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;--extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can also configure your &lt;code&gt;~/.pip/pip.conf&lt;/code&gt; file to look like this&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[global]&lt;/span&gt;
+&lt;span class="c1"&gt;; Extra index from Mr. Senko&lt;/span&gt;
+&lt;span class="na"&gt;extra-index-url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
