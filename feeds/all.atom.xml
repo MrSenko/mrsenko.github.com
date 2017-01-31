@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-01-24T09:30:00+02:00</updated><entry><title>Nitrate bug fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-01-24T09:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-01-24:blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.04
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-01-31T09:30:00+02:00</updated><entry><title>Nitrate enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/01/31/nitrate-enhancement-update/" rel="alternate"></link><published>2017-01-31T09:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-01-31:blog/mr-senko/2017/01/31/nitrate-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.05
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-01-31
+&lt;strong&gt;Severity:&lt;/strong&gt; Low&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
+&lt;p&gt;Updated Nitrate package is now available that adds various enhancements.&lt;/p&gt;
+&lt;h2&gt;Changelog since 3.8.18.04&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rebased onto 698288e from upstream (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Enable internal tests&lt;/li&gt;
+&lt;li&gt;Drop support for Python 2.6 (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update help strings of clone case form and update docs. Fix
+  &lt;a href="https://github.com/Nitrate/Nitrate/issues/67"&gt;#67&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Updated documentation with sections about hosting with
+  Gunicorn, Docker and Google Cloud Engine (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Django migrations improvements&lt;/li&gt;
+&lt;li&gt;Upgrade Django to 1.8.14&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate bug fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-01-24T09:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-01-24:blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.04
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-01-24&lt;/p&gt;
 &lt;h2&gt;Details&lt;/h2&gt;
 &lt;p&gt;Nitrate is an open source test plan, test run and test case management system.
