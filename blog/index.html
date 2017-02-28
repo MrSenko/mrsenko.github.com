@@ -146,6 +146,54 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/02/28/nitrate-bug-fix-enhancement-update/" rel="bookmark" title="Permalink to Nitrate bug-fix & enhancement update">
+                    <h2>Nitrate bug-fix & enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> nitrate-3.8.18.09
+<strong>Released on:</strong> 2017-02-28
+<strong>Severity:</strong> High</p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package is now available which fixes several bugs and
+adds various enhancements.</p>
+<h2>Changelog since 3.8.18.08</h2>
+<ul>
+<li>Rebased onto 7a6bc34 from upstream</li>
+<li>Enable the test suite. Fix
+  <a href="https://github.com/Nitrate/Nitrate/issues/113">Issue #113</a> (Chenxiong Qi)</li>
+<li>Refactor tcms.core.migrations.0001_django_comments__object_pk.
+  Fixes a bug where applied migration was shown as still pending.
+  <a href="https://github.com/Nitrate/Nitrate/pull/157">PR #157</a> (Mr. Senko)</li>
+<li>Refactor SQLs in xmlrpc (with tests).
+  <a href="https://github.com/Nitrate/Nitrate/pull/159">PR #159</a> (Mr. Senko)</li>
+<li>Enable Coveralls.io.
+  <a href="https://github.com/Nitrate/Nitrate/pull/160">PR #160</a> (Mr. Senko)</li>
+<li>Don't install files under <code>/etc/</code> to avoid SandboxViolation. Enables
+  installation in virtualenv and as non-root. Hot-fix for
+  <a href="https://github.com/Nitrate/Nitrate/issues/155">Issue #155</a> (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade nitrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 28 February 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/02/28/nitrate-bug-fix-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/02/21/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
                     <h2>Nitrate enhancement update</h2>
                 </a>
@@ -1263,39 +1311,6 @@ if you need a faster response cycle for the open source libraries you use.</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/atodorov/2016/07/30/july-2016-status-report/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/06/30/june-2016-status-report/" rel="bookmark" title="Permalink to June 2016 Status Report">
-                    <h2>June 2016 Status Report</h2>
-                </a>
-            </header>
-
-            <p>Hello everyone, last month has been a bit of a holiday and I don't have much
-to share. I've been playing around with mutation testing tools. The few
-patches I did are both related to <em>Cosmic Ray</em>:</p>
-<ul>
-<li>Allow session-name.json to be passed on the command line,
-  <a href="https://github.com/sixty-north/cosmic-ray/pull/144">PR #144</a></li>
-<li>Report the mutation results using unified diff format,
-  <a href="https://github.com/sixty-north/cosmic-ray/pull/145">PR #145</a></li>
-</ul>
-<p>Right now I'm experimenting with running mutation testing against a few
-popular open source libraries, written in both Python and Ruby.
-So far the tools seem to work fine, except minor issues. However the test
-suites I've been playing with aren't very robust and most of the mutants stay
-alive! I will write another blog post on the subject once I have more
-information to share. I hope you like my work and please
-<strong>subscribe to <a href="http://mrsenko.com/subscribe.html">Mr. Senko</a>!</strong>
-if need a faster response cycle for the open source libraries you use.</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Thu 30 June 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/06/30/june-2016-status-report/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">

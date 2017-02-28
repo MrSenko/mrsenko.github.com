@@ -149,6 +149,54 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/02/28/nitrate-bug-fix-enhancement-update/" rel="bookmark" title="Permalink to Nitrate bug-fix & enhancement update">
+                    <h2>Nitrate bug-fix & enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> nitrate-3.8.18.09
+<strong>Released on:</strong> 2017-02-28
+<strong>Severity:</strong> High</p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package is now available which fixes several bugs and
+adds various enhancements.</p>
+<h2>Changelog since 3.8.18.08</h2>
+<ul>
+<li>Rebased onto 7a6bc34 from upstream</li>
+<li>Enable the test suite. Fix
+  <a href="https://github.com/Nitrate/Nitrate/issues/113">Issue #113</a> (Chenxiong Qi)</li>
+<li>Refactor tcms.core.migrations.0001_django_comments__object_pk.
+  Fixes a bug where applied migration was shown as still pending.
+  <a href="https://github.com/Nitrate/Nitrate/pull/157">PR #157</a> (Mr. Senko)</li>
+<li>Refactor SQLs in xmlrpc (with tests).
+  <a href="https://github.com/Nitrate/Nitrate/pull/159">PR #159</a> (Mr. Senko)</li>
+<li>Enable Coveralls.io.
+  <a href="https://github.com/Nitrate/Nitrate/pull/160">PR #160</a> (Mr. Senko)</li>
+<li>Don't install files under <code>/etc/</code> to avoid SandboxViolation. Enables
+  installation in virtualenv and as non-root. Hot-fix for
+  <a href="https://github.com/Nitrate/Nitrate/issues/155">Issue #155</a> (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade nitrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 28 February 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/02/28/nitrate-bug-fix-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/02/21/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
                     <h2>Nitrate enhancement update</h2>
                 </a>
