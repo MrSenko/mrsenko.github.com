@@ -1,5 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-03-08T10:00:00+02:00</updated><entry><title>Nitrate enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/03/08/nitrate-enhancement-update/" rel="alternate"></link><published>2017-03-08T10:00:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-03-08:blog/mr-senko/2017/03/08/nitrate-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.10
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-03-22T11:00:00+02:00</updated><entry><title>django-chartit enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/03/22/django-chartit-enhancement-update/" rel="alternate"></link><published>2017-03-22T11:00:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-03-22:blog/mr-senko/2017/03/22/django-chartit-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; django-chartit-master
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-03-22
+&lt;strong&gt;Severity:&lt;/strong&gt; Low&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;Django Chartit is a Django app that can be used to easily create charts from
+the data in your database. The charts are rendered using &lt;code&gt;Highcharts&lt;/code&gt; and
+&lt;code&gt;jQuery&lt;/code&gt; JavaScript libraries. Data in your database can be plotted as simple
+line charts, column charts, area charts, scatter plots, and many more chart
+types. Data can also be plotted as Pivot Charts where the data is grouped
+and/or pivoted by specific column(s).&lt;/p&gt;
+&lt;p&gt;Updated upstream is now available which adds couple of improvements.&lt;/p&gt;
+&lt;h2&gt;Upstream changelog since 0.2.9&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Update demo with an example of how to pass &lt;code&gt;legendIndex&lt;/code&gt; as an option
+  to a data serie. Closes
+  &lt;a href="https://github.com/chartit/django-chartit/issues/48"&gt;Issue #48&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;Update demo with an example of how to change the label of any term instead
+  of using the default one. Closes
+  &lt;a href="https://github.com/chartit/django-chartit/issues/46"&gt;Issue #46&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;This is an upstream release only. No updated packages are provided via private
+repositories on Mr. Senko!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/03/22/nitrate-enhancement-update/" rel="alternate"></link><published>2017-03-22T11:00:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-03-22:blog/mr-senko/2017/03/22/nitrate-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.12
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-03-22
+&lt;strong&gt;Severity:&lt;/strong&gt; Low&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
+&lt;p&gt;Updated Nitrate package is now available which adds various enhancements and
+reduces technical debth. The main focus of this release is code refactoring,
+improved test coverage and enabling testing against multiple database backends.&lt;/p&gt;
+&lt;h2&gt;Changelog since 3.8.18.10&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rebased onto 980b07b from upstream&lt;/li&gt;
+&lt;li&gt;Add tests, SQL refactor and fixes for commit_unless_managed.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/170"&gt;PR #170&lt;/a&gt;,
+  &lt;a href="https://github.com/Nitrate/Nitrate/issues/148"&gt;Issue #148&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Enable testing with MySQL, MariaDB and Postgres on Travis-CI.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/171"&gt;PR #171&lt;/a&gt;,
+  &lt;a href="https://github.com/Nitrate/Nitrate/issues/169"&gt;Issue #169&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Open upstream issues&lt;/h2&gt;
+&lt;p&gt;The following issues and pull requests, which have been previously released on
+Mr. Senko, are still open in the upstream repository:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/45"&gt;PR #45&lt;/a&gt; -
+  fix: showing priorities in advanced search in hardcode (RhBug:1139932) &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/139"&gt;PR #139&lt;/a&gt; -
+  Refactor SQL and use ORM queries instead &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/146"&gt;PR #146&lt;/a&gt; -
+  Replace SQL with ORM in reporting app. Fix #127&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/156"&gt;PR #156&lt;/a&gt; -
+  Don't use deprecated request.REQUEST&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/157"&gt;PR #157&lt;/a&gt; -
+  Refactor tcms.core.migrations.0001_django_comments__object_pk&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/171"&gt;PR #171&lt;/a&gt; -
+  Enable testing with MySQL and Postgres on Travis-CI&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/127"&gt;Issue #127&lt;/a&gt; -
+  Make SQL statements be compatible with PostgreSQL&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/169"&gt;Issue #169&lt;/a&gt; -
+  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade nitrate
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/03/08/nitrate-enhancement-update/" rel="alternate"></link><published>2017-03-08T10:00:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-03-08:blog/mr-senko/2017/03/08/nitrate-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.10
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-03-08
 &lt;strong&gt;Severity:&lt;/strong&gt; Low&lt;/p&gt;
 &lt;h2&gt;Details&lt;/h2&gt;

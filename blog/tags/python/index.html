@@ -143,6 +143,109 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/03/22/django-chartit-enhancement-update/" rel="bookmark" title="Permalink to django-chartit enhancement update">
+                    <h2>django-chartit enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> django-chartit-master
+<strong>Released on:</strong> 2017-03-22
+<strong>Severity:</strong> Low</p>
+<h2>Details</h2>
+<p>Django Chartit is a Django app that can be used to easily create charts from
+the data in your database. The charts are rendered using <code>Highcharts</code> and
+<code>jQuery</code> JavaScript libraries. Data in your database can be plotted as simple
+line charts, column charts, area charts, scatter plots, and many more chart
+types. Data can also be plotted as Pivot Charts where the data is grouped
+and/or pivoted by specific column(s).</p>
+<p>Updated upstream is now available which adds couple of improvements.</p>
+<h2>Upstream changelog since 0.2.9</h2>
+<ul>
+<li>Update demo with an example of how to pass <code>legendIndex</code> as an option
+  to a data serie. Closes
+  <a href="https://github.com/chartit/django-chartit/issues/48">Issue #48</a>;</li>
+<li>Update demo with an example of how to change the label of any term instead
+  of using the default one. Closes
+  <a href="https://github.com/chartit/django-chartit/issues/46">Issue #46</a>.</li>
+</ul>
+<h2>How to upgrade</h2>
+<p>This is an upstream release only. No updated packages are provided via private
+repositories on Mr. Senko!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Wed 22 March 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/03/22/django-chartit-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/03/22/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
+                    <h2>Nitrate enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> nitrate-3.8.18.12
+<strong>Released on:</strong> 2017-03-22
+<strong>Severity:</strong> Low</p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package is now available which adds various enhancements and
+reduces technical debth. The main focus of this release is code refactoring,
+improved test coverage and enabling testing against multiple database backends.</p>
+<h2>Changelog since 3.8.18.10</h2>
+<ul>
+<li>Rebased onto 980b07b from upstream</li>
+<li>Add tests, SQL refactor and fixes for commit_unless_managed.
+  <a href="https://github.com/Nitrate/Nitrate/pull/170">PR #170</a>,
+  <a href="https://github.com/Nitrate/Nitrate/issues/148">Issue #148</a> (Mr. Senko)</li>
+<li>Enable testing with MySQL, MariaDB and Postgres on Travis-CI.
+  <a href="https://github.com/Nitrate/Nitrate/pull/171">PR #171</a>,
+  <a href="https://github.com/Nitrate/Nitrate/issues/169">Issue #169</a> (Mr. Senko)</li>
+</ul>
+<h2>Open upstream issues</h2>
+<p>The following issues and pull requests, which have been previously released on
+Mr. Senko, are still open in the upstream repository:</p>
+<ul>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/45">PR #45</a> -
+  fix: showing priorities in advanced search in hardcode (RhBug:1139932) </li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/139">PR #139</a> -
+  Refactor SQL and use ORM queries instead </li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/146">PR #146</a> -
+  Replace SQL with ORM in reporting app. Fix #127</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/156">PR #156</a> -
+  Don't use deprecated request.REQUEST</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/157">PR #157</a> -
+  Refactor tcms.core.migrations.0001_django_comments__object_pk</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/171">PR #171</a> -
+  Enable testing with MySQL and Postgres on Travis-CI</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/127">Issue #127</a> -
+  Make SQL statements be compatible with PostgreSQL</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/169">Issue #169</a> -
+  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix </li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade nitrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Wed 22 March 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/03/22/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/03/08/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
                     <h2>Nitrate enhancement update</h2>
                 </a>
@@ -1145,165 +1248,6 @@ this or other open source libraries please
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/" rel="bookmark" title="Permalink to Converting JSON Fixtures to Django Migrations">
-                    <h2>Converting JSON Fixtures to Django Migrations</h2>
-                </a>
-            </header>
-
-            <p>Older Django apps like
-<a href="https://github.com/chartit/django-chartit">django-chartit</a> and
-<a href="https://github.com/Nitrate/Nitrate">Nitrate</a> used JSON fixtures to populate
-their databases with initial data. In this article I will show you an easy way
-to convert JSON fixtures into native Django migrations.
-The JSON fixture looks like this</p>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Godin&quot;</span>
-            <span class="p">},</span>
- <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
- <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">1</span>
- <span class="p">}</span><span class="err">,</span>
-<span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Guy&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kawasaki&quot;</span>
-            <span class="p">},</span>
- <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
- <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">2</span>
- <span class="p">}</span><span class="err">,</span>
-<span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Geoffrey&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Colvin&quot;</span>
-            <span class="p">},</span>
- <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
- <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">3</span>
- <span class="p">}</span>
-</pre></div>
-
-
-<p>Notice the <code>pk</code> and <code>model</code> fields which tell us where this data came from
-and what was the object PK when exported from the database. The <code>fields</code>
-dict is the actual data for this object.</p>
-<p>In Python we can use <code>json.loads</code> and read the fixture data from disk or
-even better assign it directly to a variable inside our Python source file.
-Then iterate over all values and create the objects programmatically like this</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
-<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">migrations</span>
-
-
-<span class="k">def</span> <span class="nf">initialize_data</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">schema_editor</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Godin&quot;</span>
-                    <span class="p">},</span>
-         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">1</span>
-         <span class="p">},</span>
-        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Guy&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kawasaki&quot;</span>
-                    <span class="p">},</span>
-         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">2</span>
-         <span class="p">},</span>
-        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Geoffrey&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Colvin&quot;</span>
-                    <span class="p">},</span>
-         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">3</span>
-         <span class="p">},</span>
-    <span class="p">]</span>
-
-    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">app_name</span><span class="p">,</span> <span class="n">model_name</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-        <span class="n">ModelClass</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">app_name</span><span class="p">,</span> <span class="n">model_name</span><span class="p">)</span>
-        <span class="n">obj</span> <span class="o">=</span> <span class="n">ModelClass</span><span class="p">(</span><span class="o">**</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">])</span>
-        <span class="c1"># this is required only if you have other models</span>
-        <span class="c1"># with foreign keys referring to this object</span>
-        <span class="c1"># obj.pk = record[&#39;pk&#39;]</span>
-        <span class="n">obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-
-<span class="k">class</span> <span class="nc">Migration</span><span class="p">(</span><span class="n">migrations</span><span class="o">.</span><span class="n">Migration</span><span class="p">):</span>
-
-    <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">(</span><span class="s1">&#39;demoproject&#39;</span><span class="p">,</span> <span class="s1">&#39;0001_initial&#39;</span><span class="p">)</span>
-    <span class="p">]</span>
-
-    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">migrations</span><span class="o">.</span><span class="n">RunPython</span><span class="p">(</span><span class="n">initialize_data</span><span class="p">),</span>
-    <span class="p">]</span>
-</pre></div>
-
-
-<p>This works well for most of the cases. You should take care to assign the
-same PKs in case there are other objects that hold references to them. If
-this isn't the case then you can drop these fields entirely to reduce your
-source code size.</p>
-<p>I hope you like my work and please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>
-should you need commercial support for this or other open source libraries!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Mon 08 August 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/" rel="bookmark" title="Permalink to Reviving django-chartit with version 0.2.4">
-                    <h2>Reviving django-chartit with version 0.2.4</h2>
-                </a>
-            </header>
-
-            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
-that can be used to easily create charts from the data in your database. The
-charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
-Data in your database can be plotted as simple line charts, column charts,
-area charts, scatter plots, and many more chart types.</p>
-<p>The project has been originally developed by
-<a href="https://github.com/pgollakota">Praveen Gollakota</a> and had gained some
-popularity. Recently Mr. Senko was granted the necessary access rights
-and we've revived the project with two upstream releases.</p>
-<h2>Changelog</h2>
-<p>Version 0.2.3 was released a few days ago and merges the <code>django-chartit2</code> fork by
-<a href="https://github.com/grantmcconnaughey">Grant McConnaughey</a> which had a few
-releases of its own earlier this year. It also makes a few improvements and merged
-other pull requests.</p>
-<p>Version 0.2.4 was released today and fixes the usage of deprecated Django
-APIs which were removed in Django 1.10.</p>
-<p>Many thanks to Grant for his work on Python 3 and latest Django support!
-Many thanks to Praveen for letting us maintain the project.</p>
-<h2>Upgrade from django_chartit2</h2>
-<p>If you are using the <code>django_chartit2</code> module by Grant then you have to</p>
-<div class="highlight"><pre><span></span>pip uninstall django_chartit2
-pip install django_chartit
-</pre></div>
-
-
-<p>If you are not in a hurry to upgrade you may as well wait for the next
-release by Grant, which should automatically require <code>django_chartit</code>
-and transparently switch you back to using the original package and not
-the fork. However release of such an update is not under our control.</p>
-<h2>Feature plans</h2>
-<p>Mr. Senko is currently working actively to bring the rest of the project
-up to speed, including the demo site, which shows how to use the API.
-This is a mandatory step before we go ahead to work on various bug fixes
-and documentation improvements. We will also be looking into adding more
-tests for the project.</p>
-<h2>Support</h2>
-<p>At Mr. Senko we will do our best to accommodate every need and merge patches
-and feature requests as they come in. Should you need commercial support for
-this or other open source libraries please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Tue 02 August 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
