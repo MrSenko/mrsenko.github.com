@@ -143,6 +143,65 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/04/12/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
+                    <h2>Nitrate enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> nitrate-3.8.18.15
+<strong>Released on:</strong> 2017-04-12
+<strong>Severity:</strong> Medium</p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package is now available which removes one database migration.
+<code>tcms.core.migrations.0001_django_comments__object_pk</code> is modifying a 3rd party
+model and Django gets really confused about this! See the discussion in
+<a href="https://github.com/Nitrate/Nitrate/pull/157">PR #157</a> about why we've decided
+to drop the migration!</p>
+<h2>Changelog since 3.8.18.12</h2>
+<ul>
+<li>Rebased onto 8f45beb from upstream</li>
+<li>Remove tcms.core.migrations.0001_django_comments__object_pk</li>
+</ul>
+<h2>Open upstream issues</h2>
+<p>The following issues and pull requests, which have been previously released on
+Mr. Senko, are still open in the upstream repository:</p>
+<ul>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/45">PR #45</a> -
+  fix: showing priorities in advanced search in hardcode (RhBug:1139932) </li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/139">PR #139</a> -
+  Refactor SQL and use ORM queries instead </li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/146">PR #146</a> -
+  Replace SQL with ORM in reporting app. Fix #127</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/156">PR #156</a> -
+  Don't use deprecated request.REQUEST</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/171">PR #171</a> -
+  Enable testing with MySQL and Postgres on Travis-CI</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/127">Issue #127</a> -
+  Make SQL statements be compatible with PostgreSQL</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/169">Issue #169</a> -
+  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix </li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade nitrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Wed 12 April 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/04/12/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/03/22/django-chartit-enhancement-update/" rel="bookmark" title="Permalink to django-chartit enhancement update">
                     <h2>django-chartit enhancement update</h2>
                 </a>
@@ -1185,69 +1244,6 @@ should you need commercial support for this or other open source libraries!</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/" rel="bookmark" title="Permalink to New release django-chartit 0.2.6">
-                    <h2>New release django-chartit 0.2.6</h2>
-                </a>
-            </header>
-
-            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
-that can be used to easily create charts from the data in your database. The
-charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
-Data in your database can be plotted as simple line charts, column charts,
-area charts, scatter plots, and many more chart types.</p>
-<p>Today we are releasing version 0.2.6 as part of our regular update process.</p>
-<h2>Changelog since version 0.2.4</h2>
-<ul>
-<li>
-<p>0.2.6 (August 16, 2016)</p>
-<ul>
-<li>Merged <code>chartit_tests/</code> with <code>demoproject/</code></li>
-<li>Load test DB with real data to use during testing</li>
-<li>Add more tests</li>
-<li>Update the path to <code>demoproject.settings</code> when building docs. Fixes
-  a problem which caused some API docs to be empty</li>
-<li>Fix <code>ValueError: not enough values to unpack (expected 2, got 0)</code>
-  with PivotChart when the QuerySet returns empty data</li>
-<li>Dropped requirement on <code>simplejson</code></li>
-<li>Properly handle unicode data in Pivot charts. Fixes
-  <a href="https://github.com/chartit/django-chartit/issues/5">#5</a></li>
-<li>Demo project updated with Chart and PivotChart examples of
-  rendering DateField values on the X axis</li>
-<li>Allow charting of <code>extra()</code> or <code>annotate()</code> fields. Fixes
-  <a href="https://github.com/chartit/django-chartit/issues/8">#8</a> and
-  <a href="https://github.com/chartit/django-chartit/issues/12">#12</a></li>
-<li>Refactor <code>RecursiveDefaultDict</code> to allow chart objects to be
-  serialized to/from cache. Fixes
-  <a href="https://github.com/chartit/django-chartit/issues/10">#10</a></li>
-<li>Add information about supported 3rd party JavaScript versions. Fixes
-  <a href="https://github.com/chartit/django-chartit/issues/14">#14</a></li>
-</ul>
-</li>
-<li>
-<p>0.2.5 (August 3, 2016)</p>
-<ul>
-<li>Workaround Python 3 vs. Python 2 list sort issue which breaks
-  charts with multiple data sources displayed on the same axis!</li>
-<li>Make demoproject/ compatible with Django 1.10</li>
-</ul>
-</li>
-</ul>
-<h2>Support</h2>
-<p>At Mr. Senko we will do our best to accommodate every need and merge patches
-and feature requests as they come in. Should you need commercial support for
-this or other open source libraries please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Tue 16 August 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
