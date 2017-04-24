@@ -51,14 +51,10 @@ Mr. Senko, are still open in the upstream repository:&lt;/p&gt;
   Fix tags search and hint while adding tags to test cases in TP&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/179"&gt;PR #179&lt;/a&gt; -
   Update installation steps for RHEL6&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/180"&gt;PR #180&lt;/a&gt; -
-  Build Nitrate as docker image&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/127"&gt;Issue #127&lt;/a&gt; -
-  Make SQL statements be compatible with PostgreSQL&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/180"&gt;PR #180&lt;/a&gt; -
+  Build Nitrate as docker image&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/127"&gt;Issue #127&lt;/a&gt; -
+  Make SQL statements be compatible with PostgreSQL&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/169"&gt;Issue #169&lt;/a&gt; -
   Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/174"&gt;Issue #174&lt;/a&gt; -
@@ -121,14 +117,10 @@ Mr. Senko, are still open in the upstream repository:&lt;/p&gt;
   Fix tags search and hint while adding tags to test cases in TP&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/179"&gt;PR #179&lt;/a&gt; -
   Update installation steps for RHEL6&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/180"&gt;PR #180&lt;/a&gt; -
-  Build Nitrate as docker image&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/127"&gt;Issue #127&lt;/a&gt; -
-  Make SQL statements be compatible with PostgreSQL&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/180"&gt;PR #180&lt;/a&gt; -
+  Build Nitrate as docker image&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/127"&gt;Issue #127&lt;/a&gt; -
+  Make SQL statements be compatible with PostgreSQL&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/169"&gt;Issue #169&lt;/a&gt; -
   Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/174"&gt;Issue #174&lt;/a&gt; -
