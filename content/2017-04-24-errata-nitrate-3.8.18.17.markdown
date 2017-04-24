@@ -68,7 +68,6 @@ Mr. Senko, are still open in the upstream repository:
   Update installation steps for RHEL6
 - [PR #180](https://github.com/Nitrate/Nitrate/pull/180) -
   Build Nitrate as docker image
-
 - [Issue #127](https://github.com/Nitrate/Nitrate/issues/127) -
   Make SQL statements be compatible with PostgreSQL
 - [Issue #169](https://github.com/Nitrate/Nitrate/issues/169) -
