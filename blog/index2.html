@@ -146,6 +146,132 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/" rel="bookmark" title="Permalink to Loading initial data for Many-To-Many fields">
+                    <h2>Loading initial data for Many-To-Many fields</h2>
+                </a>
+            </header>
+
+            <p>Previously I've written about how to
+<a href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/">use JSON fixtures in Django migrations</a>.
+This becomes a bit more complicated when you have <code>ManyToMany</code> fields in
+your models. A corner case is when you have a <code>ManyToMany</code> relation to <code>self</code>.
+The example below comes from <a href="https://github.com/chartit/django-chartit">django-chartit</a>.</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">rating</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">()</span>
+    <span class="n">rating_count</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
+    <span class="n">publisher</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Publisher</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">)</span>
+    <span class="n">published_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">related</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">genre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Genre</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The fields <code>authors</code> and <code>related</code> are
+represented as separate tables and are computed when you access objects from this
+model. Django automatically handles these fields and creates classes for them.
+Before you can use them, you need a reference to their model classes.</p>
+<div class="highlight"><pre><span></span><span class="n">Book</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;demoproject&quot;</span><span class="p">,</span> <span class="s2">&quot;Book&quot;</span><span class="p">)</span>
+<span class="n">BookRelated</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">BookAuthors</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="k">for</span> <span class="n">relation</span> <span class="ow">in</span> <span class="n">Book</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">many_to_many</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">relation</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;related&#39;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">BookRelated</span> <span class="o">=</span> <span class="n">relation</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">through</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="c1"># available in Django 1.8</span>
+            <span class="n">BookRelated</span> <span class="o">=</span> <span class="n">relation</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">through</span>
+
+    <span class="k">if</span> <span class="n">relation</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;authors&#39;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">BookAuthors</span> <span class="o">=</span> <span class="n">relation</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">through</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="c1"># available in Django 1.8</span>
+            <span class="n">BookAuthors</span> <span class="o">=</span> <span class="n">relation</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">through</span>
+</pre></div>
+
+
+<p>The JSON data looks like this</p>
+<div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;fields&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;authors&quot;</span> <span class="p">:</span> <span class="p">[</span>  <span class="p">],</span>
+    <span class="nt">&quot;genre_id&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="nt">&quot;publisher_id&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;rating&quot;</span> <span class="p">:</span> <span class="mf">3.8999999999999999</span><span class="p">,</span>
+    <span class="nt">&quot;rating_count&quot;</span> <span class="p">:</span> <span class="mi">1869</span><span class="p">,</span>
+    <span class="nt">&quot;related&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">10</span> <span class="p">],</span>
+    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Freakonomics&quot;</span>
+  <span class="p">},</span>
+<span class="nt">&quot;model&quot;</span> <span class="p">:</span> <span class="s2">&quot;Book&quot;</span><span class="p">,</span>
+<span class="nt">&quot;pk&quot;</span> <span class="p">:</span> <span class="mi">9</span>
+<span class="p">}</span><span class="err">,</span>
+<span class="p">{</span> <span class="nt">&quot;fields&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;authors&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">24</span> <span class="p">],</span>
+    <span class="nt">&quot;genre_id&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;publisher_id&quot;</span> <span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="nt">&quot;rating&quot;</span> <span class="p">:</span> <span class="mf">4.4000000000000004</span><span class="p">,</span>
+    <span class="nt">&quot;rating_count&quot;</span> <span class="p">:</span> <span class="mi">222</span><span class="p">,</span>
+    <span class="nt">&quot;related&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">21</span> <span class="p">],</span>
+    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Hyperspace&quot;</span>
+     <span class="p">},</span>
+<span class="nt">&quot;model&quot;</span> <span class="p">:</span> <span class="s2">&quot;Book&quot;</span><span class="p">,</span>
+<span class="nt">&quot;pk&quot;</span> <span class="p">:</span> <span class="mi">24</span>
+<span class="p">}</span><span class="err">,</span>
+</pre></div>
+
+
+<p>Once we have our related model classes we proceed to store the data
+in the database like so</p>
+<div class="highlight"><pre><span></span><span class="c1"># create Book objects</span>
+<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">json_data</span><span class="p">:</span>
+    <span class="c1"># skip everything which isn&#39;t a book</span>
+    <span class="k">if</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Book&#39;</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># build a list of book authors using the intermediate BookAuthors model</span>
+    <span class="k">for</span> <span class="n">author_id</span> <span class="ow">in</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">][</span><span class="s1">&#39;authors&#39;</span><span class="p">]:</span>
+        <span class="n">author_obj</span> <span class="o">=</span> <span class="n">BookAuthors</span><span class="p">()</span>
+        <span class="n">author_obj</span><span class="o">.</span><span class="n">book_id</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;pk&#39;</span><span class="p">]</span>
+        <span class="n">author_obj</span><span class="o">.</span><span class="n">author_id</span> <span class="o">=</span> <span class="n">author_id</span>
+        <span class="n">author_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="c1"># you can&#39;t save the `authors` field directly in DB</span>
+    <span class="k">del</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">][</span><span class="s1">&#39;authors&#39;</span><span class="p">]</span>
+
+    <span class="c1"># build a list of related books using the intermediate BookRelated model</span>
+    <span class="k">for</span> <span class="n">related_id</span> <span class="ow">in</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">][</span><span class="s1">&#39;related&#39;</span><span class="p">]:</span>
+        <span class="n">related_obj</span> <span class="o">=</span> <span class="n">BookRelated</span><span class="p">()</span>
+        <span class="n">related_obj</span><span class="o">.</span><span class="n">from_book_id</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;pk&#39;</span><span class="p">]</span>
+        <span class="n">related_obj</span><span class="o">.</span><span class="n">to_book_id</span> <span class="o">=</span> <span class="n">related_id</span>
+        <span class="n">related_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="c1"># you can&#39;t save the `related` field directly in DB</span>
+    <span class="k">del</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">][</span><span class="s1">&#39;related&#39;</span><span class="p">]</span>
+
+    <span class="c1"># finally save the Book object</span>
+    <span class="n">model_class</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;demoproject&quot;</span><span class="p">,</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">])</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">model_class</span><span class="p">(</span><span class="o">**</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">])</span>
+    <span class="n">obj</span><span class="o">.</span><span class="n">pk</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;pk&#39;</span><span class="p">]</span>
+    <span class="n">obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+
+
+<p>This works well for <em>django-chartit</em>. You should take care to
+remove the <code>ManyToMany</code> fields from the JSON data because they
+don't actually exist in the <code>Book</code> class and Django will raise
+an exception if you try to assign to them.</p>
+<p>I hope you like my work and please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>
+should you need commercial support for this or other open source libraries!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Tue 30 August 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/" rel="bookmark" title="Permalink to New release django-chartit 0.2.6">
                     <h2>New release django-chartit 0.2.6</h2>
                 </a>

@@ -1,5 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-04-12T23:00:00+03:00</updated><entry><title>Nitrate enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/04/12/nitrate-enhancement-update/" rel="alternate"></link><published>2017-04-12T23:00:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-04-12:blog/mr-senko/2017/04/12/nitrate-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.15
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-04-24T13:00:00+03:00</updated><entry><title>Nitrate bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/04/24/nitrate-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-04-24T13:00:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-04-24:blog/mr-senko/2017/04/24/nitrate-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.75
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-04-24
+&lt;strong&gt;Severity:&lt;/strong&gt; Medium
+&lt;strong&gt;Documentation:&lt;/strong&gt; &lt;a href="http://nitrate-mrsenko.rtfd.io/"&gt;http://nitrate-mrsenko.rtfd.io/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
+&lt;p&gt;Updated Nitrate package is now available which introduces several fixes and
+improvements. It is also possible to build and run Nitrate as a Docker image.
+Further improvements for running in dockerized environment will be available
+in the next release.&lt;/p&gt;
+&lt;h2&gt;Changelog since 3.8.18.15&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rebased onto a1c47ec from upstream&lt;/li&gt;
+&lt;li&gt;Refactor SQL in testplans to ORM.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/172"&gt;PR #172&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Fix &lt;a href="https://github.com/Nitrate/Nitrate/issues/174"&gt;Issue #174&lt;/a&gt; -
+  Error when remove tag from a plan's cases (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Refactor SQL in testcases to ORM.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/177"&gt;PR #177&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Improve tags search and fix hints while adding tags to selected test cases
+  inside of a test plan. &lt;a href="https://github.com/Nitrate/Nitrate/pull/178"&gt;PR #178&lt;/a&gt;
+  (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update documentation about installation steps for RHEL6.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/179"&gt;PR #179&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Make it possible to build and run Nitrate as Docker image.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/180"&gt;PR #180&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Open upstream issues&lt;/h2&gt;
+&lt;p&gt;The following issues and pull requests, which have been previously released on
+Mr. Senko, are still open in the upstream repository:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/45"&gt;PR #45&lt;/a&gt; -
+  fix: showing priorities in advanced search in hardcode (RhBug:1139932) &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/139"&gt;PR #139&lt;/a&gt; -
+  Refactor SQL and use ORM queries instead &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/146"&gt;PR #146&lt;/a&gt; -
+  Replace SQL with ORM in reporting app. Fix #127&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/156"&gt;PR #156&lt;/a&gt; -
+  Don't use deprecated request.REQUEST&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/171"&gt;PR #171&lt;/a&gt; -
+  Enable testing with MySQL and Postgres on Travis-CI&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/172"&gt;PR #172&lt;/a&gt; -
+  Refactor sql in testplans&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/177"&gt;PR #177&lt;/a&gt; -
+  Refactor SQL in testcases and fix #174&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/178"&gt;PR #178&lt;/a&gt; -
+  Fix tags search and hint while adding tags to test cases in TP&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/179"&gt;PR #179&lt;/a&gt; -
+  Update installation steps for RHEL6&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/180"&gt;PR #180&lt;/a&gt; -
+  Build Nitrate as docker image&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/127"&gt;Issue #127&lt;/a&gt; -
+  Make SQL statements be compatible with PostgreSQL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/169"&gt;Issue #169&lt;/a&gt; -
+  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/174"&gt;Issue #174&lt;/a&gt; -
+  Error when remove tag from a plan's case&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade nitrate
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/04/24/nitrate-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-04-24T13:00:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-04-24:blog/mr-senko/2017/04/24/nitrate-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.75
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-04-24
+&lt;strong&gt;Severity:&lt;/strong&gt; Medium
+&lt;strong&gt;Documentation:&lt;/strong&gt; &lt;a href="http://nitrate-mrsenko.rtfd.io/"&gt;http://nitrate-mrsenko.rtfd.io/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
+&lt;p&gt;Updated Nitrate package is now available which introduces several fixes and
+improvements. It is also possible to build and run Nitrate as a Docker image.
+Further improvements for running in dockerized environment will be available
+in the next release.&lt;/p&gt;
+&lt;h2&gt;Changelog since 3.8.18.15&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rebased onto a1c47ec from upstream&lt;/li&gt;
+&lt;li&gt;Refactor SQL in testplans to ORM.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/172"&gt;PR #172&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Fix &lt;a href="https://github.com/Nitrate/Nitrate/issues/174"&gt;Issue #174&lt;/a&gt; -
+  Error when remove tag from a plan's cases (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Refactor SQL in testcases to ORM.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/177"&gt;PR #177&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Improve tags search and fix hints while adding tags to selected test cases
+  inside of a test plan. &lt;a href="https://github.com/Nitrate/Nitrate/pull/178"&gt;PR #178&lt;/a&gt;
+  (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update documentation about installation steps for RHEL6.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/179"&gt;PR #179&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Make it possible to build and run Nitrate as Docker image.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/180"&gt;PR #180&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Open upstream issues&lt;/h2&gt;
+&lt;p&gt;The following issues and pull requests, which have been previously released on
+Mr. Senko, are still open in the upstream repository:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/45"&gt;PR #45&lt;/a&gt; -
+  fix: showing priorities in advanced search in hardcode (RhBug:1139932) &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/139"&gt;PR #139&lt;/a&gt; -
+  Refactor SQL and use ORM queries instead &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/146"&gt;PR #146&lt;/a&gt; -
+  Replace SQL with ORM in reporting app. Fix #127&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/156"&gt;PR #156&lt;/a&gt; -
+  Don't use deprecated request.REQUEST&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/171"&gt;PR #171&lt;/a&gt; -
+  Enable testing with MySQL and Postgres on Travis-CI&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/172"&gt;PR #172&lt;/a&gt; -
+  Refactor sql in testplans&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/177"&gt;PR #177&lt;/a&gt; -
+  Refactor SQL in testcases and fix #174&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/178"&gt;PR #178&lt;/a&gt; -
+  Fix tags search and hint while adding tags to test cases in TP&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/179"&gt;PR #179&lt;/a&gt; -
+  Update installation steps for RHEL6&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/Nitrate/Nitrate/pull/180"&gt;PR #180&lt;/a&gt; -
+  Build Nitrate as docker image&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/127"&gt;Issue #127&lt;/a&gt; -
+  Make SQL statements be compatible with PostgreSQL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/169"&gt;Issue #169&lt;/a&gt; -
+  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Nitrate/Nitrate/issues/174"&gt;Issue #174&lt;/a&gt; -
+  Error when remove tag from a plan's case&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade nitrate
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/04/12/nitrate-enhancement-update/" rel="alternate"></link><published>2017-04-12T23:00:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-04-12:blog/mr-senko/2017/04/12/nitrate-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.15
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-04-12
 &lt;strong&gt;Severity:&lt;/strong&gt; Medium&lt;/p&gt;
 &lt;h2&gt;Details&lt;/h2&gt;
@@ -1128,6 +1268,36 @@ powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
   Gunicorn, Docker and Google Cloud Engine (Mr. Senko)&lt;/li&gt;
 &lt;li&gt;Django migrations improvements&lt;/li&gt;
 &lt;li&gt;Upgrade Django to 1.8.14&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate bug fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-01-24T09:30:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-01-24:blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.04
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-01-24&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
+&lt;p&gt;Updated Nitrate package is now available that adds various enhancements and
+bug fixes.&lt;/p&gt;
+&lt;h2&gt;Changelog&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Don't hard-code priorities in advanced search.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/45"&gt;PR #45&lt;/a&gt;,
+  fixes &lt;a href="https://bugzilla.redhat.com/show_bug.cgi?id=1139932"&gt;RhBz #1139932&lt;/a&gt; (Chenxiong Qi)&lt;/li&gt;
+&lt;li&gt;Update to Django 1.8.11. &lt;a href="https://github.com/Nitrate/Nitrate/pull/81"&gt;PR #81&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update django-tinymce to 2.4.0&lt;/li&gt;
+&lt;li&gt;Minor updates to documentation.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/100"&gt;PR #100&lt;/a&gt; (Matthias Cavigelli)&lt;/li&gt;
+&lt;li&gt;Update link to wadofstuff-django-serializers.
+  PR &lt;a href="https://github.com/Nitrate/Nitrate/pull/101"&gt;#101&lt;/a&gt;,
+  fixes &lt;a href="https://github.com/Nitrate/Nitrate/issues/99"&gt;#99&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Require Celery&amp;lt;2 for compatibility reasons.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/102"&gt;PR #102&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Host static files in DEBUG mode for development.
+  &lt;a href="https://github.com/Nitrate/Nitrate/pull/103"&gt;PR #103&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;flake8 fixes. &lt;a href="https://github.com/Nitrate/Nitrate/pull/104"&gt;PR #104&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;How to upgrade&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and

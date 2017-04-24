@@ -143,6 +143,93 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/04/24/nitrate-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to Nitrate bug-fix and enhancement update">
+                    <h2>Nitrate bug-fix and enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> nitrate-3.8.18.75
+<strong>Released on:</strong> 2017-04-24
+<strong>Severity:</strong> Medium
+<strong>Documentation:</strong> <a href="http://nitrate-mrsenko.rtfd.io/">http://nitrate-mrsenko.rtfd.io/</a></p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package is now available which introduces several fixes and
+improvements. It is also possible to build and run Nitrate as a Docker image.
+Further improvements for running in dockerized environment will be available
+in the next release.</p>
+<h2>Changelog since 3.8.18.15</h2>
+<ul>
+<li>Rebased onto a1c47ec from upstream</li>
+<li>Refactor SQL in testplans to ORM.
+  <a href="https://github.com/Nitrate/Nitrate/pull/172">PR #172</a> (Mr. Senko)</li>
+<li>Fix <a href="https://github.com/Nitrate/Nitrate/issues/174">Issue #174</a> -
+  Error when remove tag from a plan's cases (Mr. Senko)</li>
+<li>Refactor SQL in testcases to ORM.
+  <a href="https://github.com/Nitrate/Nitrate/pull/177">PR #177</a> (Mr. Senko)</li>
+<li>Improve tags search and fix hints while adding tags to selected test cases
+  inside of a test plan. <a href="https://github.com/Nitrate/Nitrate/pull/178">PR #178</a>
+  (Mr. Senko)</li>
+<li>Update documentation about installation steps for RHEL6.
+  <a href="https://github.com/Nitrate/Nitrate/pull/179">PR #179</a> (Mr. Senko)</li>
+<li>Make it possible to build and run Nitrate as Docker image.
+  <a href="https://github.com/Nitrate/Nitrate/pull/180">PR #180</a> (Mr. Senko)</li>
+</ul>
+<h2>Open upstream issues</h2>
+<p>The following issues and pull requests, which have been previously released on
+Mr. Senko, are still open in the upstream repository:</p>
+<ul>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/45">PR #45</a> -
+  fix: showing priorities in advanced search in hardcode (RhBug:1139932) </li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/139">PR #139</a> -
+  Refactor SQL and use ORM queries instead </li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/146">PR #146</a> -
+  Replace SQL with ORM in reporting app. Fix #127</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/156">PR #156</a> -
+  Don't use deprecated request.REQUEST</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/171">PR #171</a> -
+  Enable testing with MySQL and Postgres on Travis-CI</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/172">PR #172</a> -
+  Refactor sql in testplans</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/177">PR #177</a> -
+  Refactor SQL in testcases and fix #174</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/178">PR #178</a> -
+  Fix tags search and hint while adding tags to test cases in TP</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/179">PR #179</a> -
+  Update installation steps for RHEL6</li>
+<li>
+<p><a href="https://github.com/Nitrate/Nitrate/pull/180">PR #180</a> -
+  Build Nitrate as docker image</p>
+</li>
+<li>
+<p><a href="https://github.com/Nitrate/Nitrate/issues/127">Issue #127</a> -
+  Make SQL statements be compatible with PostgreSQL</p>
+</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/169">Issue #169</a> -
+  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/174">Issue #174</a> -
+  Error when remove tag from a plan's case</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade nitrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Mon 24 April 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/04/24/nitrate-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/04/12/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
                     <h2>Nitrate enhancement update</h2>
                 </a>
@@ -1118,132 +1205,6 @@ if you need faster response cycle for the open source libraries you use.</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/atodorov/2016/08/31/august-2016-status-report/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/" rel="bookmark" title="Permalink to Loading initial data for Many-To-Many fields">
-                    <h2>Loading initial data for Many-To-Many fields</h2>
-                </a>
-            </header>
-
-            <p>Previously I've written about how to
-<a href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/">use JSON fixtures in Django migrations</a>.
-This becomes a bit more complicated when you have <code>ManyToMany</code> fields in
-your models. A corner case is when you have a <code>ManyToMany</code> relation to <code>self</code>.
-The example below comes from <a href="https://github.com/chartit/django-chartit">django-chartit</a>.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-    <span class="n">rating</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">()</span>
-    <span class="n">rating_count</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
-    <span class="n">authors</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
-    <span class="n">publisher</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Publisher</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">)</span>
-    <span class="n">published_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">related</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">genre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Genre</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">)</span>
-</pre></div>
-
-
-<p>The fields <code>authors</code> and <code>related</code> are
-represented as separate tables and are computed when you access objects from this
-model. Django automatically handles these fields and creates classes for them.
-Before you can use them, you need a reference to their model classes.</p>
-<div class="highlight"><pre><span></span><span class="n">Book</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;demoproject&quot;</span><span class="p">,</span> <span class="s2">&quot;Book&quot;</span><span class="p">)</span>
-<span class="n">BookRelated</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="n">BookAuthors</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="k">for</span> <span class="n">relation</span> <span class="ow">in</span> <span class="n">Book</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">many_to_many</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">relation</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;related&#39;</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">BookRelated</span> <span class="o">=</span> <span class="n">relation</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">through</span>
-        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="c1"># available in Django 1.8</span>
-            <span class="n">BookRelated</span> <span class="o">=</span> <span class="n">relation</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">through</span>
-
-    <span class="k">if</span> <span class="n">relation</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;authors&#39;</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">BookAuthors</span> <span class="o">=</span> <span class="n">relation</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">through</span>
-        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="c1"># available in Django 1.8</span>
-            <span class="n">BookAuthors</span> <span class="o">=</span> <span class="n">relation</span><span class="o">.</span><span class="n">rel</span><span class="o">.</span><span class="n">through</span>
-</pre></div>
-
-
-<p>The JSON data looks like this</p>
-<div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;fields&quot;</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;authors&quot;</span> <span class="p">:</span> <span class="p">[</span>  <span class="p">],</span>
-    <span class="nt">&quot;genre_id&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="nt">&quot;publisher_id&quot;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="nt">&quot;rating&quot;</span> <span class="p">:</span> <span class="mf">3.8999999999999999</span><span class="p">,</span>
-    <span class="nt">&quot;rating_count&quot;</span> <span class="p">:</span> <span class="mi">1869</span><span class="p">,</span>
-    <span class="nt">&quot;related&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">10</span> <span class="p">],</span>
-    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Freakonomics&quot;</span>
-  <span class="p">},</span>
-<span class="nt">&quot;model&quot;</span> <span class="p">:</span> <span class="s2">&quot;Book&quot;</span><span class="p">,</span>
-<span class="nt">&quot;pk&quot;</span> <span class="p">:</span> <span class="mi">9</span>
-<span class="p">}</span><span class="err">,</span>
-<span class="p">{</span> <span class="nt">&quot;fields&quot;</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;authors&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">24</span> <span class="p">],</span>
-    <span class="nt">&quot;genre_id&quot;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="nt">&quot;publisher_id&quot;</span> <span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
-    <span class="nt">&quot;rating&quot;</span> <span class="p">:</span> <span class="mf">4.4000000000000004</span><span class="p">,</span>
-    <span class="nt">&quot;rating_count&quot;</span> <span class="p">:</span> <span class="mi">222</span><span class="p">,</span>
-    <span class="nt">&quot;related&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">21</span> <span class="p">],</span>
-    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Hyperspace&quot;</span>
-     <span class="p">},</span>
-<span class="nt">&quot;model&quot;</span> <span class="p">:</span> <span class="s2">&quot;Book&quot;</span><span class="p">,</span>
-<span class="nt">&quot;pk&quot;</span> <span class="p">:</span> <span class="mi">24</span>
-<span class="p">}</span><span class="err">,</span>
-</pre></div>
-
-
-<p>Once we have our related model classes we proceed to store the data
-in the database like so</p>
-<div class="highlight"><pre><span></span><span class="c1"># create Book objects</span>
-<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">json_data</span><span class="p">:</span>
-    <span class="c1"># skip everything which isn&#39;t a book</span>
-    <span class="k">if</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Book&#39;</span><span class="p">:</span>
-        <span class="k">continue</span>
-
-    <span class="c1"># build a list of book authors using the intermediate BookAuthors model</span>
-    <span class="k">for</span> <span class="n">author_id</span> <span class="ow">in</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">][</span><span class="s1">&#39;authors&#39;</span><span class="p">]:</span>
-        <span class="n">author_obj</span> <span class="o">=</span> <span class="n">BookAuthors</span><span class="p">()</span>
-        <span class="n">author_obj</span><span class="o">.</span><span class="n">book_id</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;pk&#39;</span><span class="p">]</span>
-        <span class="n">author_obj</span><span class="o">.</span><span class="n">author_id</span> <span class="o">=</span> <span class="n">author_id</span>
-        <span class="n">author_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-    <span class="c1"># you can&#39;t save the `authors` field directly in DB</span>
-    <span class="k">del</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">][</span><span class="s1">&#39;authors&#39;</span><span class="p">]</span>
-
-    <span class="c1"># build a list of related books using the intermediate BookRelated model</span>
-    <span class="k">for</span> <span class="n">related_id</span> <span class="ow">in</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">][</span><span class="s1">&#39;related&#39;</span><span class="p">]:</span>
-        <span class="n">related_obj</span> <span class="o">=</span> <span class="n">BookRelated</span><span class="p">()</span>
-        <span class="n">related_obj</span><span class="o">.</span><span class="n">from_book_id</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;pk&#39;</span><span class="p">]</span>
-        <span class="n">related_obj</span><span class="o">.</span><span class="n">to_book_id</span> <span class="o">=</span> <span class="n">related_id</span>
-        <span class="n">related_obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-    <span class="c1"># you can&#39;t save the `related` field directly in DB</span>
-    <span class="k">del</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">][</span><span class="s1">&#39;related&#39;</span><span class="p">]</span>
-
-    <span class="c1"># finally save the Book object</span>
-    <span class="n">model_class</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;demoproject&quot;</span><span class="p">,</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">])</span>
-    <span class="n">obj</span> <span class="o">=</span> <span class="n">model_class</span><span class="p">(</span><span class="o">**</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">])</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">pk</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;pk&#39;</span><span class="p">]</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-</pre></div>
-
-
-<p>This works well for <em>django-chartit</em>. You should take care to
-remove the <code>ManyToMany</code> fields from the JSON data because they
-don't actually exist in the <code>Book</code> class and Django will raise
-an exception if you try to assign to them.</p>
-<p>I hope you like my work and please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>
-should you need commercial support for this or other open source libraries!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Tue 30 August 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/08/30/loading-initial-data-for-many-to-many-fields/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
