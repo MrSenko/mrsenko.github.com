@@ -30,7 +30,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (
             ('github', 'https://github.com/MrSenko'),
             ('twitter', 'https://twitter.com/Mr_Senko'),
-            ('bitbucket', 'https://bitbucket.org/MrSenko'),
+#            ('bitbucket', 'https://bitbucket.org/MrSenko'),
 )
 
 DEFAULT_PAGINATION = 20
