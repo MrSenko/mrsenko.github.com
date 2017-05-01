@@ -143,12 +143,114 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/05/01/nitrate-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to Nitrate bug-fix and enhancement update">
+                    <h2>Nitrate bug-fix and enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> nitrate-3.8.18.18
+<strong>Released on:</strong> 2017-05-01
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/nitrate/">http://MrSenko.com/nitrate/</a></p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package and Docker image are now available which fix several bugs
+and introduce big improvements related to using external bug trackers with Nitrate!
+Further improvements related to bugtracker integration will be available in the
+next release.</p>
+<h2>Changes since 3.8.18.17</h2>
+<ul>
+<li>Rebased onto a2363f8 from upstream</li>
+<li>Add default permissions to groups.
+  <a href="https://github.com/Nitrate/Nitrate/pull/191">PR #191</a> (Mr. Senko)</li>
+<li>Fix
+  <a href="https://github.com/Nitrate/Nitrate/issues/186">Issue #186</a>:
+  Errata field visible when <code>ERRATA_URL_PREFIX</code> is empty.
+  <a href="https://github.com/Nitrate/Nitrate/pull/188">PR #188</a> (Mr. Senko)</li>
+<li>Fix
+  <a href="https://github.com/Nitrate/Nitrate/issues/181">Issue #181</a>:
+  Failed to delete testplan or product.
+  <a href="https://github.com/Nitrate/Nitrate/pull/182">PR #182</a> (Mr. Senko)</li>
+<li>Add link to Administration guide in footer (Mr. Senko)</li>
+<li>Update MOTD displayed on login/registration form (Mr. Senko)</li>
+<li>Updated RPMs inside Docker image (Mr. Senko)</li>
+<li>Use bug trackers defined in the DB.
+  <a href="https://github.com/Nitrate/Nitrate/pull/79">PR #79</a> (Mr. Senko)</li>
+</ul>
+<p><strong>NOTE</strong>: this release introduces new database migrations so don't forget to
+execute <code>./manage.py migrate</code>!</p>
+<h2>Open upstream issues</h2>
+<p>The following issues and pull requests, which have been previously released on
+Mr. Senko, are still open in the upstream repository:</p>
+<ul>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/45">PR #45</a> -
+  fix: showing priorities in advanced search in hardcode (RhBug:1139932)</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/79">PR #79</a> -
+  Use bug trackers defined in the DB</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/139">PR #139</a> -
+  Refactor SQL and use ORM queries instead</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/146">PR #146</a> -
+  Replace SQL with ORM in reporting app. Fix #127</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/171">PR #171</a> -
+  Enable testing with MySQL and Postgres on Travis-CI</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/172">PR #172</a> -
+  Refactor sql in testplans</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/177">PR #177</a> -
+  Refactor SQL in testcases and fix #174</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/178">PR #178</a> -
+  Fix tags search and hint while adding tags to test cases in TP</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/180">PR #180</a> -
+  Build Nitrate as docker image</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/127">Issue #127</a> -
+  Make SQL statements be compatible with PostgreSQL</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/169">Issue #169</a> -
+  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/174">Issue #174</a> -
+  Error when remove tag from a plan's case</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/181">Issue #181</a> -
+  Failed to delete testplan or product</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/186">Issue #186</a> -
+  Errata field visible when <code>ERRATA_URL_PREFIX</code> is empty</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade nitrate
+</pre></div>
+
+
+<p>If you are using Nitrate as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm nitrate_web_1 nitrate_db_1
+docker-compose up -d
+docker exec -it nitrate_web_1 /Nitrate/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/Nitrate/blob/version_3.8.18/docker-compose.yml">docker-compose.yml</a>
+for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Mon 01 May 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/05/01/nitrate-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/04/24/nitrate-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to Nitrate bug-fix and enhancement update">
                     <h2>Nitrate bug-fix and enhancement update</h2>
                 </a>
             </header>
 
-            <p><strong>Version:</strong> nitrate-3.8.18.75
+            <p><strong>Version:</strong> nitrate-3.8.18.17
 <strong>Released on:</strong> 2017-04-24
 <strong>Severity:</strong> Medium
 <strong>Documentation:</strong> <a href="http://nitrate-mrsenko.rtfd.io/">http://nitrate-mrsenko.rtfd.io/</a></p>
@@ -1165,42 +1267,6 @@ this or other open source libraries please
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/08/31/august-2016-status-report/" rel="bookmark" title="Permalink to August 2016 Status Report">
-                    <h2>August 2016 Status Report</h2>
-                </a>
-            </header>
-
-            <p>Hello everyone, during August I've been focusing on
-<a href="https://github.com/chartit/django-chartit">django-chartit</a> which
-is a supported package of our Python software stack.</p>
-<p>Since I've taken over maintenance from Praveen Gollakota there
-were several bug-fix releases, 3 of them in August. The result is
-6 closed issues and increased test coverage. I've spent time to
-refactor parts of the code and make it compatible with the latest
-Django version. Also cleaned up code smells identified by Landscape.io.</p>
-<p>Future plans for <em>django-chartit</em> include working on the remaining
-open issues. I think I will have to refactor the code a lot more
-to make it compatible with the latest Highcharts.js API before
-being able to implement the requested features.</p>
-<p>I have also spoken with Highcharts engineering on the topic of
-testing their JavaScript charting code in the context of <em>django-chartit</em>.
-My idea is to load the demo project using various versions of the
-JavaScript library and make sure everything works on the client side.
-This appears to be doable with Selenium.</p>
-<p>I hope you like my work and please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
-if you need faster response cycle for the open source libraries you use.</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Wed 31 August 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/08/31/august-2016-status-report/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
