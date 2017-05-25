@@ -5,7 +5,7 @@ comments: true
 Author: Mr. Senko
 Tags: Python, errata
 
-**Version:** nitrate-3.8.18.75
+**Version:** nitrate-3.8.18.17
 **Released on:** 2017-04-24
 **Severity:** Medium
 **Documentation:** <http://nitrate-mrsenko.rtfd.io/>
