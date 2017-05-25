@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Nitrate bug-fix and enhancement update</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-layers.min.js"></script>
+                <script src="/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: '/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: '/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: '/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: '/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: '/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: '/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="/theme/css/skel.css" />
+			<link rel="stylesheet" href="/theme/css/style.css" />
+			<link rel="stylesheet" href="/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+
+        <meta name="description" content="version 3.8.18.25" >
+
+        <meta name="author" content="Mr. Senko">
+
+        <meta name="tags" content="Python" >
+        <meta name="tags" content="errata" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="Nitrate bug-fix and enhancement update">
+            <meta name="twitter:description" content="version 3.8.18.25">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="/blog/mr-senko/" />
+        <meta property="og:url" content="/blog/mr-senko/2017/05/25/nitrate-bug-fix-and-enhancement-update/" />
+        <meta property="og:title" content="Nitrate bug-fix and enhancement update" />
+        <meta property="article:published_time" content="2017-05-25 10:00:00+03:00">
+            <meta property="og:description" content="version 3.8.18.25">
+
+            <meta property="og:image" content="/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="/">
+				<img src="/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><strong><a href="/#subscriptions">Our offer</a></strong></li>
+						<li><strong><a href="/#software">Supported software</a></strong></li>
+						<li><strong><a href="/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+    <h2>Nitrate bug-fix and enhancement update</h2>
+    <p>version 3.8.18.25</p>
+    <p>
+        <em>Posted by
+                <a href="/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Thu 25 May 2017
+        </em>
+    </p>
+            </section>
+
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p><strong>Version:</strong> nitrate-3.8.18.21
+<strong>Released on:</strong> 2017-05-25
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/nitrate/">http://MrSenko.com/nitrate/</a></p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package and Docker image are now available which fix several bugs
+and introduce big improvements related to using external bug trackers with Nitrate!
+Further improvements related to bugtracker integration will be available in the
+next release.</p>
+<h2>Changes since 3.8.18.18</h2>
+<ul>
+<li>Rebased onto f7e2c6c from upstrem</li>
+<li>Includes PRs #197, #198, #199, #200, #201, #202, #204:
+  removal of deprecated <code>request.REQUEST</code> and more tests (tkdchen)</li>
+<li>Includes PR #203: Minor fixes (Mr. Senko)</li>
+<li>Fixed failing test cases on PostgreSQL and MySQL (Mr. Senko)</li>
+<li>Remove unused doctest. PR #205 (tkdchen)</li>
+<li>Fixes Issue #185: Improve integrations between Nitrate and
+  external bug tracking systems (Mr. Senko). In particular:</li>
+<li>removed all hard-coded issue tracker settings</li>
+<li>allow issue trackers to be configured entirely in the DB</li>
+<li>re-implemented the functionality to open all bugs inside
+    the issue tracker by clicking a single link at the bottom
+    of the test run reports page</li>
+<li>re-implemented the "Check to add test case(s) to Issue Tracker"
+    checkbox when adding a bug to a test case run</li>
+<li>re-implemented the "Report" bug functionality, which will pre-load
+    the chosen Issue Tracker with information about the test case
+    which was used to discover the bug.</li>
+<li>NOTE: full integration is available only for Bugzilla. This version
+    provides only reporting integration for JIRA</li>
+</ul>
+<p>NOTE: this release introduces new database migrations!</p>
+<p>NOTE: this release includes updated static files!</p>
+<p>NOTE: this release introduces a new configuration setting called
+<code>NITRATE_BASE_URL</code>. It defined the FQDN of your Nitrate instance!
+This configuration is used to construct a URL linking back to test
+cases and test runs when reporting bugs!</p>
+<ul>
+<li>Rebased onto a2363f8 from upstream</li>
+<li>Add default permissions to groups.
+  <a href="https://github.com/Nitrate/Nitrate/pull/191">PR #191</a> (Mr. Senko)</li>
+<li>Fix
+  <a href="https://github.com/Nitrate/Nitrate/issues/186">Issue #186</a>:
+  Errata field visible when <code>ERRATA_URL_PREFIX</code> is empty.
+  <a href="https://github.com/Nitrate/Nitrate/pull/188">PR #188</a> (Mr. Senko)</li>
+<li>Fix
+  <a href="https://github.com/Nitrate/Nitrate/issues/181">Issue #181</a>:
+  Failed to delete testplan or product.
+  <a href="https://github.com/Nitrate/Nitrate/pull/182">PR #182</a> (Mr. Senko)</li>
+<li>Add link to Administration guide in footer (Mr. Senko)</li>
+<li>Update MOTD displayed on login/registration form (Mr. Senko)</li>
+<li>Updated RPMs inside Docker image (Mr. Senko)</li>
+<li>Use bug trackers defined in the DB.
+  <a href="https://github.com/Nitrate/Nitrate/pull/79">PR #79</a> (Mr. Senko)</li>
+</ul>
+<p><strong>NOTE</strong>: this release introduces new database migrations so don't forget to
+execute <code>./manage.py migrate</code>!</p>
+<h2>Open upstream issues</h2>
+<p>The following issues and pull requests, which have been previously released on
+Mr. Senko, are still open in the upstream repository:</p>
+<ul>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/45">PR #45</a> -
+  fix: showing priorities in advanced search in hardcode (RhBug:1139932)</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/79">PR #79</a> -
+  Use bug trackers defined in the DB</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/139">PR #139</a> -
+  Refactor SQL and use ORM queries instead</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/146">PR #146</a> -
+  Replace SQL with ORM in reporting app. Fix #127</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/171">PR #171</a> -
+  Enable testing with MySQL and Postgres on Travis-CI</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/172">PR #172</a> -
+  Refactor sql in testplans</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/177">PR #177</a> -
+  Refactor SQL in testcases and fix #174</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/178">PR #178</a> -
+  Fix tags search and hint while adding tags to test cases in TP</li>
+<li><a href="https://github.com/Nitrate/Nitrate/pull/180">PR #180</a> -
+  Build Nitrate as docker image</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/127">Issue #127</a> -
+  Make SQL statements be compatible with PostgreSQL</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/169">Issue #169</a> -
+  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/174">Issue #174</a> -
+  Error when remove tag from a plan's case</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/181">Issue #181</a> -
+  Failed to delete testplan or product</li>
+<li><a href="https://github.com/Nitrate/Nitrate/issues/186">Issue #186</a> -
+  Errata field visible when <code>ERRATA_URL_PREFIX</code> is empty</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade nitrate
+</pre></div>
+
+
+<p>If you are using Nitrate as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm nitrate_web_1 nitrate_db_1
+docker-compose up -d
+docker exec -it nitrate_web_1 /Nitrate/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/Nitrate/blob/version_3.8.18/docker-compose.yml">docker-compose.yml</a>
+for the above commands to work!</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="/blog/mr-senko/">Mr. Senko</a>
+        on Thu 25 May 2017
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="/blog/tags/python/">Python</a>, <a href="/blog/tags/errata/">errata</a>, </p>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa fa-twitter"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016-2017 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
