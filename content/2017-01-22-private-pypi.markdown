@@ -13,7 +13,7 @@ which to install package versions supported by Mr. Senko. The URL is of the form
 You must keep this URL secret! You can install supported packaged by either command line:
 
     :::
-    pip install nitrate --extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
+    pip install kiwitestpad --extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
 
 or inside of your project by adding the following statement to `requirements.txt`:
 
