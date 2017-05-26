@@ -143,6 +143,70 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/" rel="bookmark" title="Permalink to Nitrate is now KiwiTestPad">
+                    <h2>Nitrate is now KiwiTestPad</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.21.2
+<strong>Released on:</strong> 2017-05-26
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Starting with this release the product will be available under the name
+<strong>KiwiTestPad</strong> with an upstream repository at <a href="https://github.com/MrSenko/Kiwi/">https://github.com/MrSenko/Kiwi/</a>.</p>
+<p>We have been working actively with the upstream Nitrate project in the past
+several months. However the community is practically unresponsive and without
+a clear vision how to develop in the future. The PR velocity is very slow and
+pull requests have been opened for months and years. This is why at Mr. Senko
+we have decided to fork the project completely and drive the new community on our
+own!</p>
+<p>The most important changes you can expect in the short-term future are
+complete integration with JIRA and GitHub,
+improvements to documentation, improved support for running as Docker container,
+migration to latest Django versions and migration to Python 3, cleaning up of
+obsolete dependencies and streamlining the process of creating customized
+configuration of KiwiTestPad, improved visual design and simplified UX!</p>
+<h2>Changes since Nitrate 3.8.18.21</h2>
+<ul>
+<li><code>NITRATE_BASE_URL</code> has been renamed to <code>KIWI_BASE_URL</code></li>
+<li>Use <code>/tmp/.bugzilla</code> for python-bugzilla cache to avoid 500 ISE
+  when running as Docker container</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web_1 kiwi_db_1
+docker-compose up -d
+docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/Kiwi/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Fri 26 May 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/05/25/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
                     <h2>Nitrate enhancement update</h2>
                 </a>
