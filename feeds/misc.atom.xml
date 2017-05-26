@@ -487,7 +487,7 @@ before upgrading!&lt;/p&gt;</summary><category term="Python"></category><categor
 which to install package versions supported by Mr. Senko. The URL is of the form
 &lt;strong&gt;https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;You must keep this URL secret! You can install supported packaged by either command line:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install nitrate --extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install kiwitestpad --extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
 &lt;/pre&gt;&lt;/div&gt;
 
 
