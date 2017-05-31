@@ -143,6 +143,65 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad bug-fix and enhancement update">
+                    <h2>KiwiTestPad bug-fix and enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.22
+<strong>Released on:</strong> 2017-05-31
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>This release brings several bug fixes as well as lots of internal improvements
+to facilitate migration to latest Django versions and Python 3 in the near future.</p>
+<h2>Changes since KiwiTestPad 3.21.2</h2>
+<ul>
+<li>Multiple refactorings of deprecated Django features (Mr. Senko)</li>
+<li>Added more tests (Chenxiong Qi)</li>
+<li>Replace deprecated XML2Dict with xmltodict. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/10">Issue #10</a> (Mr. Senko)</li>
+<li>Use mysqlclient instead of MySQL-python. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/14">Issue #14</a> (Mr. Senko)</li>
+<li>Make TestCase changelog display state changes using their names. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/9">Issue #9</a> (Mr. Senko)</li>
+<li>Multiple documentation improvements, including documentation of all
+  configuration settings (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web_1 kiwi_db_1
+docker-compose up -d
+docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/Kiwi/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Wed 31 May 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/" rel="bookmark" title="Permalink to Nitrate is now KiwiTestPad">
                     <h2>Nitrate is now KiwiTestPad</h2>
                 </a>

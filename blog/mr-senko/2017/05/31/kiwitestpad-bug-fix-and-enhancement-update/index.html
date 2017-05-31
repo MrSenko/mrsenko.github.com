@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
-		<title>Mr. Senko - Open Source Wizards - Authors</title>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>KiwiTestPad bug-fix and enhancement update</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="" />
                 <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
@@ -110,14 +110,31 @@
                 <!-- Code highlight color scheme -->
                     <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
 
-                    <meta name="twitter:site" content="@Mr_Senko">
-                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
-                    <meta name="twitter:description" content="Support for open source libraries">
-                    <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
 
-                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
-                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+
+        <meta name="description" content="version 3.22" >
+
+        <meta name="author" content="Mr. Senko">
+
+        <meta name="tags" content="Python" >
+        <meta name="tags" content="errata" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="KiwiTestPad bug-fix and enhancement update">
+            <meta name="twitter:description" content="version 3.22">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="http://mrsenko.com/blog/mr-senko/" />
+        <meta property="og:url" content="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/" />
+        <meta property="og:title" content="KiwiTestPad bug-fix and enhancement update" />
+        <meta property="article:published_time" content="2017-05-31 12:30:00+03:00">
+            <meta property="og:description" content="version 3.22">
+
+            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
 	</head>
 	<body class="landing">
 
@@ -137,28 +154,97 @@
 			</header>
 
             <section id="banner">
-    <h2>Mr. Senko's blog</h2>
+    <h2>KiwiTestPad bug-fix and enhancement update</h2>
+    <p>version 3.22</p>
     <p>
-        open source from the wizards
+        <em>Posted by
+                <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Wed 31 May 2017
+        </em>
     </p>
             </section>
 
-        <div class="post-preview">
-            <a href="http://mrsenko.com/blog/atodorov/" rel="bookmark">
-                <h2 class="post-title">
-                    Alexander Todorov (16)
-                </h2>
-            </a>
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p><strong>Version:</strong> kiwitestpad-3.22
+<strong>Released on:</strong> 2017-05-31
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>This release brings several bug fixes as well as lots of internal improvements
+to facilitate migration to latest Django versions and Python 3 in the near future.</p>
+<h2>Changes since KiwiTestPad 3.21.2</h2>
+<ul>
+<li>Multiple refactorings of deprecated Django features (Mr. Senko)</li>
+<li>Added more tests (Chenxiong Qi)</li>
+<li>Replace deprecated XML2Dict with xmltodict. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/10">Issue #10</a> (Mr. Senko)</li>
+<li>Use mysqlclient instead of MySQL-python. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/14">Issue #14</a> (Mr. Senko)</li>
+<li>Make TestCase changelog display state changes using their names. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/9">Issue #9</a> (Mr. Senko)</li>
+<li>Multiple documentation improvements, including documentation of all
+  configuration settings (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web_1 kiwi_db_1
+docker-compose up -d
+docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/Kiwi/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+        on Wed 31 May 2017
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, <a href="http://mrsenko.com/blog/tags/errata/">errata</a>, </p>
         </div>
-        <hr>
-        <div class="post-preview">
-            <a href="http://mrsenko.com/blog/mr-senko/" rel="bookmark">
-                <h2 class="post-title">
-                    Mr. Senko (25)
-                </h2>
-            </a>
+    </div>
+
+    <section id="comments" class="wrapper style2 special">
+        <div class="container">
+            <header class="major special">
+                <h2>Comments !</h2>
+            </header>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'mrsenko';
+                var disqus_identifier = 'blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/';
+                var disqus_url = 'http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mrsenko.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
-        <hr>
+    </section>
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">

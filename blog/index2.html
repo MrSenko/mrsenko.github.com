@@ -146,6 +146,48 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/" rel="bookmark" title="Permalink to Status Report for September 2016">
+                    <h2>Status Report for September 2016</h2>
+                </a>
+            </header>
+
+            <p>Hello everyone, during September I've been focusing on
+<a href="https://github.com/sixty-north/cosmic-ray">Cosmic Ray</a> which
+is a supported package of our Python software stack.</p>
+<p>The changes include better error checking when running the test suite in
+Travis CI, fixes for some code smells and style updates, some Python 3.3
+compatibility fixes, traceback fix for Python 3.4, new <code>and-or</code> replacement
+operators and internal refactoring.</p>
+<p>During my work on <code>and-or</code> replacement operators it turned out that <em>Cosmic Ray</em>
+didn't support the notion of one operator producing multiple code mutations.
+This required refactoring of project internals and is now currently supported.
+As a follow up there are a couple more issues opened to clean up the existing
+code, mainly the comparisons replacement operators.</p>
+<p><strong>NOTE</strong> <em>Cosmic Ray</em> is still not compatible with Python 3.3 and will probably
+never be, despite my work. In <code>cosmic_ray/importing.py</code> we make use of
+<code>importlib.machinery.ModuleSpec</code> which was introduced in 3.4 and at this moment
+we don't want to backport and support this for Python 3.3. The rest of the code
+is 3.3 compatible though.</p>
+<p>During September I have also worked on
+<a href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/">django-chartit v0.2.7</a> to fix
+a nasty <a href="http://mrsenko.com/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/">recursion loop</a>
+bug. The follow up of this bug is 
+<a href="https://github.com/PyCQA/pylint/pull/1109">pylint #1109</a>, which is now merged
+into master!</p>
+<p>I hope you like my work and please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
+if you need faster response cycle for the open source libraries you use.</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Tue 04 October 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/" rel="bookmark" title="Permalink to Beware of recursion loop when using super()">
                     <h2>Beware of recursion loop when using super()</h2>
                 </a>
@@ -1600,38 +1642,6 @@ BBC definitely did their job right because the device didn't crash.</p>
 
 <p>There are <a href="http://mrsenko.com/blog/2016/01/31/fosdem-2016-report/#disqus_thread">comments</a>.</p>        </div>
     </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/2016/01/10/founding-of-mr-senko/" rel="bookmark" title="Permalink to Founding of Mr. Senko">
-                    <h2>Founding of Mr. Senko</h2>
-                </a>
-            </header>
-
-            <p>Hello everyone, welcome to <a href="http://MrSenko.com">Mr. Senko</a>! We are a group of friends who have
-been working with open source for the last 10 years. During this time we've
-seen technologies come and go and hype projects becoming abandoned months later.
-We've seen the pain when companies had to rewrite their software because of this
-and the struggle to get your patches accepted upstream.
-Don't you wish you had somebody who could take care of all the hassle for you?</p>
-<p>Mr. Senko is our attempt at providing commercial support for open source projects,
-specifically libraries which other companies use to build their products. As of now
-we have diverse experience in Java, Python and JavaScript as well as my personal
-experience with Quality Assurance.</p>
-<p>In the next weeks and months we will be refining our value proposition and building
-the team so we can offer you great technical support and expertise. We plan to blog
-regularly about our progress and about technology and open source events in general! 
-You can follow us at <a href="https://twitter.com/Mr_Senko">@Mr_Senko</a> or tweet at the wizard
-using the <strong>#MrSenko</strong> hashtag! </p>
-<p>Stay tuned for more news!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Sun 10 January 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/2016/01/10/founding-of-mr-senko/#disqus_thread">comments</a>.</p>        </div>
-    </section>
 
 <section class="wrapper special">
     <div class="container">
@@ -1640,7 +1650,10 @@ using the <strong>#MrSenko</strong> hashtag! </p>
             <a href="http://mrsenko.com/blog/index.html" class="button special big">&larr;Newest Posts </a>
         </li>
         <li>
-            Page 2 / 2
+            Page 2 / 3
+        </li>
+        <li>
+            <a href="http://mrsenko.com/blog/index3.html" class="button special big">Older Posts &rarr;</a>
         </li>
         </li>
     </ul>

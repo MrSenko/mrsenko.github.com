@@ -143,6 +143,65 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad bug-fix and enhancement update">
+                    <h2>KiwiTestPad bug-fix and enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.22
+<strong>Released on:</strong> 2017-05-31
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>This release brings several bug fixes as well as lots of internal improvements
+to facilitate migration to latest Django versions and Python 3 in the near future.</p>
+<h2>Changes since KiwiTestPad 3.21.2</h2>
+<ul>
+<li>Multiple refactorings of deprecated Django features (Mr. Senko)</li>
+<li>Added more tests (Chenxiong Qi)</li>
+<li>Replace deprecated XML2Dict with xmltodict. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/10">Issue #10</a> (Mr. Senko)</li>
+<li>Use mysqlclient instead of MySQL-python. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/14">Issue #14</a> (Mr. Senko)</li>
+<li>Make TestCase changelog display state changes using their names. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/9">Issue #9</a> (Mr. Senko)</li>
+<li>Multiple documentation improvements, including documentation of all
+  configuration settings (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web_1 kiwi_db_1
+docker-compose up -d
+docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/Kiwi/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Wed 31 May 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/" rel="bookmark" title="Permalink to Nitrate is now KiwiTestPad">
                     <h2>Nitrate is now KiwiTestPad</h2>
                 </a>
@@ -1257,48 +1316,6 @@ if you need faster response cycle for the open source libraries you use.</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/" rel="bookmark" title="Permalink to Status Report for September 2016">
-                    <h2>Status Report for September 2016</h2>
-                </a>
-            </header>
-
-            <p>Hello everyone, during September I've been focusing on
-<a href="https://github.com/sixty-north/cosmic-ray">Cosmic Ray</a> which
-is a supported package of our Python software stack.</p>
-<p>The changes include better error checking when running the test suite in
-Travis CI, fixes for some code smells and style updates, some Python 3.3
-compatibility fixes, traceback fix for Python 3.4, new <code>and-or</code> replacement
-operators and internal refactoring.</p>
-<p>During my work on <code>and-or</code> replacement operators it turned out that <em>Cosmic Ray</em>
-didn't support the notion of one operator producing multiple code mutations.
-This required refactoring of project internals and is now currently supported.
-As a follow up there are a couple more issues opened to clean up the existing
-code, mainly the comparisons replacement operators.</p>
-<p><strong>NOTE</strong> <em>Cosmic Ray</em> is still not compatible with Python 3.3 and will probably
-never be, despite my work. In <code>cosmic_ray/importing.py</code> we make use of
-<code>importlib.machinery.ModuleSpec</code> which was introduced in 3.4 and at this moment
-we don't want to backport and support this for Python 3.3. The rest of the code
-is 3.3 compatible though.</p>
-<p>During September I have also worked on
-<a href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/">django-chartit v0.2.7</a> to fix
-a nasty <a href="http://mrsenko.com/blog/atodorov/2016/09/14/beware-of-recursion-loop-when-using-super/">recursion loop</a>
-bug. The follow up of this bug is 
-<a href="https://github.com/PyCQA/pylint/pull/1109">pylint #1109</a>, which is now merged
-into master!</p>
-<p>I hope you like my work and please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
-if you need faster response cycle for the open source libraries you use.</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Tue 04 October 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/10/04/status-report-for-september-2016/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">

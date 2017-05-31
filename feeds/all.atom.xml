@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-05-26T12:30:00+03:00</updated><entry><title>Nitrate is now KiwiTestPad</title><link href="http://mrsenko.com/blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/" rel="alternate"></link><published>2017-05-26T12:30:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-05-26:blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.21.2
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-05-31T12:30:00+03:00</updated><entry><title>KiwiTestPad bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-05-31T12:30:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-05-31:blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.22
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-05-31
+&lt;strong&gt;Severity:&lt;/strong&gt; Medium
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
+&lt;p&gt;This release brings several bug fixes as well as lots of internal improvements
+to facilitate migration to latest Django versions and Python 3 in the near future.&lt;/p&gt;
+&lt;h2&gt;Changes since KiwiTestPad 3.21.2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple refactorings of deprecated Django features (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Added more tests (Chenxiong Qi)&lt;/li&gt;
+&lt;li&gt;Replace deprecated XML2Dict with xmltodict. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/10"&gt;Issue #10&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Use mysqlclient instead of MySQL-python. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/14"&gt;Issue #14&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Make TestCase changelog display state changes using their names. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/9"&gt;Issue #9&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Multiple documentation improvements, including documentation of all
+  configuration settings (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade kiwitestpad
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using KiwiTestPad as a Docker container then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose stop
+docker rm kiwi_web_1 kiwi_db_1
+docker-compose up -d
+docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
+&lt;a href="https://github.com/MrSenko/Kiwi/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate is now KiwiTestPad</title><link href="http://mrsenko.com/blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/" rel="alternate"></link><published>2017-05-26T12:30:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-05-26:blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.21.2
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-05-26
 &lt;strong&gt;Severity:&lt;/strong&gt; High
 &lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
