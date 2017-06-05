@@ -40,7 +40,7 @@ docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
 
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
-&lt;a href="https://github.com/MrSenko/Kiwi/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+&lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
 and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate is now KiwiTestPad</title><link href="http://mrsenko.com/blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/" rel="alternate"></link><published>2017-05-26T12:30:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-05-26:blog/mr-senko/2017/05/26/nitrate-is-now-kiwitestpad/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.21.2
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-05-26
 &lt;strong&gt;Severity:&lt;/strong&gt; High
@@ -87,7 +87,7 @@ docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
 
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
-&lt;a href="https://github.com/MrSenko/Kiwi/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+&lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
 and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Nitrate enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/05/25/nitrate-enhancement-update/" rel="alternate"></link><published>2017-05-25T10:00:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-05-25:blog/mr-senko/2017/05/25/nitrate-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; nitrate-3.8.18.21
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-05-25
 &lt;strong&gt;Severity:&lt;/strong&gt; High
