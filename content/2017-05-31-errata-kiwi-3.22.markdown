@@ -55,5 +55,5 @@ If you are using KiwiTestPad as a Docker container then
     docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
 
 **NOTE** you will need the appropriate version of
-[docker-compose.yml](https://github.com/MrSenko/Kiwi/blob/master/docker-compose.yml)
+[docker-compose.yml](https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml)
 and the `mrsenko/kiwi` Docker image for the above commands to work!
