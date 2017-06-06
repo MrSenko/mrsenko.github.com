@@ -146,6 +146,60 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/06/06/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
+                    <h2>KiwiTestPad enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.23
+<strong>Released on:</strong> 2017-06-06
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>This release makes it possible to customize all product settings and override the
+Docker image to suit your needs.</p>
+<h2>Changes since KiwiTestPad 3.22</h2>
+<ul>
+<li>Docker compose is now hosted at <a href="https://github.com/MrSenko/kiwi-docker">https://github.com/MrSenko/kiwi-docker</a>
+  with the ability to customize all settings and the Docker image itself
+  (Mr. Senko)</li>
+<li>Trimmed down the contents of the Docker image - removed unnecessary RPM
+  packages (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 06 June 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/06/06/kiwitestpad-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad bug-fix and enhancement update">
                     <h2>KiwiTestPad bug-fix and enhancement update</h2>
                 </a>
@@ -1268,57 +1322,6 @@ if you need faster response cycle for the open source libraries you use.</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/" rel="bookmark" title="Permalink to Status Report for October 2016">
-                    <h2>Status Report for October 2016</h2>
-                </a>
-            </header>
-
-            <p>Hello everyone, during October I've been focusing on
-<a href="https://github.com/sixty-north/cosmic-ray">Cosmic Ray</a> which
-is a supported package of our
-<a href="http://mrsenko.com/support/python.html">Python software stack</a>.</p>
-<p>The changes include</p>
-<ul>
-<li>Report only SURVIVED mutants if <code>--full-report</code> is not specified;</li>
-<li>Refactoring of <code>MutationCore.visit_mutation_site()</code>;</li>
-<li>Update of comparison operators mutations based on the new behavior;</li>
-<li>Refactoring of <code>UnaryOp</code> mutation operators based on the new behavior
-  and introduction of more mutations;</li>
-<li>Update <code>BinaryOp</code> mutation operators and add more mutations;</li>
-<li>Update of <code>tools/inspector.py</code> to follow the latest code.</li>
-</ul>
-<p>All of my work this month was around <code>visit_mutation_site()</code> being able
-to generate multiple mutations at a single site. For example the code</p>
-<div class="highlight"><pre><span></span>a &lt; b
-</pre></div>
-
-
-<p>can be mutated into:</p>
-<div class="highlight"><pre><span></span>a &lt;= b
-a is not b
-a &gt; b
-... etc
-</pre></div>
-
-
-<p>Previously this was done using different mutation operators but now it
-is done using a single class and an index to the desired operator replacement.
-As a follow up other mutation operators had to be updated as well. As a result
-the code base is cleaner and easier to understand.</p>
-<p>I hope you like my work and please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
-if you need faster response cycle for the open source libraries you use.</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Mon 31 October 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">

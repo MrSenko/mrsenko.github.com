@@ -149,6 +149,60 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/06/06/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
+                    <h2>KiwiTestPad enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.23
+<strong>Released on:</strong> 2017-06-06
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>This release makes it possible to customize all product settings and override the
+Docker image to suit your needs.</p>
+<h2>Changes since KiwiTestPad 3.22</h2>
+<ul>
+<li>Docker compose is now hosted at <a href="https://github.com/MrSenko/kiwi-docker">https://github.com/MrSenko/kiwi-docker</a>
+  with the ability to customize all settings and the Docker image itself
+  (Mr. Senko)</li>
+<li>Trimmed down the contents of the Docker image - removed unnecessary RPM
+  packages (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 06 June 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/06/06/kiwitestpad-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad bug-fix and enhancement update">
                     <h2>KiwiTestPad bug-fix and enhancement update</h2>
                 </a>
@@ -1257,62 +1311,6 @@ this or other open source libraries please
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/" rel="bookmark" title="Permalink to Reviving django-chartit with version 0.2.4">
-                    <h2>Reviving django-chartit with version 0.2.4</h2>
-                </a>
-            </header>
-
-            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
-that can be used to easily create charts from the data in your database. The
-charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
-Data in your database can be plotted as simple line charts, column charts,
-area charts, scatter plots, and many more chart types.</p>
-<p>The project has been originally developed by
-<a href="https://github.com/pgollakota">Praveen Gollakota</a> and had gained some
-popularity. Recently Mr. Senko was granted the necessary access rights
-and we've revived the project with two upstream releases.</p>
-<h2>Changelog</h2>
-<p>Version 0.2.3 was released a few days ago and merges the <code>django-chartit2</code> fork by
-<a href="https://github.com/grantmcconnaughey">Grant McConnaughey</a> which had a few
-releases of its own earlier this year. It also makes a few improvements and merged
-other pull requests.</p>
-<p>Version 0.2.4 was released today and fixes the usage of deprecated Django
-APIs which were removed in Django 1.10.</p>
-<p>Many thanks to Grant for his work on Python 3 and latest Django support!
-Many thanks to Praveen for letting us maintain the project.</p>
-<h2>Upgrade from django_chartit2</h2>
-<p>If you are using the <code>django_chartit2</code> module by Grant then you have to</p>
-<div class="highlight"><pre><span></span>pip uninstall django_chartit2
-pip install django_chartit
-</pre></div>
-
-
-<p>If you are not in a hurry to upgrade you may as well wait for the next
-release by Grant, which should automatically require <code>django_chartit</code>
-and transparently switch you back to using the original package and not
-the fork. However release of such an update is not under our control.</p>
-<h2>Feature plans</h2>
-<p>Mr. Senko is currently working actively to bring the rest of the project
-up to speed, including the demo site, which shows how to use the API.
-This is a mandatory step before we go ahead to work on various bug fixes
-and documentation improvements. We will also be looking into adding more
-tests for the project.</p>
-<h2>Support</h2>
-<p>At Mr. Senko we will do our best to accommodate every need and merge patches
-and feature requests as they come in. Should you need commercial support for
-this or other open source libraries please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Tue 02 August 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
