@@ -149,6 +149,78 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/06/13/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
+                    <h2>KiwiTestPad enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.24
+<strong>Released on:</strong> 2017-06-13
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release removes many obsoleted dependencies and adds integration with
+JIRA and GitHub issue trackers.</p>
+<h2>Changes since KiwiTestPad 3.23</h2>
+<ul>
+<li>Removed dependency on Celery and django-celery. The following configuration
+  settings have been removed: <code>BROKER_URL</code>, <code>CELERY_TASK_RESULT_EXPIRES</code>,
+  <code>CELERY_RESULT_BACKEND</code>, <code>CELERYD_TIMER_PRECISION</code>, <code>CELERY_IGNORE_RESULT</code>,
+  <code>CELERY_MAX_CACHED_RESULTS</code>, <code>CELERY_DEFAULT_RATE_LIMIT</code> (Mr. Senko)</li>
+<li>Refactoring of internal email sending capabilities. The following configuration
+  settings have been removed: <code>EMAILS_FOR_DEBUG</code> (replaced by <code>ADMINS</code>),
+  <code>ENABLE_ASYNC_EMAIL</code> (Mr. Senko)</li>
+<li>Removed integration with <em>Errata System</em> and removed the <code>ERRATA_URL_PREFIX</code>
+  setting. Fixes <a href="https://github.com/MrSenko/Kiwi/issues/15">Issue #15</a> (Mr. Senko)</li>
+<li>Removed dependency on qpid-python and QPID integration which has been disabled
+  for a long time and most likely not working. This also removes the
+  <code>ENABLE_QPID</code> setting.</li>
+<li>Removed dependency on kerberos with instructions how to add it back and enable
+  it if required (Mr. Senko)</li>
+<li>Removed dependency on Kobo. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/5">Issue #15</a> Mr. Senko)</li>
+<li>Add missing integrations for JIRA. It is now possible to link failed Test Case(s)
+  to JIRA Issues and Report new issues with pre-filled information from the test case!
+  Fixes <a href="https://github.com/MrSenko/Kiwi/issues/2">Issue #2</a> (Mr. Senko)</li>
+<li>Add more tests (Chenxiong Qi)</li>
+<li>Add integration with GitHub issues. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/4">Issue #4</a> (Mr. Senko)</li>
+</ul>
+<p><strong>IMPORTANT:</strong> this release introduces new database migrations!</p>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 13 June 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/06/13/kiwitestpad-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/06/06/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
                     <h2>KiwiTestPad enhancement update</h2>
                 </a>
@@ -1248,69 +1320,6 @@ this or other open source libraries please
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/" rel="bookmark" title="Permalink to New release django-chartit 0.2.6">
-                    <h2>New release django-chartit 0.2.6</h2>
-                </a>
-            </header>
-
-            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
-that can be used to easily create charts from the data in your database. The
-charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
-Data in your database can be plotted as simple line charts, column charts,
-area charts, scatter plots, and many more chart types.</p>
-<p>Today we are releasing version 0.2.6 as part of our regular update process.</p>
-<h2>Changelog since version 0.2.4</h2>
-<ul>
-<li>
-<p>0.2.6 (August 16, 2016)</p>
-<ul>
-<li>Merged <code>chartit_tests/</code> with <code>demoproject/</code></li>
-<li>Load test DB with real data to use during testing</li>
-<li>Add more tests</li>
-<li>Update the path to <code>demoproject.settings</code> when building docs. Fixes
-  a problem which caused some API docs to be empty</li>
-<li>Fix <code>ValueError: not enough values to unpack (expected 2, got 0)</code>
-  with PivotChart when the QuerySet returns empty data</li>
-<li>Dropped requirement on <code>simplejson</code></li>
-<li>Properly handle unicode data in Pivot charts. Fixes
-  <a href="https://github.com/chartit/django-chartit/issues/5">#5</a></li>
-<li>Demo project updated with Chart and PivotChart examples of
-  rendering DateField values on the X axis</li>
-<li>Allow charting of <code>extra()</code> or <code>annotate()</code> fields. Fixes
-  <a href="https://github.com/chartit/django-chartit/issues/8">#8</a> and
-  <a href="https://github.com/chartit/django-chartit/issues/12">#12</a></li>
-<li>Refactor <code>RecursiveDefaultDict</code> to allow chart objects to be
-  serialized to/from cache. Fixes
-  <a href="https://github.com/chartit/django-chartit/issues/10">#10</a></li>
-<li>Add information about supported 3rd party JavaScript versions. Fixes
-  <a href="https://github.com/chartit/django-chartit/issues/14">#14</a></li>
-</ul>
-</li>
-<li>
-<p>0.2.5 (August 3, 2016)</p>
-<ul>
-<li>Workaround Python 3 vs. Python 2 list sort issue which breaks
-  charts with multiple data sources displayed on the same axis!</li>
-<li>Make demoproject/ compatible with Django 1.10</li>
-</ul>
-</li>
-</ul>
-<h2>Support</h2>
-<p>At Mr. Senko we will do our best to accommodate every need and merge patches
-and feature requests as they come in. Should you need commercial support for
-this or other open source libraries please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Tue 16 August 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/16/new-release-django-chartit-026/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">

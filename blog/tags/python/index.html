@@ -143,6 +143,78 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/06/13/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
+                    <h2>KiwiTestPad enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.24
+<strong>Released on:</strong> 2017-06-13
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release removes many obsoleted dependencies and adds integration with
+JIRA and GitHub issue trackers.</p>
+<h2>Changes since KiwiTestPad 3.23</h2>
+<ul>
+<li>Removed dependency on Celery and django-celery. The following configuration
+  settings have been removed: <code>BROKER_URL</code>, <code>CELERY_TASK_RESULT_EXPIRES</code>,
+  <code>CELERY_RESULT_BACKEND</code>, <code>CELERYD_TIMER_PRECISION</code>, <code>CELERY_IGNORE_RESULT</code>,
+  <code>CELERY_MAX_CACHED_RESULTS</code>, <code>CELERY_DEFAULT_RATE_LIMIT</code> (Mr. Senko)</li>
+<li>Refactoring of internal email sending capabilities. The following configuration
+  settings have been removed: <code>EMAILS_FOR_DEBUG</code> (replaced by <code>ADMINS</code>),
+  <code>ENABLE_ASYNC_EMAIL</code> (Mr. Senko)</li>
+<li>Removed integration with <em>Errata System</em> and removed the <code>ERRATA_URL_PREFIX</code>
+  setting. Fixes <a href="https://github.com/MrSenko/Kiwi/issues/15">Issue #15</a> (Mr. Senko)</li>
+<li>Removed dependency on qpid-python and QPID integration which has been disabled
+  for a long time and most likely not working. This also removes the
+  <code>ENABLE_QPID</code> setting.</li>
+<li>Removed dependency on kerberos with instructions how to add it back and enable
+  it if required (Mr. Senko)</li>
+<li>Removed dependency on Kobo. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/5">Issue #15</a> Mr. Senko)</li>
+<li>Add missing integrations for JIRA. It is now possible to link failed Test Case(s)
+  to JIRA Issues and Report new issues with pre-filled information from the test case!
+  Fixes <a href="https://github.com/MrSenko/Kiwi/issues/2">Issue #2</a> (Mr. Senko)</li>
+<li>Add more tests (Chenxiong Qi)</li>
+<li>Add integration with GitHub issues. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/4">Issue #4</a> (Mr. Senko)</li>
+</ul>
+<p><strong>IMPORTANT:</strong> this release introduces new database migrations!</p>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 13 June 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/06/13/kiwitestpad-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/06/06/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
                     <h2>KiwiTestPad enhancement update</h2>
                 </a>
@@ -1280,45 +1352,6 @@ this or other open source libraries please
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/" rel="bookmark" title="Permalink to What I've worked on in November 2016">
-                    <h2>What I've worked on in November 2016</h2>
-                </a>
-            </header>
-
-            <p>Hello everyone, during November I've been focusing on
-Cosmic Ray, pylint and django-chartit which are
-supported packages in our
-<a href="http://mrsenko.com/support/python.html">Python software stack</a>.</p>
-<p>The changes include</p>
-<ul>
-<li>Cosmic Ray will not fail if baseline test execution fails, see
-  <a href="https://github.com/sixty-north/cosmic-ray/pull/181">PR #181</a>;</li>
-<li>Cosmic Ray refactoring in skipping mutations to self, see
-  <a href="https://github.com/sixty-north/cosmic-ray/pull/180">PR #180</a>;</li>
-<li>Added new checker to pylint. Statements using <code>len(SEQUENCE)</code> are
-  checked more thoroughly. If there are comparisons to 0 these should
-  be refactored. See <a href="https://github.com/PyCQA/pylint/pull/1154">PR #1154</a>.</li>
-<li>Fixed small pylint typo;</li>
-<li>Started work on support for <code>RawQuerySet</code> in django-chartit. This also alignes
-  with support for model properties. There is a POC solution proposed to
-  requesters and waiting for feedback. New version of django-chartit will be released
-  very soon, see <a href="https://github.com/chartit/django-chartit/issues/44">#44</a> and
-  <a href="https://github.com/chartit/django-chartit/issues/35">#35</a>.</li>
-</ul>
-<p>I hope you like my work and please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
-if you need faster response cycle for the open source libraries you use.</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Wed 30 November 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
