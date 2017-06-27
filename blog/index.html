@@ -146,6 +146,65 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/06/27/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
+                    <h2>KiwiTestPad enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.26
+<strong>Released on:</strong> 2017-06-27
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release removes many instances of the depracated <code>request.REQUEST</code> object,
+adds more tests and provides more documentation about configuring email notifications.</p>
+<h2>Changes since KiwiTestPad 3.24</h2>
+<ul>
+<li>Multiple replacements of deprecated <code>request.REQUEST</code> and more tests
+  (Chenxiong Qi)</li>
+<li>Use the <code>EMAIL_SUBJECT_PREFIX</code> setting when sending emails (Mr. Senko)</li>
+<li>Document how to use an external email provider instead of SMTP with
+  example for Amazon SES. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/12">Issue #12</a> (Mr. Senko)</li>
+<li>Remove the <code>KIWI_BASE_URL</code> configuration setting. The Administration
+  Guide now includes a section called <em>Configure Kiwi’s base URL</em> which
+  explains how to configure the base URL of your installation! (Mr. Senko)</li>
+</ul>
+<p><strong>IMPORTANT:</strong> this release introduces new database migrations!</p>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 27 June 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/06/27/kiwitestpad-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/06/13/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
                     <h2>KiwiTestPad enhancement update</h2>
                 </a>
@@ -1318,43 +1377,6 @@ this or other open source libraries please
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/" rel="bookmark" title="Permalink to New release pelican-ab 0.2.3">
-                    <h2>New release pelican-ab 0.2.3</h2>
-                </a>
-            </header>
-
-            <p><a href="https://github.com/MrSenko/pelican-ab">pelican-ab</a> is an A/B testing plugin
-for Pelican, the static site generator. It allows you to encode experiments in
-your templates and renders the experiment selected by the <code>AB_EXPERIMENT</code>
-environment variable.</p>
-<p>Today we are releasing version <code>0.2.3</code> as an urgent bug fix update handling
-internal changes in the latest version of Pelican.
-In previous versions Pelican used the <code>JINJA_EXTENSIONS</code> setting to
-configure additional Jinja2 modules. In version 3.7.0, released yesterday,
-<code>JINJA_EXTENSIONS</code> has been replaced with the <code>JINJA_ENVIRONMENT</code> setting.
-Version 0.2.3 of pelican-ab handles both cases and is able to work with older
-and newer versions of Pelican!</p>
-<p>This backward-incompatible change in Pelican has been automatically detected by our
-monitoring tool
-<a href="http://mrsenko.com/blog/mr-senko/2016/05/18/triggering-automatic-dependency-testing/">Strazar</a>,
-which proves the value of automatic testing against the latest versions of
-upstream dependencies!</p>
-<h2>Support</h2>
-<p>At Mr. Senko we will do our best to accommodate every need and merge patches
-and feature requests as they come in. Should you need commercial support for
-this or other open source libraries please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Tue 13 December 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
