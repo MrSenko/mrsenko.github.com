@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-06-27T14:45:00+03:00</updated><entry><title>KiwiTestPad enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/06/27/kiwitestpad-enhancement-update/" rel="alternate"></link><published>2017-06-27T14:45:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-06-27:blog/mr-senko/2017/06/27/kiwitestpad-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.26
-&lt;strong&gt;Released on:&lt;/strong&gt; 2017-06-27
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-07-11T14:35:00+03:00</updated><entry><title>KiwiTestPad bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-07-11T14:35:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-07-11:blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.28
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-07-11
 &lt;strong&gt;Severity:&lt;/strong&gt; Medium
 &lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Details&lt;/h2&gt;
@@ -8,21 +8,65 @@
 It has a lot of great features, such as Bugzilla and JIRA integration,
 fast test plan and runs search, powerful access control for each plan, run and case,
 and XML-RPC APIs.&lt;/p&gt;
-&lt;p&gt;This release removes many instances of the depracated &lt;code&gt;request.REQUEST&lt;/code&gt; object,
-adds more tests and provides more documentation about configuring email notifications.&lt;/p&gt;
-&lt;h2&gt;Changes since KiwiTestPad 3.24&lt;/h2&gt;
+&lt;p&gt;This release removes all remaining instances of the deprecated &lt;code&gt;request.REQUEST&lt;/code&gt; object,
+adds more tests and fixes several bugs.&lt;/p&gt;
+&lt;h2&gt;Changes since KiwiTestPad 3.26&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Multiple replacements of deprecated &lt;code&gt;request.REQUEST&lt;/code&gt; and more tests
-  (Chenxiong Qi)&lt;/li&gt;
-&lt;li&gt;Use the &lt;code&gt;EMAIL_SUBJECT_PREFIX&lt;/code&gt; setting when sending emails (Mr. Senko)&lt;/li&gt;
-&lt;li&gt;Document how to use an external email provider instead of SMTP with
-  example for Amazon SES. Fixes
-  &lt;a href="https://github.com/MrSenko/Kiwi/issues/12"&gt;Issue #12&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
-&lt;li&gt;Remove the &lt;code&gt;KIWI_BASE_URL&lt;/code&gt; configuration setting. The Administration
-  Guide now includes a section called &lt;em&gt;Configure Kiwi’s base URL&lt;/em&gt; which
-  explains how to configure the base URL of your installation! (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Replace w3m cmd line tool with html2text. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/7"&gt;Issue #7&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Disable bug reporting if Issue Tracker base_url is empty (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Don't link TC to Issue Trackers if required parameters not present.
+  By default these are &lt;code&gt;api_url&lt;/code&gt;, &lt;code&gt;api_username&lt;/code&gt; and &lt;code&gt;api_password&lt;/code&gt;.
+  For GitHub they are &lt;code&gt;base_url&lt;/code&gt; and &lt;code&gt;api_password&lt;/code&gt;. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/3"&gt;Issue #3&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Don't add component to testcase if component already exists. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/13"&gt;Issue #13&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Add more tests (Chenxiong Qi)&lt;/li&gt;
+&lt;li&gt;Replace deprecated &lt;code&gt;request.REQUEST&lt;/code&gt; (Chenxiong Qi, Mr. Senko)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt; this release introduces new database migrations!&lt;/p&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade kiwitestpad
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using KiwiTestPad as a Docker container then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
+&lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>KiwiTestPad bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-07-11T14:35:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-07-11:blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.28
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-07-11
+&lt;strong&gt;Severity:&lt;/strong&gt; Medium
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.&lt;/p&gt;
+&lt;p&gt;This release removes all remaining instances of the deprecated &lt;code&gt;request.REQUEST&lt;/code&gt; object,
+adds more tests and fixes several bugs.&lt;/p&gt;
+&lt;h2&gt;Changes since KiwiTestPad 3.26&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Replace w3m cmd line tool with html2text. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/7"&gt;Issue #7&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Disable bug reporting if Issue Tracker base_url is empty (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Don't link TC to Issue Trackers if required parameters not present.
+  By default these are &lt;code&gt;api_url&lt;/code&gt;, &lt;code&gt;api_username&lt;/code&gt; and &lt;code&gt;api_password&lt;/code&gt;.
+  For GitHub they are &lt;code&gt;base_url&lt;/code&gt; and &lt;code&gt;api_password&lt;/code&gt;. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/3"&gt;Issue #3&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Don't add component to testcase if component already exists. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/13"&gt;Issue #13&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Add more tests (Chenxiong Qi)&lt;/li&gt;
+&lt;li&gt;Replace deprecated &lt;code&gt;request.REQUEST&lt;/code&gt; (Chenxiong Qi, Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;How to upgrade&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
 &lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
@@ -125,6 +169,48 @@ docker exec -it kiwi_web /Kiwi/manage.py migrate
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
 &lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>KiwiTestPad enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/06/27/kiwitestpad-enhancement-update/" rel="alternate"></link><published>2017-06-27T14:45:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-06-27:blog/mr-senko/2017/06/27/kiwitestpad-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.26
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-06-27
+&lt;strong&gt;Severity:&lt;/strong&gt; Medium
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.&lt;/p&gt;
+&lt;p&gt;This release removes many instances of the depracated &lt;code&gt;request.REQUEST&lt;/code&gt; object,
+adds more tests and provides more documentation about configuring email notifications.&lt;/p&gt;
+&lt;h2&gt;Changes since KiwiTestPad 3.24&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple replacements of deprecated &lt;code&gt;request.REQUEST&lt;/code&gt; and more tests
+  (Chenxiong Qi)&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;EMAIL_SUBJECT_PREFIX&lt;/code&gt; setting when sending emails (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Document how to use an external email provider instead of SMTP with
+  example for Amazon SES. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/12"&gt;Issue #12&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Remove the &lt;code&gt;KIWI_BASE_URL&lt;/code&gt; configuration setting. The Administration
+  Guide now includes a section called &lt;em&gt;Configure Kiwi’s base URL&lt;/em&gt; which
+  explains how to configure the base URL of your installation! (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt; this release introduces new database migrations!&lt;/p&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade kiwitestpad
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using KiwiTestPad as a Docker container then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
+&lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
 and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>KiwiTestPad enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/06/13/kiwitestpad-enhancement-update/" rel="alternate"></link><published>2017-06-13T10:43:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-06-13:blog/mr-senko/2017/06/13/kiwitestpad-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.24
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-06-13
 &lt;strong&gt;Severity:&lt;/strong&gt; High
@@ -396,6 +482,48 @@ before upgrading!&lt;/p&gt;
 docker rm kiwi_web kiwi_db
 docker-compose up -d
 docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
+&lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>KiwiTestPad bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-05-31T12:30:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-05-31:blog/mr-senko/2017/05/31/kiwitestpad-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.22
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-05-31
+&lt;strong&gt;Severity:&lt;/strong&gt; Medium
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.&lt;/p&gt;
+&lt;p&gt;This release brings several bug fixes as well as lots of internal improvements
+to facilitate migration to latest Django versions and Python 3 in the near future.&lt;/p&gt;
+&lt;h2&gt;Changes since KiwiTestPad 3.21.2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple refactorings of deprecated Django features (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Added more tests (Chenxiong Qi)&lt;/li&gt;
+&lt;li&gt;Replace deprecated XML2Dict with xmltodict. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/10"&gt;Issue #10&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Use mysqlclient instead of MySQL-python. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/14"&gt;Issue #14&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Make TestCase changelog display state changes using their names. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/9"&gt;Issue #9&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Multiple documentation improvements, including documentation of all
+  configuration settings (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade kiwitestpad
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using KiwiTestPad as a Docker container then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose stop
+docker rm kiwi_web_1 kiwi_db_1
+docker-compose up -d
+docker exec -it kiwi_web_1 /Kiwi/manage.py migrate
 &lt;/pre&gt;&lt;/div&gt;
 
 

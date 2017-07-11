@@ -146,6 +146,66 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad bug-fix and enhancement update">
+                    <h2>KiwiTestPad bug-fix and enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.28
+<strong>Released on:</strong> 2017-07-11
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release removes all remaining instances of the deprecated <code>request.REQUEST</code> object,
+adds more tests and fixes several bugs.</p>
+<h2>Changes since KiwiTestPad 3.26</h2>
+<ul>
+<li>Replace w3m cmd line tool with html2text. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/7">Issue #7</a> (Mr. Senko)</li>
+<li>Disable bug reporting if Issue Tracker base_url is empty (Mr. Senko)</li>
+<li>Don't link TC to Issue Trackers if required parameters not present.
+  By default these are <code>api_url</code>, <code>api_username</code> and <code>api_password</code>.
+  For GitHub they are <code>base_url</code> and <code>api_password</code>. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/3">Issue #3</a> (Mr. Senko)</li>
+<li>Don't add component to testcase if component already exists. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/13">Issue #13</a> (Mr. Senko)</li>
+<li>Add more tests (Chenxiong Qi)</li>
+<li>Replace deprecated <code>request.REQUEST</code> (Chenxiong Qi, Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 11 July 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/06/27/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
                     <h2>KiwiTestPad enhancement update</h2>
                 </a>
@@ -1266,117 +1326,6 @@ if you need faster response cycle for the open source libraries you use.</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/" rel="bookmark" title="Permalink to Using model properties and raw SQL with django-chartit">
-                    <h2>Using model properties and raw SQL with django-chartit</h2>
-                </a>
-            </header>
-
-            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
-that can be used to easily create charts from the data in your database. The
-charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
-Data in your database can be plotted as simple line charts, column charts,
-area charts, scatter plots, and many more chart types.</p>
-<p>Few days ago we have released version 0.2.8 which includes support for
-model properties and raw SQL queries in your charts. This blog post will describe
-how to use them.</p>
-<h2>Using model properties</h2>
-<p>Sometimes it is convenient to calculate a value inside your models but
-not store it in the database. For example consider the following model</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">City</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">city</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-    <span class="n">state</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">region</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;USA:</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">city</span>
-</pre></div>
-
-
-<p>You are not able to select the <code>region</code> "field" but you may use it
-as part of your chart <code>terms</code> as shown below</p>
-<div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">DataPool</span><span class="p">(</span>
-        <span class="n">series</span><span class="o">=</span><span class="p">[{</span>
-            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">SalesHistory</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">only</span><span class="p">(</span>
-                            <span class="s1">&#39;bookstore__city&#39;</span><span class="p">,</span> <span class="s1">&#39;sale_qty&#39;</span>
-                          <span class="p">)[:</span><span class="mi">10</span><span class="p">],</span>
-            <span class="p">},</span>
-            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s1">&#39;bookstore__city__region&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;sale_qty&#39;</span>
-            <span class="p">]</span>
-        <span class="p">}]</span>
-<span class="p">)</span>
-
-<span class="n">cht</span> <span class="o">=</span> <span class="n">Chart</span><span class="p">(</span>
-        <span class="n">datasource</span><span class="o">=</span><span class="n">ds</span><span class="p">,</span>
-        <span class="n">series_options</span><span class="o">=</span><span class="p">[{</span>
-            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;stacking&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
-                <span class="s1">&#39;stack&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="p">},</span>
-            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">&#39;bookstore__city__region&#39;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="s1">&#39;sale_qty&#39;</span>
-                <span class="p">]</span>
-            <span class="p">}},</span>
-        <span class="p">],</span>
-        <span class="n">chart_options</span><span class="o">=</span><span class="p">{</span>
-            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Sales reports&#39;</span>
-            <span class="p">},</span>
-            <span class="s1">&#39;xAxis&#39;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;City&#39;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-<span class="p">)</span>
-</pre></div>
-
-
-<p>The full example, including source code and live charts is available at
-<a href="https://github.com/chartit/django-chartit/tree/master/demoproject">django-chartit/demoproject</a>!</p>
-<h2>Using raw SQL queries</h2>
-<p>Django allows you to execute SQL queries directly. These will return objects in the form of
-RawQuerySet and can be used in the same way as any other QuerySet.</p>
-<div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">DataPool</span><span class="p">(</span>
-        <span class="n">series</span><span class="o">=</span><span class="p">[{</span>
-            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">MonthlyWeatherByCity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span>
-                            <span class="s2">&quot;SELECT id, month, houston_temp, boston_temp &quot;</span>
-                            <span class="s2">&quot;FROM demoproject_monthlyweatherbycity&quot;</span><span class="p">)</span>
-            <span class="p">},</span>
-            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s1">&#39;month&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;houston_temp&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;boston_temp&#39;</span>
-            <span class="p">]</span>
-        <span class="p">}]</span>
-<span class="p">)</span>
-</pre></div>
-
-
-<p>You will have to select the primary key field and pay attention to field names as to avoid
-duplicates when performing <code>JOIN</code> operations. Otherwise there is no difference. Full examples,
-including source code and live charts are available at
-<a href="https://github.com/chartit/django-chartit/tree/master/demoproject">django-chartit/demoproject</a>!</p>
-<h2>Support</h2>
-<p>At Mr. Senko we will do our best to accommodate every need and merge patches
-and feature requests as they come in. Should you need commercial support for
-this or other open source libraries please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Tue 13 December 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">

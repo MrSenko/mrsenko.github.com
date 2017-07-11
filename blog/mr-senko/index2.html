@@ -149,6 +149,43 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/" rel="bookmark" title="Permalink to New release pelican-ab 0.2.3">
+                    <h2>New release pelican-ab 0.2.3</h2>
+                </a>
+            </header>
+
+            <p><a href="https://github.com/MrSenko/pelican-ab">pelican-ab</a> is an A/B testing plugin
+for Pelican, the static site generator. It allows you to encode experiments in
+your templates and renders the experiment selected by the <code>AB_EXPERIMENT</code>
+environment variable.</p>
+<p>Today we are releasing version <code>0.2.3</code> as an urgent bug fix update handling
+internal changes in the latest version of Pelican.
+In previous versions Pelican used the <code>JINJA_EXTENSIONS</code> setting to
+configure additional Jinja2 modules. In version 3.7.0, released yesterday,
+<code>JINJA_EXTENSIONS</code> has been replaced with the <code>JINJA_ENVIRONMENT</code> setting.
+Version 0.2.3 of pelican-ab handles both cases and is able to work with older
+and newer versions of Pelican!</p>
+<p>This backward-incompatible change in Pelican has been automatically detected by our
+monitoring tool
+<a href="http://mrsenko.com/blog/mr-senko/2016/05/18/triggering-automatic-dependency-testing/">Strazar</a>,
+which proves the value of automatic testing against the latest versions of
+upstream dependencies!</p>
+<h2>Support</h2>
+<p>At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 13 December 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2016/09/14/new-release-django-chartit-027/" rel="bookmark" title="Permalink to New release django-chartit 0.2.7">
                     <h2>New release django-chartit 0.2.7</h2>
                 </a>

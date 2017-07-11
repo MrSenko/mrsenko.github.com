@@ -143,6 +143,66 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad bug-fix and enhancement update">
+                    <h2>KiwiTestPad bug-fix and enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.28
+<strong>Released on:</strong> 2017-07-11
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release removes all remaining instances of the deprecated <code>request.REQUEST</code> object,
+adds more tests and fixes several bugs.</p>
+<h2>Changes since KiwiTestPad 3.26</h2>
+<ul>
+<li>Replace w3m cmd line tool with html2text. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/7">Issue #7</a> (Mr. Senko)</li>
+<li>Disable bug reporting if Issue Tracker base_url is empty (Mr. Senko)</li>
+<li>Don't link TC to Issue Trackers if required parameters not present.
+  By default these are <code>api_url</code>, <code>api_username</code> and <code>api_password</code>.
+  For GitHub they are <code>base_url</code> and <code>api_password</code>. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/3">Issue #3</a> (Mr. Senko)</li>
+<li>Don't add component to testcase if component already exists. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/13">Issue #13</a> (Mr. Senko)</li>
+<li>Add more tests (Chenxiong Qi)</li>
+<li>Replace deprecated <code>request.REQUEST</code> (Chenxiong Qi, Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 11 July 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/06/27/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
                     <h2>KiwiTestPad enhancement update</h2>
                 </a>
