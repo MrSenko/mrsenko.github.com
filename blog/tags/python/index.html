@@ -143,6 +143,63 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/07/27/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
+                    <h2>KiwiTestPad enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.30
+<strong>Released on:</strong> 2017-07-27
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release is updated to Django 1.9.13 and includes updates for all other
+3rd party dependencies as well as other improvements.</p>
+<h2>Changes since KiwiTestPad 3.28</h2>
+<ul>
+<li>Upgrade Django to 1.9.13 (Mr. Senko)</li>
+<li>Upgrade all other requirements to their latest versions (Mr. Senko)</li>
+<li>Fix bug in <code>class BlobField</code> where database engine is not examined
+  correctly (Mr. Senko)</li>
+<li>Replace <code>SQLExecution</code> with ORM queries (Mr. Senko)</li>
+<li>Improve test assertions so they don't fail when database returns
+  records in arbitrary order (Mr. Senko)</li>
+</ul>
+<p><strong>IMPORTANT:</strong> this release introduces new database migrations!</p>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Thu 27 July 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/07/27/kiwitestpad-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/07/11/kiwitestpad-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad bug-fix and enhancement update">
                     <h2>KiwiTestPad bug-fix and enhancement update</h2>
                 </a>
@@ -1251,78 +1308,6 @@ if you need faster response cycle for the open source components which you use.<
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/" rel="bookmark" title="Permalink to What I've worked on in December 2016">
-                    <h2>What I've worked on in December 2016</h2>
-                </a>
-            </header>
-
-            <p>Hello everyone, during December I've been working on several
-different projects from our supported
-<a href="http://mrsenko.com/support/python.html">Python software stack</a>
-and also ventured into Ruby land.</p>
-<h2>Versions 0.2.3 and 0.2.4 of pelican-ab</h2>
-<p><em>pelican-ab</em> is an A/B testing plugin for Pelican, the static site
-generator for Python. It allows you to encode experiments in your
-templates and renders the experiment selected by the <code>AB_EXPERIMENT</code>
-environment variable.</p>
-<p>There were two versions released in December 2016 making it compatible
-with the newly released <em>Pelican 3.7.0</em>, adding more tests and fixing some
-minor bugs.</p>
-<h2>Version 0.2.8 of django-chartit</h2>
-<p>I have worked on a new version for django-chartit which adds support for
-<a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/">model properties and raw SQL queries in charts</a>.
-I've also done internal work for further refactoring but without
-anything concrete yet!</p>
-<h2>New extensions for pylint</h2>
-<p>I've worked on the new
-<a href="https://github.com/PyCQA/pylint/pull/1183">compare-to-empty-string</a>
-extension for pylint. Using this extension the following snippet</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">S</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="n">S</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-    <span class="k">pass</span>
-</pre></div>
-
-
-<p>will be flagged as problematic because it can be written in a more natural way:</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">S</span><span class="p">:</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">S</span><span class="p">:</span>
-    <span class="k">pass</span>
-</pre></div>
-
-
-<p>The extension will be disabled by default because empty string may be
-a valid value depending on the behavior of your program. I have also
-created a similar extension to flag integer comparisons against zero,
-see <a href="https://github.com/PyCQA/pylint/pull/1243">pylint#1243</a>.
-While these may seem a bit extreme they are very useful to identify
-code which can be refactored to reduce comparisons
-when coupled with mutation testing!</p>
-<h2>New Rspec formatters</h2>
-<p>I've worked on two new formatters for Rspec:</p>
-<ul>
-<li><a href="https://github.com/MrSenko/rspec_numbered_documentation">rspec_numbered_documentation</a>;</li>
-<li><a href="https://github.com/MrSenko/rspec_key_value">rspec_key_value</a>.</li>
-</ul>
-<p>Both add simple syntactic sugar to how Rspec output can be formatted and make it
-easier for debugging or sending off for further machine processing.</p>
-<p>I hope you like my work and please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
-if you need faster response cycle for the open source libraries you use.</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Fri 30 December 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">

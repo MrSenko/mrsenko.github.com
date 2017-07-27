@@ -149,6 +149,117 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/" rel="bookmark" title="Permalink to Using model properties and raw SQL with django-chartit">
+                    <h2>Using model properties and raw SQL with django-chartit</h2>
+                </a>
+            </header>
+
+            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
+that can be used to easily create charts from the data in your database. The
+charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
+Data in your database can be plotted as simple line charts, column charts,
+area charts, scatter plots, and many more chart types.</p>
+<p>Few days ago we have released version 0.2.8 which includes support for
+model properties and raw SQL queries in your charts. This blog post will describe
+how to use them.</p>
+<h2>Using model properties</h2>
+<p>Sometimes it is convenient to calculate a value inside your models but
+not store it in the database. For example consider the following model</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">City</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">region</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;USA:</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">city</span>
+</pre></div>
+
+
+<p>You are not able to select the <code>region</code> "field" but you may use it
+as part of your chart <code>terms</code> as shown below</p>
+<div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">DataPool</span><span class="p">(</span>
+        <span class="n">series</span><span class="o">=</span><span class="p">[{</span>
+            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">SalesHistory</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">only</span><span class="p">(</span>
+                            <span class="s1">&#39;bookstore__city&#39;</span><span class="p">,</span> <span class="s1">&#39;sale_qty&#39;</span>
+                          <span class="p">)[:</span><span class="mi">10</span><span class="p">],</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;bookstore__city__region&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;sale_qty&#39;</span>
+            <span class="p">]</span>
+        <span class="p">}]</span>
+<span class="p">)</span>
+
+<span class="n">cht</span> <span class="o">=</span> <span class="n">Chart</span><span class="p">(</span>
+        <span class="n">datasource</span><span class="o">=</span><span class="n">ds</span><span class="p">,</span>
+        <span class="n">series_options</span><span class="o">=</span><span class="p">[{</span>
+            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;stacking&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+                <span class="s1">&#39;stack&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;bookstore__city__region&#39;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s1">&#39;sale_qty&#39;</span>
+                <span class="p">]</span>
+            <span class="p">}},</span>
+        <span class="p">],</span>
+        <span class="n">chart_options</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Sales reports&#39;</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;xAxis&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;City&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>The full example, including source code and live charts is available at
+<a href="https://github.com/chartit/django-chartit/tree/master/demoproject">django-chartit/demoproject</a>!</p>
+<h2>Using raw SQL queries</h2>
+<p>Django allows you to execute SQL queries directly. These will return objects in the form of
+RawQuerySet and can be used in the same way as any other QuerySet.</p>
+<div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">DataPool</span><span class="p">(</span>
+        <span class="n">series</span><span class="o">=</span><span class="p">[{</span>
+            <span class="s1">&#39;options&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">MonthlyWeatherByCity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span>
+                            <span class="s2">&quot;SELECT id, month, houston_temp, boston_temp &quot;</span>
+                            <span class="s2">&quot;FROM demoproject_monthlyweatherbycity&quot;</span><span class="p">)</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;terms&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;month&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;houston_temp&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;boston_temp&#39;</span>
+            <span class="p">]</span>
+        <span class="p">}]</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>You will have to select the primary key field and pay attention to field names as to avoid
+duplicates when performing <code>JOIN</code> operations. Otherwise there is no difference. Full examples,
+including source code and live charts are available at
+<a href="https://github.com/chartit/django-chartit/tree/master/demoproject">django-chartit/demoproject</a>!</p>
+<h2>Support</h2>
+<p>At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 13 December 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/using-model-properties-and-raw-sql-with-django-chartit/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2016/12/13/new-release-pelican-ab-023/" rel="bookmark" title="Permalink to New release pelican-ab 0.2.3">
                     <h2>New release pelican-ab 0.2.3</h2>
                 </a>
