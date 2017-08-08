@@ -143,6 +143,65 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/08/08/kiwitestpad-security-and-bug-fix-update/" rel="bookmark" title="Permalink to KiwiTestPad security and bug-fix update">
+                    <h2>KiwiTestPad security and bug-fix update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitestpad-3.32
+<strong>Released on:</strong> 2017-08-08
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTestPad is an open source test plan, test run and test case management system.
+It has a lot of great features, such as Bugzilla and JIRA integration,
+fast test plan and runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release is updated to Django 1.10.7 and includes several other bug-fixes and
+updates.</p>
+<h2>Changes since KiwiTestPad 3.30</h2>
+<ul>
+<li>Upgrade Django to 1.10.7 (Mr. Senko)</li>
+<li>Replace unmaintained django-pagination with dj-pagination. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/48">Issue #48</a> (Mr. Senko)</li>
+<li>When activating new accounts check the expiration date of activation
+  keys. Previously this was not checked (Mr. Senko)</li>
+<li>Fix a traceback when showing Plan -&gt; Tree View (Mr. Senko)</li>
+<li>Fixed an issue where <code>Prompt.render</code> was wrapped within <code>HttpResponse</code>
+  causing DB connections to be closed after view functions have returned (Mr. Senko)</li>
+<li>Refactored responses for AJAX calls (Chenxiong Qi)</li>
+</ul>
+<p><strong>IMPORTANT:</strong> this release introduces new database migrations!</p>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitestpad
+</pre></div>
+
+
+<p>If you are using KiwiTestPad as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose stop
+docker rm kiwi_web kiwi_db
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 08 August 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/08/08/kiwitestpad-security-and-bug-fix-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/07/27/kiwitestpad-enhancement-update/" rel="bookmark" title="Permalink to KiwiTestPad enhancement update">
                     <h2>KiwiTestPad enhancement update</h2>
                 </a>
@@ -1252,62 +1311,6 @@ before upgrading!</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/01/24/nitrate-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/" rel="bookmark" title="Permalink to Using private PyPI repositories">
-                    <h2>Using private PyPI repositories</h2>
-                </a>
-            </header>
-
-            <p>Once you have subscribed to Mr. Senko you will receive a repository URL from
-which to install package versions supported by Mr. Senko. The URL is of the form
-<strong>https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID</strong></p>
-<p>You must keep this URL secret! You can install supported packaged by either command line:</p>
-<div class="highlight"><pre><span></span>pip install kiwitestpad --extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
-</pre></div>
-
-
-<p>or inside of your project by adding the following statement to <code>requirements.txt</code>:</p>
-<div class="highlight"><pre><span></span>--extra-index-url https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID
-</pre></div>
-
-
-<p>You can also configure your <code>~/.pip/pip.conf</code> file to look like this</p>
-<div class="highlight"><pre><span></span><span class="k">[global]</span>
-<span class="c1">; Extra index from Mr. Senko</span>
-<span class="na">extra-index-url</span> <span class="o">=</span> <span class="s">https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID</span>
-</pre></div>
-
-
-<p>Another possibility is to configure the private repository URL directly into <code>setup.py</code>:</p>
-<div class="highlight"><pre><span></span><span class="n">setup</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;YourAppName&#39;</span><span class="p">,</span>
-    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
-        <span class="s1">&#39;strazar&#39;</span><span class="p">,</span>
-    <span class="p">],</span>
-    <span class="n">dependency_links</span><span class="o">=</span><span class="p">[</span>
-        <span class="s1">&#39;https://d1v12p11qcbqzw.cloudfront.net/YOUR-CUSTOMER-ID&#39;</span><span class="p">,</span>
-    <span class="p">],</span>
-<span class="p">)</span>
-</pre></div>
-
-
-<p>And you're ready to seamlessly pip install private packages from Mr. Senko.</p>
-<h2>What is Mr. Senko?</h2>
-<p>Mr. Senko provides long term support for various open source libraries. We do
-bug fixes and feature development, improve testing and write documentation so
-you don't have to!
-<strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong>
-if you need faster response cycle for the open source components which you use.</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Sun 22 January 2017
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
