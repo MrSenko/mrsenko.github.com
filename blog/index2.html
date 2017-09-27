@@ -145,6 +145,47 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/02/14/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
+                    <h2>Nitrate enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> nitrate-3.8.18.07
+<strong>Released on:</strong> 2017-02-14
+<strong>Severity:</strong> Medium</p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package is now available that adds various enhancements.</p>
+<h2>Changelog since 3.8.18.05</h2>
+<ul>
+<li>Rebased onto 82625f1 from upstream</li>
+<li>Add documentation about installation with Apache and virtualenv.
+  <a href="https://github.com/Nitrate/Nitrate/pull/137">PR #137</a> (Mr. Senko)</li>
+<li>Replace hard-coded SQL statements with ORM queries. Improves portability
+  between database backends.
+  <a href="https://github.com/Nitrate/Nitrate/pull/139">PR #139</a> (Mr. Senko)</li>
+<li>Use version from module, not txt file. Version is now shown in
+  Nitrate footer.
+  <a href="https://github.com/Nitrate/Nitrate/pull/145">PR #145</a> (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 14 February 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/02/14/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/01/31/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
                     <h2>Nitrate enhancement update</h2>
                 </a>
@@ -1269,65 +1310,6 @@ if need a faster response cycle for the open source libraries you use.</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/atodorov/2016/05/31/may-2016-status-report/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2016/05/25/reviving-pelican-octopress-and-pelipress/" rel="bookmark" title="Permalink to Reviving pelican-octopress and pelipress">
-                    <h2>Reviving pelican-octopress and pelipress</h2>
-                </a>
-            </header>
-
-            <p><em>pelican-octopress-theme</em> and <em>Pelipress</em> are popular themes for <em>Pelican</em>
-but are not actively
-developed at the moment. Mr. Senko decided to fork and
-continue their active development. The new repository is at
-<a href="https://github.com/MrSenko/pelican-octopress-theme">MrSenko/pelican-octopress-theme</a>.</p>
-<h2>Why did we fork</h2>
-<p>Initially we've tried sending pull requests to the upstream repository but
-later noticed multiple issues and pull requests which were left open for more than
-a year, nearly 2 years in the worst cases. <em>Pelipress</em> on the other hand
-has not been rebased back to <em>pelican-octopress-theme</em> for almost 3 years!</p>
-<p>We've emailed the original authors of both projects but didn't get a reply to our
-inquiries in a few weeks so decided to fork and continue forward.</p>
-<h2>Changelog</h2>
-<p>The following features have been merged from <em>pelican-octopress-theme</em> by
-resolving all conflicts which were present:</p>
-<ul>
-<li>Merge PR #88 - add header images and background colors. Fixes issue #52</li>
-<li>Merge PR #87 - update documentation. Fixes issue #56</li>
-<li>Merge PR #84 - add INDEX_FULL_CONTENT setting</li>
-<li>Merge PR #83 - load scripts before plugins that might use them</li>
-<li>Merge PR #82 - add disqus_identifier article metadata. Fixes issue #81</li>
-<li>Merge PR #76 - add support for Mailchimp newsletter registrations</li>
-<li>Merge PR #73 - add ARCHIVE_TITLE setting</li>
-<li>Merge PR #72 - add support for Google AdSense in sidebar</li>
-<li>Merge PR #67 - improved sidebar control with AUTHOR_ABOUT, DISPLAY_CATEGORIES,
-  DISPLAY_TAGS and DISPLAY_FEEDS settings. SIDEBAR_IMAGE is only shown when
-  AUTHOR_ABOUT is set!</li>
-<li>Merge PR #55 - add SHOW_ARTICLE_NEIGHBORS, SHOW_DISQUS_COMMENT_COUNT,
-  ARTICLE_ASIDES, PAGE_ASIDES and INDEX_ASIDES settings</li>
-</ul>
-<p>The following features have been inspired by <em>Pelipress</em> and cleanly re-implemented
-on top of the current fork:</p>
-<ul>
-<li>Add DISPLAY_SOCIAL_ICONS setting and the social_icons sidebar</li>
-<li>Add FOOTER_INCLUDE setting</li>
-<li>Add SHOW_HEADER setting</li>
-</ul>
-<h2>Support</h2>
-<p>At Mr. Senko we will do our best to accommodate every need and merge patches
-and feature requests as they come in.
-Should you need commercial support for this or other open source libraries
-please <strong>subscribe to
-<a href="http://mrsenko.com/subscribe.html">Mr. Senko's support service</a></strong>!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Wed 25 May 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/05/25/reviving-pelican-octopress-and-pelipress/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">

@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-09-12T17:10:00+03:00</updated><entry><title>Kiwi TCMS Python 3 and HTTPS update</title><link href="http://mrsenko.com/blog/mr-senko/2017/09/12/kiwi-tcms-python-3-and-https-update/" rel="alternate"></link><published>2017-09-12T17:10:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-09-12:blog/mr-senko/2017/09/12/kiwi-tcms-python-3-and-https-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.37
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-09-27T14:10:00+03:00</updated><entry><title>Introducing Patternfly based UI for Kiwi TCMS</title><link href="http://mrsenko.com/blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/" rel="alternate"></link><published>2017-09-27T14:10:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-09-27:blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.39
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-09-27
+&lt;strong&gt;Severity:&lt;/strong&gt; High
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;KiwiTCMS is the leading open source test plan, test run and test case management system!
+It has a lot of great features, such as Bugzilla, JIRA and GitHub integration,
+fast test plan and test runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.&lt;/p&gt;
+&lt;p&gt;This release introduces a glimpse of the new look and feel of Kiwi TCMS. We're going to
+fully update the UI using the Patternfly library. Since this will take a while we've
+decided to make the change gradually, few screens at a time. Here's how it looks at
+the moment&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New KiwiTCMS dashboard" src="/images/kiwitcms/dashboard_patternfly.png" title="New KiwiTCMS dashboard" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img alt="New KiwiTCMS login" src="/images/kiwitcms/login_patternfly.png" title="New KiwiTCMS login" /&gt;&lt;/p&gt;
+&lt;h2&gt;Changes since KiwiTCMS 3.37&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduce modern UI elements using Patternfly library!
+  Main navigation, login and password reset pages are
+  currently implemented. NOTE: main navigation is placed
+  inside an iframe to workaround issues with the legacy
+  JavaScript on other pages. These will be fixed in the future
+  and the iframe will be removed! (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Piwik integration has been removed together with the following settings
+  &lt;code&gt;ENABLE_PIWIK_TRACKING&lt;/code&gt;, &lt;code&gt;PIWIK_SITE_ID&lt;/code&gt;, &lt;code&gt;PIWIK_SITE_API_URL&lt;/code&gt;,
+  &lt;code&gt;PIWIK_SITE_JS_URL&lt;/code&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;USER_GUIDE_URL&lt;/code&gt; setting has been removed. You can specify this configuration
+  directly in &lt;code&gt;FOOTER_LINKS&lt;/code&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Added missing templates and views for password reset functionality (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Makefile updates and flake8 fixes (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Additional bug fixes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Test Case EDIT and CLONE buttons are now working again (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;More tests and better handling of input parameters when loading builds
+  (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Load more of the required JavaScript and CSS files for admin forms (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade kiwitcms
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using KiwiTCMS as a Docker container then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose down
+docker pull mrsenko/kiwi
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
+&lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Kiwi TCMS Python 3 and HTTPS update</title><link href="http://mrsenko.com/blog/mr-senko/2017/09/12/kiwi-tcms-python-3-and-https-update/" rel="alternate"></link><published>2017-09-12T17:10:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-09-12:blog/mr-senko/2017/09/12/kiwi-tcms-python-3-and-https-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitestpad-3.37
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-09-12
 &lt;strong&gt;Severity:&lt;/strong&gt; High
 &lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;

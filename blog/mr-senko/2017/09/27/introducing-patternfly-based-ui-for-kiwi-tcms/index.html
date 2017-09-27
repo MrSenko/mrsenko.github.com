@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Introducing Patternfly based UI for Kiwi TCMS</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+
+        <meta name="description" content="version 3.39" >
+
+        <meta name="author" content="Mr. Senko">
+
+        <meta name="tags" content="Python" >
+        <meta name="tags" content="errata" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="Introducing Patternfly based UI for Kiwi TCMS">
+            <meta name="twitter:description" content="version 3.39">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:card" content="summary_large_image">
+                <meta property="twitter:image" content="http://mrsenko.com/images/kiwitcms/dashboard_patternfly_twitter.png">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="http://mrsenko.com/blog/mr-senko/" />
+        <meta property="og:url" content="http://mrsenko.com/blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/" />
+        <meta property="og:title" content="Introducing Patternfly based UI for Kiwi TCMS" />
+        <meta property="article:published_time" content="2017-09-27 14:10:00+03:00">
+            <meta property="og:description" content="version 3.39">
+
+            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><strong><a href="http://mrsenko.com/#subscriptions">Our offer</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+    <h2>Introducing Patternfly based UI for Kiwi TCMS</h2>
+    <p>version 3.39</p>
+    <p>
+        <em>Posted by
+                <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Wed 27 September 2017
+        </em>
+    </p>
+            </section>
+
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p><strong>Version:</strong> kiwitcms-3.39
+<strong>Released on:</strong> 2017-09-27
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTCMS is the leading open source test plan, test run and test case management system!
+It has a lot of great features, such as Bugzilla, JIRA and GitHub integration,
+fast test plan and test runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release introduces a glimpse of the new look and feel of Kiwi TCMS. We're going to
+fully update the UI using the Patternfly library. Since this will take a while we've
+decided to make the change gradually, few screens at a time. Here's how it looks at
+the moment</p>
+<p><img alt="New KiwiTCMS dashboard" src="/images/kiwitcms/dashboard_patternfly.png" title="New KiwiTCMS dashboard" /></p>
+<hr />
+<p><img alt="New KiwiTCMS login" src="/images/kiwitcms/login_patternfly.png" title="New KiwiTCMS login" /></p>
+<h2>Changes since KiwiTCMS 3.37</h2>
+<ul>
+<li>Introduce modern UI elements using Patternfly library!
+  Main navigation, login and password reset pages are
+  currently implemented. NOTE: main navigation is placed
+  inside an iframe to workaround issues with the legacy
+  JavaScript on other pages. These will be fixed in the future
+  and the iframe will be removed! (Mr. Senko)</li>
+<li>Piwik integration has been removed together with the following settings
+  <code>ENABLE_PIWIK_TRACKING</code>, <code>PIWIK_SITE_ID</code>, <code>PIWIK_SITE_API_URL</code>,
+  <code>PIWIK_SITE_JS_URL</code> (Mr. Senko)</li>
+<li><code>USER_GUIDE_URL</code> setting has been removed. You can specify this configuration
+  directly in <code>FOOTER_LINKS</code> (Mr. Senko)</li>
+<li>Added missing templates and views for password reset functionality (Mr. Senko)</li>
+<li>Makefile updates and flake8 fixes (Mr. Senko)</li>
+</ul>
+<p>Additional bug fixes:</p>
+<ul>
+<li>Test Case EDIT and CLONE buttons are now working again (Mr. Senko)</li>
+<li>More tests and better handling of input parameters when loading builds
+  (Mr. Senko)</li>
+<li>Load more of the required JavaScript and CSS files for admin forms (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitcms
+</pre></div>
+
+
+<p>If you are using KiwiTCMS as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose down
+docker pull mrsenko/kiwi
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+        on Wed 27 September 2017
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, <a href="http://mrsenko.com/blog/tags/errata/">errata</a>, </p>
+        </div>
+    </div>
+
+    <section id="comments" class="wrapper style2 special">
+        <div class="container">
+            <header class="major special">
+                <h2>Comments !</h2>
+            </header>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'mrsenko';
+                var disqus_identifier = 'blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/';
+                var disqus_url = 'http://mrsenko.com/blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mrsenko.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa fa-twitter"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016-2017 Mr. Senko, Ltd.</li>
+					</ul>
+				</div>
+			</footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72200638-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<!-- LuckyOrange -->
+<script type='text/javascript'>
+window.__lo_site_id = 55938;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'mrsenko';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+	</body>
+</html>

@@ -148,6 +148,80 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/" rel="bookmark" title="Permalink to Introducing Patternfly based UI for Kiwi TCMS">
+                    <h2>Introducing Patternfly based UI for Kiwi TCMS</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitcms-3.39
+<strong>Released on:</strong> 2017-09-27
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTCMS is the leading open source test plan, test run and test case management system!
+It has a lot of great features, such as Bugzilla, JIRA and GitHub integration,
+fast test plan and test runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release introduces a glimpse of the new look and feel of Kiwi TCMS. We're going to
+fully update the UI using the Patternfly library. Since this will take a while we've
+decided to make the change gradually, few screens at a time. Here's how it looks at
+the moment</p>
+<p><img alt="New KiwiTCMS dashboard" src="/images/kiwitcms/dashboard_patternfly.png" title="New KiwiTCMS dashboard" /></p>
+<hr />
+<p><img alt="New KiwiTCMS login" src="/images/kiwitcms/login_patternfly.png" title="New KiwiTCMS login" /></p>
+<h2>Changes since KiwiTCMS 3.37</h2>
+<ul>
+<li>Introduce modern UI elements using Patternfly library!
+  Main navigation, login and password reset pages are
+  currently implemented. NOTE: main navigation is placed
+  inside an iframe to workaround issues with the legacy
+  JavaScript on other pages. These will be fixed in the future
+  and the iframe will be removed! (Mr. Senko)</li>
+<li>Piwik integration has been removed together with the following settings
+  <code>ENABLE_PIWIK_TRACKING</code>, <code>PIWIK_SITE_ID</code>, <code>PIWIK_SITE_API_URL</code>,
+  <code>PIWIK_SITE_JS_URL</code> (Mr. Senko)</li>
+<li><code>USER_GUIDE_URL</code> setting has been removed. You can specify this configuration
+  directly in <code>FOOTER_LINKS</code> (Mr. Senko)</li>
+<li>Added missing templates and views for password reset functionality (Mr. Senko)</li>
+<li>Makefile updates and flake8 fixes (Mr. Senko)</li>
+</ul>
+<p>Additional bug fixes:</p>
+<ul>
+<li>Test Case EDIT and CLONE buttons are now working again (Mr. Senko)</li>
+<li>More tests and better handling of input parameters when loading builds
+  (Mr. Senko)</li>
+<li>Load more of the required JavaScript and CSS files for admin forms (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitcms
+</pre></div>
+
+
+<p>If you are using KiwiTCMS as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose down
+docker pull mrsenko/kiwi
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Wed 27 September 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/09/12/kiwi-tcms-python-3-and-https-update/" rel="bookmark" title="Permalink to Kiwi TCMS Python 3 and HTTPS update">
                     <h2>Kiwi TCMS Python 3 and HTTPS update</h2>
                 </a>
@@ -1308,47 +1382,6 @@ before upgrading!</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/02/21/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2017/02/14/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
-                    <h2>Nitrate enhancement update</h2>
-                </a>
-            </header>
-
-            <p><strong>Version:</strong> nitrate-3.8.18.07
-<strong>Released on:</strong> 2017-02-14
-<strong>Severity:</strong> Medium</p>
-<h2>Details</h2>
-<p>Nitrate is an open source test plan, test run and test case management system.
-It has a lot of great features, such as
-Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
-powerful access control for each plan, run and case, and XMLRPC APIs.</p>
-<p>Updated Nitrate package is now available that adds various enhancements.</p>
-<h2>Changelog since 3.8.18.05</h2>
-<ul>
-<li>Rebased onto 82625f1 from upstream</li>
-<li>Add documentation about installation with Apache and virtualenv.
-  <a href="https://github.com/Nitrate/Nitrate/pull/137">PR #137</a> (Mr. Senko)</li>
-<li>Replace hard-coded SQL statements with ORM queries. Improves portability
-  between database backends.
-  <a href="https://github.com/Nitrate/Nitrate/pull/139">PR #139</a> (Mr. Senko)</li>
-<li>Use version from module, not txt file. Version is now shown in
-  Nitrate footer.
-  <a href="https://github.com/Nitrate/Nitrate/pull/145">PR #145</a> (Mr. Senko)</li>
-</ul>
-<h2>How to upgrade</h2>
-<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
-<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
-before upgrading!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Tue 14 February 2017
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/02/14/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
