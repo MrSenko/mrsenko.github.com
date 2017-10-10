@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-09-27T14:10:00+03:00</updated><entry><title>Introducing Patternfly based UI for Kiwi TCMS</title><link href="http://mrsenko.com/blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/" rel="alternate"></link><published>2017-09-27T14:10:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-09-27:blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.39
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/all.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-10-10T11:40:00+03:00</updated><entry><title>Kiwi TCMS bug-fix and database update</title><link href="http://mrsenko.com/blog/mr-senko/2017/10/10/kiwi-tcms-bug-fix-and-database-update/" rel="alternate"></link><published>2017-10-10T11:40:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-10-10:blog/mr-senko/2017/10/10/kiwi-tcms-bug-fix-and-database-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.41-ee
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-10-10
+&lt;strong&gt;Severity:&lt;/strong&gt; High
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;KiwiTCMS is the leading open source test plan, test run and test case management system!
+It has a lot of great features, such as Bugzilla, JIRA and GitHub integration,
+fast test plan and test runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.&lt;/p&gt;
+&lt;p&gt;This release removes some unused code, introduces a few bug-fixes and most importantly
+updates the MariaDB docker image to take full advantage of UTF8 strings!&lt;/p&gt;
+&lt;h2&gt;Changes since KiwiTCMS 3.39&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Upon registration assign default group permissions if none set.
+  Also by default make all users have the &lt;code&gt;is_staff&lt;/code&gt; permission
+  so they can add Products, Builds, Versions, etc. via the ADMIN menu
+  (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update documentation (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Remove unused &lt;code&gt;plugins_support/&lt;/code&gt; directory (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Remove unused models in &lt;code&gt;tcms.profiles&lt;/code&gt;. The &lt;code&gt;Profiles&lt;/code&gt;,
+  &lt;code&gt;Groups&lt;/code&gt; and &lt;code&gt;UserGroupMap&lt;/code&gt; models are removed because they are
+  not used (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Remove max_length=30 limitation for EmailField in RegistrationForm.
+  Fixes &lt;a href="https://github.com/MrSenko/Kiwi/issues/71"&gt;Issue #71&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Display error messages on login form (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update main navigation to indicate login is required before creating
+  Test Plan (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;WARNING&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MariaDB defaults are to use &lt;code&gt;latin1&lt;/code&gt; as the default character set and collation.
+This will lead to 500 internal server errors when trying to save data which
+does not use ASCII characters. This is a limitation with the underlying CentOS/MariaDB
+docker image and &lt;a href="https://github.com/CentOS/CentOS-Dockerfiles/pull/146"&gt;has been fixed upstream&lt;/a&gt;.
+Update your docker image by running:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker pull centos/mariadb
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You need to manually update your existing databases by using the following instructions:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bash-4.2$ mysql -u root -p
+Enter password:
+
+MariaDB [(none)]&amp;gt; ALTER DATABASE kiwi CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+Query OK, 1 row affected (0.00 sec)
+
+bash-4.2$ mysql -D kiwi -u root -p -B -N -e &amp;quot;SHOW TABLES&amp;quot; | awk &amp;#39;{print &amp;quot;ALTER TABLE&amp;quot;, $1, &amp;quot;CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;&amp;quot;}&amp;#39; &amp;gt; /tmp/alter_charset.txt
+Enter password:
+
+bash-4.2$ cat /tmp/alter_charset.txt | mysql -D kiwi -u root -p
+Enter password:
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can use the &lt;code&gt;SHOW TABLE STATUS;&lt;/code&gt; query to see the current settings for your tables!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt; this release introduces new database migrations!&lt;/p&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade kiwitcms
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using KiwiTCMS as a Docker container then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose down
+docker pull mrsenko/kiwi
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
+&lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Introducing Patternfly based UI for Kiwi TCMS</title><link href="http://mrsenko.com/blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/" rel="alternate"></link><published>2017-09-27T14:10:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-09-27:blog/mr-senko/2017/09/27/introducing-patternfly-based-ui-for-kiwi-tcms/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.39
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-09-27
 &lt;strong&gt;Severity:&lt;/strong&gt; High
 &lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
