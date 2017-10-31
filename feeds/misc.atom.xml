@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-10-10T11:40:00+03:00</updated><entry><title>Kiwi TCMS bug-fix and database update</title><link href="http://mrsenko.com/blog/mr-senko/2017/10/10/kiwi-tcms-bug-fix-and-database-update/" rel="alternate"></link><published>2017-10-10T11:40:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-10-10:blog/mr-senko/2017/10/10/kiwi-tcms-bug-fix-and-database-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.41-ee
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-10-31T13:00:00+02:00</updated><entry><title>Kiwi TCMS bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-10-31T13:00:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-10-31:blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.44-ee
+&lt;strong&gt;Released on:&lt;/strong&gt; 2017-10-31
+&lt;strong&gt;Severity:&lt;/strong&gt; High
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;KiwiTCMS is the leading open source test plan, test run and test case management system!
+It has a lot of great features, such as Bugzilla, JIRA and GitHub integration,
+fast test plan and test runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.&lt;/p&gt;
+&lt;p&gt;This release introduces several bug-fixes and updates the documentation with
+newer screenshots and better explanations how to run Kiwi TCMS in production
+and locally for development.&lt;/p&gt;
+&lt;h2&gt;Changes since KiwiTCMS 3.41&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Use correct django_comment permission name. Allows non-admin users to enter
+  comments. Fixes &lt;a href="https://github.com/MrSenko/Kiwi/issues/74&amp;gt;"&gt;Issue #74&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Fix 500 ISE when viewing other user profiles (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Add a more visible link to account registration in the MOTD section
+  of the login page (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Use correct permission names when editting Test Plan Environment Group field.
+  Fixes &lt;a href="https://github.com/MrSenko/Kiwi/issues/73"&gt;Issue #73&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update how we render the XMLRPC info page. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/80"&gt;Issue #80&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Rename &lt;code&gt;FOOTER_LINKS&lt;/code&gt; setting to &lt;code&gt;HELP_MENU_ITEMS&lt;/code&gt; (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Update documentation with new screenshots (Mr. Senko)&lt;/li&gt;
+&lt;li&gt;Make documentation more lear on how to run Kiwi TCMS both in production
+  and in local development mode. Fixes
+  &lt;a href="https://github.com/MrSenko/Kiwi/issues/89"&gt;Issue #89&lt;/a&gt; (Mr. Senko)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; and
+&lt;a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/"&gt;configure your private PyPI repositories&lt;/a&gt;
+before upgrading!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade kiwitcms
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you are using KiwiTCMS as a Docker container then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose down
+docker pull mrsenko/kiwi
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; you will need the appropriate version of
+&lt;a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml"&gt;docker-compose.yml&lt;/a&gt;
+and the &lt;code&gt;mrsenko/kiwi&lt;/code&gt; Docker image for the above commands to work!&lt;/p&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Kiwi TCMS bug-fix and database update</title><link href="http://mrsenko.com/blog/mr-senko/2017/10/10/kiwi-tcms-bug-fix-and-database-update/" rel="alternate"></link><published>2017-10-10T11:40:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-10-10:blog/mr-senko/2017/10/10/kiwi-tcms-bug-fix-and-database-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.41-ee
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-10-10
 &lt;strong&gt;Severity:&lt;/strong&gt; High
 &lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;

@@ -145,6 +145,70 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to Kiwi TCMS bug-fix and enhancement update">
+                    <h2>Kiwi TCMS bug-fix and enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> kiwitcms-3.44-ee
+<strong>Released on:</strong> 2017-10-31
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://MrSenko.com/kiwi/">http://MrSenko.com/kiwi/</a></p>
+<h2>Details</h2>
+<p>KiwiTCMS is the leading open source test plan, test run and test case management system!
+It has a lot of great features, such as Bugzilla, JIRA and GitHub integration,
+fast test plan and test runs search, powerful access control for each plan, run and case,
+and XML-RPC APIs.</p>
+<p>This release introduces several bug-fixes and updates the documentation with
+newer screenshots and better explanations how to run Kiwi TCMS in production
+and locally for development.</p>
+<h2>Changes since KiwiTCMS 3.41</h2>
+<ul>
+<li>Use correct django_comment permission name. Allows non-admin users to enter
+  comments. Fixes <a href="https://github.com/MrSenko/Kiwi/issues/74&gt;">Issue #74</a> (Mr. Senko)</li>
+<li>Fix 500 ISE when viewing other user profiles (Mr. Senko)</li>
+<li>Add a more visible link to account registration in the MOTD section
+  of the login page (Mr. Senko)</li>
+<li>Use correct permission names when editting Test Plan Environment Group field.
+  Fixes <a href="https://github.com/MrSenko/Kiwi/issues/73">Issue #73</a> (Mr. Senko)</li>
+<li>Update how we render the XMLRPC info page. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/80">Issue #80</a> (Mr. Senko)</li>
+<li>Rename <code>FOOTER_LINKS</code> setting to <code>HELP_MENU_ITEMS</code> (Mr. Senko)</li>
+<li>Update documentation with new screenshots (Mr. Senko)</li>
+<li>Make documentation more lear on how to run Kiwi TCMS both in production
+  and in local development mode. Fixes
+  <a href="https://github.com/MrSenko/Kiwi/issues/89">Issue #89</a> (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade kiwitcms
+</pre></div>
+
+
+<p>If you are using KiwiTCMS as a Docker container then</p>
+<div class="highlight"><pre><span></span>docker-compose down
+docker pull mrsenko/kiwi
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+
+<p><strong>NOTE</strong> you will need the appropriate version of
+<a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose.yml</a>
+and the <code>mrsenko/kiwi</code> Docker image for the above commands to work!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 31 October 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/10/10/kiwi-tcms-bug-fix-and-database-update/" rel="bookmark" title="Permalink to Kiwi TCMS bug-fix and database update">
                     <h2>Kiwi TCMS bug-fix and database update</h2>
                 </a>
@@ -1385,54 +1449,6 @@ before upgrading!</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/03/08/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2017/02/28/nitrate-bug-fix-enhancement-update/" rel="bookmark" title="Permalink to Nitrate bug-fix & enhancement update">
-                    <h2>Nitrate bug-fix & enhancement update</h2>
-                </a>
-            </header>
-
-            <p><strong>Version:</strong> nitrate-3.8.18.09
-<strong>Released on:</strong> 2017-02-28
-<strong>Severity:</strong> High</p>
-<h2>Details</h2>
-<p>Nitrate is an open source test plan, test run and test case management system.
-It has a lot of great features, such as
-Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
-powerful access control for each plan, run and case, and XMLRPC APIs.</p>
-<p>Updated Nitrate package is now available which fixes several bugs and
-adds various enhancements.</p>
-<h2>Changelog since 3.8.18.08</h2>
-<ul>
-<li>Rebased onto 7a6bc34 from upstream</li>
-<li>Enable the test suite. Fix
-  <a href="https://github.com/Nitrate/Nitrate/issues/113">Issue #113</a> (Chenxiong Qi)</li>
-<li>Refactor tcms.core.migrations.0001_django_comments__object_pk.
-  Fixes a bug where applied migration was shown as still pending.
-  <a href="https://github.com/Nitrate/Nitrate/pull/157">PR #157</a> (Mr. Senko)</li>
-<li>Refactor SQLs in xmlrpc (with tests).
-  <a href="https://github.com/Nitrate/Nitrate/pull/159">PR #159</a> (Mr. Senko)</li>
-<li>Enable Coveralls.io.
-  <a href="https://github.com/Nitrate/Nitrate/pull/160">PR #160</a> (Mr. Senko)</li>
-<li>Don't install files under <code>/etc/</code> to avoid SandboxViolation. Enables
-  installation in virtualenv and as non-root. Hot-fix for
-  <a href="https://github.com/Nitrate/Nitrate/issues/155">Issue #155</a> (Mr. Senko)</li>
-</ul>
-<h2>How to upgrade</h2>
-<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
-<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
-before upgrading!</p>
-<div class="highlight"><pre><span></span>pip install --upgrade nitrate
-</pre></div>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Tue 28 February 2017
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/02/28/nitrate-bug-fix-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
