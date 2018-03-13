@@ -1301,3 +1301,13 @@ a.fa-check-square {
 a.fa-minus-square {
     text-decoration: none;
 }
+
+.feature.featured {
+    border-color: #53606f;
+    background: #53606f;
+    color: #fff;
+}
+
+.feature.featured h4 {
+    color: #92D400;
+}
