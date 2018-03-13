@@ -128,7 +128,7 @@
                             </a>
 				<nav id="nav">
 					<ul>
-						<li><strong><a href="http://mrsenko.com/#subscriptions">Our offer</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/#subscriptions">Pricing</a></strong></li>
 						<li><strong><a href="http://mrsenko.com/blog/">Blog</a></strong></li>
 						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
 					</ul>
@@ -166,8 +166,7 @@
 
                     <div class="content">
                         <p>
-                            Kiwi TCMS is the leading open source test plan, test run and test case management system!
-                            It was initially created to replace Testopia, a test case management extension for Bugzilla.
+                            Kiwi TCMS is the leading open source test case management system!
                             Kiwi TCMS has a lot of great features, such as Bugzilla, JIRA and GitHub integration,
                             fast test plan and test runs search, powerful access control and external API.
                         </p>
@@ -183,10 +182,7 @@
                         </header>
                         <ul>
                             <li>
-                                Self-hosted <a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">Docker compose</a> - recommended
-                            </li>
-                            <li>
-                                pip install from a private repository
+                                Docker image via <a href="https://github.com/MrSenko/kiwi-docker/blob/master/docker-compose.yml">docker-compose</a>
                             </li>
                             <li>
                                 Unlimited instances!
@@ -197,7 +193,7 @@
                         </ul>
 
                         <a href="http://sites.fastspring.com/otbbg/product/mrsenko" class="button special small">Subscribe</a> or
-                        <a href="/#get-in-touch">Ask for a demo</a>
+                        <a href="https://demo.kiwitcms.org">Check-out the demo</a>
                     </div>
                 </div>
             </div>
@@ -302,14 +298,14 @@
 								<div class="image rounded"><i class="fa fa-5x fa-repeat"></i></div>
 								<div class="content">
 									<header>
-										<h4>Long Term Support</h4>
+										<h4>Long Term Commitment</h4>
 									</header>
 									<p>
-                                                                            Typically older versions of libraries reach end-of-life
-                                                                            when the latest one is released.
+                                                                            Typically open source projects reach end-of-life
+                                                                            when the original author gives up.
 
-                                                                            Mr. Senko takes over maintenance and continues to provide
-                                                                            backports, bug fixes and security patches.
+                                                                            Mr. Senko is working directly with the upstream projects
+                                                                            to help with maintenance, bug fixes and development.
                                                                         </p>
 								</div>
 							</div>
@@ -318,14 +314,13 @@
 								<div class="image rounded"><i class="fa fa-5x fa-lock"></i></div>
 								<div class="content">
 									<header>
-										<h4>Private repositories</h4>
+										<h4>Private infrastructure</h4>
 									</header>
 									<p>
-                                                                            Subscriptions map to private URLs which can be used with 
+                                                                            Subscriptions map to private releases via
                                                                             pip or docker.
 
-                                                                            Everything is reliably served from our CDN without
-                                                                            downtime or missing older versions.
+                                                                            These are produced and tested by Mr. Senko!
                                                                         </p>
 								</div>
 							</div>
@@ -337,10 +332,11 @@
 
                                             <ol>
                                                 <li>
-                                                    Report a problem to Mr. Senko;
+                                                    Report an issue with <a href="https://github.com/kiwitcms/Kiwi/issues/new">Kiwi TCMS</a>;
                                                 </li>
+
                                                 <li>
-                                                    Mr. Senko will prioritize, reproduce, test and fix the problem;
+                                                    Mr. Senko will reproduce, prioritize, test and fix the problem;
                                                 </li>
 
                                                 <li>
@@ -358,8 +354,7 @@
                                                 will be included in the next release. This is based on their
                                                 severity and demand from customers.
                                                 If you want an issue to be fixed faster we ask you to increase
-                                                the number of your subscriptions! Mr. Senko considers it a good practice to
-                                                have one subscription per installation!
+                                                the number of your subscriptions!
                                             </p>
 
 					</div>
@@ -368,7 +363,7 @@
 				<section id="subscriptions" class="wrapper style1">
 					<div class="container">
 						<header class="major special">
-						    <h2>Our offer</h2>
+						    <h2>Subscriptions &amp; pricing</h2>
 						</header>
                                             <div class="feature-grid four">
                                                 <div class="box feature">
@@ -378,35 +373,39 @@
 							</header>
 <ul>
     <li>
-        Upstream decides when to release
+        Unlimited users and projects
     </li>
 
     <li>
-        Upstream decides when to deprecate
+        <a href="http://kiwitcms.org">Upstream</a> decides when to release
     </li>
 
     <li>
-        You install from public repositories
+        Install from <a href="https://hub.docker.com/r/kiwitcms/kiwi/">public Docker image</a>
     </li>
 
     <li>
-        All fixes from Mr. Senko are pushed as PRs
+        Docker image based on CentOS 7
     </li>
 
     <li>
-        Mr. Senko develops new features
+        Self-hosted &amp; self-supported
     </li>
 
     <li>
-        Mr. Senko contributes to upstream testing
+        Email backend: SMTP
     </li>
 
     <li>
-        Mr. Senko improves documentation
+        Authentication backend: username+password
     </li>
 
     <li>
-        1 subscription covers all software stacks
+        Default bug trackers: Bugzilla, JIRA, GitHub
+    </li>
+
+    <li>
+        Faster development via subscription
     </li>
 
     <li>
@@ -417,7 +416,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="box feature">
+                                                <div class="box feature featured">
                                                     <div class="content subscription">
                                                         <header>
 							    <h4>Start-up Subscription Plan</h4>
@@ -428,39 +427,36 @@
     </li>
 
     <li>
-        9-5, Mon-Fri coverage
+        Regular releases every 2 weeks
     </li>
 
     <li>
-        Mr. Senko releases every 2 weeks
+        Install from Docker image <code>mrsenko/kiwi</code>
     </li>
 
     <li>
-        You install from a private repository URL
-    </li>
+        Add-ons in private Docker image:
+        <ul>
+            <li>
+                Automated error logs sent to Mr. Senko via Sentry
+            </li>
 
-    <li>
-        Private repo can be used in multiple projects
-    </li>
+            <li>
+                Versioned static files, CDN ready
+            </li>
 
-    <li>
-        2 years support for every -minor- version
-    </li>
+            <li>
+                Email backend: SMTP + Amazon SES
+            </li>
 
-    <li>
-        -Release- versions are merged with our patches
-    </li>
+            <li>
+                Authentication backends: TBA
+            </li>
 
-    <li>
-        Backports between -major- versions are available on request
-    </li>
-
-    <li>
-        Mr. Senko performs additional testing
-    </li>
-
-    <li>
-        Technical release notes for every update
+            <li>
+                Enabled bug trackers: TBA
+            </li>
+        </ul>
     </li>
 
     <li>
@@ -484,32 +480,24 @@
     </li>
 
     <li>
-        24x7 coverage for security and urgent issues
+        Docker image based on RHEL 7 (TBA)
     </li>
 
     <li>
-        Mr. Senko releases every week
+        Hosted by Mr. Senko on OpenShift
     </li>
 
     <li>
-        Async security and urgent hotfix releases
+        Backup &amp; upgrades performed by Mr. Senko
     </li>
 
     <li>
-        5 years support for every -minor- version
-    </li>
-
-    <li>
-        Options for technical training & webinars
-    </li>
-
-    <li>
-        Additional packaging as
-        <em><a href="https://www.softwarecollections.org/en/">Software Collections</a></em>
-    </li>
-
-    <li>
-        Extensive 3rd party dependencies testing
+        Add-ons in private Docker image:
+        <ul>
+            <li>
+                Authentication backends: Kerberos, LDAP (TBA)
+            </li>
+        </ul>
     </li>
 
     <li>
@@ -522,10 +510,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-If you are an individual developer who wants only certain bugs fixed please
-<a href="#get-in-touch">get in touch</a> with us! We're exploring the possibilities of
-supporting freelancers and individuals on a fundraising basis!
 
 					</div>
 				</section>
