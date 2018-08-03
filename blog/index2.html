@@ -145,6 +145,47 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2017/03/08/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
+                    <h2>Nitrate enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> nitrate-3.8.18.10
+<strong>Released on:</strong> 2017-03-08
+<strong>Severity:</strong> Low</p>
+<h2>Details</h2>
+<p>Nitrate is an open source test plan, test run and test case management system.
+It has a lot of great features, such as
+Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
+powerful access control for each plan, run and case, and XMLRPC APIs.</p>
+<p>Updated Nitrate package is now available which fixes several bugs and
+adds various enhancements.</p>
+<h2>Changelog since 3.8.18.09</h2>
+<ul>
+<li>Rebased onto c696e62 from upstream</li>
+<li>Don't use deprecated <code>request.REQUEST</code>.
+  <a href="https://github.com/Nitrate/Nitrate/pull/156">PR #156</a> (Mr. Senko)</li>
+<li>Update tests and fix Travis CI core dump.
+  <a href="https://github.com/Nitrate/Nitrate/pull/168">PR #168</a>,
+  <a href="https://github.com/Nitrate/Nitrate/issues/161">Issue #161</a> (Mr. Senko)</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
+<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
+before upgrading!</p>
+<div class="highlight"><pre><span></span>pip install --upgrade nitrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Wed 08 March 2017
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/03/08/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/02/28/nitrate-bug-fix-enhancement-update/" rel="bookmark" title="Permalink to Nitrate bug-fix & enhancement update">
                     <h2>Nitrate bug-fix & enhancement update</h2>
                 </a>
@@ -1265,51 +1306,6 @@ this or other open source libraries please
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/atodorov/2016/07/30/july-2016-status-report/" rel="bookmark" title="Permalink to July 2016 Status Report">
-                    <h2>July 2016 Status Report</h2>
-                </a>
-            </header>
-
-            <p>Hello everyone, July has been relatively busy in terms of pull requests.
-I've been working on <em>Cosmic Ray</em> the mutation testing tool for Python
-and in the last couple of days taken over maintenance of <em>django-chartit</em>.</p>
-<p>I've made several improvements against <em>Cosmic Ray</em>. The most notable
-are:</p>
-<ul>
-<li>Added support for nosetests test runner;</li>
-<li>Added a True-False, False-True replacer operator;</li>
-<li>Added workaround for empty <code>__init__.py</code> files which addresses
-<a href="http://bugs.python.org/issue27578">Python #27578</a>;</li>
-<li>Made <em>Cosmic Ray</em> accept directories and .py file names as possible
-inputs which works like a charm for users who rely heavily on bash completion;</li>
-</ul>
-<p>I will be continuing to work on <em>Cosmic Ray</em> and also integrate mutation testing
-as part of the standard testing toolset used by Mr. Senko.</p>
-<p>Then I've started working on
-<a href="https://github.com/chartit/django-chartit">django-chartit</a> which is a very
-popular module that has been abandoned in the last couple of years.
-My immediate goal was to merge back the
-<a href="https://github.com/grantmcconnaughey/django-chartit2">django-chartit2</a> fork
-by Grant McConnaughey, which adds Python 3 and latest Django support and merge
-some pending pull requests.
-I've been working on fixing quite a few errors and warnings reported by the test
-tools and getting the documentation up to speed. A much anticipated release on
-PyPI will be coming out very soon. Once the merger between <em>django-chartit</em> and
-<em>django-chartit2</em> is complete I will continue working on the reported issues.</p>
-<p>I hope you like my work and please
-<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko</a></strong>
-if you need a faster response cycle for the open source libraries you use.</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
-                on Sat 30 July 2016
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/07/30/july-2016-status-report/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">

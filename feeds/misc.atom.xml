@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2017-10-31T13:00:00+02:00</updated><entry><title>Kiwi TCMS bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-10-31T13:00:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-10-31:blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.44-ee
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2018-08-03T22:00:00+03:00</updated><entry><title>Kiwi TCMS security and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2018/08/03/kiwi-tcms-security-and-enhancement-update/" rel="alternate"></link><published>2018-08-03T22:00:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-08-03:blog/mr-senko/2018/08/03/kiwi-tcms-security-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; 5.1-ee-803
+&lt;strong&gt;Released on:&lt;/strong&gt; 2018-08-03
+&lt;strong&gt;Severity:&lt;/strong&gt; Medium
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://kiwitcms.org/"&gt;http://kiwitcms.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;This release updates to the latest Django version due to a moderate security
+issue, fixes several bugs and removes unnecessary application code.
+This is an Enterprise Edition release, available only to Mr. Senko subscribers.
+Docker images:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mrsenko/kiwi        5.1-ee-803          334884936c46
+mrsenko/kiwi        latest              334884936c46
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Changes since KiwiTCMS 5.1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgrade to &lt;a href="https://docs.djangoproject.com/en/2.1/releases/2.1/"&gt;Django 2.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The first registered user will become superuser&lt;/li&gt;
+&lt;li&gt;Remove &lt;code&gt;UserProfile&lt;/code&gt; model. User profiles are now served via the default
+  user admin views&lt;/li&gt;
+&lt;li&gt;Do not require login for password reset pages&lt;/li&gt;
+&lt;li&gt;Remove the &lt;code&gt;AUTHENTICATION_BACKENDS&lt;/code&gt; setting because we use the default
+  backend now&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;USER_REGISTERED_SIGNAL&lt;/code&gt; now doesn't receive the &lt;code&gt;backend&lt;/code&gt; parameter&lt;/li&gt;
+&lt;li&gt;Remove unused get_using_backend(). Fixes
+  &lt;a href="https://github.com/kiwitcms/Kiwi/issues/261"&gt;Issue #261&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Remove &lt;code&gt;dj_pagination&lt;/code&gt;. Fixes
+  &lt;a href="https://github.com/kiwitcms/Kiwi/issues/110"&gt;Issue #110&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PAGINATION_DEFAULT_PAGINATION&lt;/code&gt; setting is also removed&lt;/li&gt;
+&lt;li&gt;Updated translation strings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; to get access to
+our private Docker repository and then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose down
+docker pull mrsenko/kiwi
+docker pull centos/mariadb
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Kiwi TCMS bug-fix and enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/" rel="alternate"></link><published>2017-10-31T13:00:00+02:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2017-10-31:blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; kiwitcms-3.44-ee
 &lt;strong&gt;Released on:&lt;/strong&gt; 2017-10-31
 &lt;strong&gt;Severity:&lt;/strong&gt; High
 &lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://MrSenko.com/kiwi/"&gt;http://MrSenko.com/kiwi/&lt;/a&gt;&lt;/p&gt;

@@ -145,6 +145,62 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2018/08/03/kiwi-tcms-security-and-enhancement-update/" rel="bookmark" title="Permalink to Kiwi TCMS security and enhancement update">
+                    <h2>Kiwi TCMS security and enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> 5.1-ee-803
+<strong>Released on:</strong> 2018-08-03
+<strong>Severity:</strong> Medium
+<strong>URL:</strong> <a href="http://kiwitcms.org/">http://kiwitcms.org/</a></p>
+<h2>Details</h2>
+<p>This release updates to the latest Django version due to a moderate security
+issue, fixes several bugs and removes unnecessary application code.
+This is an Enterprise Edition release, available only to Mr. Senko subscribers.
+Docker images:</p>
+<div class="highlight"><pre><span></span>mrsenko/kiwi        5.1-ee-803          334884936c46
+mrsenko/kiwi        latest              334884936c46
+</pre></div>
+
+
+<h2>Changes since KiwiTCMS 5.1</h2>
+<ul>
+<li>Upgrade to <a href="https://docs.djangoproject.com/en/2.1/releases/2.1/">Django 2.1</a></li>
+<li>The first registered user will become superuser</li>
+<li>Remove <code>UserProfile</code> model. User profiles are now served via the default
+  user admin views</li>
+<li>Do not require login for password reset pages</li>
+<li>Remove the <code>AUTHENTICATION_BACKENDS</code> setting because we use the default
+  backend now</li>
+<li><code>USER_REGISTERED_SIGNAL</code> now doesn't receive the <code>backend</code> parameter</li>
+<li>Remove unused get_using_backend(). Fixes
+  <a href="https://github.com/kiwitcms/Kiwi/issues/261">Issue #261</a></li>
+<li>Remove <code>dj_pagination</code>. Fixes
+  <a href="https://github.com/kiwitcms/Kiwi/issues/110">Issue #110</a></li>
+<li><code>PAGINATION_DEFAULT_PAGINATION</code> setting is also removed</li>
+<li>Updated translation strings</li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> to get access to
+our private Docker repository and then</p>
+<div class="highlight"><pre><span></span>docker-compose down
+docker pull mrsenko/kiwi
+docker pull centos/mariadb
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Fri 03 August 2018
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2018/08/03/kiwi-tcms-security-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2017/10/31/kiwi-tcms-bug-fix-and-enhancement-update/" rel="bookmark" title="Permalink to Kiwi TCMS bug-fix and enhancement update">
                     <h2>Kiwi TCMS bug-fix and enhancement update</h2>
                 </a>
@@ -1408,47 +1464,6 @@ before upgrading!</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/03/22/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2017/03/08/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
-                    <h2>Nitrate enhancement update</h2>
-                </a>
-            </header>
-
-            <p><strong>Version:</strong> nitrate-3.8.18.10
-<strong>Released on:</strong> 2017-03-08
-<strong>Severity:</strong> Low</p>
-<h2>Details</h2>
-<p>Nitrate is an open source test plan, test run and test case management system.
-It has a lot of great features, such as
-Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
-powerful access control for each plan, run and case, and XMLRPC APIs.</p>
-<p>Updated Nitrate package is now available which fixes several bugs and
-adds various enhancements.</p>
-<h2>Changelog since 3.8.18.09</h2>
-<ul>
-<li>Rebased onto c696e62 from upstream</li>
-<li>Don't use deprecated <code>request.REQUEST</code>.
-  <a href="https://github.com/Nitrate/Nitrate/pull/156">PR #156</a> (Mr. Senko)</li>
-<li>Update tests and fix Travis CI core dump.
-  <a href="https://github.com/Nitrate/Nitrate/pull/168">PR #168</a>,
-  <a href="https://github.com/Nitrate/Nitrate/issues/161">Issue #161</a> (Mr. Senko)</li>
-</ul>
-<h2>How to upgrade</h2>
-<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
-<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
-before upgrading!</p>
-<div class="highlight"><pre><span></span>pip install --upgrade nitrate
-</pre></div>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Wed 08 March 2017
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/03/08/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
