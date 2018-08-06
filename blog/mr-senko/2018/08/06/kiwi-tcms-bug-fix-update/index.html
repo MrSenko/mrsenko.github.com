@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
-		<title>Mr. Senko - Open Source Wizards - Authors</title>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Kiwi TCMS bug-fix update</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="" />
                 <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
@@ -110,14 +110,31 @@
                 <!-- Code highlight color scheme -->
                     <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
 
-                    <meta name="twitter:site" content="@Mr_Senko">
-                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
-                    <meta name="twitter:description" content="Support for open source libraries">
-                    <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
 
-                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
-                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+
+        <meta name="description" content="version 5.1-ee-806" >
+
+        <meta name="author" content="Mr. Senko">
+
+        <meta name="tags" content="Python" >
+        <meta name="tags" content="errata" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="Kiwi TCMS bug-fix update">
+            <meta name="twitter:description" content="version 5.1-ee-806">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="http://mrsenko.com/blog/mr-senko/" />
+        <meta property="og:url" content="http://mrsenko.com/blog/mr-senko/2018/08/06/kiwi-tcms-bug-fix-update/" />
+        <meta property="og:title" content="Kiwi TCMS bug-fix update" />
+        <meta property="article:published_time" content="2018-08-06 22:20:00+03:00">
+            <meta property="og:description" content="version 5.1-ee-806">
+
+            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
 	</head>
 	<body class="landing">
 
@@ -136,28 +153,81 @@
 			</header>
 
             <section id="banner">
-    <h2>Mr. Senko's blog</h2>
+    <h2>Kiwi TCMS bug-fix update</h2>
+    <p>version 5.1-ee-806</p>
     <p>
-        open source from the wizards
+        <em>Posted by
+                <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Mon 06 August 2018
+        </em>
     </p>
             </section>
 
-        <div class="post-preview">
-            <a href="http://mrsenko.com/blog/atodorov/" rel="bookmark">
-                <h2 class="post-title">
-                    Alexander Todorov (16)
-                </h2>
-            </a>
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p><strong>Version:</strong> 5.1-ee-806
+<strong>Released on:</strong> 2018-08-06
+<strong>Severity:</strong> High
+<strong>URL:</strong> <a href="http://kiwitcms.org/">http://kiwitcms.org/</a></p>
+<h2>Details</h2>
+<p>This release updates to the latest django-report-builder version due to
+issues with missing JavaScript files in earlier versions of this package.
+This is an Enterprise Edition release, available only to Mr. Senko subscribers.
+Docker images:</p>
+<div class="highlight"><pre><span></span>mrsenko/kiwi        5.1-ee-806          af59f36067cb
+mrsenko/kiwi        latest              af59f36067cb
+</pre></div>
+
+
+<h2>Changes since KiwiTCMS 5.1</h2>
+<ul>
+<li>Upgrade to <a href="https://github.com/burke-software/django-report-builder/issues/295">django-report-builder 6.2.2</a></li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> to get access to
+our private Docker repository and then</p>
+<div class="highlight"><pre><span></span>docker-compose down
+docker pull mrsenko/kiwi
+docker pull centos/mariadb
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+        on Mon 06 August 2018
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, <a href="http://mrsenko.com/blog/tags/errata/">errata</a>, </p>
         </div>
-        <hr>
-        <div class="post-preview">
-            <a href="http://mrsenko.com/blog/mr-senko/" rel="bookmark">
-                <h2 class="post-title">
-                    Mr. Senko (38)
-                </h2>
-            </a>
+    </div>
+
+    <section id="comments" class="wrapper style2 special">
+        <div class="container">
+            <header class="major special">
+                <h2>Comments !</h2>
+            </header>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'mrsenko';
+                var disqus_identifier = 'blog/mr-senko/2018/08/06/kiwi-tcms-bug-fix-update/';
+                var disqus_url = 'http://mrsenko.com/blog/mr-senko/2018/08/06/kiwi-tcms-bug-fix-update/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mrsenko.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
-        <hr>
+    </section>
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">

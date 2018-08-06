@@ -145,6 +145,62 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/" rel="bookmark" title="Permalink to Reviving django-chartit with version 0.2.4">
+                    <h2>Reviving django-chartit with version 0.2.4</h2>
+                </a>
+            </header>
+
+            <p><a href="https://github.com/chartit/django-chartit">django-chartit</a> is a Django app
+that can be used to easily create charts from the data in your database. The
+charts are rendered using <code>Highcharts</code> and <code>jQuery</code> JavaScript libraries.
+Data in your database can be plotted as simple line charts, column charts,
+area charts, scatter plots, and many more chart types.</p>
+<p>The project has been originally developed by
+<a href="https://github.com/pgollakota">Praveen Gollakota</a> and had gained some
+popularity. Recently Mr. Senko was granted the necessary access rights
+and we've revived the project with two upstream releases.</p>
+<h2>Changelog</h2>
+<p>Version 0.2.3 was released a few days ago and merges the <code>django-chartit2</code> fork by
+<a href="https://github.com/grantmcconnaughey">Grant McConnaughey</a> which had a few
+releases of its own earlier this year. It also makes a few improvements and merged
+other pull requests.</p>
+<p>Version 0.2.4 was released today and fixes the usage of deprecated Django
+APIs which were removed in Django 1.10.</p>
+<p>Many thanks to Grant for his work on Python 3 and latest Django support!
+Many thanks to Praveen for letting us maintain the project.</p>
+<h2>Upgrade from django_chartit2</h2>
+<p>If you are using the <code>django_chartit2</code> module by Grant then you have to</p>
+<div class="highlight"><pre><span></span>pip uninstall django_chartit2
+pip install django_chartit
+</pre></div>
+
+
+<p>If you are not in a hurry to upgrade you may as well wait for the next
+release by Grant, which should automatically require <code>django_chartit</code>
+and transparently switch you back to using the original package and not
+the fork. However release of such an update is not under our control.</p>
+<h2>Feature plans</h2>
+<p>Mr. Senko is currently working actively to bring the rest of the project
+up to speed, including the demo site, which shows how to use the API.
+This is a mandatory step before we go ahead to work on various bug fixes
+and documentation improvements. We will also be looking into adding more
+tests for the project.</p>
+<h2>Support</h2>
+<p>At Mr. Senko we will do our best to accommodate every need and merge patches
+and feature requests as they come in. Should you need commercial support for
+this or other open source libraries please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 02 August 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/atodorov/2016/07/30/july-2016-status-report/" rel="bookmark" title="Permalink to July 2016 Status Report">
                     <h2>July 2016 Status Report</h2>
                 </a>
