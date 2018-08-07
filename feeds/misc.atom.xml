@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2018-08-06T22:20:00+03:00</updated><entry><title>Kiwi TCMS bug-fix update</title><link href="http://mrsenko.com/blog/mr-senko/2018/08/06/kiwi-tcms-bug-fix-update/" rel="alternate"></link><published>2018-08-06T22:20:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-08-06:blog/mr-senko/2018/08/06/kiwi-tcms-bug-fix-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; 5.1-ee-806
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2018-08-07T23:30:00+03:00</updated><entry><title>Kiwi TCMS enhancement update</title><link href="http://mrsenko.com/blog/mr-senko/2018/08/07/kiwi-tcms-enhancement-update/" rel="alternate"></link><published>2018-08-07T23:30:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-08-07:blog/mr-senko/2018/08/07/kiwi-tcms-enhancement-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; 5.2-ee
+&lt;strong&gt;Released on:&lt;/strong&gt; 2018-08-07
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://kiwitcms.org/"&gt;http://kiwitcms.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;This is an Enterprise Edition release, available only to Mr. Senko subscribers.
+Docker images:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mrsenko/kiwi        5.2-ee          cc9bf54d3638
+mrsenko/kiwi        latest          cc9bf54d3638
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Changes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Based on upstream &lt;a href="http://kiwitcms.org/blog/kiwi-tcms-team/2018/08/07/kiwi-tcms-52/"&gt;Kiwi TCMS v5.2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Docker image now running with uid 1001 instead of root&lt;/li&gt;
+&lt;li&gt;Provides &lt;a href="http://python-social-auth-docs.readthedocs.io/en/latest/backends/index.html#supported-backends"&gt;python-social-auth login backend&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; to get access to
+our private Docker repository and then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose down
+docker pull mrsenko/kiwi
+docker pull centos/mariadb
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Kiwi TCMS bug-fix update</title><link href="http://mrsenko.com/blog/mr-senko/2018/08/06/kiwi-tcms-bug-fix-update/" rel="alternate"></link><published>2018-08-06T22:20:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-08-06:blog/mr-senko/2018/08/06/kiwi-tcms-bug-fix-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; 5.1-ee-806
 &lt;strong&gt;Released on:&lt;/strong&gt; 2018-08-06
 &lt;strong&gt;Severity:&lt;/strong&gt; High
 &lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://kiwitcms.org/"&gt;http://kiwitcms.org/&lt;/a&gt;&lt;/p&gt;

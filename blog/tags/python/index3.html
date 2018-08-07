@@ -142,6 +142,109 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/" rel="bookmark" title="Permalink to Converting JSON Fixtures to Django Migrations">
+                    <h2>Converting JSON Fixtures to Django Migrations</h2>
+                </a>
+            </header>
+
+            <p>Older Django apps like
+<a href="https://github.com/chartit/django-chartit">django-chartit</a> and
+<a href="https://github.com/Nitrate/Nitrate">Nitrate</a> used JSON fixtures to populate
+their databases with initial data. In this article I will show you an easy way
+to convert JSON fixtures into native Django migrations.
+The JSON fixture looks like this</p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Godin&quot;</span>
+            <span class="p">},</span>
+ <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">1</span>
+ <span class="p">}</span><span class="err">,</span>
+<span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Guy&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kawasaki&quot;</span>
+            <span class="p">},</span>
+ <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">2</span>
+ <span class="p">}</span><span class="err">,</span>
+<span class="p">{</span><span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Geoffrey&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Colvin&quot;</span>
+            <span class="p">},</span>
+ <span class="nt">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">3</span>
+ <span class="p">}</span>
+</pre></div>
+
+
+<p>Notice the <code>pk</code> and <code>model</code> fields which tell us where this data came from
+and what was the object PK when exported from the database. The <code>fields</code>
+dict is the actual data for this object.</p>
+<p>In Python we can use <code>json.loads</code> and read the fixture data from disk or
+even better assign it directly to a variable inside our Python source file.
+Then iterate over all values and create the objects programmatically like this</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">migrations</span>
+
+
+<span class="k">def</span> <span class="nf">initialize_data</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">schema_editor</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Seth&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Godin&quot;</span>
+                    <span class="p">},</span>
+         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">1</span>
+         <span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Guy&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kawasaki&quot;</span>
+                    <span class="p">},</span>
+         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">2</span>
+         <span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Geoffrey&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Colvin&quot;</span>
+                    <span class="p">},</span>
+         <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;demoproject.Author&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pk&quot;</span><span class="p">:</span> <span class="mi">3</span>
+         <span class="p">},</span>
+    <span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">app_name</span><span class="p">,</span> <span class="n">model_name</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+        <span class="n">ModelClass</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">app_name</span><span class="p">,</span> <span class="n">model_name</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">ModelClass</span><span class="p">(</span><span class="o">**</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">])</span>
+        <span class="c1"># this is required only if you have other models</span>
+        <span class="c1"># with foreign keys referring to this object</span>
+        <span class="c1"># obj.pk = record[&#39;pk&#39;]</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Migration</span><span class="p">(</span><span class="n">migrations</span><span class="o">.</span><span class="n">Migration</span><span class="p">):</span>
+
+    <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;demoproject&#39;</span><span class="p">,</span> <span class="s1">&#39;0001_initial&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">RunPython</span><span class="p">(</span><span class="n">initialize_data</span><span class="p">),</span>
+    <span class="p">]</span>
+</pre></div>
+
+
+<p>This works well for most of the cases. You should take care to assign the
+same PKs in case there are other objects that hold references to them. If
+this isn't the case then you can drop these fields entirely to reduce your
+source code size.</p>
+<p>I hope you like my work and please
+<strong><a href="http://mrsenko.com/subscribe.html">subscribe to Mr. Senko's support service</a></strong>
+should you need commercial support for this or other open source libraries!</p>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/atodorov/">Alexander Todorov</a>
+                on Mon 08 August 2016
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/atodorov/2016/08/08/converting-json-fixtures-to-django-migrations/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2016/08/02/reviving-django-chartit-with-version-024/" rel="bookmark" title="Permalink to Reviving django-chartit with version 0.2.4">
                     <h2>Reviving django-chartit with version 0.2.4</h2>
                 </a>

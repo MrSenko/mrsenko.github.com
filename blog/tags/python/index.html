@@ -142,6 +142,48 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2018/08/07/kiwi-tcms-enhancement-update/" rel="bookmark" title="Permalink to Kiwi TCMS enhancement update">
+                    <h2>Kiwi TCMS enhancement update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> 5.2-ee
+<strong>Released on:</strong> 2018-08-07
+<strong>URL:</strong> <a href="http://kiwitcms.org/">http://kiwitcms.org/</a></p>
+<h2>Details</h2>
+<p>This is an Enterprise Edition release, available only to Mr. Senko subscribers.
+Docker images:</p>
+<div class="highlight"><pre><span></span>mrsenko/kiwi        5.2-ee          cc9bf54d3638
+mrsenko/kiwi        latest          cc9bf54d3638
+</pre></div>
+
+
+<h2>Changes</h2>
+<ul>
+<li>Based on upstream <a href="http://kiwitcms.org/blog/kiwi-tcms-team/2018/08/07/kiwi-tcms-52/">Kiwi TCMS v5.2</a></li>
+<li>Docker image now running with uid 1001 instead of root</li>
+<li>Provides <a href="http://python-social-auth-docs.readthedocs.io/en/latest/backends/index.html#supported-backends">python-social-auth login backend</a></li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> to get access to
+our private Docker repository and then</p>
+<div class="highlight"><pre><span></span>docker-compose down
+docker pull mrsenko/kiwi
+docker pull centos/mariadb
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Tue 07 August 2018
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2018/08/07/kiwi-tcms-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2018/08/06/kiwi-tcms-bug-fix-update/" rel="bookmark" title="Permalink to Kiwi TCMS bug-fix update">
                     <h2>Kiwi TCMS bug-fix update</h2>
                 </a>
@@ -1401,45 +1443,6 @@ before upgrading!</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/04/12/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2017/03/22/django-chartit-enhancement-update/" rel="bookmark" title="Permalink to django-chartit enhancement update">
-                    <h2>django-chartit enhancement update</h2>
-                </a>
-            </header>
-
-            <p><strong>Version:</strong> django-chartit-master
-<strong>Released on:</strong> 2017-03-22
-<strong>Severity:</strong> Low</p>
-<h2>Details</h2>
-<p>Django Chartit is a Django app that can be used to easily create charts from
-the data in your database. The charts are rendered using <code>Highcharts</code> and
-<code>jQuery</code> JavaScript libraries. Data in your database can be plotted as simple
-line charts, column charts, area charts, scatter plots, and many more chart
-types. Data can also be plotted as Pivot Charts where the data is grouped
-and/or pivoted by specific column(s).</p>
-<p>Updated upstream is now available which adds couple of improvements.</p>
-<h2>Upstream changelog since 0.2.9</h2>
-<ul>
-<li>Update demo with an example of how to pass <code>legendIndex</code> as an option
-  to a data serie. Closes
-  <a href="https://github.com/chartit/django-chartit/issues/48">Issue #48</a>;</li>
-<li>Update demo with an example of how to change the label of any term instead
-  of using the default one. Closes
-  <a href="https://github.com/chartit/django-chartit/issues/46">Issue #46</a>.</li>
-</ul>
-<h2>How to upgrade</h2>
-<p>This is an upstream release only. No updated packages are provided via private
-repositories on Mr. Senko!</p>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Wed 22 March 2017
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/03/22/django-chartit-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
