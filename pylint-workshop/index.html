@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Mr. Senko - Open Source Wizards - Workshop: How to write pylint plugins</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="http://mrsenko.com/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="http://mrsenko.com/theme/js/jquery.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel.min.js"></script>
+		<script src="http://mrsenko.com/theme/js/skel-layers.min.js"></script>
+                <script src="http://mrsenko.com/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: 'http://mrsenko.com/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: 'http://mrsenko.com/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: 'http://mrsenko.com/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: 'http://mrsenko.com/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: 'http://mrsenko.com/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: 'http://mrsenko.com/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/skel.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style.css" />
+			<link rel="stylesheet" href="http://mrsenko.com/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
+
+                    <meta name="twitter:site" content="@Mr_Senko">
+                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
+                    <meta name="twitter:description" content="Support for open source libraries">
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="http://mrsenko.com/">
+				<img src="http://mrsenko.com/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><strong><a href="http://mrsenko.com/#subscriptions">Pricing</a></strong></li>
+						<li><strong><a href="http://mrsenko.com/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+            </section>
+
+    <p>Pylint is the most popular static source code analyzer for Python.
+It has a plugable architecture and allows developers to create their
+own checks. This is very useful for projects where you would like to
+enforce specific rules and coding style. For example that all of your
+API classes follow the same naming convention or that all of your source
+files contain a copyright notice!</p>
+<p>Mr. Senko provides instructor led workshops which teach you all the
+necessary skills for creating plugins.</p>
+<h2>Target audience</h2>
+<p>Medium level or experienced developers who work with Python (and/or Django)
+and/or QA engineers who work
+with the project source code directly! In order to get the maximum of this
+workshop you need to have moderate skills in programming with Python!</p>
+<h2>Workshop: AST based plugins</h2>
+<p>Duration: 3hrs</p>
+<p>Group: max 10 people</p>
+<p>Pricing: 100 EUR/person</p>
+<p>Description: Abstract syntax tree based plugins are the most popular type
+of plugins in pylint. They are used over 90% of the time. This workshop
+will teach you:</p>
+<ul>
+<li>How pylint works</li>
+<li>Implementing a plugin skeleton - hands-on exercise</li>
+<li>Invoking the plugin - hands-on exercise</li>
+<li>Parsing Abstract Syntax Trees in Python – hands-on exercise</li>
+<li>Putting together a minimalistic plugin - hands-on exercise</li>
+<li>Formulating (your) ideas into actionable goals - what sort of plugin
+would you like to create (or work from pre-existing scenarios)</li>
+<li>Writing code and code review - more hands-on exercise</li>
+</ul>
+<h2>Full day pylint workshop</h2>
+<p>Duration: 6hrs</p>
+<p>Group: max 10 people</p>
+<p>Pricing: 300 EUR/person</p>
+<p>Description: This workshop covers pylint in more details with more
+practical examples and explanation. Topic include:</p>
+<ul>
+<li>Everything from the AST workshop</li>
+<li>Other pylint checker interfaces</li>
+<li>Token based pylint plugins</li>
+<li>Token and AST mixed plugins</li>
+<li>Type inference in AST - figuring out what kind of objects we are
+  dealing with</li>
+<li>Augmentations - suppressing selected error messages during runtime</li>
+<li>Transformations - teaching pylint to recognize your framework</li>
+<li>Proper testing of pylint plugins</li>
+</ul>
+<h2>Technical requirements</h2>
+<ul>
+<li>Python 3.6 installed and running</li>
+<li>Text editor or IDE of your choice – you must know how to use them !</li>
+<li>virtualenv (virtualenv-wrapper) tools installed and running so you can
+  configure a working environment for your pylint plugins</li>
+<li>pylint &gt;= 2.0 installed inside the virtualenv</li>
+</ul>
+<p>Try to identify code patterns which are not detected by standard pylint checks
+so that you can write a plugin for them. Practice patters will be provided by
+instructor.</p>
+<h2>Instructor</h2>
+<p><a href="https://github.com/atodorov">Alexander Todorov</a> –
+a Senior QA engineer with more than 10 years of experience in
+test automation and development with Python. Alex is also the current maintainer of
+<a href="https://github.com/PyCQA/pylint-django/graphs/contributors">pylint-django</a>
+and a contributor to <a href="https://github.com/PyCQA/pylint/pulls/atodorov">pylint</a>.</p>
+<h2>Dates</h2>
+<ul>
+<li>Feb 2019, Brussels, TBC</li>
+<li>2-3 Nov 2018, Staint Petersburg for <a href="https://piterpy.com">PiterPy</a></li>
+<li>October 20018, Germany, Karlsruhe region, TBA</li>
+<li>15 Sept 2018, Sofia, TBA</li>
+<li>3rd June 2018, Prague for <a href="https://cz.pycon.org/2018/">PyCon CZ</a></li>
+<li>26-27 May 2018, Heidelberg for
+<a href="https://2018.djangocon.eu/news/talk-announcement/">DjangoCon Europe</a></li>
+<li>19-20 May 2018, Tirana for <a href="https://oscal.openlabs.cc/">OSCAL'18</a></li>
+</ul>
+<p>For more dates and in-house corporate training please
+<a href="/#get-in-touch">get in touch with us</a>!</p>
+<h2>Support pylint development</h2>
+<p>If you use pylint commercially we strongly encourage you to invest in its continued
+development by <a href="http://mrsenko.com/subscribe.html">signing up for a paid plan</a>
+(use our existing subscription plans).
+We believe that collaboratively funded software can offer outstanding returns on investment,
+by encouraging our users to collectively share the cost of development.</p>
+<p>Signing up for a paid plan will:</p>
+<ul>
+<li>Directly contribute to faster releases, more features, and higher quality software</li>
+<li>Allow more time to be invested in documentation, issue triage, and community support</li>
+<li>Safeguard the future development of pylint</li>
+</ul>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa fa-twitter"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016-2018 Mr. Senko</li>
+						<li><a href="/legal/">Legal notice</a></li>
+					</ul>
+				</div>
+			</footer>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-72200638-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+<!-- LuckyOrange -->
+<script type='text/javascript'>
+window.__lo_site_id = 55938;
+    (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'mrsenko';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+	</body>
+</html>

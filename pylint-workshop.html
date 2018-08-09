@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Mr. Senko - Open Source Wizards - Pylint Workshop</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+                <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
+		<!--[if lte IE 8]><script src="/theme/js/html5shiv.js"></script><![endif]-->
+		<script src="/theme/js/jquery.min.js"></script>
+		<script src="/theme/js/skel.min.js"></script>
+		<script src="/theme/js/skel-layers.min.js"></script>
+                <script src="/js/list-v1.2.0.min.js"></script>
+<script>
+/*
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: {
+				href: '/theme/css/style.css',
+				containers: 1400,
+				grid: { gutters: ['2em', 0] }
+			},
+			xlarge: {
+				media: '(max-width: 1680px)',
+				href: '/theme/css/style-xlarge.css',
+				containers: 1200
+			},
+			large: {
+				media: '(max-width: 1280px)',
+				href: '/theme/css/style-large.css',
+				containers: 960,
+				grid: { gutters: ['1.5em', 0] },
+				viewport: { scalable: false }
+			},
+			medium: {
+				media: '(max-width: 980px)',
+				href: '/theme/css/style-medium.css',
+				containers: '90%!'
+			},
+			small: {
+				media: '(max-width: 736px)',
+				href: '/theme/css/style-small.css',
+				containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
+			},
+			xsmall: {
+				media: '(max-width: 480px)',
+				href: '/theme/css/style-xsmall.css'
+			}
+		},
+		plugins: {
+			layers: {
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'medium',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="moveElement" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
+				navButton: {
+					breakpoints: 'medium',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
+			}
+		}
+	});
+
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				$body.removeClass('is-loading');
+			});
+
+		// Touch mode.
+			if (skel.vars.isMobile)
+				$body.addClass('is-touch');
+
+	});
+
+})(jQuery);
+</script>		<noscript>
+			<link rel="stylesheet" href="/theme/css/skel.css" />
+			<link rel="stylesheet" href="/theme/css/style.css" />
+			<link rel="stylesheet" href="/theme/css/style-xlarge.css" />
+		</noscript>
+
+                <!-- Code highlight color scheme -->
+                    <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+                    <meta name="twitter:site" content="@Mr_Senko">
+                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
+                    <meta name="twitter:description" content="Support for open source libraries">
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:image" content="/theme/images/twitter_card.jpg">
+
+                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+                <meta property="og:image" content="/theme/images/og_image.jpg">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+                            <a href="/">
+				<img src="/theme/images/logo.png" />
+                            </a>
+				<nav id="nav">
+					<ul>
+						<li><strong><a href="/#subscriptions">Pricing</a></strong></li>
+						<li><strong><a href="/blog/">Blog</a></strong></li>
+						<li><strong><a class="fa fa-twitter" href="https://twitter.com/Mr_Senko"></a></strong></li>
+					</ul>
+				</nav>
+			</header>
+
+            <section id="banner">
+            </section>
+
+    <p>Pylint is the most popular Python source code analyzer which looks for
+programming errors, helps enforce a coding standard and detects some
+code smells. It is possible to write plugins to add your own checks.</p>
+<h2>Objectives</h2>
+<ul>
+<li>To understand how a pylint plugin works</li>
+<li>To get some hands-on experience with writing plugins</li>
+<li>To be able to write a non-complex plugin by the end of the workshop</li>
+</ul>
+<h2>Agenda</h2>
+<ul>
+<li>Introduction to how pylint works</li>
+<li>Implementing a plugin skeleton - hands-on exercise</li>
+<li>Invoking the plugin - hands-on exercise</li>
+<li>Parsing Abstract Syntax Trees in the Python shell – hands-on exercise</li>
+<li>
+<p>Putting together a minimalistic plugin - hands-on exercise</p>
+</li>
+<li>
+<p>Formulating (your) ideas into actionable goals</p>
+</li>
+<li>Writing code and code review - hands-on exercise</li>
+<li>Testing your plugin</li>
+</ul>
+<h2>Target audience</h2>
+<p>Developers who work with Python (and/or Django) and/or QA engineers who work
+with the project source code directly! In order to get the maximum of this
+workshop you need to have moderate skills in programming with Python!</p>
+<h2>Technical requirements</h2>
+<ul>
+<li>Python 3.6 installed and running</li>
+<li>Text editor or IDE of your choice – you must know how to use them !</li>
+<li>virtualenv (virtualenv-wrapper) tools installed and running so you can
+  configure a working environment for your pylint plugins</li>
+<li>pylint &gt;= 2.0 installed inside the virtualenv</li>
+</ul>
+<p>Try to identify code patterns which are not detected by standard pylint checks
+so that you can write a plugin for them. Practice patters will be provided by
+trainer.</p>
+<p>Try to keep the simplest checks at the top of your list and the more complex
+ones at the bottom.</p>
+<h2>Trainer</h2>
+<p>Alexander Todorov – a Senior QA engineer with more than 10 years of experience in
+test automation and development with Python. Alex is also the current maintainer
+<a href="https://github.com/PyCQA/pylint-django/graphs/contributors">pylint-django</a>
+and a contributor to <a href="https://github.com/PyCQA/pylint/pulls/atodorov">pylint</a>.</p>
+<h2>Pricing</h2>
+<ul>
+<li>Corporate training: 1000 EUR/day, up to 10 people</li>
+<li>Conference workshop: travel and hotel expenses only</li>
+</ul>
+<h2>Dates</h2>
+<ul>
+<li>19-20 May 2018, Tirana, Albania for <a href="https://oscal.openlabs.cc/">OSCAL'18</a></li>
+<li>26-27 May 2018, Heidelberg, Germany for
+  <a href="https://2018.djangocon.eu/news/talk-announcement/">DjangoCon Europe</a></li>
+<li>3rd June 2018, Prague, Czech Republic for <a href="https://cz.pycon.org/2018/">PyConCZ</a></li>
+<li>2-3 Nov 2018, Staint Petersburg, Russia for <a href="https://piterpy.com">PiterPy</a></li>
+</ul>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://github.com/MrSenko" class="icon fa fa-github"></a></li>
+						<li><a href="https://twitter.com/Mr_Senko" class="icon fa fa-twitter"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2016-2018 Mr. Senko</li>
+						<li><a href="/legal/">Legal notice</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
