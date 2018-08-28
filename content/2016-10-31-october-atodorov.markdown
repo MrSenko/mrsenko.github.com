@@ -6,9 +6,7 @@ Author: Alexander Todorov
 Tags: Python
 
 Hello everyone, during October I've been focusing on
-[Cosmic Ray](https://github.com/sixty-north/cosmic-ray) which
-is a supported package of our
-[Python software stack]({filename}pages/support/python.html).
+[Cosmic Ray](https://github.com/sixty-north/cosmic-ray).
 
 The changes include
 

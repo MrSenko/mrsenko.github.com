@@ -6,9 +6,7 @@ Author: Alexander Todorov
 Tags: Python
 
 Hello everyone, during November I've been focusing on
-Cosmic Ray, pylint and django-chartit which are
-supported packages in our
-[Python software stack]({filename}pages/support/python.html).
+Cosmic Ray, pylint.
 
 The changes include
 
