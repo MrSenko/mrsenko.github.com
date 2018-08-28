@@ -48,6 +48,8 @@ will teach you:
 would you like to create (or work from pre-existing scenarios)
 * Writing code and code review - more hands-on exercise
 
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeiwJVSBUUZC4i_bktLcR4xyzsaBh_tavoW0POFh55hndi1Ug/viewform" class="button special small">Sign-up</a>
+
 
 Full day pylint workshop
 ------------------------
@@ -70,6 +72,8 @@ practical examples and explanation. Topic include:
 * Augmentations - suppressing selected error messages during runtime
 * Transformations - teaching pylint to recognize your framework
 * Proper testing of pylint plugins
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdOTxt2Jy04nCP1lWVGI2Jv1JnUABFe4Jqzu5ZNaQEn434p4g/viewform" class="button special small">Sign-up</a>
 
 
 Technical requirements
@@ -101,6 +105,7 @@ of [Kiwi TCMS](http://kiwitcms.org).
 Dates
 -----
 
+* *More dates will be announced depending on availability*
 * Feb 2019, Brussels, TBC
 * 2-3 Nov 2018, Staint Petersburg
 * October 20018, Germany, Karlsruhe region, TBC
