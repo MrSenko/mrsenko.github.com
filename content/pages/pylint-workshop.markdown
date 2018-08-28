@@ -2,6 +2,8 @@ Title: Workshop: How to write pylint plugins
 url: pylint-workshop/
 save_as: pylint-workshop/index.html
 
+How to write pylint plugins
+===========================
 
 Pylint is the most popular static source code analyzer for Python.
 It has a plugable architecture and allows developers to create their
@@ -20,7 +22,8 @@ Target audience
 Medium level or experienced developers who work with Python (and/or Django)
 and/or QA engineers who work
 with the project source code directly! In order to get the maximum of this
-workshop you need to have moderate skills in programming with Python!
+workshop you need to have moderate skills in programming with Python and be
+comfortable working with classes and objects!
 
 
 Workshop: AST based plugins
@@ -30,7 +33,7 @@ Duration: 3hrs
 
 Group: max 10 people
 
-Pricing: 100 EUR/person
+Pricing: 150 EUR/person
 
 Description: Abstract syntax tree based plugins are the most popular type
 of plugins in pylint. They are used over 90% of the time. This workshop
@@ -49,11 +52,11 @@ would you like to create (or work from pre-existing scenarios)
 Full day pylint workshop
 ------------------------
 
-Duration: 6hrs
+Duration: 7hrs
 
 Group: max 10 people
 
-Pricing: 300 EUR/person
+Pricing: 500 EUR/person
 
 Description: This workshop covers pylint in more details with more
 practical examples and explanation. Topic include:
@@ -90,21 +93,21 @@ Instructor
 [Alexander Todorov](https://github.com/atodorov) –
 a Senior QA engineer with more than 10 years of experience in
 test automation and development with Python. Alex is also the current maintainer of
-[pylint-django](https://github.com/PyCQA/pylint-django/graphs/contributors)
-and a contributor to [pylint](https://github.com/PyCQA/pylint/pulls/atodorov).
+[pylint-django](https://github.com/PyCQA/pylint-django/graphs/contributors),
+contributor to [pylint](https://github.com/PyCQA/pylint/pulls/atodorov) and project lead
+of [Kiwi TCMS](http://kiwitcms.org).
 
 
 Dates
 -----
 
 * Feb 2019, Brussels, TBC
-* 2-3 Nov 2018, Staint Petersburg for [PiterPy](https://piterpy.com)
-* October 20018, Germany, Karlsruhe region, TBA
-* 15 Sept 2018, Sofia, TBA
-* 3rd June 2018, Prague for [PyCon CZ](https://cz.pycon.org/2018/)
-* 26-27 May 2018, Heidelberg for
-[DjangoCon Europe](https://2018.djangocon.eu/news/talk-announcement/)
-* 19-20 May 2018, Tirana for [OSCAL'18](https://oscal.openlabs.cc/)
+* 2-3 Nov 2018, Staint Petersburg
+* October 20018, Germany, Karlsruhe region, TBC
+* 15 Sept 2018, Sofia
+* 3rd June 2018, Prague
+* 26-27 May 2018, Heidelberg
+* 19-20 May 2018, Tirana
 
 
 For more dates and in-house corporate training please
