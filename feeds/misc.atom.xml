@@ -1226,7 +1226,7 @@ you don't have to!
 &lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt;
 if you need faster response cycle for the open source components which you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>What I've worked on in December 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/" rel="alternate"></link><published>2016-12-30T10:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-12-30:blog/atodorov/2016/12/30/what-ive-worked-on-in-december-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during December I've been working on several
 different projects from our supported
-&lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;
+&lt;a href="{filename}pages/support/python.html"&gt;Python software stack&lt;/a&gt;
 and also ventured into Ruby land.&lt;/p&gt;
 &lt;h2&gt;Versions 0.2.3 and 0.2.4 of pelican-ab&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;pelican-ab&lt;/em&gt; is an A/B testing plugin for Pelican, the static site
@@ -1394,9 +1394,7 @@ upstream dependencies!&lt;/p&gt;
 and feature requests as they come in. Should you need commercial support for
 this or other open source libraries please
 &lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko's support service&lt;/a&gt;&lt;/strong&gt;!&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>What I've worked on in November 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/" rel="alternate"></link><published>2016-11-30T17:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-11-30:blog/atodorov/2016/11/30/what-ive-worked-on-in-november-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during November I've been focusing on
-Cosmic Ray, pylint and django-chartit which are
-supported packages in our
-&lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;.&lt;/p&gt;
+Cosmic Ray, pylint.&lt;/p&gt;
 &lt;p&gt;The changes include&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Cosmic Ray will not fail if baseline test execution fails, see
@@ -1416,9 +1414,7 @@ supported packages in our
 &lt;p&gt;I hope you like my work and please
 &lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt;
 if you need faster response cycle for the open source libraries you use.&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>Status Report for October 2016</title><link href="http://mrsenko.com/blog/atodorov/2016/10/31/status-report-for-october-2016/" rel="alternate"></link><published>2016-10-31T11:30:00+02:00</published><author><name>Alexander Todorov</name></author><id>tag:mrsenko.com,2016-10-31:blog/atodorov/2016/10/31/status-report-for-october-2016/</id><summary type="html">&lt;p&gt;Hello everyone, during October I've been focusing on
-&lt;a href="https://github.com/sixty-north/cosmic-ray"&gt;Cosmic Ray&lt;/a&gt; which
-is a supported package of our
-&lt;a href="http://mrsenko.com/support/python.html"&gt;Python software stack&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="https://github.com/sixty-north/cosmic-ray"&gt;Cosmic Ray&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The changes include&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Report only SURVIVED mutants if &lt;code&gt;--full-report&lt;/code&gt; is not specified;&lt;/li&gt;
