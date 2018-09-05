@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-                <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
-		<title>Mr. Senko - Open Source Wizards - Tags</title>
+                    <script src="https://cdn.optimizely.com/js/5899451178.js"></script>
+		<title>Kiwi TCMS update</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="" />
                 <meta name="google-site-verification" content="fDhfvNtsr-Oqa-_-cJ_1viTvXhEWDFXRDC8oZnXV-To" />
@@ -110,14 +110,31 @@
                 <!-- Code highlight color scheme -->
                     <link href="http://mrsenko.com/theme/css/code_blocks/github.css" rel="stylesheet">
 
-                    <meta name="twitter:site" content="@Mr_Senko">
-                    <meta name="twitter:title" content="Mr. Senko - Open Source Wizards">
-                    <meta name="twitter:description" content="Support for open source libraries">
-                    <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
 
-                <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
-                <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
+
+        <meta name="description" content="version 5.3.1-ee" >
+
+        <meta name="author" content="Mr. Senko">
+
+        <meta name="tags" content="Python" >
+        <meta name="tags" content="errata" >
+
+        <meta name="twitter:site" content="@Mr_Senko">
+        <meta name="twitter:title" content="Kiwi TCMS update">
+            <meta name="twitter:description" content="version 5.3.1-ee">
+        <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content="http://mrsenko.com/theme/images/twitter_card.jpg">
+
+
+        <meta property="og:site_name" content="Mr. Senko - Open Source Wizards">
+        <meta property="og:type" content="article" />
+            <meta property="article:author" content="http://mrsenko.com/blog/mr-senko/" />
+        <meta property="og:url" content="http://mrsenko.com/blog/mr-senko/2018/09/05/kiwi-tcms-update/" />
+        <meta property="og:title" content="Kiwi TCMS update" />
+        <meta property="article:published_time" content="2018-09-05 14:55:00+03:00">
+            <meta property="og:description" content="version 5.3.1-ee">
+
+            <meta property="og:image" content="http://mrsenko.com/theme/images/og_image.jpg">
 	</head>
 	<body class="landing">
 
@@ -136,13 +153,78 @@
 			</header>
 
             <section id="banner">
+    <h2>Kiwi TCMS update</h2>
+    <p>version 5.3.1-ee</p>
+    <p>
+        <em>Posted by
+                <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+            <br/>on Wed 05 September 2018
+        </em>
+    </p>
             </section>
 
-    <h1>Tags for Mr. Senko - Open Source Wizards</h1>        <li><a href="http://mrsenko.com/blog/tags/django/">Django</a> (6)</li>
-        <li><a href="http://mrsenko.com/blog/tags/errata/">errata</a> (29)</li>
-        <li><a href="http://mrsenko.com/blog/tags/python/">Python</a> (53)</li>
-        <li><a href="http://mrsenko.com/blog/tags/qa/">QA</a> (1)</li>
-        <li><a href="http://mrsenko.com/blog/tags/ruby/">Ruby</a> (2)</li>
+<section id="#article" class="wrapper style1">
+    <div class="container">
+    <p><strong>Version:</strong> 5.3.1-ee
+<strong>Released on:</strong> 2018-09-05
+<strong>URL:</strong> <a href="http://kiwitcms.org/">http://kiwitcms.org/</a></p>
+<h2>Details</h2>
+<p>This is an Enterprise Edition release, available only to Mr. Senko subscribers.
+Docker images:</p>
+<div class="highlight"><pre><span></span>mrsenko/kiwi         5.3.1-ee            ce5329930acf        1.108 GB
+mrsenko/kiwi         latest              ce5329930acf        1.108 GB
+</pre></div>
+
+
+<h2>Changes</h2>
+<ul>
+<li>Based on upstream <a href="http://kiwitcms.org/blog/kiwi-tcms-team/2018/09/04/kiwi-tcms-531/">Kiwi TCMS v5.3.1</a></li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> to get access to
+our private Docker repository and then</p>
+<div class="highlight"><pre><span></span>docker-compose down
+docker pull mrsenko/kiwi
+docker pull centos/mariadb
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+    <div class="post-meta">
+        <p>
+        Posted by
+            <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+        on Wed 05 September 2018
+        </p>
+    </div>
+
+        <div class="tags">
+            <p>tags: <a href="http://mrsenko.com/blog/tags/python/">Python</a>, <a href="http://mrsenko.com/blog/tags/errata/">errata</a>, </p>
+        </div>
+    </div>
+
+    <section id="comments" class="wrapper style2 special">
+        <div class="container">
+            <header class="major special">
+                <h2>Comments !</h2>
+            </header>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'mrsenko';
+                var disqus_identifier = 'blog/mr-senko/2018/09/05/kiwi-tcms-update/';
+                var disqus_url = 'http://mrsenko.com/blog/mr-senko/2018/09/05/kiwi-tcms-update/';
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//mrsenko.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568b9305e58615ff"></script>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">

@@ -142,6 +142,46 @@
     <section class="wrapper style1">
         <div class="container">
             <header class="major special">
+                <a href="http://mrsenko.com/blog/mr-senko/2018/09/05/kiwi-tcms-update/" rel="bookmark" title="Permalink to Kiwi TCMS update">
+                    <h2>Kiwi TCMS update</h2>
+                </a>
+            </header>
+
+            <p><strong>Version:</strong> 5.3.1-ee
+<strong>Released on:</strong> 2018-09-05
+<strong>URL:</strong> <a href="http://kiwitcms.org/">http://kiwitcms.org/</a></p>
+<h2>Details</h2>
+<p>This is an Enterprise Edition release, available only to Mr. Senko subscribers.
+Docker images:</p>
+<div class="highlight"><pre><span></span>mrsenko/kiwi         5.3.1-ee            ce5329930acf        1.108 GB
+mrsenko/kiwi         latest              ce5329930acf        1.108 GB
+</pre></div>
+
+
+<h2>Changes</h2>
+<ul>
+<li>Based on upstream <a href="http://kiwitcms.org/blog/kiwi-tcms-team/2018/09/04/kiwi-tcms-531/">Kiwi TCMS v5.3.1</a></li>
+</ul>
+<h2>How to upgrade</h2>
+<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> to get access to
+our private Docker repository and then</p>
+<div class="highlight"><pre><span></span>docker-compose down
+docker pull mrsenko/kiwi
+docker pull centos/mariadb
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+</pre></div>
+
+            <p class="post-meta">Posted by
+                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
+                on Wed 05 September 2018
+            </p>
+
+<p>There are <a href="http://mrsenko.com/blog/mr-senko/2018/09/05/kiwi-tcms-update/#disqus_thread">comments</a>.</p>        </div>
+    </section>
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major special">
                 <a href="http://mrsenko.com/blog/mr-senko/2018/08/07/kiwi-tcms-enhancement-update/" rel="bookmark" title="Permalink to Kiwi TCMS enhancement update">
                     <h2>Kiwi TCMS enhancement update</h2>
                 </a>
@@ -1384,65 +1424,6 @@ before upgrading!</p>
             </p>
 
 <p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/04/24/nitrate-bug-fix-and-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
-    </section>
-    <section class="wrapper style1">
-        <div class="container">
-            <header class="major special">
-                <a href="http://mrsenko.com/blog/mr-senko/2017/04/12/nitrate-enhancement-update/" rel="bookmark" title="Permalink to Nitrate enhancement update">
-                    <h2>Nitrate enhancement update</h2>
-                </a>
-            </header>
-
-            <p><strong>Version:</strong> nitrate-3.8.18.15
-<strong>Released on:</strong> 2017-04-12
-<strong>Severity:</strong> Medium</p>
-<h2>Details</h2>
-<p>Nitrate is an open source test plan, test run and test case management system.
-It has a lot of great features, such as
-Bugzilla and JIRA integration, QPID integration, fast test plan and runs search,
-powerful access control for each plan, run and case, and XMLRPC APIs.</p>
-<p>Updated Nitrate package is now available which removes one database migration.
-<code>tcms.core.migrations.0001_django_comments__object_pk</code> is modifying a 3rd party
-model and Django gets really confused about this! See the discussion in
-<a href="https://github.com/Nitrate/Nitrate/pull/157">PR #157</a> about why we've decided
-to drop the migration!</p>
-<h2>Changelog since 3.8.18.12</h2>
-<ul>
-<li>Rebased onto 8f45beb from upstream</li>
-<li>Remove tcms.core.migrations.0001_django_comments__object_pk</li>
-</ul>
-<h2>Open upstream issues</h2>
-<p>The following issues and pull requests, which have been previously released on
-Mr. Senko, are still open in the upstream repository:</p>
-<ul>
-<li><a href="https://github.com/Nitrate/Nitrate/pull/45">PR #45</a> -
-  fix: showing priorities in advanced search in hardcode (RhBug:1139932) </li>
-<li><a href="https://github.com/Nitrate/Nitrate/pull/139">PR #139</a> -
-  Refactor SQL and use ORM queries instead </li>
-<li><a href="https://github.com/Nitrate/Nitrate/pull/146">PR #146</a> -
-  Replace SQL with ORM in reporting app. Fix #127</li>
-<li><a href="https://github.com/Nitrate/Nitrate/pull/156">PR #156</a> -
-  Don't use deprecated request.REQUEST</li>
-<li><a href="https://github.com/Nitrate/Nitrate/pull/171">PR #171</a> -
-  Enable testing with MySQL and Postgres on Travis-CI</li>
-<li><a href="https://github.com/Nitrate/Nitrate/issues/127">Issue #127</a> -
-  Make SQL statements be compatible with PostgreSQL</li>
-<li><a href="https://github.com/Nitrate/Nitrate/issues/169">Issue #169</a> -
-  Add MySQL, MariaDB and PostgreSQL to Travis CI test matrix </li>
-</ul>
-<h2>How to upgrade</h2>
-<p><strong><a href="http://mrsenko.com/subscribe.html">Subscribe to Mr. Senko</a></strong> and
-<a href="http://mrsenko.com/blog/mr-senko/2017/01/22/using-private-pypi-repositories/">configure your private PyPI repositories</a>
-before upgrading!</p>
-<div class="highlight"><pre><span></span>pip install --upgrade nitrate
-</pre></div>
-
-            <p class="post-meta">Posted by
-                    <a href="http://mrsenko.com/blog/mr-senko/">Mr. Senko</a>
-                on Wed 12 April 2017
-            </p>
-
-<p>There are <a href="http://mrsenko.com/blog/mr-senko/2017/04/12/nitrate-enhancement-update/#disqus_thread">comments</a>.</p>        </div>
     </section>
 
 <section class="wrapper special">
