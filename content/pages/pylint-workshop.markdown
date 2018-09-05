@@ -109,7 +109,7 @@ Dates
 * Feb 2019, Brussels, TBC
 * 2-3 Nov 2018, Staint Petersburg
 * October 20018, Germany, Karlsruhe region, TBC
-* 15 Sept 2018, Sofia
+* 14th Sept 2018, Sofia
 * 3rd June 2018, Prague
 * 26-27 May 2018, Heidelberg
 * 19-20 May 2018, Tirana
