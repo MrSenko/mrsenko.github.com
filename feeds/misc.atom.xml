@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2018-09-05T14:55:00+03:00</updated><entry><title>Kiwi TCMS update</title><link href="http://mrsenko.com/blog/mr-senko/2018/09/05/kiwi-tcms-update/" rel="alternate"></link><published>2018-09-05T14:55:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-09-05:blog/mr-senko/2018/09/05/kiwi-tcms-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; 5.3.1-ee
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2018-09-05T15:05:00+03:00</updated><entry><title>Writing pylint plugins workshop in Sofia</title><link href="http://mrsenko.com/blog/mr-senko/2018/09/05/writing-pylint-plugins-workshop-in-sofia/" rel="alternate"></link><published>2018-09-05T15:05:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-09-05:blog/mr-senko/2018/09/05/writing-pylint-plugins-workshop-in-sofia/</id><summary type="html">&lt;p&gt;We are happy to announce that our
+&lt;a href="http://mrsenko.com/pylint-workshop/"&gt;AST based pylint plugins workshop&lt;/a&gt;
+will take place in Sofia at Sept. 14th during
+&lt;a href="https://www.hackconf.bg/bg/#program"&gt;HackConf&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Workshop will be hosted by &lt;a href="http://atodorov.org"&gt;Alexander Todorov&lt;/a&gt; - founder of
+Mr. Senko and maintainer of pylint-django!&lt;/p&gt;
+&lt;p&gt;Participation is limited to 10 seats, reserved for conference ticket holders only!&lt;/p&gt;
+&lt;p&gt;If you are interested in signing-up for this workshop on another date please see
+&lt;a href="http://mrsenko.com/pylint-workshop/"&gt;our workshop page&lt;/a&gt;!&lt;/p&gt;</summary><category term="workshops"></category></entry><entry><title>Kiwi TCMS update</title><link href="http://mrsenko.com/blog/mr-senko/2018/09/05/kiwi-tcms-update/" rel="alternate"></link><published>2018-09-05T14:55:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-09-05:blog/mr-senko/2018/09/05/kiwi-tcms-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; 5.3.1-ee
 &lt;strong&gt;Released on:&lt;/strong&gt; 2018-09-05
 &lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://kiwitcms.org/"&gt;http://kiwitcms.org/&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Details&lt;/h2&gt;
