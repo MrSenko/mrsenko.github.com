@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2018-09-05T15:05:00+03:00</updated><entry><title>Writing pylint plugins workshop in Sofia</title><link href="http://mrsenko.com/blog/mr-senko/2018/09/05/writing-pylint-plugins-workshop-in-sofia/" rel="alternate"></link><published>2018-09-05T15:05:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-09-05:blog/mr-senko/2018/09/05/writing-pylint-plugins-workshop-in-sofia/</id><summary type="html">&lt;p&gt;We are happy to announce that our
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Mr. Senko - Open Source Wizards</title><link href="http://mrsenko.com/" rel="alternate"></link><link href="http://mrsenko.com/feeds/misc.atom.xml" rel="self"></link><id>http://mrsenko.com/</id><updated>2018-09-06T22:20:00+03:00</updated><entry><title>Kiwi TCMS hot-fix update</title><link href="http://mrsenko.com/blog/mr-senko/2018/09/06/kiwi-tcms-hot-fix-update/" rel="alternate"></link><published>2018-09-06T22:20:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-09-06:blog/mr-senko/2018/09/06/kiwi-tcms-hot-fix-update/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Version:&lt;/strong&gt; 5.3.1-ee-906
+&lt;strong&gt;Released on:&lt;/strong&gt; 2018-09-06
+&lt;strong&gt;Severity:&lt;/strong&gt; High
+&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="http://kiwitcms.org/"&gt;http://kiwitcms.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Details&lt;/h2&gt;
+&lt;p&gt;This release fixes a critical failure with localized test plan names
+which was causing failure to display the dashboard page.
+This is an Enterprise Edition release, available only to Mr. Senko subscribers.
+Docker images:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mrsenko/kiwi         5.3.1-ee-906        e77b623ebf6a        1.108 GB
+mrsenko/kiwi         latest              e77b623ebf6a        1.108 GB
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Changes since KiwiTCMS 5.1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Don't use &lt;code&gt;|slugify&lt;/code&gt; filter in templates. Fix Sentry KIWI-TCMS-38&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;How to upgrade&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://mrsenko.com/subscribe.html"&gt;Subscribe to Mr. Senko&lt;/a&gt;&lt;/strong&gt; to get access to
+our private Docker repository and then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose down
+docker pull mrsenko/kiwi
+docker pull centos/mariadb
+docker-compose up -d
+docker exec -it kiwi_web /Kiwi/manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Python"></category><category term="errata"></category></entry><entry><title>Writing pylint plugins workshop in Sofia</title><link href="http://mrsenko.com/blog/mr-senko/2018/09/05/writing-pylint-plugins-workshop-in-sofia/" rel="alternate"></link><published>2018-09-05T15:05:00+03:00</published><author><name>Mr. Senko</name></author><id>tag:mrsenko.com,2018-09-05:blog/mr-senko/2018/09/05/writing-pylint-plugins-workshop-in-sofia/</id><summary type="html">&lt;p&gt;We are happy to announce that our
 &lt;a href="http://mrsenko.com/pylint-workshop/"&gt;AST based pylint plugins workshop&lt;/a&gt;
 will take place in Sofia at Sept. 14th during
 &lt;a href="https://www.hackconf.bg/bg/#program"&gt;HackConf&lt;/a&gt;.&lt;/p&gt;
