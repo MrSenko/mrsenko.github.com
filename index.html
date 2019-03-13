@@ -269,8 +269,8 @@
 									</header>
 									<p>
                                                                             On average it takes around 20 to 30 days for a single pull request
-                                                                            to be accepted on GitHub! Mr.&nbsp;Senko is working on forked repositories
-                                                                            and we're able to deliver patches and bug fixes faster.
+                                                                            to be accepted on GitHub! Mr.&nbsp;Senko is working directly with upstream
+                                                                            but when needed we fork &amp; ship immediately!
                                                                         </p>
 								</div>
 							</div>
@@ -284,8 +284,8 @@
 									<p>
                                                                             Open source package authors release new versions when they
                                                                             see fit. Sometimes this takes several months. Mr. Senko
-                                                                            provides weekly and bi-weekly package releases for all
-                                                                            supported libraries.
+                                                                            provides bi-weekly package releases for all
+                                                                            supported components.
                                                                         </p>
 								</div>
 							</div>
@@ -302,8 +302,8 @@
                                                                             Typically open source projects reach end-of-life
                                                                             when the original author gives up.
 
-                                                                            Mr. Senko is working directly with the upstream projects
-                                                                            to help with maintenance, bug fixes and development.
+                                                                            Mr. Senko is working directly with the upstream
+                                                                            to help with engineering and community development.
                                                                         </p>
 								</div>
 							</div>
@@ -316,7 +316,7 @@
 									</header>
 									<p>
                                                                             Subscriptions map to private releases via
-                                                                            pip or docker.
+                                                                            Docker Hub.
 
                                                                             These are produced and tested by Mr. Senko!
                                                                         </p>
@@ -342,7 +342,7 @@
                                                 </li>
 
                                                 <li>
-                                                    You download and upgrade from a private repository!
+                                                    You download and upgrade from a private Docker Hub repository!
                                                 </li>
                                             </ol>
 
@@ -398,10 +398,6 @@
     </li>
 
     <li>
-        Default bug trackers: Bugzilla, JIRA, GitHub
-    </li>
-
-    <li>
         Support ongoing development
     </li>
 
@@ -428,6 +424,10 @@
     </li>
 
     <li>
+        9/5 Mo-Fri email support
+    </li>
+
+    <li>
         Install from Docker image <code>mrsenko/kiwi</code>
     </li>
 
@@ -447,11 +447,9 @@
             </li>
 
             <li>
-                Authentication backends: <a href="http://python-social-auth-docs.readthedocs.io/en/latest/backends/index.html#supported-backends">social_auth</a>
-            </li>
-
-            <li>
-                Enabled bug trackers: TBA
+                Authentication backends:
+                <a href="http://python-social-auth-docs.readthedocs.io/en/latest/backends/index.html#supported-backends">social_auth</a>,
+                <a href="https://github.com/kiwitcms/python-social-auth-kerberos/">kerberos</a>
             </li>
         </ul>
     </li>
@@ -481,11 +479,7 @@
     </li>
 
     <li>
-        Docker image based on RHEL 7 (TBA)
-    </li>
-
-    <li>
-        Hosted by Mr. Senko on OpenShift
+        Hosted by Mr. Senko on our own cluster
     </li>
 
     <li>
@@ -493,23 +487,104 @@
     </li>
 
     <li>
-        Add-ons in private Docker image:
-        <ul>
-            <li>
-                Authentication backends: Kerberos, LDAP (TBA)
-            </li>
-        </ul>
+        Fully isolated tenant via docker-compose
+    </li>
+
+    <li>
+        Can deploy customized docker image
+    </li>
+
+    <li>
+        You are responsible for QA of customized docker images
     </li>
 
     <li>
         1 subscription == 3 priority votes
     </li>
-
 </ul>
 
                                                         <a href="http://sites.fastspring.com/otbbg/product/mrsenko" class="button special small">Subscribe for 300 $/mo</a>
                                                     </div>
                                                 </div>
+                                            </div>
+
+                                            <h2>Other plans</h2>
+
+                                            <div class="feature-grid four">
+                                                <div class="box feature">
+                                                    <div class="content subscription">
+                                                        <header>
+                                                            <h4>Open Source Sponsor</h4>
+                                                        </header>
+                                                        <ul>
+                                                            <li>
+                                                                You like Kiwi TCMS
+                                                            </li>
+
+                                                            <li>
+                                                                You don't ask anything in return
+                                                            </li>
+
+                                                            <li>
+                                                                One-time or monthly donation
+                                                            </li>
+                                                        </ul>
+
+                                                        <a href="https://opencollective.com/kiwitcms" class="button special small">5$ donation</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="box feature">
+                                                    <div class="content subscription">
+                                                        <header>
+                                                            <h4>SaaS</h4>
+                                                        </header>
+                                                        <ul>
+                                                            <li>
+                                                                Securely hosted on AWS
+                                                            </li>
+
+                                                            <li>
+                                                                Shared multi-tenant architecture
+                                                            </li>
+
+                                                            <li>
+                                                                Ideal for small teams
+                                                            </li>
+
+                                                            <li>
+                                                                Coming soon ...
+                                                            </li>
+                                                        </ul>
+
+                                                        <a href="https://kiwitcms.us17.list-manage.com/subscribe/post?u=9b57a21155a3b7c655ae8f922&amp;id=c970a37581" class="button special small">15$/mo (subscribe for news)</a>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="box feature">
+                                                    <div class="content subscription">
+                                                        <header>
+                                                            <h4>Professional services</h4>
+                                                        </header>
+                                                        <ul>
+                                                            <li>
+                                                                Custom engineering
+                                                            </li>
+
+                                                            <li>
+                                                                Hands-on, training and/or consultancy
+                                                            </li>
+
+                                                            <li>
+                                                                On-site services billed as full day (8hrs)
+                                                            </li>
+                                                        </ul>
+
+                                                        <a href="#get-in-touch" class="button special small">100$/hr (ask)</a>
+                                                    </div>
+                                                </div>
+
                                             </div>
 
 					</div>
@@ -575,104 +650,6 @@
             </div>
         </section>
 
-			<!-- Three -->
-				<section id="who-are-we" class="wrapper style1 special">
-					<div class="container">
-						<header class="major special">
-						    <h2>TEAM</h2>
-                                                    <p>
-                                                        <em>open source veterans you can count on</em>
-                                                    </p>
-
-						</header>
-						<div class="feature-grid">
-							<div class="feature">
-								<div class="image rounded"><img src="https://avatars1.githubusercontent.com/u/1002300?v=3&amp;s=170" /></div>
-								<div class="content">
-									<header>
-										<h4>Alexander Todorov</h4>
-										<p>Quality Assurance Guru</p>
-									</header>
-									<p>
-                                                                            Alex has been testing open source software
-                                                                            for the past 10+ years and is responsible for
-                                                                            finding more than 1600 bugs! He was the installation test lead
-                                                                            for Red&nbsp;Hat&nbsp;Enterprise&nbsp;Linux&nbsp;5!
-                                                                        </p>
-                                                                        <ul class="icons">
-                                                                            <li>
-                                                                                <a href="https://twitter.com/atodorov_">
-                                                                                    <span class="fa-stack">
-                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                                                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                                                                    </span>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="https://github.com/atodorov">
-                                                                                    <span class="icon fa-stack">
-                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                                                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                                                                    </span>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="https://bg.linkedin.com/in/alextodorov">
-                                                                                    <span class="fa-stack">
-                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                                                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                                                                    </span>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-								</div>
-							</div>
-
-							<div class="feature">
-								<div class="image rounded"><img src="https://avatars0.githubusercontent.com/u/528677?v=3&amp;s=170" alt="" /></div>
-								<div class="content">
-									<header>
-										<h4>Krasimir Tsonev</h4>
-										<p>Front-end developer</p>
-									</header>
-									<p>
-                                                                            Krasimir is a front-end developer, blogger and speaker
-                                                                            who loves writing JavaScript. He is also the author of
-                                                                            the books Node.js Blueprints and Node.js&nbsp;By&nbsp;Example.
-                                                                        </p>
-                                                                        <ul class="icons">
-                                                                            <li>
-                                                                                <a href="https://twitter.com/KrasimirTsonev">
-                                                                                    <span class="fa-stack">
-                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                                                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                                                                    </span>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="https://github.com/krasimir">
-                                                                                    <span class="fa-stack">
-                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                                                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                                                                    </span>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="https://www.linkedin.com/in/krasimir-tsonev-67b8b66">
-                                                                                    <span class="fa-stack">
-                                                                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                                                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                                                                    </span>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-				</section>
 
 			<!-- Four -->
 				<section id="get-in-touch" class="wrapper style3 special" style="width:100vw;position: relative; margin-left: -50vw; left: 50%">
